@@ -23,17 +23,21 @@
     "prepare": "npm run build",
     "prettier": "prettier-package-json --write ./package.json &&prettier --write .",
     "scripts:generate-chunks": "NODE_NO_WARNINGS=1 tsx ./src/scripts/generateChunks.ts",
+    "scripts:generate-sqlite-db": "NODE_NO_WARNINGS=1 tsx ./src/scripts/generateSqliteDb.ts",
     "test": "vitest",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.11.0",
     "@xenova/transformers": "2.17.2",
+    "better-sqlite3": "11.9.1",
     "minimatch": "10.0.1",
+    "sqlite-vec": "0.1.7-alpha.2",
     "zod": "^4.0.0-beta.20250505T195954"
   },
   "devDependencies": {
     "@eslint/js": "9.23.0",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/jsdom": "~21.1.7",
     "@types/node": "22",
     "@types/semver": "7.7.0",

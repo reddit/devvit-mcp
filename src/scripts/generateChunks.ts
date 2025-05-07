@@ -7,10 +7,10 @@ import { promisify } from 'util';
 import { exec } from 'child_process';
 import { minimatch } from 'minimatch';
 import PQueue from 'p-queue';
-import { GreedySplitter } from '../splitter/GreedySplitter';
-import { SemanticMarkdownSplitter } from '../splitter/SemanticMarkdownSplitter';
+import { GreedySplitter } from '../docs/splitter/GreedySplitter';
+import { SemanticMarkdownSplitter } from '../docs/splitter/SemanticMarkdownSplitter';
 import { logger } from '../utils/logger';
-import type { ContentChunk } from '../splitter/types';
+import type { ContentChunk } from '../docs/splitter/types';
 import { Document } from 'langchain/document';
 import { embedDocuments } from '../utils/embeddings';
 
