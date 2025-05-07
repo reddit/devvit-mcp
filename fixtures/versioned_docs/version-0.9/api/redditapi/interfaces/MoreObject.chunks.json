@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: MoreObject, Properties, parentId</path>\n# Interface: MoreObject\n## Table of contents\n### Properties\n-   [children](MoreObject.md#children)\n-   [depth](MoreObject.md#depth)\n-   [parentId](MoreObject.md#parentid)\n## Properties\n### children\n• **children**: \\`t1\\_${string}\\`\\[\\]\n### depth\n• **depth**: `number`\n### parentId\n• **parentId**: \\`t1\\_${string}\\` | \\`t3\\_${string}\\`",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Interface: MoreObject",
+        "Properties",
+        "parentId"
+      ],
+      "level": 1
+    }
+  }
+]

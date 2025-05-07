@@ -1,0 +1,28 @@
+[
+  {
+    "pageContent": "<path>Customize the post preview</path>\n# Customize the post preview\nAfter your app has been created, you can use `setCustomPostPreview` to update your post preview and customize the loading screen with actual content.\nFor example, if your post has information about a future event, you could set the preview/loading screen to say how many days away the event is.\n```ts\n// creation of the post\nconst daysAwayFromEvent = 3; // would actually be done by checking the date diff, but just hardcoding for this example\nconst post = await reddit.submitPost({\n  title: 'A Countdown post',\n  subredditName: subreddit.name,\n  preview: (\n    <zstack height=\"100%\" width=\"100%\" alignment=\"center middle\">\n      <text>The event will start in {daysAwayFromEvent} days</text>\n    </zstack>\n  ),\n});\n```\nThen you'd create a [scheduler](./capabilities/scheduler.md) to run when the days away count changes:\n```ts\nDevvit.addSchedulerJob({\n  name: 'UpdatePostPreview',\n  onRun: async (event, context) => {\n    const { reddit } = context;\n    const { postId } = event.data!;\n\n    if (!postId) {\n      console.error('No post ID provided');\n      return;\n    }\n\n    const post = await reddit.getPostById(postId);\n    const daysAwayFromEvent = 2; // would actually be done by checking the date diff, but just hardcoding for this example\n    const newPreview = (\n      <vstack height=\"100%\" width=\"100%\" alignment=\"center middle\">\n        <text>The event will start in {daysAwayFromEvent} days</text>\n      </vstack>\n    );\n\n    await post.setCustomPostPreview(() => newPreview);\n  },\n});\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "level": 1,
+      "path": [
+        "Customize the post preview"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Customize the post preview</path>\nHow you customize your loading screen is up to you!",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 1,
+      "path": [
+        "Customize the post preview"
+      ]
+    }
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "pageContent": "<path>Spacer, Examples</path>\nimport AttributeMinHeight from './attributes/\\_minHeight.md'; import AttributeMaxHeight from './attributes/\\_maxHeight.md'; import AttributeMinWidth from './attributes/\\_minWidth.md'; import AttributeMaxWidth from './attributes/\\_maxWidth.md'; import AttributeGrow from './attributes/\\_grow.md'; import AttributeWidth from './attributes/\\_width.mdx'; import AttributeHeight from './attributes/\\_height.mdx';\n# Spacer\nThe `<spacer>` element is used to create adjustable space between UI elements.\n## Attributes\n### size\nSets the spacer size. Possible values:\n-   `xsmall`\n-   `small`: The default if the attribute is not used.\n-   `medium`\n-   `large`\n### grow\n### shape\nPossible values:\n-   `invisible`\n-   `thin`\n-   `square`\n### width\n### minWidth\n### maxWidth\n### height\n### minHeight\n### maxHeight\n## Examples\n```tsx\n<hstack>\n  <button>Button 1</button>\n  <spacer size=\"medium\" />\n  <button>Button 2</button>\n</hstack>\n```\n```tsx\n<hstack>\n  <button>Button 1</button>\n  <spacer grow />\n  <button>Button 2</button>\n</hstack>\n```",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Spacer",
+        "Examples"
+      ],
+      "level": 0
+    }
+  },
+  {
+    "pageContent": "<path>Spacer, Examples</path>\n```tsx\n<hstack>\n  <button>Button 1</button>\n  <spacer width=\"50%\" />\n  <button>Button 2</button>\n</hstack>\n```",
+    "metadata": {
+      "type": [
+        "code"
+      ],
+      "level": 2,
+      "path": [
+        "Spacer",
+        "Examples"
+      ]
+    }
+  }
+]

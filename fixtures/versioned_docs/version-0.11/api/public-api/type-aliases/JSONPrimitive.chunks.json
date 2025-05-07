@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Type Alias: JSONPrimitive</path>\n[**@devvit/public-api v0.11.14-dev**](../README.md)\n# Type Alias: JSONPrimitive\n**JSONPrimitive** = `boolean` | `null` | `number` | `string`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: JSONPrimitive"
+      ],
+      "level": 0
+    }
+  }
+]

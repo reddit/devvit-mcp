@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: CreateWikiPageOptions, Properties, subredditName</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Type Alias: CreateWikiPageOptions\n**CreateWikiPageOptions** = `object`\n## Properties\n### content\n**content**: `string`\nThe content of the page.\n### page\n**page**: `string`\nThe name of the page to create.\n### reason?\n`optional` **reason**: `string`\nThe reason for creating the page.\n### subredditName\n**subredditName**: `string`\nThe name of the subreddit to create the page in.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: CreateWikiPageOptions",
+        "Properties",
+        "subredditName"
+      ],
+      "level": 0
+    }
+  }
+]

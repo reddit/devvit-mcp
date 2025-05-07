@@ -1,0 +1,18 @@
+[
+  {
+    "pageContent": "<path>Create a custom post, Start a project, Next steps</path>\n# Create a custom post\n## Start a project\nTo create a custom post app, use the `custom-post` template to start a new project.\n-   From the terminal, navigate to a directory where you'll store your project.\n-   Enter the following command to create a project folder on your local machine.\n```bash\ndevvit new <replace-with-your-app-name> --template=custom-post\n```\n### Install dependencies\n-   To have your package manager install the dependencies, run the following command in the root of your project:\n```bash\nnpm install\n```\n\\-OR-\n```bash\nyarn install\n```\n### Check out your post!\n-   Open your app in your test subreddit. Run the following command in the root of your project:\n```bash\ndevvit playtest <replace with your test subreddit name>\n```\nYou'll see a \"Hello\" post that looks like this:\n![hello_blocks](./assets/hello_blocks_v2.png)\n### Next steps\nNow that you've created a basic custom post, check out one of our tutorials to learn how to [build a form](custom_post_form.md) in a custom post.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Create a custom post",
+        "Start a project",
+        "Next steps"
+      ],
+      "level": 1
+    }
+  }
+]

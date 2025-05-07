@@ -1,0 +1,53 @@
+[
+  {
+    "pageContent": "<path>Class: ButtonWidget, Constructors, constructor, Overrides</path>\n# Class: ButtonWidget\n## Hierarchy\n-   [`Widget`](Widget.md)\n    \n    ↳ **`ButtonWidget`**\n## Table of contents\n### Constructors\n-   [constructor](ButtonWidget.md#constructor)\n### Accessors\n-   [buttons](ButtonWidget.md#buttons)\n-   [description](ButtonWidget.md#description)\n-   [id](ButtonWidget.md#id)\n-   [name](ButtonWidget.md#name)\n-   [styles](ButtonWidget.md#styles)\n-   [subredditName](ButtonWidget.md#subredditname)\n### Methods\n-   [delete](ButtonWidget.md#delete)\n-   [toJSON](ButtonWidget.md#tojson)\n-   [add](ButtonWidget.md#add)\n-   [create](ButtonWidget.md#create)\n-   [delete](ButtonWidget.md#delete-1)\n-   [getWidgets](ButtonWidget.md#getwidgets)\n-   [reorder](ButtonWidget.md#reorder)\n-   [update](ButtonWidget.md#update)\n## Constructors\n### constructor\n• **new ButtonWidget**(`widgetData`, `subredditName`, `metadata?`)\n#### Parameters\n| Name | Type |\n|---|---|\n| widgetData | GetWidgetsResponse_WidgetItem |\n| subredditName | string |\n| metadata? | Metadata |\n#### Overrides\n[Widget](Widget.md).[constructor](Widget.md#constructor)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: ButtonWidget",
+        "Constructors",
+        "constructor",
+        "Overrides"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: ButtonWidget, Methods, create, Parameters</path>\n## Accessors\n### buttons\n• `get` **buttons**(): `WidgetButton`\\[\\]\n#### Returns\n`WidgetButton`\\[\\]\n### description\n• `get` **description**(): `string`\n#### Returns\n`string`\n### id\n• `get` **id**(): `string`\n#### Returns\n`string`\n#### Inherited from\nWidget.id\n### name\n• `get` **name**(): `string`\n#### Returns\n`string`\n#### Inherited from\nWidget.name\n### styles\n• `get` **styles**(): `WidgetStyles`\n#### Returns\n`WidgetStyles`\n### subredditName\n• `get` **subredditName**(): `string`\n#### Returns\n`string`\n#### Inherited from\nWidget.subredditName\n## Methods\n### delete\n▸ **delete**(): `Promise`< `void`\\>\n#### Returns\n`Promise`< `void`\\>\n#### Inherited from\n[Widget](Widget.md).[delete](Widget.md#delete)\n### toJSON\n▸ **toJSON**(): `Object`\n#### Returns\n`Object`\n| Name | Type |\n|---|---|\n| buttons | WidgetButton[] |\n| description | string |\n| id | string |\n| name | string |\n| styles | WidgetStyles |\n| subredditName | string |\n#### Overrides\n[Widget](Widget.md).[toJSON](Widget.md#tojson)\n### add\n▸ `Static` **add**(`widgetData`, `metadata`): `Promise`< [`ImageWidget`](ImageWidget.md) | [`CalendarWidget`](CalendarWidget.md) | [`TextAreaWidget`](TextAreaWidget.md) | [`ButtonWidget`](ButtonWidget.md) | [`CommunityListWidget`](CommunityListWidget.md) | [`PostFlairWidget`](PostFlairWidget.md) | [`CustomWidget`](CustomWidget.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| widgetData | AddWidgetData |\n| metadata | undefined | Metadata |\n#### Returns\n`Promise`< [`ImageWidget`](ImageWidget.md) | [`CalendarWidget`](CalendarWidget.md) | [`TextAreaWidget`](TextAreaWidget.md) | [`ButtonWidget`](ButtonWidget.md) | [`CommunityListWidget`](CommunityListWidget.md) | [`PostFlairWidget`](PostFlairWidget.md) | [`CustomWidget`](CustomWidget.md)\\>\n#### Inherited from\n[Widget](Widget.md).[add](Widget.md#add)\n### create\n▸ `Static` **create**(`options`, `metadata`): `Promise`< [`ButtonWidget`](ButtonWidget.md)\\>\n#### Parameters",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: ButtonWidget",
+        "Methods",
+        "create",
+        "Parameters"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: ButtonWidget, Methods, update, Returns</path>\n| Name | Type |\n|---|---|\n| options | AddButtonWidgetRequest |\n| metadata | undefined | Metadata |\n#### Returns\n`Promise`< [`ButtonWidget`](ButtonWidget.md)\\>\n### delete\n▸ `Static` **delete**(`subredditName`, `id`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| subredditName | string |\n| id | string |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n#### Inherited from\n[Widget](Widget.md).[delete](Widget.md#delete-1)\n### getWidgets\n▸ `Static` **getWidgets**(`subredditName`, `metadata?`): `Promise`< ([`ImageWidget`](ImageWidget.md) | [`CalendarWidget`](CalendarWidget.md) | [`TextAreaWidget`](TextAreaWidget.md) | [`ButtonWidget`](ButtonWidget.md) | [`CommunityListWidget`](CommunityListWidget.md) | [`PostFlairWidget`](PostFlairWidget.md) | [`CustomWidget`](CustomWidget.md))\\[\\]>\n#### Parameters\n| Name | Type |\n|---|---|\n| subredditName | string |\n| metadata? | Metadata |\n#### Returns\n`Promise`< ([`ImageWidget`](ImageWidget.md) | [`CalendarWidget`](CalendarWidget.md) | [`TextAreaWidget`](TextAreaWidget.md) | [`ButtonWidget`](ButtonWidget.md) | [`CommunityListWidget`](CommunityListWidget.md) | [`PostFlairWidget`](PostFlairWidget.md) | [`CustomWidget`](CustomWidget.md))\\[\\]>\n#### Inherited from\n[Widget](Widget.md).[getWidgets](Widget.md#getwidgets)\n### reorder\n▸ `Static` **reorder**(`subredditName`, `orderByIds`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| subredditName | string |\n| orderByIds | string[] |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n#### Inherited from\n[Widget](Widget.md).[reorder](Widget.md#reorder)\n### update\n▸ `Static` **update**(`options`, `metadata`): `Promise`< [`ButtonWidget`](ButtonWidget.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | UpdateButtonWidgetRequest |\n| metadata | undefined | Metadata |\n#### Returns\n`Promise`< [`ButtonWidget`](ButtonWidget.md)\\>",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: ButtonWidget",
+        "Methods",
+        "update",
+        "Returns"
+      ],
+      "level": 3
+    }
+  }
+]

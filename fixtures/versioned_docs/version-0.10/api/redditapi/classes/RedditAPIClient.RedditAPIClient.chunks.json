@@ -1,0 +1,431 @@
+[
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Table of contents</path>\n# Class: RedditAPIClient\n[RedditAPIClient](../modules/RedditAPIClient.md).RedditAPIClient\nThe Reddit API Client\nTo use the Reddit API Client, add it to the plugin configuration at the top of the file.\n**`Example`**\n```ts\nDevvit.configure({\n  redditAPI: true,\n  // other plugins\n});\n\n// use within one of our capability handlers e.g. Menu Actions, Triggers, Scheduled Job Type, etc\nasync (event, context) => {\n  const subreddit = await context.reddit.getSubredditById(context.subredditId);\n  await context.reddit.submitPost({\n    subredditName: subreddit.name,\n    title: 'test post',\n    text: 'test body',\n  });\n  // additional code\n};\n```\n## Table of contents\n### Constructors\n-   [constructor](RedditAPIClient.RedditAPIClient.md#constructor)\n### Accessors\n-   [modMail](RedditAPIClient.RedditAPIClient.md#modmail)\n### Methods",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Table of contents"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Table of contents, Methods</path>\n-   [addEditorToWikiPage](RedditAPIClient.RedditAPIClient.md#addeditortowikipage)\n-   [addModNote](RedditAPIClient.RedditAPIClient.md#addmodnote)\n-   [addRemovalNote](RedditAPIClient.RedditAPIClient.md#addremovalnote)\n-   [addSubredditRemovalReason](RedditAPIClient.RedditAPIClient.md#addsubredditremovalreason)\n-   [addWidget](RedditAPIClient.RedditAPIClient.md#addwidget)\n-   [addWikiContributor](RedditAPIClient.RedditAPIClient.md#addwikicontributor)\n-   [approve](RedditAPIClient.RedditAPIClient.md#approve)\n-   [approveUser](RedditAPIClient.RedditAPIClient.md#approveuser)\n-   [banUser](RedditAPIClient.RedditAPIClient.md#banuser)\n-   [banWikiContributor](RedditAPIClient.RedditAPIClient.md#banwikicontributor)\n-   [createCollection](RedditAPIClient.RedditAPIClient.md#createcollection)\n-   [createPostFlairTemplate](RedditAPIClient.RedditAPIClient.md#createpostflairtemplate)\n-   [createUserFlairTemplate](RedditAPIClient.RedditAPIClient.md#createuserflairtemplate)\n-   [createWikiPage](RedditAPIClient.RedditAPIClient.md#createwikipage)\n-   [crosspost](RedditAPIClient.RedditAPIClient.md#crosspost)\n-   [deleteFlairTemplate](RedditAPIClient.RedditAPIClient.md#deleteflairtemplate)\n-   [deleteModNote](RedditAPIClient.RedditAPIClient.md#deletemodnote)\n-   [deleteWidget](RedditAPIClient.RedditAPIClient.md#deletewidget)\n-   [editFlairTemplate](RedditAPIClient.RedditAPIClient.md#editflairtemplate)\n-   [getAppUser](RedditAPIClient.RedditAPIClient.md#getappuser)\n-   [getApprovedUsers](RedditAPIClient.RedditAPIClient.md#getapprovedusers)\n-   [getBannedUsers](RedditAPIClient.RedditAPIClient.md#getbannedusers)\n-   [getBannedWikiContributors](RedditAPIClient.RedditAPIClient.md#getbannedwikicontributors)\n-   [getCollectionById](RedditAPIClient.RedditAPIClient.md#getcollectionbyid)\n-   [getCollectionsForSubreddit](RedditAPIClient.RedditAPIClient.md#getcollectionsforsubreddit)\n-   [getCommentById](RedditAPIClient.RedditAPIClient.md#getcommentbyid)",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Class: RedditAPIClient",
+        "Table of contents",
+        "Methods"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Table of contents, Methods</path>\n-   [getComments](RedditAPIClient.RedditAPIClient.md#getcomments)\n-   [getCommentsAndPostsByUser](RedditAPIClient.RedditAPIClient.md#getcommentsandpostsbyuser)\n-   [getCommentsByUser](RedditAPIClient.RedditAPIClient.md#getcommentsbyuser)\n-   [getControversialPosts](RedditAPIClient.RedditAPIClient.md#getcontroversialposts)\n-   [getCurrentSubreddit](RedditAPIClient.RedditAPIClient.md#getcurrentsubreddit)\n-   [getCurrentUser](RedditAPIClient.RedditAPIClient.md#getcurrentuser)\n-   [getEdited](RedditAPIClient.RedditAPIClient.md#getedited)\n-   [getHotPosts](RedditAPIClient.RedditAPIClient.md#gethotposts)\n-   [getMessages](RedditAPIClient.RedditAPIClient.md#getmessages)\n-   [getModNotes](RedditAPIClient.RedditAPIClient.md#getmodnotes)\n-   [getModQueue](RedditAPIClient.RedditAPIClient.md#getmodqueue)\n-   [getModerationLog](RedditAPIClient.RedditAPIClient.md#getmoderationlog)\n-   [getModerators](RedditAPIClient.RedditAPIClient.md#getmoderators)\n-   [getMutedUsers](RedditAPIClient.RedditAPIClient.md#getmutedusers)\n-   [getNewPosts](RedditAPIClient.RedditAPIClient.md#getnewposts)\n-   [getPostById](RedditAPIClient.RedditAPIClient.md#getpostbyid)\n-   [getPostFlairTemplates](RedditAPIClient.RedditAPIClient.md#getpostflairtemplates)\n-   [getPostsByUser](RedditAPIClient.RedditAPIClient.md#getpostsbyuser)\n-   [getReports](RedditAPIClient.RedditAPIClient.md#getreports)\n-   [getRisingPosts](RedditAPIClient.RedditAPIClient.md#getrisingposts)\n-   [getSnoovatarUrl](RedditAPIClient.RedditAPIClient.md#getsnoovatarurl)\n-   [getSpam](RedditAPIClient.RedditAPIClient.md#getspam)\n-   [getSubredditById](RedditAPIClient.RedditAPIClient.md#getsubredditbyid)\n-   [getSubredditByName](RedditAPIClient.RedditAPIClient.md#getsubredditbyname)\n-   [getSubredditRemovalReasons](RedditAPIClient.RedditAPIClient.md#getsubredditremovalreasons)\n-   [getSubredditStyles](RedditAPIClient.RedditAPIClient.md#getsubredditstyles)\n-   [getTopPosts](RedditAPIClient.RedditAPIClient.md#gettopposts)",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Class: RedditAPIClient",
+        "Table of contents",
+        "Methods"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Table of contents, Methods</path>\n-   [getUnmoderated](RedditAPIClient.RedditAPIClient.md#getunmoderated)\n-   [getUserById](RedditAPIClient.RedditAPIClient.md#getuserbyid)\n-   [getUserByUsername](RedditAPIClient.RedditAPIClient.md#getuserbyusername)\n-   [getUserFlairTemplates](RedditAPIClient.RedditAPIClient.md#getuserflairtemplates)\n-   [getWidgets](RedditAPIClient.RedditAPIClient.md#getwidgets)\n-   [getWikiContributors](RedditAPIClient.RedditAPIClient.md#getwikicontributors)\n-   [getWikiPage](RedditAPIClient.RedditAPIClient.md#getwikipage)\n-   [getWikiPageRevisions](RedditAPIClient.RedditAPIClient.md#getwikipagerevisions)\n-   [getWikiPageSettings](RedditAPIClient.RedditAPIClient.md#getwikipagesettings)\n-   [getWikiPages](RedditAPIClient.RedditAPIClient.md#getwikipages)\n-   [inviteModerator](RedditAPIClient.RedditAPIClient.md#invitemoderator)\n-   [markAllMessagesAsRead](RedditAPIClient.RedditAPIClient.md#markallmessagesasread)\n-   [muteUser](RedditAPIClient.RedditAPIClient.md#muteuser)\n-   [remove](RedditAPIClient.RedditAPIClient.md#remove)\n-   [removeEditorFromWikiPage](RedditAPIClient.RedditAPIClient.md#removeeditorfromwikipage)\n-   [removeModerator](RedditAPIClient.RedditAPIClient.md#removemoderator)\n-   [removePostFlair](RedditAPIClient.RedditAPIClient.md#removepostflair)\n-   [removeUser](RedditAPIClient.RedditAPIClient.md#removeuser)\n-   [removeUserFlair](RedditAPIClient.RedditAPIClient.md#removeuserflair)\n-   [removeWikiContributor](RedditAPIClient.RedditAPIClient.md#removewikicontributor)\n-   [reorderWidgets](RedditAPIClient.RedditAPIClient.md#reorderwidgets)\n-   [report](RedditAPIClient.RedditAPIClient.md#report)\n-   [revertWikiPage](RedditAPIClient.RedditAPIClient.md#revertwikipage)\n-   [revokeModeratorInvite](RedditAPIClient.RedditAPIClient.md#revokemoderatorinvite)\n-   [sendPrivateMessage](RedditAPIClient.RedditAPIClient.md#sendprivatemessage)\n-   [sendPrivateMessageAsSubreddit](RedditAPIClient.RedditAPIClient.md#sendprivatemessageassubreddit)",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Class: RedditAPIClient",
+        "Table of contents",
+        "Methods"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Accessors, modMail, Returns</path>\n-   [setModeratorPermissions](RedditAPIClient.RedditAPIClient.md#setmoderatorpermissions)\n-   [setPostFlair](RedditAPIClient.RedditAPIClient.md#setpostflair)\n-   [setUserFlair](RedditAPIClient.RedditAPIClient.md#setuserflair)\n-   [submitComment](RedditAPIClient.RedditAPIClient.md#submitcomment)\n-   [submitPost](RedditAPIClient.RedditAPIClient.md#submitpost)\n-   [unbanUser](RedditAPIClient.RedditAPIClient.md#unbanuser)\n-   [unbanWikiContributor](RedditAPIClient.RedditAPIClient.md#unbanwikicontributor)\n-   [unmuteUser](RedditAPIClient.RedditAPIClient.md#unmuteuser)\n-   [updateWikiPage](RedditAPIClient.RedditAPIClient.md#updatewikipage)\n-   [updateWikiPageSettings](RedditAPIClient.RedditAPIClient.md#updatewikipagesettings)\n## Constructors\n### constructor\n• **new RedditAPIClient**(`metadata`): [`RedditAPIClient`](RedditAPIClient.RedditAPIClient.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| metadata | Metadata |\n#### Returns\n[`RedditAPIClient`](RedditAPIClient.RedditAPIClient.md)\n## Accessors\n### modMail\n• `get` **modMail**(): [`ModMailService`](models.ModMailService.md)\nGet ModMail API object\n#### Returns\n[`ModMailService`](models.ModMailService.md)\n**`Example`**\n```ts\nawait reddit.modMail.reply({\n  body: \"Here is my message\",\n  conversationId: \"abcd42\";\n})\n```",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Accessors",
+        "modMail",
+        "Returns"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods, addWidget, Parameters</path>\n## Methods\n### addEditorToWikiPage\n▸ **addEditorToWikiPage**(`subredditName`, `page`, `username`): `Promise`<`void`\\>\nAdd an editor to a wiki page.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| subredditName | string | The name of the subreddit the wiki is in. |\n| page | string | The name of the wiki page to add the editor to. |\n| username | string | The username of the user to add as an editor. |\n#### Returns\n`Promise`<`void`\\>\n### addModNote\n▸ **addModNote**(`options`): `Promise`<[`ModNote`](models.ModNote.md)\\>\nAdd a mod note.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | Omit<Prettify<PostNotesRequest & { label: UserNoteLabel ; redditId: `t1_${string}` | `t3_${string}` }>, \"redditId\"> & { redditId: string } | Options for the request |\n#### Returns\n`Promise`<[`ModNote`](models.ModNote.md)\\>\nA Promise that resolves if the mod note was successfully added.\n### addRemovalNote\n▸ **addRemovalNote**(`options`): `Promise`<`void`\\>\nAdd a mod note for why a post or comment was removed\n#### Parameters\n| Name | Type |\n|---|---|\n| options | Prettify<PostRemovalNoteRequest> |\n#### Returns\n`Promise`<`void`\\>\n### addSubredditRemovalReason\n▸ **addSubredditRemovalReason**(`subredditName`, `options`): `Promise`<`string`\\>\nAdd a removal reason to a subreddit\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| subredditName | string | Name of the subreddit being removed. |\n| options | Object | Options. |\n| options.message | string | The message associated with the removal reason. |\n| options.title | string | The title of the removal reason. |\n#### Returns\n`Promise`<`string`\\>\nRemoval Reason ID\n**`Example`**\n```ts\nconst newReason = await reddit.addSubredditRemovalReasons('askReddit', {\n  title: 'Spam',\n  message: 'This is spam!',\n});\nconsole.log(newReason.id);\n```\n### addWidget\n▸ **addWidget**(`widgetData`): `Promise`<[`Widget`](models.Widget.md)\\>\nAdd a widget to a subreddit.\n#### Parameters",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods",
+        "addWidget",
+        "Parameters"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods, createPostFlairTemplate</path>\n| Name | Type | Description |\n|---|---|---|\n| widgetData | AddWidgetData | The data for the widget to add. |\n#### Returns\n`Promise`<[`Widget`](models.Widget.md)\\>\n-   The added Widget object.\n### addWikiContributor\n▸ **addWikiContributor**(`username`, `subredditName`): `Promise`<`void`\\>\nAdd a user as a wiki contributor for a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| username | string | The username of the user to add as a wiki contributor. e.g. 'spez' |\n| subredditName | string | The name of the subreddit to add the user as a wiki contributor. e.g. 'memes' |\n#### Returns\n`Promise`<`void`\\>\n### approve\n▸ **approve**(`id`): `Promise`<`void`\\>\nApprove a post or comment.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| id | string | The id of the post (t3*) or comment (t1*) to approve. |\n#### Returns\n`Promise`<`void`\\>\n**`Example`**\n```ts\nawait reddit.approve('t3_123456');\nawait reddit.approve('t1_123456');\n```\n### approveUser\n▸ **approveUser**(`username`, `subredditName`): `Promise`<`void`\\>\nApprove a user to post in a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| username | string | The username of the user to approve. e.g. 'spez' |\n| subredditName | string | The name of the subreddit to approve the user in. e.g. 'memes' |\n#### Returns\n`Promise`<`void`\\>\n### banUser\n▸ **banUser**(`options`): `Promise`<`void`\\>\nBan a user from a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | BanUserOptions | Options for the request |\n#### Returns\n`Promise`<`void`\\>\n### banWikiContributor\n▸ **banWikiContributor**(`options`): `Promise`<`void`\\>\nBan a user from contributing to the wiki on a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | BanWikiContributorOptions | Options for the request |\n#### Returns\n`Promise`<`void`\\>\n### createPostFlairTemplate\n▸ **createPostFlairTemplate**(`options`): `Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\>",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods",
+        "createPostFlairTemplate"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods, deleteModNote</path>\nCreate a post flair template for a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | CreateFlairTemplateOptions | Options for the request |\n#### Returns\n`Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\>\nThe created FlairTemplate object.\n### createUserFlairTemplate\n▸ **createUserFlairTemplate**(`options`): `Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\>\nCreate a user flair template for a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | CreateFlairTemplateOptions | Options for the request |\n#### Returns\n`Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\>\nThe created FlairTemplate object.\n### createWikiPage\n▸ **createWikiPage**(`options`): `Promise`<[`WikiPage`](models.WikiPage.md)\\>\nCreate a new wiki page for a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | CreateWikiPageOptions | Options for the request |\n#### Returns\n`Promise`<[`WikiPage`](models.WikiPage.md)\\>\n-   The created WikiPage object.\n### crosspost\n▸ **crosspost**(`options`): `Promise`<[`Post`](models.Post.md)\\>\nCrossposts a post to a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | CrosspostOptions | Options for crossposting a post |\n#### Returns\n`Promise`<[`Post`](models.Post.md)\\>\n-   A Promise that resolves to a Post object.\n### deleteFlairTemplate\n▸ **deleteFlairTemplate**(`subredditName`, `flairTemplateId`): `Promise`<`void`\\>\nDelete a flair template from a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| subredditName | string | The name of the subreddit to delete the flair template from. |\n| flairTemplateId | string | The ID of the flair template to delete. |\n#### Returns\n`Promise`<`void`\\>\n### deleteModNote\n▸ **deleteModNote**(`options`): `Promise`<`boolean`\\>\nDelete a mod note.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | Prettify<DeleteNotesRequest> | Options for the request |\n#### Returns",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods",
+        "deleteModNote"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods, getBannedUsers</path>\n`Promise`<`boolean`\\>\nTrue if it was deleted successfully; false otherwise.\n### deleteWidget\n▸ **deleteWidget**(`subredditName`, `widgetId`): `Promise`<`void`\\>\nDelete a widget from a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| subredditName | string | The name of the subreddit to delete the widget from. |\n| widgetId | string | The ID of the widget to delete. |\n#### Returns\n`Promise`<`void`\\>\n### editFlairTemplate\n▸ **editFlairTemplate**(`options`): `Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\>\nEdit a flair template for a subreddit. This can be either a post or user flair template. Note: If you leave any of the options fields as undefined, they will reset to their default values.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | EditFlairTemplateOptions | Options for the request |\n#### Returns\n`Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\>\nThe edited FlairTemplate object.\n### getAppUser\n▸ **getAppUser**(): `Promise`<[`User`](models.User.md)\\>\nGet the user that the app runs as on the provided metadata.\n#### Returns\n`Promise`<[`User`](models.User.md)\\>\nA Promise that resolves to a User object.\n**`Example`**\n```ts\nconst user = await reddit.getAppUser(metadata);\n```\n### getApprovedUsers\n▸ **getApprovedUsers**(`options`): [`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\nGet a list of users who have been approved to post in a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | GetSubredditUsersOptions | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\nA Listing of User objects.\n### getBannedUsers\n▸ **getBannedUsers**(`options`): [`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\nGet a list of users who are banned from a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | GetSubredditUsersOptions | Options for the request |\n#### Returns",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods",
+        "getBannedUsers"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods, getCommentsAndPostsByUser, Returns</path>\n[`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\nA Listing of User objects.\n### getBannedWikiContributors\n▸ **getBannedWikiContributors**(`options`): [`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\nGet a list of users who are banned from contributing to the wiki on a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | GetSubredditUsersOptions | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\nA Listing of User objects.\n### getCommentById\n▸ **getCommentById**(`id`): `Promise`<[`Comment`](models.Comment.md)\\>\nGet a [Comment](models.Comment.md) object by ID\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| id | string | The ID (starting with t1_) of the comment to retrieve. e.g. t1_1qjpg |\n#### Returns\n`Promise`<[`Comment`](models.Comment.md)\\>\nA Promise that resolves to a Comment object.\n**`Example`**\n```ts\nconst comment = await reddit.getCommentById('t1_1qjpg');\n```\n### getComments\n▸ **getComments**(`options`): [`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\nGet a list of comments from a specific post or comment.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | GetCommentsOptions | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\nA Listing of Comment objects.\n**`Example`**\n```ts\nconst comments = await reddit\n  .getComments({\n    postId: 't3_1qjpg',\n    limit: 1000,\n    pageSize: 100,\n  })\n  .all();\n```\n### getCommentsAndPostsByUser\n▸ **getCommentsAndPostsByUser**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\nGet a list of posts and comments from a specific user.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | GetUserOverviewOptions | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods",
+        "getCommentsAndPostsByUser",
+        "Returns"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods, getEdited, Returns</path>\nA Listing of `Post` and `Comment` objects.\n### getCommentsByUser\n▸ **getCommentsByUser**(`options`): [`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\nGet a list of comments by a specific user.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | GetCommentsByUserOptions | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\nA Listing of Comment objects.\n### getControversialPosts\n▸ **getControversialPosts**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\nGet a list of controversial posts from a specific subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | GetPostsOptionsWithTimeframe | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\nA Listing of Post objects.\n**`Example`**\n```ts\nconst posts = await reddit\n  .getControversialPosts({\n    subredditName: 'memes',\n    timeframe: 'day',\n    limit: 1000,\n    pageSize: 100,\n  })\n  .all();\n```\n### getCurrentSubreddit\n▸ **getCurrentSubreddit**(): `Promise`<[`Subreddit`](models.Subreddit.md)\\>\nRetrieves the current subreddit.\n#### Returns\n`Promise`<[`Subreddit`](models.Subreddit.md)\\>\nA Promise that resolves a Subreddit object.\n**`Example`**\n```ts\nconst currentSubreddit = await reddit.getCurrentSubreddit();\n```\n### getCurrentUser\n▸ **getCurrentUser**(): `Promise`<[`User`](models.User.md)\\>\nGet the current calling user.\n#### Returns\n`Promise`<[`User`](models.User.md)\\>\nA Promise that resolves to a User object.\n**`Example`**\n```ts\nconst user = await reddit.getCurrentUser();\n```\n### getEdited\n▸ **getEdited**(`options`): [`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\nReturn a listing of things that have been edited recently.\n#### Parameters\n| Name | Type |\n|---|---|\n| options | ModLogOptions<\"comment\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\n**`Example`**",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods",
+        "getEdited",
+        "Returns"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods, getModNotes</path>\n```ts\nconst subreddit = await reddit.getSubredditByName('mysubreddit');\nlet listing = await subreddit.getEdited();\nconsole.log('Posts and Comments: ', await listing.all());\nlisting = await subreddit.getEdited({ type: 'post' });\nconsole.log('Posts: ', await listing.all());\n```\n▸ **getEdited**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | ModLogOptions<\"post\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n▸ **getEdited**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | ModLogOptions<\"all\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n### getHotPosts\n▸ **getHotPosts**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\nGet a list of hot posts from a specific subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | GetHotPostsOptions | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\nA Listing of Post objects.\n**`Example`**\n```ts\nconst posts = await reddit\n  .getHotPosts({\n    subredditName: 'memes',\n    timeframe: 'day',\n    limit: 1000,\n    pageSize: 100,\n  })\n  .all();\n```\n### getMessages\n▸ **getMessages**(`options`): `Promise`<[`Listing`](models.Listing.md)<[`PrivateMessage`](models.PrivateMessage.md)\\>>\nGet private messages sent to the currently authenticated user.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | Prettify<{ type?: \"inbox\" | \"unread\" | \"sent\" } & ListingFetchOptions> | Options for the request |\n#### Returns\n`Promise`<[`Listing`](models.Listing.md)<[`PrivateMessage`](models.PrivateMessage.md)\\>>\n### getModNotes\n▸ **getModNotes**(`options`): [`Listing`](models.Listing.md)<[`ModNote`](models.ModNote.md)\\>\nGet a list of mod notes related to a user in a subreddit.",
+    "metadata": {
+      "type": [
+        "code",
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods",
+        "getModNotes"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods, getModerationLog</path>\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | Prettify<Pick<GetNotesRequest, \"subreddit\" | \"user\"> & { filter?: \"BAN\" | \"NOTE\" | \"APPROVAL\" | \"REMOVAL\" | \"MUTE\" | \"INVITE\" | \"SPAM\" | \"CONTENT_CHANGE\" | \"MOD_ACTION\" | \"ALL\" } & Pick<ListingFetchOptions, \"before\" | \"limit\">> | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`ModNote`](models.ModNote.md)\\>\nA listing of ModNote objects.\n### getModQueue\n▸ **getModQueue**(`options`): [`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\nReturn a listing of things requiring moderator review, such as reported things and items.\n#### Parameters\n| Name | Type |\n|---|---|\n| options | ModLogOptions<\"comment\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\n**`Example`**\n```ts\nconst subreddit = await reddit.getSubredditByName('mysubreddit');\nlet listing = await subreddit.getModQueue();\nconsole.log('Posts and Comments: ', await listing.all());\nlisting = await subreddit.getModQueue({ type: 'post' });\nconsole.log('Posts: ', await listing.all());\n```\n▸ **getModQueue**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | ModLogOptions<\"post\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n▸ **getModQueue**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | ModLogOptions<\"all\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n### getModerationLog\n▸ **getModerationLog**(`options`): [`Listing`](models.Listing.md)<[`ModAction`](../interfaces/models.ModAction.md)\\>\nGet the moderation log for a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | GetModerationLogOptions | Options for the request |\n#### Returns",
+    "metadata": {
+      "type": [
+        "heading",
+        "table",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods",
+        "getModerationLog"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods</path>\n[`Listing`](models.Listing.md)<[`ModAction`](../interfaces/models.ModAction.md)\\>\nA Listing of ModAction objects.\n**`Example`**\n```ts\nconst modActions = await reddit\n  .getModerationLog({\n    subredditName: 'memes',\n    moderatorUsernames: ['spez'],\n    type: 'banuser',\n    limit: 1000,\n    pageSize: 100,\n  })\n  .all();\n```\n### getModerators\n▸ **getModerators**(`options`): [`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\nGet a list of users who are moderators for a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | GetSubredditUsersOptions | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\nA Listing of User objects.\n### getMutedUsers\n▸ **getMutedUsers**(`options`): [`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\nGet a list of users who are muted in a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | GetSubredditUsersOptions | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\nA listing of User objects.\n### getNewPosts\n▸ **getNewPosts**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\nGet a list of new posts from a specific subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | GetPostsOptions | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\nA Listing of Post objects.\n**`Example`**\n```ts\nconst posts = await reddit\n  .getNewPosts({\n    subredditName: 'memes',\n    limit: 1000,\n    pageSize: 100,\n  })\n  .all();\n```\n### getPostById\n▸ **getPostById**(`id`): `Promise`<[`Post`](models.Post.md)\\>\nGets a [Post](models.Post.md) object by ID\n#### Parameters\n| Name | Type |\n|---|---|\n| id | string |\n#### Returns\n`Promise`<[`Post`](models.Post.md)\\>\nA Promise that resolves to a Post object.\n### getPostFlairTemplates",
+    "metadata": {
+      "type": [
+        "text",
+        "code",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods</path>\n▸ **getPostFlairTemplates**(`subredditName`): `Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\[\\]>\nGet the list of post flair templates for a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| subredditName | string | The name of the subreddit to get the post flair templates for. |\n#### Returns\n`Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\[\\]>\nA Promise that resolves with an array of FlairTemplate objects.\n### getPostsByUser\n▸ **getPostsByUser**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\nGet a list of posts from a specific user.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | GetPostsByUserOptions | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\nA Listing of Post objects.\n### getReports\n▸ **getReports**(`options`): [`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\nReturn a listing of things that have been reported.\n#### Parameters\n| Name | Type |\n|---|---|\n| options | ModLogOptions<\"comment\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\n**`Example`**\n```ts\nconst subreddit = await reddit.getSubredditByName('mysubreddit');\nlet listing = await subreddit.getReports();\nconsole.log('Posts and Comments: ', await listing.all());\nlisting = await subreddit.getReports({ type: 'post' });\nconsole.log('Posts: ', await listing.all());\n```\n▸ **getReports**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | ModLogOptions<\"post\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n▸ **getReports**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | ModLogOptions<\"all\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n### getRisingPosts",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods, getSpam</path>\n▸ **getRisingPosts**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\nGet a list of hot posts from a specific subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | GetPostsOptions | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\nA Listing of Post objects.\n**`Example`**\n```ts\nconst posts = await reddit\n  .getRisingPosts({\n    subredditName: 'memes',\n    timeframe: 'day',\n    limit: 1000,\n    pageSize: 100,\n  })\n  .all();\n```\n### getSnoovatarUrl\n▸ **getSnoovatarUrl**(`username`): `Promise`<`undefined` | `string`\\>\nGet the snoovatar URL for a given username.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| username | string | The username of the snoovatar to retrieve |\n#### Returns\n`Promise`<`undefined` | `string`\\>\nA Promise that resolves to a URL of the snoovatar image if it exists.\n### getSpam\n▸ **getSpam**(`options`): [`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\nReturn a listing of things that have been marked as spam or otherwise removed.\n#### Parameters\n| Name | Type |\n|---|---|\n| options | ModLogOptions<\"comment\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\n**`Example`**\n```ts\nconst subreddit = await reddit.getSubredditByName('mysubreddit');\nlet listing = await subreddit.getSpam();\nconsole.log('Posts and Comments: ', await listing.all());\nlisting = await subreddit.getSpam({ type: 'post' });\nconsole.log('Posts: ', await listing.all());\n```\n▸ **getSpam**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | ModLogOptions<\"post\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n▸ **getSpam**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | ModLogOptions<\"all\"> |\n#### Returns",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods",
+        "getSpam"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods, getSubredditStyles, Returns</path>\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n### getSubredditById\n▸ **getSubredditById**(`id`): `Promise`<[`Subreddit`](models.Subreddit.md)\\>\nGets a [Subreddit](models.Subreddit.md) object by ID\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| id | string | The ID (starting with t5_) of the subreddit to retrieve. e.g. t5_2qjpg |\n#### Returns\n`Promise`<[`Subreddit`](models.Subreddit.md)\\>\nA Promise that resolves a Subreddit object.\n**`Example`**\n```ts\nconst memes = await reddit.getSubredditById('t5_2qjpg');\n```\n### getSubredditByName\n▸ **getSubredditByName**(`name`): `Promise`<[`Subreddit`](models.Subreddit.md)\\>\nGets a [Subreddit](models.Subreddit.md) object by name\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| name | string | The name of a subreddit omitting the r/. This is case insensitive. |\n#### Returns\n`Promise`<[`Subreddit`](models.Subreddit.md)\\>\nA Promise that resolves a Subreddit object.\n**`Example`**\n```ts\nconst askReddit = await reddit.getSubredditByName('askReddit');\n```\n### getSubredditRemovalReasons\n▸ **getSubredditRemovalReasons**(`subredditName`): `Promise`<[`RemovalReason`](../modules/models.md#removalreason)\\[\\]>\nGet the list of subreddit's removal reasons (ordered)\n#### Parameters\n| Name | Type |\n|---|---|\n| subredditName | string |\n#### Returns\n`Promise`<[`RemovalReason`](../modules/models.md#removalreason)\\[\\]>\nOrdered array of Removal Reasons\n**`Example`**\n```ts\nconst reasons = await reddit.getSubredditRemovalReasons('askReddit');\n\nfor (let reason of reasons) {\n  console.log(reason.id, reason.message, reason.title);\n}\n```\n### getSubredditStyles\n▸ **getSubredditStyles**(`subredditId`): `Promise`<[`SubredditStyles`](../modules/models.md#subredditstyles)\\>\nReturns the styles for a given subreddit ID.\n#### Parameters\n| Name | Type |\n|---|---|\n| subredditId | string |\n#### Returns\n`Promise`<[`SubredditStyles`](../modules/models.md#subredditstyles)\\>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods",
+        "getSubredditStyles",
+        "Returns"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods</path>\nStyles for the given subreddit.\n**`Example`**\n```ts\nconst styles = await reddit.getSubredditStyles('t5_2th52');\n\nconsole.log('Subreddit primaryColor: ' + styles.primaryColor);\n```\n### getTopPosts\n▸ **getTopPosts**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\nGet a list of top posts from a specific subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | GetPostsOptionsWithTimeframe | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\nA Listing of Post objects.\n**`Example`**\n```ts\nconst posts = await reddit\n  .getTopPosts({\n    subredditName: 'memes',\n    timeframe: 'day',\n    limit: 1000,\n    pageSize: 100,\n  })\n  .all();\n```\n### getUnmoderated\n▸ **getUnmoderated**(`options`): [`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\nReturn a listing of things that have yet to be approved/removed by a mod.\n#### Parameters\n| Name | Type |\n|---|---|\n| options | ModLogOptions<\"comment\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\n**`Example`**\n```ts\nconst subreddit = await reddit.getSubredditByName('mysubreddit');\nlet listing = await subreddit.getUnmoderated();\nconsole.log('Posts and Comments: ', await listing.all());\nlisting = await subreddit.getUnmoderated({ type: 'post' });\nconsole.log('Posts: ', await listing.all());\n```\n▸ **getUnmoderated**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | ModLogOptions<\"post\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n▸ **getUnmoderated**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | ModLogOptions<\"all\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n### getUserById",
+    "metadata": {
+      "type": [
+        "text",
+        "code",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods, getWikiContributors, Parameters</path>\n▸ **getUserById**(`id`): `Promise`<[`User`](models.User.md)\\>\nGets a [User](models.User.md) object by ID\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| id | string | The ID (starting with t2_) of the user to retrieve. e.g. t2_1qjpg |\n#### Returns\n`Promise`<[`User`](models.User.md)\\>\nA Promise that resolves to a User object.\n**`Example`**\n```ts\nconst user = await reddit.getUserById('t2_1qjpg');\n```\n### getUserByUsername\n▸ **getUserByUsername**(`username`): `Promise`<[`User`](models.User.md)\\>\nGets a [User](models.User.md) object by username\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| username | string | The username of the user omitting the u/. e.g. 'devvit' |\n#### Returns\n`Promise`<[`User`](models.User.md)\\>\nA Promise that resolves to a User object.\n**`Example`**\n```ts\nconst user = await reddit.getUserByUsername('devvit');\n```\n### getUserFlairTemplates\n▸ **getUserFlairTemplates**(`subredditName`): `Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\[\\]>\nGet the list of user flair templates for a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| subredditName | string | The name of the subreddit to get the user flair templates for. |\n#### Returns\n`Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\[\\]>\nA Promise that resolves with an array of FlairTemplate objects.\n### getWidgets\n▸ **getWidgets**(`subredditName`): `Promise`<[`Widget`](models.Widget.md)\\[\\]>\nGet the widgets for a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| subredditName | string | The name of the subreddit to get the widgets for. |\n#### Returns\n`Promise`<[`Widget`](models.Widget.md)\\[\\]>\n-   An array of Widget objects.\n### getWikiContributors\n▸ **getWikiContributors**(`options`): [`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\nGet a list of users who are wiki contributors of a subreddit.\n#### Parameters",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods",
+        "getWikiContributors",
+        "Parameters"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods, inviteModerator</path>\n| Name | Type | Description |\n|---|---|---|\n| options | GetSubredditUsersOptions | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\nA Listing of User objects.\n### getWikiPage\n▸ **getWikiPage**(`subredditName`, `page`): `Promise`<[`WikiPage`](models.WikiPage.md)\\>\nGet a wiki page from a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| subredditName | string | The name of the subreddit to get the wiki page from. |\n| page | string | The name of the wiki page to get. |\n#### Returns\n`Promise`<[`WikiPage`](models.WikiPage.md)\\>\nThe requested WikiPage object.\n### getWikiPageRevisions\n▸ **getWikiPageRevisions**(`options`): [`Listing`](models.Listing.md)<[`WikiPageRevision`](models.WikiPageRevision.md)\\>\nGet the revisions for a wiki page.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | GetPageRevisionsOptions | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`WikiPageRevision`](models.WikiPageRevision.md)\\>\nA Listing of WikiPageRevision objects.\n### getWikiPageSettings\n▸ **getWikiPageSettings**(`subredditName`, `page`): `Promise`<[`WikiPageSettings`](models.WikiPageSettings.md)\\>\nGet the settings for a wiki page.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| subredditName | string | The name of the subreddit the wiki is in. |\n| page | string | The name of the wiki page to get the settings for. |\n#### Returns\n`Promise`<[`WikiPageSettings`](models.WikiPageSettings.md)\\>\nA WikiPageSettings object.\n### getWikiPages\n▸ **getWikiPages**(`subredditName`): `Promise`<`string`\\[\\]>\nGet the wiki pages for a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| subredditName | string | The name of the subreddit to get the wiki pages from. |\n#### Returns\n`Promise`<`string`\\[\\]>\nA list of the wiki page names for the subreddit.\n### inviteModerator\n▸ **inviteModerator**(`options`): `Promise`<`void`\\>",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods",
+        "inviteModerator"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods</path>\nInvite a user to become a moderator of a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | InviteModeratorOptions | Options for the request |\n#### Returns\n`Promise`<`void`\\>\n### markAllMessagesAsRead\n▸ **markAllMessagesAsRead**(): `Promise`<`void`\\>\nMark all private messages as read.\n#### Returns\n`Promise`<`void`\\>\n### muteUser\n▸ **muteUser**(`options`): `Promise`<`void`\\>\nMute a user in a subreddit. Muting a user prevents them from sending modmail.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | MuteUserOptions | Options for the request |\n#### Returns\n`Promise`<`void`\\>\n### remove\n▸ **remove**(`id`, `isSpam`): `Promise`<`void`\\>\nRemove a post or comment.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| id | string | The id of the post (t3*) or comment (t1*) to remove. |\n| isSpam | boolean | Is the post or comment being removed because it's spam? |\n#### Returns\n`Promise`<`void`\\>\n**`Example`**\n```ts\nawait reddit.remove('t3_123456', false);\nawait reddit.remove('t1_123456', true);\n```\n### removeEditorFromWikiPage\n▸ **removeEditorFromWikiPage**(`subredditName`, `page`, `username`): `Promise`<`void`\\>\nRemove an editor from a wiki page.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| subredditName | string | The name of the subreddit the wiki is in. |\n| page | string | The name of the wiki page to remove the editor from. |\n| username | string | The username of the user to remove as an editor. |\n#### Returns\n`Promise`<`void`\\>\n### removeModerator\n▸ **removeModerator**(`username`, `subredditName`): `Promise`<`void`\\>\nRemove a user as a moderator of a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| username | string | The username of the user to remove as a moderator. e.g. 'spez' |\n| subredditName | string | The name of the subreddit to remove the user as a moderator from. e.g. 'memes' |\n#### Returns\n`Promise`<`void`\\>\n### removePostFlair",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods, reorderWidgets</path>\n▸ **removePostFlair**(`subredditName`, `postId`): `Promise`<`void`\\>\nRemove the flair for a post in a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| subredditName | string | The name of the subreddit to remove the flair from. |\n| postId | string | The ID of the post to remove the flair from. |\n#### Returns\n`Promise`<`void`\\>\n### removeUser\n▸ **removeUser**(`username`, `subredditName`): `Promise`<`void`\\>\nRemove a user's approval to post in a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| username | string | The username of the user to remove approval from. e.g. 'spez' |\n| subredditName | string | The name of the subreddit to remove the user's approval from. e.g. 'memes' |\n#### Returns\n`Promise`<`void`\\>\n### removeUserFlair\n▸ **removeUserFlair**(`subredditName`, `username`): `Promise`<`void`\\>\nRemove the flair for a user in a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| subredditName | string | The name of the subreddit to remove the flair from. |\n| username | string | The username of the user to remove the flair from. |\n#### Returns\n`Promise`<`void`\\>\n### removeWikiContributor\n▸ **removeWikiContributor**(`username`, `subredditName`): `Promise`<`void`\\>\nRemove a user's wiki contributor status for a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| username | string | The username of the user to remove wiki contributor status from. e.g. 'spez' |\n| subredditName | string | The name of the subreddit to remove the user's wiki contributor status from. e.g. 'memes' |\n#### Returns\n`Promise`<`void`\\>\n### reorderWidgets\n▸ **reorderWidgets**(`subredditName`, `orderByIds`): `Promise`<`void`\\>\nReorder the widgets for a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| subredditName | string | The name of the subreddit to reorder the widgets for. |\n| orderByIds | string[] | An array of widget IDs in the order that they should be displayed. |\n#### Returns",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods",
+        "reorderWidgets"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods, sendPrivateMessageAsSubreddit, Parameters</path>\n`Promise`<`void`\\>\n### report\n▸ **report**(`thing`, `options`): `Promise`<`JsonStatus`\\>\nReport a Post or Comment\nThe report is sent to the moderators of the subreddit for review.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| thing | Post | Comment | Post or Comment |\n| options | Object | Options |\n| options.reason | string | Why the thing is reported |\n#### Returns\n`Promise`<`JsonStatus`\\>\n**`Example`**\n```ts\nawait reddit.report(post, {\n  reason: 'This is spam!',\n});\n```\n### revertWikiPage\n▸ **revertWikiPage**(`subredditName`, `page`, `revisionId`): `Promise`<`void`\\>\nRevert a wiki page to a previous revision.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| subredditName | string | The name of the subreddit the wiki is in. |\n| page | string | The name of the wiki page to revert. |\n| revisionId | string | The ID of the revision to revert to. |\n#### Returns\n`Promise`<`void`\\>\n### revokeModeratorInvite\n▸ **revokeModeratorInvite**(`username`, `subredditName`): `Promise`<`void`\\>\nRevoke a moderator invite for a user to a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| username | string | The username of the user to revoke the invite for. e.g. 'spez' |\n| subredditName | string | The name of the subreddit to revoke the invite for. e.g. 'memes' |\n#### Returns\n`Promise`<`void`\\>\n### sendPrivateMessage\n▸ **sendPrivateMessage**(`options`): `Promise`<`void`\\>\nSends a private message to a user.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | SendPrivateMessageOptions | The options for sending the message. |\n#### Returns\n`Promise`<`void`\\>\nA Promise that resolves if the private message was successfully sent.\n### sendPrivateMessageAsSubreddit\n▸ **sendPrivateMessageAsSubreddit**(`options`): `Promise`<`void`\\>\nSends a private message to a user on behalf of a subreddit.\n#### Parameters",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods",
+        "sendPrivateMessageAsSubreddit",
+        "Parameters"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods, submitPost</path>\n| Name | Type | Description |\n|---|---|---|\n| options | SendPrivateMessageAsSubredditOptions | The options for sending the message as a subreddit. |\n#### Returns\n`Promise`<`void`\\>\nA Promise that resolves if the private message was successfully sent.\n### setModeratorPermissions\n▸ **setModeratorPermissions**(`username`, `subredditName`, `permissions`): `Promise`<`void`\\>\nUpdate the permissions of a moderator of a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| username | string | The username of the user to update the permissions for. e.g. 'spez' |\n| subredditName | string | The name of the subreddit. e.g. 'memes' |\n| permissions | ModeratorPermission[] | The permissions to give the user. e.g ['posts', 'wiki'] |\n#### Returns\n`Promise`<`void`\\>\n### setPostFlair\n▸ **setPostFlair**(`options`): `Promise`<`void`\\>\nSet the flair for a post in a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | SetPostFlairOptions | Options for the request |\n#### Returns\n`Promise`<`void`\\>\n### setUserFlair\n▸ **setUserFlair**(`options`): `Promise`<`void`\\>\nSet the flair for a user in a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | SetUserFlairOptions | Options for the request |\n#### Returns\n`Promise`<`void`\\>\n### submitComment\n▸ **submitComment**(`options`): `Promise`<[`Comment`](models.Comment.md)\\>\nSubmit a new comment to a post or comment.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | CommentSubmissionOptions & { id: string } | You must provide either options.text or options.richtext but not both. |\n#### Returns\n`Promise`<[`Comment`](models.Comment.md)\\>\nA Promise that resolves to a Comment object.\n### submitPost\n▸ **submitPost**(`options`): `Promise`<[`Post`](models.Post.md)\\>\nSubmits a new post to a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | SubmitPostOptions | Either a self post or a link post. |\n#### Returns",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods",
+        "submitPost"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods</path>\n`Promise`<[`Post`](models.Post.md)\\>\nA Promise that resolves to a Post object.\n**`Example`**\n```ts\nconst post = await reddit.submitPost({\n  subredditName: 'devvit',\n  title: 'Hello World',\n  richtext: new RichTextBuilder()\n    .heading({ level: 1 }, (h) => {\n      h.rawText('Hello world');\n    })\n    .codeBlock({}, (cb) => cb.rawText('This post was created via the Devvit API'))\n    .build(),\n});\n```\n### unbanUser\n▸ **unbanUser**(`username`, `subredditName`): `Promise`<`void`\\>\nUnban a user from a subreddit.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| username | string | The username of the user to unban. e.g. 'spez' |\n| subredditName | string | The name of the subreddit to unban the user from. e.g. 'memes' |\n#### Returns\n`Promise`<`void`\\>\n### unbanWikiContributor\n▸ **unbanWikiContributor**(`username`, `subredditName`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| username | string | The username of the user to unban. e.g. 'spez' |\n| subredditName | string | The name of the subreddit to unban the user from contributing to the wiki on. e.g. 'memes' |\n#### Returns\n`Promise`<`void`\\>\n### unmuteUser\n▸ **unmuteUser**(`username`, `subredditName`): `Promise`<`void`\\>\nUnmute a user in a subreddit. Unmuting a user allows them to send modmail.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| username | string | The username of the user to unmute. e.g. 'spez' |\n| subredditName | string | The name of the subreddit to unmute the user in. e.g. 'memes' |\n#### Returns\n`Promise`<`void`\\>\n### updateWikiPage\n▸ **updateWikiPage**(`options`): `Promise`<[`WikiPage`](models.WikiPage.md)\\>\nUpdate a wiki page.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | UpdateWikiPageOptions | Options for the request |\n#### Returns\n`Promise`<[`WikiPage`](models.WikiPage.md)\\>\nThe updated WikiPage object.\n### updateWikiPageSettings",
+    "metadata": {
+      "type": [
+        "text",
+        "code",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: RedditAPIClient, Methods, updateWikiPageSettings, Returns</path>\n▸ **updateWikiPageSettings**(`options`): `Promise`<[`WikiPageSettings`](models.WikiPageSettings.md)\\>\nUpdate the settings for a wiki page.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | UpdatePageSettingsOptions | Options for the request |\n#### Returns\n`Promise`<[`WikiPageSettings`](models.WikiPageSettings.md)\\>\nA WikiPageSettings object.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: RedditAPIClient",
+        "Methods",
+        "updateWikiPageSettings",
+        "Returns"
+      ],
+      "level": 3
+    }
+  }
+]

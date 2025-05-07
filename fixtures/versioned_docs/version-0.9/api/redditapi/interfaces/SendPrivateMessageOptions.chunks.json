@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: SendPrivateMessageOptions, Properties, to</path>\n# Interface: SendPrivateMessageOptions\n## Hierarchy\n-   **`SendPrivateMessageOptions`**\n    \n    ↳ [`SendPrivateMessageAsSubredditOptions`](SendPrivateMessageAsSubredditOptions.md)\n## Table of contents\n### Properties\n-   [subject](SendPrivateMessageOptions.md#subject)\n-   [text](SendPrivateMessageOptions.md#text)\n-   [to](SendPrivateMessageOptions.md#to)\n## Properties\n### subject\n• **subject**: `string`\nThe subject of the message.\n### text\n• **text**: `string`\nThe body of the message in markdown text format.\n### to\n• **to**: `string`\nRecipient username (without the leading u/), or /r/name for that subreddit's moderators.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Interface: SendPrivateMessageOptions",
+        "Properties",
+        "to"
+      ],
+      "level": 1
+    }
+  }
+]

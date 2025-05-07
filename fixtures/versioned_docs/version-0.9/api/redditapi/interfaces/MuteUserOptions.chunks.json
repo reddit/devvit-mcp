@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: MuteUserOptions, Properties, username</path>\n# Interface: MuteUserOptions\n## Table of contents\n### Properties\n-   [note](MuteUserOptions.md#note)\n-   [subredditName](MuteUserOptions.md#subredditname)\n-   [username](MuteUserOptions.md#username)\n## Properties\n### note\n• `Optional` **note**: `string`\nA mod note on why the user was muted. (optional)\n### subredditName\n• **subredditName**: `string`\nThe name of the subreddit to mute the user in\n### username\n• **username**: `string`\nThe name of the user to mute",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Interface: MuteUserOptions",
+        "Properties",
+        "username"
+      ],
+      "level": 1
+    }
+  }
+]

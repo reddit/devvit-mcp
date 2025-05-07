@@ -1,0 +1,33 @@
+[
+  {
+    "pageContent": "<path>Overview, Sizing, Intrinsic size</path>\n# Overview\nBlocks is a cross-platform layout system, optimized for building apps (not web pages, not documents). The goal is to let anyone build simple apps that conform to our design system and best practices for apps, without it being rocket science. If you want to get started right away try our [quickstart](../quickstart.mdx).\n## Available blocks\nWe support the following elements:\n### Containers\n-   **Blocks**\n-   [**HStack**](./stacks)\n-   [**VStack**](./stacks)\n-   [**ZStack**](./stacks)\n### Objects\n-   [**Text**](./text)\n-   [**Button**](./button)\n-   [**Spacer**](./spacer)\n-   [**Image**](./image)\n-   [**Icon**](./icon)\nFurther elements (components) may be derived from these blocks, and obey the same rules.\n## Sizing\n### Paddings and gaps\n-   We're operating in a [border-box](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing) model, where the padding is counted as part of the size of an element.\n-   Padding is incompressible.\n-   Gaps are implemented as if we're injecting spacers between all children.\n### Units\nThere are two supported units:\n-   `px`: device-independent pixels\n-   `%`: percent of parent container's available content area (i.e. subtracting the parent's padding and gaps)\n### Intrinsic size\nAll elements have an _intrinsic size_. This is the size that they would be if there were no sizing modifiers applied to them.\n-   **HStack**: Sum of the intrinsic widths of the children × the max of the intrinsic heights of the children (+ gaps and padding)\n-   **VStack**: Max of the intrinsic widths of the children × the sum of the intrinsic heights of the children (+ gaps and padding)\n-   **ZStack**: Max of the intrinsic sizes of the children (+ padding)\n-   **Text**: Size of the text without wrapping or truncation\n-   **Button**: Size of the text without wrapping or truncation (+ padding)\n-   **Spacer**: Size in pixels, as specified\n-   **Image**: imageWidth × imageHeight",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Overview",
+        "Sizing",
+        "Intrinsic size"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Overview, Sizing, Overflow</path>\nThis size provides a baseline, which can be modified by attributes. There are a few sizing attributes:\n-   `width` / `height`\n-   `minWidth` / `minHeight`\n-   `maxWidth` / `maxHeight`\n-   `grow` (operates in the _current direction_).\n:::note Setting both `width` and `grow` simultaneously is not recommended, because then `grow` would become a no-op (overridden by `width`). :::\n### Preferred size\nThe preferred size is calculated based on the intrinsic size and the modifier attributes. The modifiers can conflict, in which case the precedence order is:\n`(most important) minWidth > maxWidth > width > aspect-ratio > grow > intrinsic width (least important)`\nHere, `grow` attempts to set `width=\"100%\"`. Unlike actually setting `width=\"100%\"`, `grow` can be flexibly adjusted later. Examples:\n-   `<text width=\"50px\" grow />` will always have a preferred size of 50px. (width overrides `grow`)\n-   `<text minWidth=\"50px\" grow />` will always take at least 50px, and will attempt to consume the available `width`.\n### Adjusted size\nGrow elements are flexible. Whenever the full width (or height) of a parent element is not fully utilized, a grow element will expand to fit the parent element, assuming that the other constraints permit. Grow is prioritized lower than the other sizing attributes, e.g. an element will never grow beyond its maxWidth.\n### Direction\nAll elements inherit a direction for the purposes of growing. Things only grow in one direction at a time.\n| Element | Self Direction | Child Direction |\n|---|---|---|\n| Blocks | N/A | Vertical |\n| HStack | Inherit | Horizontal |\n| VStack | Inherit | Vertical |\n| ZStack | Inherit | Inherit |\n| Text | Horizontal | N/A |\n| Button | Horizontal | N/A |\n| Spacer | Inherit | N/A |\n| Image | Inherit | N/A |\n### Overflow\nAll containers clip overflown content.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Overview",
+        "Sizing",
+        "Overflow"
+      ],
+      "level": 3
+    }
+  }
+]

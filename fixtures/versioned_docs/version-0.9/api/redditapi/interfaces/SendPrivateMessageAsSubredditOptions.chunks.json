@@ -1,0 +1,18 @@
+[
+  {
+    "pageContent": "<path>Interface: SendPrivateMessageAsSubredditOptions, Properties, to, Inherited from</path>\n# Interface: SendPrivateMessageAsSubredditOptions\n## Hierarchy\n-   [`SendPrivateMessageOptions`](SendPrivateMessageOptions.md)\n    \n    ↳ **`SendPrivateMessageAsSubredditOptions`**\n## Table of contents\n### Properties\n-   [fromSubredditName](SendPrivateMessageAsSubredditOptions.md#fromsubredditname)\n-   [subject](SendPrivateMessageAsSubredditOptions.md#subject)\n-   [text](SendPrivateMessageAsSubredditOptions.md#text)\n-   [to](SendPrivateMessageAsSubredditOptions.md#to)\n## Properties\n### fromSubredditName\n• **fromSubredditName**: `string`\nThe name of the subreddit the message is being sent from (without the leading r/)\n### subject\n• **subject**: `string`\nThe subject of the message.\n#### Inherited from\n[SendPrivateMessageOptions](SendPrivateMessageOptions.md).[subject](SendPrivateMessageOptions.md#subject)\n### text\n• **text**: `string`\nThe body of the message in markdown text format.\n#### Inherited from\n[SendPrivateMessageOptions](SendPrivateMessageOptions.md).[text](SendPrivateMessageOptions.md#text)\n### to\n• **to**: `string`\nRecipient username (without the leading u/), or /r/name for that subreddit's moderators.\n#### Inherited from\n[SendPrivateMessageOptions](SendPrivateMessageOptions.md).[to](SendPrivateMessageOptions.md#to)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Interface: SendPrivateMessageAsSubredditOptions",
+        "Properties",
+        "to",
+        "Inherited from"
+      ],
+      "level": 1
+    }
+  }
+]

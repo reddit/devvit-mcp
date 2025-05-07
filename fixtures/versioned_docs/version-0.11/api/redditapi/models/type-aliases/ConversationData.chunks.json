@@ -1,0 +1,34 @@
+[
+  {
+    "pageContent": "<path>Type Alias: ConversationData, Properties, messages</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Type Alias: ConversationData\n**ConversationData** = `object`\n## Properties\n### authors\n**authors**: [`Participant`](Participant.md)\\[\\]\nThe authors of each message in the modmail conversation.\n### conversationType?\n`optional` **conversationType**: `string`\nA ConversationType specifies whether a conversation is with a subreddit itself, with another user, or with another subreddit entirely.\n-   `internal` - This is a conversation with another user outside of the subreddit. The participant ID is that user's ID.\n-   `sr_user` - This is a Mod Discussion, internal to the subreddit. There is no other participant.\n-   `sr_sr` - This is a conversation is with another subreddit. The participant will have a subreddit ID.\n### id?\n`optional` **id**: `string`\nConversation ID\n### isAuto?\n`optional` **isAuto**: `boolean`\nIs the conversation automatically generated e.g. from automod, u/reddit\n### isHighlighted?\n`optional` **isHighlighted**: `boolean`\nIs the conversation highlighted\n### isInternal?\n`optional` **isInternal**: `boolean`\nIs the conversation internal (i.e. mod only)\n### lastModUpdate?\n`optional` **lastModUpdate**: `string`\nThe last datetime a mod from the owning subreddit made any interaction with the conversation.\n(Note that if this is a subreddit to subreddit conversation, the mods of the participant subreddit are irrelevant and do not affect this field.)\n### lastUnread?\n`optional` **lastUnread**: `string`\nThe datetime of the last unread message within this conversation for the current viewer.\n### lastUpdated?\n`optional` **lastUpdated**: `string`\nThe datetime of the last time the conversation was update.\n### lastUserUpdate?\n`optional` **lastUserUpdate**: `string`\nThe last datetime a user made any interaction with the conversation\n### messages\n**messages**: `object`\nConversation messages\n#### Index Signature\n\\[`id`: `string`\\]: [`MessageData`](MessageData.md)\n#### Example",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: ConversationData",
+        "Properties",
+        "messages"
+      ],
+      "level": 0
+    }
+  },
+  {
+    "pageContent": "<path>Type Alias: ConversationData, Properties, subreddit?, id?</path>\n```ts\nconst arrayOfMessages = Object.values(conversation.messages);\nconst messageById = conversation.messages[messageId];\n```\n### modActions\n**modActions**: `object`\nConversation mod actions\n#### Index Signature\n\\[`id`: `string`\\]: [`ModActionData`](ModActionData.md)\n#### Example\n```ts\nconst arrayOfModActions = Object.values(conversation.modActions);\nconst modActionById = conversation.modActions[modActionId];\n```\n### numMessages?\n`optional` **numMessages**: `number`\nNumber of messages (not actions) in the conversation\n### participant?\n`optional` **participant**: [`Participant`](Participant.md)\nParticipant. Is absent for mod discussions\n### state?\n`optional` **state**: [`ModMailConversationState`](../enumerations/ModMailConversationState.md)\nState of the conversation\n### subject?\n`optional` **subject**: `string`\nSuject of the conversation\n### subreddit?\n`optional` **subreddit**: `object`\nSubreddit owning the modmail conversation\n#### displayName?\n`optional` **displayName**: `string`\n#### id?\n`optional` **id**: `string`",
+    "metadata": {
+      "type": [
+        "code",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Type Alias: ConversationData",
+        "Properties",
+        "subreddit?",
+        "id?"
+      ],
+      "level": 3
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: UserSocialLink, Properties, type</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Type Alias: UserSocialLink\n**UserSocialLink** = `object`\n## Field\nid: ID of the social link.\n## Field\nhandle: Display name of social media link.\n## Field\noutboundUrl: Outbound url of social media link.\n## Field\ntype: Type of social media link i.e. Instagram, YouTube.\n## Field\ntitle: Title or name of social media link.\n## Properties\n### handle?\n`optional` **handle**: `string`\n### id\n**id**: `string`\n### outboundUrl\n**outboundUrl**: `string`\n### title\n**title**: `string`\n### type\n**type**: [`SocialLinkType`](../enumerations/SocialLinkType.md)",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: UserSocialLink",
+        "Properties",
+        "type"
+      ],
+      "level": 0
+    }
+  }
+]

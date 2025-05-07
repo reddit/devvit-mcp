@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: AppUpgrade, Properties, subreddit?</path>\n[**@devvit/public-api v0.12.0-dev**](../../../../README.md)\n# Interface: AppUpgrade\n## Properties\n### installer?\n`optional` **installer**: `UserV2`\n### subreddit?\n`optional` **subreddit**: `SubredditV2`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Interface: AppUpgrade",
+        "Properties",
+        "subreddit?"
+      ],
+      "level": 0
+    }
+  }
+]

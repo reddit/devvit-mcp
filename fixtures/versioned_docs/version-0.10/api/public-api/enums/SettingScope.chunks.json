@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Enumeration: SettingScope, Enumeration Members, Installation</path>\n# Enumeration: SettingScope\n## Table of contents\n### Enumeration Members\n-   [App](SettingScope.md#app)\n-   [Installation](SettingScope.md#installation)\n## Enumeration Members\n### App\n• **App** = `\"app\"`\n### Installation\n• **Installation** = `\"installation\"`",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Enumeration: SettingScope",
+        "Enumeration Members",
+        "Installation"
+      ],
+      "level": 1
+    }
+  }
+]

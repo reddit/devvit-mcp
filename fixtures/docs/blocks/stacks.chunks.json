@@ -1,0 +1,93 @@
+[
+  {
+    "pageContent": "<path>Stacks, Directions, <zstack></path>\nimport AttributeMinHeight from './attributes/\\_minHeight.md'; import AttributeMaxHeight from './attributes/\\_maxHeight.md'; import AttributeMinWidth from './attributes/\\_minWidth.md'; import AttributeMaxWidth from './attributes/\\_maxWidth.md'; import AttributeGrow from './attributes/\\_grow.md'; import AttributeAlignment from './attributes/\\_alignment.md'; import AttributeOnPress from './attributes/\\_onPress.md'; import AttributeWidth from './attributes/\\_width.mdx'; import AttributeHeight from './attributes/\\_height.mdx'; import AttributeColor from './attributes/\\_color.md';\n# Stacks\nThe stack elements (`<vstack>`, `<hstack>`, and `<zstack>`) are flexible containers used to arrange child elements in different orientations and layers. Stacks can be nested, styled, and clicked if given an `onPress` handler. Stacks clip any overflowing content.\n## Directions\n### <vstack>\nVertically stacks elements on top of each other. Perfect for forms, lists, or any vertical grouping of elements.\n### <hstack>\nHorizontally arranges elements side by side. Ideal for creating horizontal layouts, like navigation menus or toolbars.\n### <zstack>\nLayers elements on top of each other along the z-axis. Useful for overlaying elements like modals, badges, or custom stacking layouts.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Stacks",
+        "Directions",
+        "<zstack>"
+      ],
+      "level": 0
+    }
+  },
+  {
+    "pageContent": "<path>Stacks, Attributes, grow, Examples</path>\n## Attributes\n### padding\nAn `enum` that defines the padding inside the stack. Possible values:\n-   `none`: The default if the attribute is not used.\n-   `xsmall`: 4px\n-   `small`: 8px\n-   `medium`: 16px\n-   `large`: 32px\n![app_image_fixed_size](../assets/blocks/docs-blocks-stacks-padding.png)\n#### Examples\nA padded row of buttons with a gap between:\n```tsx\n<hstack gap=\"medium\" padding=\"medium\">\n  <hstack padding=\"10px\" height=\"10px\" backgroundColor=\"#ff4500\" />\n  <hstack padding=\"10px\" height=\"10px\" backgroundColor=\"#000000\" />\n</hstack>\n```\n### gap\nAn `enum` that determines the space between child elements. Possible values:\n-   `none`: The default if the attribute is not used.\n-   `small`: 8px\n-   `medium`: 16px\n-   `large`: 32px\nHas no effect on `<zstack>`.\n![app_image_fixed_size](../assets/blocks/docs-blocks-stacks-gap.png)\n#### Examples\nTwo left aligned buttons with a gap between:\n```tsx\n<hstack gap=\"medium\">\n  <button>This</button>\n  <button>That</button>\n</hstack>\n```\nThe gap is automatically subtracted from the available space children can occupy.\n```tsx\n<hstack gap=\"medium\">\n  <button width=\"50%\">This</button>\n  <button width=\"50%\">That</button>\n</hstack>\n```\n### alignment\n#### Examples\nAlign content to the top left corner\n```tsx\n<zstack width=\"100px\" height=\"100px\" backgroundColor=\"#000000\" alignment=\"top start\">\n  <hstack width=\"33%\" height=\"33%\" backgroundColor=\"#ff4500\" />\n</zstack>\n```\nAlign content to the bottom right corner\n```tsx\n<zstack width=\"100px\" height=\"100px\" backgroundColor=\"#000000\" alignment=\"bottom end\">\n  <hstack width=\"33%\" height=\"33%\" backgroundColor=\"#ff4500\" />\n</zstack>\n```\n### reverse\nA `boolean` that reverses the order of child elements if set to true. Possible values:\n-   `true`\n-   `false`: The default if the attribute is not used.\n![Showing the reverse attribute](../assets/blocks/docs-blocks-stacks-reverse.png)\n### grow\n#### Examples\nIn a `hstack` children grow horizontally.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Stacks",
+        "Attributes",
+        "grow",
+        "Examples"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Stacks, Attributes, cornerRadius</path>\n```tsx\n<hstack>\n  <hstack grow backgroundColor=\"#ff4500\" />\n  <hstack grow backgroundColor=\"#000000\" />\n</hstack>\n```\nIn a `vstack` children grow vertically.\n```tsx\n<vstack>\n  <hstack grow backgroundColor=\"#ff4500\" />\n  <hstack grow backgroundColor=\"#000000\" />\n</vstack>\n```\nHas no effect on children within a `<zstack>`.\n### width\n#### Examples\nTwo colorful squares, taking up 50% of the width 100px each, with a height of 20px.\n```tsx\n<hstack width=\"100px\">\n  <hstack width=\"50%\" height=\"20px\" backgroundColor=\"#ff4500\" />\n  <hstack width=\"50%\" height=\"20px\" backgroundColor=\"#000000\" />\n</hstack>\n```\n### minWidth\n### maxWidth\n### height\n#### Examples\nSets the height as an absolute value\n```tsx\n<hstack height=\"40px\"> ... </hstack>\n```\nSets the height as a percentage of the parent.\n```tsx\n<hstack height=\"50%\"> ... </hstack>\n```\n### minHeight\n### maxHeight\n### backgroundColor\nDefaults to `transparent`.\n### borderWidth\nAn `enum` for setting the border width of the stack. The border sits between edge of the element and the content area. Possible values:\n-   `none`: The default if the attribute is not used.\n-   `thin`: 1px\n-   `thick`: 2px\n![Showing all the borderWidth options](../assets/blocks/docs-blocks-stacks-border-width.png)\n### borderColor\nDefaults to `neutral-border-weak`.\n### cornerRadius\nEn `enum` that rounds all 4 corners of the stack. Clips content. Possible values:\n-   `none`: The default if the attribute is not used.\n-   `small`: 8px.\n-   `medium`: 16px.\n-   `large`: 24px.\n-   `full`: 50%.\n![Showing all the cornerRadius options](../assets/blocks/docs-blocks-stacks-corner-radius.png)",
+    "metadata": {
+      "type": [
+        "code",
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Stacks",
+        "Attributes",
+        "cornerRadius"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Stacks, Examples</path>\n## Functions\n### onPress\n#### Examples\n```tsx\n<hstack\n  height=\"50px\"\n  width=\"50px\"\n  backgroundColor=\"#ff4500\"\n  onPress={() => console.log('clicked')}\n></hstack>\n```\n## Examples\nAn `<hstack>`. Open in [Play](https://developers.reddit.com/play#pen/N4IgdghgtgpiBcIQBoQGcBOBjBICWUADgPYYAuABMACIwBudeZAvhQGYbFQUDkAAgBN6jMgHpCAVwBGAGzxYAtBEJ4eAHTAbaDJgDoIAgQGEJaMlwAKxMwBUAnoRgAKYBooVIseLwBy0GDzIbhQYMGBCGN4A+ljEYGQwAB6UALwAfFTB7qFkEhhgFE5Z7hQAPLLEWADWaGnFJWUAFmYQ1RQQcgDmYLDxKWogWGEJGBRQeIYyMAMUncr9ILACeBJQM4QGy2CdC0srayAUUq1VnZwS4UbEMqQLAMRsAAxPTwN1BQ2fpQnJFGh4AC8YAsZBAMJ1pocAO4wPCdRpkBZSa4CN4AUUS0EIUwoNiYU1Koh+ZHeny+aA2Q1GZ2IUIoolJZJK5QkZHMBXkcQWphgGBm-yBuxgy1WM2UjjBEDAQwWhAwBDBdjeAFU0LzCVJWezGWTCc0yCcdczRBVqrVigBKYLMDTMK2aMBJEjkChCNgQCQySjaEQoEB0Xn-OIIACMzCAA).\n```tsx\n<blocks>\n  <hstack alignment=\"center middle\" gap=\"medium\" padding=\"medium\" backgroundColor=\"gray\">\n    <text size=\"large\" weight=\"bold\">\n      Example Title\n    </text>\n    <spacer grow />\n    <button icon=\"user\" size=\"medium\" appearance=\"primary\">\n      User\n    </button>\n  </hstack>\n</blocks>\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "code",
+        "text"
+      ],
+      "path": [
+        "Stacks",
+        "Examples"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Stacks, Examples</path>\nA `<vstack>` example. Open in [Play](https://developers.reddit.com/play#pen/N4IgdghgtgpiBcIQBoQGcBOBjBICWUADgPYYAuABMACIwBudeZAvhQGYbFQUDkAAgBN6jMgHpCAVwBGAGzxYAtBEJ4eAHTAbaDJgDoIAgQGEJaMlwAKxMwBUAnoRgAKYBooVIseLwBy0GDzIbhQYMGBCGN4A+ljEYGQwAB6UALwAfFTB7qFkEhhgFE5Z7hQAPLLEWADWaGnFJWV0ZhDVFBByAOZgsPEpauhkEOQUWGEJGP0UHcp96FDtMpOEBgJ4YB2zsKsSUP11BQ2HpQnJFGh4AF4wmzDbuyAUAO4weB0AFmSzUsQyAnsA4v4KAB5QhkPBxNClUQnMj7Q5HKQSMjmArnK43O6TZSOIYQMCjWZoGCxcJDOx7UHguIUACM0KRKLi8IRJXKyNRZ0u136WzwO2xhFxGHxhP6xNJAnJlLBEIKACYGRzmfVEcq0dzMfz7m0hTA8QSeegSXEpRgKSA0lS5RQAMxKplgFkI6FNQbVZ1s0QVaq1YoASmCzA0zEDmjASRIwyEbAgEhklG0IhQIDoMAw5ziCFpzCAA).\n```tsx\n<blocks>\n  <vstack alignment=\"start center\" gap=\"small\" padding=\"medium\">\n    <text size=\"medium\" weight=\"bold\">\n      Game Options\n    </text>\n    <button size=\"medium\" appearance=\"secondary\">\n      Option 1\n    </button>\n    <button size=\"medium\" appearance=\"secondary\">\n      Option 2\n    </button>\n    <button size=\"medium\" appearance=\"secondary\">\n      Option 3\n    </button>\n  </vstack>\n</blocks>\n```",
+    "metadata": {
+      "type": [
+        "text",
+        "code"
+      ],
+      "level": 2,
+      "path": [
+        "Stacks",
+        "Examples"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Stacks, Examples</path>\nA `<zstack>` example. Open in [Play](https://developers.reddit.com/play#pen/N4IgdghgtgpiBcIQBoQGcBOBjBICWUADgPYYAuABMACIwBudeZAvhQGYbFQUDkAAgBN6jMgHpCAVwBGAGzxYAtBEJ4eAHTAbaDJgDoIAgQGEJaMlwAKxMwBUAnoRgAKYBooVIseLwBy0GDzIbhQYMGBCGN4A+ljEYGQwAB6UALwAfFTB7qFkEhhgFE5Z7hQAPLLEWADWaGnFJWUAXmYQ1RQQcgDmYLDxKWogWGEJGBRQeIYyMAMUAO4TZAAWKTwAzAAM64SJPBSLMHidi2QrAEyb27tSrVWdnBLhRsQypP0gAMQA7AAcAJzrvyMAzqBQaYNKCWSFDQeEaMDeiUSMggGE60xAcwORxOAykzwEM1iLwwb3eADEKZSZmY7FM3vsDHgwJ1gQAhACSAHEKDYAKIADRspVEkLIILB4NF0Nh8IGiTQUA6MhmsyxxzeoU6EmRGEJz1eA3JlIp1LItNlIDxAjsMw6hx6wzeeLI5m4Q3iMF1IHFErBAHkCuZCBRiGxoYqZDIKKL6uCRUkxbH3MLmmQbj6GsKKtVasUAJTBZgaZgFzRgJIkcgUIRsCDayjaEQoEB0T0wuIIACMzCAA).\n```tsx\n<blocks>\n  <zstack alignment=\"center middle\" width=\"300px\" height=\"200px\" backgroundColor=\"#78909C\">\n    <text size=\"xxlarge\" weight=\"bold\" color=\"white\" style=\"heading\">\n      BIG TEXT\n    </text>\n    <text size=\"xsmall\" weight=\"regular\" color=\"white\" style=\"body\" alignment=\"bottom center\">\n      On top of small text\n    </text>\n  </zstack>\n</blocks>\n```",
+    "metadata": {
+      "type": [
+        "text",
+        "code"
+      ],
+      "level": 2,
+      "path": [
+        "Stacks",
+        "Examples"
+      ]
+    }
+  }
+]

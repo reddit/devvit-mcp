@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Manage your communities</path>\n## Manage your communities\nTo view the subreddits you moderate, select “My communities” from the profile dropdown menu. This will list app installations across all communities where you have moderator permissions.\n![mod view](./assets/mod_community_settings.png)\nClick the subreddit name to install or remove apps from your community.\n_Note: only moderators with app management permissions will be able to modify community app installations. Permissions are [managed in mod settings](https://mods.reddithelp.com/hc/en-us/articles/360009381491-User-Management-moderators-and-permissions)._",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "level": 2,
+      "path": [
+        "Manage your communities"
+      ]
+    }
+  }
+]

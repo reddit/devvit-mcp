@@ -1,0 +1,18 @@
+[
+  {
+    "pageContent": "<path>Type Alias: DevvitDebug, Properties, emitState?</path>\n[**@devvit/public-api v0.11.14-dev**](../README.md)\n# Type Alias: DevvitDebug\n**DevvitDebug** = `object`\nHome for debug flags, settings, and other information. Any type removals may cause type errors but not runtime errors.\n**Favor ContextDebugInfo since request-based state is preferred.**\n## Properties\n### emitSnapshots?\n`optional` **emitSnapshots**: `boolean`\nShould debug block rendering in console.log according to the reified JSX/XML output. Example:\n```\n<hstack><text>hi world</text></hstack>\n```\n### emitState?\n`optional` **emitState**: `boolean`\nShould console.log the state of the app after every event.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Type Alias: DevvitDebug",
+        "Properties",
+        "emitState?"
+      ],
+      "level": 0
+    }
+  }
+]

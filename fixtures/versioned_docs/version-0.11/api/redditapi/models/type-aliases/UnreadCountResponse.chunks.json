@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: UnreadCountResponse, Properties, notifications?</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Type Alias: UnreadCountResponse\n**UnreadCountResponse** = `object`\n## Properties\n### appeals?\n`optional` **appeals**: `number`\n### archived?\n`optional` **archived**: `number`\n### filtered?\n`optional` **filtered**: `number`\n### highlighted?\n`optional` **highlighted**: `number`\n### inprogress?\n`optional` **inprogress**: `number`\n### joinRequests?\n`optional` **joinRequests**: `number`\n### mod?\n`optional` **mod**: `number`\n### new?\n`optional` **new**: `number`\n### notifications?\n`optional` **notifications**: `number`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: UnreadCountResponse",
+        "Properties",
+        "notifications?"
+      ],
+      "level": 0
+    }
+  }
+]

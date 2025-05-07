@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: RootProps, Type declaration, height?</path>\n[**@devvit/public-api v0.11.14-dev**](../../../../../../README.md)\n# Type Alias: RootProps\n**RootProps** = [`HasElementChildren`](HasElementChildren.md) & `object`\n## Type declaration\n### height?\n`optional` **height**: [`RootHeight`](RootHeight.md)",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: RootProps",
+        "Type declaration",
+        "height?"
+      ],
+      "level": 0
+    }
+  }
+]

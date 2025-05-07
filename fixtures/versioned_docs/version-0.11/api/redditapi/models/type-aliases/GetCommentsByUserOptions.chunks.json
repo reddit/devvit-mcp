@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: GetCommentsByUserOptions, Properties, username</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Type Alias: GetCommentsByUserOptions\n**GetCommentsByUserOptions** = `object`\n## Properties\n### after?\n`optional` **after**: `string`\n### before?\n`optional` **before**: `string`\n### limit?\n`optional` **limit**: `number`\n### pageSize?\n`optional` **pageSize**: `number`\n### sort?\n`optional` **sort**: `\"hot\"` | `\"new\"` | `\"top\"` | `\"controversial\"`\n### timeframe?\n`optional` **timeframe**: `\"hour\"` | `\"day\"` | `\"week\"` | `\"month\"` | `\"year\"` | `\"all\"`\n### username\n**username**: `string`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: GetCommentsByUserOptions",
+        "Properties",
+        "username"
+      ],
+      "level": 0
+    }
+  }
+]

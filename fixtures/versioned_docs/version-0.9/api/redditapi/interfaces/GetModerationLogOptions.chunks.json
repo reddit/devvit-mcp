@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: GetModerationLogOptions, Properties, type</path>\n# Interface: GetModerationLogOptions\n## Hierarchy\n-   [`ListingFetchOptions`](ListingFetchOptions.md)\n    \n    ↳ **`GetModerationLogOptions`**\n## Table of contents\n### Properties\n-   [after](GetModerationLogOptions.md#after)\n-   [before](GetModerationLogOptions.md#before)\n-   [limit](GetModerationLogOptions.md#limit)\n-   [moderatorId](GetModerationLogOptions.md#moderatorid)\n-   [more](GetModerationLogOptions.md#more)\n-   [pageSize](GetModerationLogOptions.md#pagesize)\n-   [subredditName](GetModerationLogOptions.md#subredditname)\n-   [type](GetModerationLogOptions.md#type)\n## Properties\n### after\n• `Optional` **after**: `string`\n#### Inherited from\n[ListingFetchOptions](ListingFetchOptions.md).[after](ListingFetchOptions.md#after)\n### before\n• `Optional` **before**: `string`\n#### Inherited from\n[ListingFetchOptions](ListingFetchOptions.md).[before](ListingFetchOptions.md#before)\n### limit\n• `Optional` **limit**: `number`\n#### Inherited from\n[ListingFetchOptions](ListingFetchOptions.md).[limit](ListingFetchOptions.md#limit)\n### moderatorId\n• `Optional` **moderatorId**: `string`\n### more\n• `Optional` **more**: [`MoreObject`](MoreObject.md)\n#### Inherited from\n[ListingFetchOptions](ListingFetchOptions.md).[more](ListingFetchOptions.md#more)\n### pageSize\n• `Optional` **pageSize**: `number`\n#### Inherited from\n[ListingFetchOptions](ListingFetchOptions.md).[pageSize](ListingFetchOptions.md#pagesize)\n### subredditName\n• **subredditName**: `string`\n### type\n• `Optional` **type**: [`ModActionType`](../README.md#modactiontype)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Interface: GetModerationLogOptions",
+        "Properties",
+        "type"
+      ],
+      "level": 1
+    }
+  }
+]

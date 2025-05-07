@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: AppInstallDefinition, Properties, onEvent</path>\n[**@devvit/public-api v0.11.14-dev**](../README.md)\n# Type Alias: AppInstallDefinition\n**AppInstallDefinition** = `object`\n## Properties\n### event\n**event**: [`AppInstall`](AppInstall.md)\n### onEvent\n**onEvent**: [`TriggerOnEventHandler`](TriggerOnEventHandler.md)<[`AppInstall`](../@devvit/namespaces/EventTypes/interfaces/AppInstall.md)\\>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: AppInstallDefinition",
+        "Properties",
+        "onEvent"
+      ],
+      "level": 0
+    }
+  }
+]

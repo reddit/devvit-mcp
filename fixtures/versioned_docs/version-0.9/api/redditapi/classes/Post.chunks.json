@@ -1,0 +1,160 @@
+[
+  {
+    "pageContent": "<path>Class: Post, Table of contents</path>\n# Class: Post\n## Table of contents\n### Constructors\n-   [constructor](Post.md#constructor)\n### Accessors\n-   [approved](Post.md#approved)\n-   [archived](Post.md#archived)\n-   [authorId](Post.md#authorid)\n-   [authorName](Post.md#authorname)\n-   [body](Post.md#body)\n-   [comments](Post.md#comments)\n-   [createdAt](Post.md#createdat)\n-   [distinguishedBy](Post.md#distinguishedby)\n-   [edited](Post.md#edited)\n-   [hidden](Post.md#hidden)\n-   [id](Post.md#id)\n-   [ignoringReports](Post.md#ignoringreports)\n-   [locked](Post.md#locked)\n-   [nsfw](Post.md#nsfw)\n-   [numberOfComments](Post.md#numberofcomments)\n-   [numberOfReports](Post.md#numberofreports)\n-   [permalink](Post.md#permalink)\n-   [quarantined](Post.md#quarantined)\n-   [removed](Post.md#removed)\n-   [score](Post.md#score)\n-   [spam](Post.md#spam)\n-   [spoiler](Post.md#spoiler)\n-   [stickied](Post.md#stickied)\n-   [subredditId](Post.md#subredditid)\n-   [subredditName](Post.md#subredditname)\n-   [thumbnail](Post.md#thumbnail)\n-   [title](Post.md#title)\n-   [url](Post.md#url)\n### Methods",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: Post",
+        "Table of contents"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: Post, Table of contents, Methods</path>\n-   [addComment](Post.md#addcomment)\n-   [approve](Post.md#approve)\n-   [crosspost](Post.md#crosspost)\n-   [delete](Post.md#delete)\n-   [distinguish](Post.md#distinguish)\n-   [distinguishAsAdmin](Post.md#distinguishasadmin)\n-   [edit](Post.md#edit)\n-   [getAuthor](Post.md#getauthor)\n-   [hide](Post.md#hide)\n-   [ignoreReports](Post.md#ignorereports)\n-   [isApproved](Post.md#isapproved)\n-   [isArchived](Post.md#isarchived)\n-   [isDistinguishedBy](Post.md#isdistinguishedby)\n-   [isEdited](Post.md#isedited)\n-   [isHidden](Post.md#ishidden)\n-   [isIgnoringReports](Post.md#isignoringreports)\n-   [isLocked](Post.md#islocked)\n-   [isNsfw](Post.md#isnsfw)\n-   [isQuarantined](Post.md#isquarantined)\n-   [isRemoved](Post.md#isremoved)\n-   [isSpam](Post.md#isspam)\n-   [isSpoiler](Post.md#isspoiler)\n-   [isStickied](Post.md#isstickied)\n-   [lock](Post.md#lock)\n-   [markAsNsfw](Post.md#markasnsfw)\n-   [markAsSpoiler](Post.md#markasspoiler)\n-   [remove](Post.md#remove)\n-   [sticky](Post.md#sticky)\n-   [toJSON](Post.md#tojson)\n-   [undistinguish](Post.md#undistinguish)\n-   [unhide](Post.md#unhide)\n-   [unignoreReports](Post.md#unignorereports)\n-   [unlock](Post.md#unlock)\n-   [unmarkAsNsfw](Post.md#unmarkasnsfw)\n-   [unmarkAsSpoiler](Post.md#unmarkasspoiler)\n-   [unsticky](Post.md#unsticky)\n-   [approve](Post.md#approve-1)\n-   [crosspost](Post.md#crosspost-1)\n-   [delete](Post.md#delete-1)\n-   [distinguish](Post.md#distinguish-1)\n-   [edit](Post.md#edit-1)\n-   [getById](Post.md#getbyid)\n-   [getControversialPosts](Post.md#getcontroversialposts)\n-   [getHotPosts](Post.md#gethotposts)\n-   [getNewPosts](Post.md#getnewposts)\n-   [getPostsByUser](Post.md#getpostsbyuser)\n-   [getRisingPosts](Post.md#getrisingposts)\n-   [getSortedPosts](Post.md#getsortedposts)\n-   [getTopPosts](Post.md#gettopposts)\n-   [hide](Post.md#hide-1)\n-   [ignoreReports](Post.md#ignorereports-1)\n-   [lock](Post.md#lock-1)\n-   [markAsNsfw](Post.md#markasnsfw-1)\n-   [markAsSpoiler](Post.md#markasspoiler-1)",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Class: Post",
+        "Table of contents",
+        "Methods"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Class: Post, Accessors</path>\n-   [remove](Post.md#remove-1)\n-   [sticky](Post.md#sticky-1)\n-   [submit](Post.md#submit)\n-   [undistinguish](Post.md#undistinguish-1)\n-   [unhide](Post.md#unhide-1)\n-   [unignoreReports](Post.md#unignorereports-1)\n-   [unlock](Post.md#unlock-1)\n-   [unmarkAsNsfw](Post.md#unmarkasnsfw-1)\n-   [unmarkAsSpoiler](Post.md#unmarkasspoiler-1)\n-   [unsticky](Post.md#unsticky-1)\n## Constructors\n### constructor\n• **new Post**(`data`, `metadata?`)\n#### Parameters\n| Name | Type |\n|---|---|\n| data | RedditObject |\n| metadata? | Metadata |\n## Accessors\n### approved\n• `get` **approved**(): `boolean`\n#### Returns\n`boolean`\n### archived\n• `get` **archived**(): `boolean`\n#### Returns\n`boolean`\n### authorId\n• `get` **authorId**(): \\`t2\\_${string}\\`\n#### Returns\n\\`t2\\_${string}\\`\n### authorName\n• `get` **authorName**(): `string`\n#### Returns\n`string`\n### body\n• `get` **body**(): `undefined` | `string`\n#### Returns\n`undefined` | `string`\n### comments\n• `get` **comments**(): [`Listing`](Listing.md)< [`Comment`](Comment.md)\\>\n#### Returns\n[`Listing`](Listing.md)< [`Comment`](Comment.md)\\>\n### createdAt\n• `get` **createdAt**(): `Date`\n#### Returns\n`Date`\n### distinguishedBy\n• `get` **distinguishedBy**(): `undefined` | `string`\n#### Returns\n`undefined` | `string`\n### edited\n• `get` **edited**(): `boolean`\n#### Returns\n`boolean`\n### hidden\n• `get` **hidden**(): `boolean`\n#### Returns\n`boolean`\n### id\n• `get` **id**(): \\`t3\\_${string}\\`\n#### Returns\n\\`t3\\_${string}\\`\n### ignoringReports\n• `get` **ignoringReports**(): `boolean`\n#### Returns\n`boolean`\n### locked\n• `get` **locked**(): `boolean`\n#### Returns\n`boolean`\n### nsfw\n• `get` **nsfw**(): `boolean`\n#### Returns\n`boolean`\n### numberOfComments\n• `get` **numberOfComments**(): `number`\n#### Returns\n`number`\n### numberOfReports\n• `get` **numberOfReports**(): `number`\n#### Returns\n`number`\n### permalink\n• `get` **permalink**(): `string`\n#### Returns\n`string`\n### quarantined\n• `get` **quarantined**(): `boolean`\n#### Returns\n`boolean`\n### removed",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: Post",
+        "Accessors"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: Post, Methods, ignoreReports</path>\n• `get` **removed**(): `boolean`\n#### Returns\n`boolean`\n### score\n• `get` **score**(): `number`\n#### Returns\n`number`\n### spam\n• `get` **spam**(): `boolean`\n#### Returns\n`boolean`\n### spoiler\n• `get` **spoiler**(): `boolean`\n#### Returns\n`boolean`\n### stickied\n• `get` **stickied**(): `boolean`\n#### Returns\n`boolean`\n### subredditId\n• `get` **subredditId**(): \\`t5\\_${string}\\`\n#### Returns\n\\`t5\\_${string}\\`\n### subredditName\n• `get` **subredditName**(): `string`\n#### Returns\n`string`\n### thumbnail\n• `get` **thumbnail**(): `undefined` | { `height`: `number` ; `url`: `string` ; `width`: `number` }\n#### Returns\n`undefined` | { `height`: `number` ; `url`: `string` ; `width`: `number` }\n### title\n• `get` **title**(): `string`\n#### Returns\n`string`\n### url\n• `get` **url**(): `string`\n#### Returns\n`string`\n## Methods\n### addComment\n▸ **addComment**(`options`): `Promise`< [`Comment`](Comment.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | CommentSubmissionOptions |\n#### Returns\n`Promise`< [`Comment`](Comment.md)\\>\n### approve\n▸ **approve**(): `Promise`< `void`\\>\n#### Returns\n`Promise`< `void`\\>\n### crosspost\n▸ **crosspost**(`options`): `Promise`< [`Post`](Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | Omit< CrosspostOptions, \"postId\"> |\n#### Returns\n`Promise`< [`Post`](Post.md)\\>\n### delete\n▸ **delete**(): `Promise`< `void`\\>\n#### Returns\n`Promise`< `void`\\>\n### distinguish\n▸ **distinguish**(): `Promise`< `void`\\>\n#### Returns\n`Promise`< `void`\\>\n### distinguishAsAdmin\n▸ **distinguishAsAdmin**(): `Promise`< `void`\\>\n#### Returns\n`Promise`< `void`\\>\n### edit\n▸ **edit**(`options`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | PostTextOptions |\n#### Returns\n`Promise`< `void`\\>\n### getAuthor\n▸ **getAuthor**(): `Promise`< [`User`](User.md)\\>\n#### Returns\n`Promise`< [`User`](User.md)\\>\n### hide\n▸ **hide**(): `Promise`< `void`\\>\n#### Returns\n`Promise`< `void`\\>\n### ignoreReports\n▸ **ignoreReports**(): `Promise`< `void`\\>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: Post",
+        "Methods",
+        "ignoreReports"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: Post, Methods, toJSON, Returns</path>\n#### Returns\n`Promise`< `void`\\>\n### isApproved\n▸ **isApproved**(): `boolean`\n#### Returns\n`boolean`\n### isArchived\n▸ **isArchived**(): `boolean`\n#### Returns\n`boolean`\n### isDistinguishedBy\n▸ **isDistinguishedBy**(): `undefined` | `string`\n#### Returns\n`undefined` | `string`\n### isEdited\n▸ **isEdited**(): `boolean`\n#### Returns\n`boolean`\n### isHidden\n▸ **isHidden**(): `boolean`\n#### Returns\n`boolean`\n### isIgnoringReports\n▸ **isIgnoringReports**(): `boolean`\n#### Returns\n`boolean`\n### isLocked\n▸ **isLocked**(): `boolean`\n#### Returns\n`boolean`\n### isNsfw\n▸ **isNsfw**(): `boolean`\n#### Returns\n`boolean`\n### isQuarantined\n▸ **isQuarantined**(): `boolean`\n#### Returns\n`boolean`\n### isRemoved\n▸ **isRemoved**(): `boolean`\n#### Returns\n`boolean`\n### isSpam\n▸ **isSpam**(): `boolean`\n#### Returns\n`boolean`\n### isSpoiler\n▸ **isSpoiler**(): `boolean`\n#### Returns\n`boolean`\n### isStickied\n▸ **isStickied**(): `boolean`\n#### Returns\n`boolean`\n### lock\n▸ **lock**(): `Promise`< `void`\\>\n#### Returns\n`Promise`< `void`\\>\n### markAsNsfw\n▸ **markAsNsfw**(): `Promise`< `void`\\>\n#### Returns\n`Promise`< `void`\\>\n### markAsSpoiler\n▸ **markAsSpoiler**(): `Promise`< `void`\\>\n#### Returns\n`Promise`< `void`\\>\n### remove\n▸ **remove**(`isSpam?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type | Default value |\n|---|---|---|\n| isSpam | boolean | false |\n#### Returns\n`Promise`< `void`\\>\n### sticky\n▸ **sticky**(`position?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| position? | 2 | 1 | 3 | 4 |\n#### Returns\n`Promise`< `void`\\>\n### toJSON\n▸ **toJSON**(): `Object`\n#### Returns\n`Object`",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: Post",
+        "Methods",
+        "toJSON",
+        "Returns"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Post, Methods, delete, Returns</path>\n| Name | Type |\n|---|---|\n| approved | boolean |\n| archived | boolean |\n| authorId | `t2_${string}` |\n| authorName | string |\n| body | undefined | string |\n| createdAt | Date |\n| distinguishedBy | undefined | string |\n| edited | boolean |\n| hidden | boolean |\n| id | `t3_${string}` |\n| ignoringReports | boolean |\n| locked | boolean |\n| nsfw | boolean |\n| numberOfComments | number |\n| numberOfReports | number |\n| permalink | string |\n| quarantined | boolean |\n| removed | boolean |\n| score | number |\n| spam | boolean |\n| spoiler | boolean |\n| stickied | boolean |\n| subredditId | `t5_${string}` |\n| subredditName | string |\n| thumbnail | undefined | { height: number ; url: string ; width: number } |\n| title | string |\n| url | string |\n### undistinguish\n▸ **undistinguish**(): `Promise`< `void`\\>\n#### Returns\n`Promise`< `void`\\>\n### unhide\n▸ **unhide**(): `Promise`< `void`\\>\n#### Returns\n`Promise`< `void`\\>\n### unignoreReports\n▸ **unignoreReports**(): `Promise`< `void`\\>\n#### Returns\n`Promise`< `void`\\>\n### unlock\n▸ **unlock**(): `Promise`< `void`\\>\n#### Returns\n`Promise`< `void`\\>\n### unmarkAsNsfw\n▸ **unmarkAsNsfw**(): `Promise`< `void`\\>\n#### Returns\n`Promise`< `void`\\>\n### unmarkAsSpoiler\n▸ **unmarkAsSpoiler**(): `Promise`< `void`\\>\n#### Returns\n`Promise`< `void`\\>\n### unsticky\n▸ **unsticky**(): `Promise`< `void`\\>\n#### Returns\n`Promise`< `void`\\>\n### approve\n▸ `Static` **approve**(`id`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t3_${string}` |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n### crosspost\n▸ `Static` **crosspost**(`options`, `metadata?`): `Promise`< [`Post`](Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | CrosspostOptions |\n| metadata? | Metadata |\n#### Returns\n`Promise`< [`Post`](Post.md)\\>\n### delete\n▸ `Static` **delete**(`id`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t3_${string}` |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: Post",
+        "Methods",
+        "delete",
+        "Returns"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Post, Methods</path>\n### distinguish\n▸ `Static` **distinguish**(`id`, `asAdmin`, `metadata?`): `Promise`< { `distinguishedBy`: `undefined` | `string` = post.distinguished }>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t3_${string}` |\n| asAdmin | boolean |\n| metadata? | Metadata |\n#### Returns\n`Promise`< { `distinguishedBy`: `undefined` | `string` = post.distinguished }>\n### edit\n▸ `Static` **edit**(`options`, `metadata?`): `Promise`< [`Post`](Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | Object |\n| metadata? | Metadata |\n#### Returns\n`Promise`< [`Post`](Post.md)\\>\n### getById\n▸ `Static` **getById**(`id`, `metadata?`): `Promise`< [`Post`](Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t3_${string}` |\n| metadata? | Metadata |\n#### Returns\n`Promise`< [`Post`](Post.md)\\>\n### getControversialPosts\n▸ `Static` **getControversialPosts**(`options?`, `metadata?`): [`Listing`](Listing.md)< [`Post`](Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetPostsOptionsWithTimeframe |\n| metadata? | Metadata |\n#### Returns\n[`Listing`](Listing.md)< [`Post`](Post.md)\\>\n### getHotPosts\n▸ `Static` **getHotPosts**(`options?`, `metadata?`): [`Listing`](Listing.md)< [`Post`](Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetHotPostsOptions |\n| metadata? | Metadata |\n#### Returns\n[`Listing`](Listing.md)< [`Post`](Post.md)\\>\n### getNewPosts\n▸ `Static` **getNewPosts**(`options`, `metadata?`): [`Listing`](Listing.md)< [`Post`](Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetPostsOptions |\n| metadata? | Metadata |\n#### Returns\n[`Listing`](Listing.md)< [`Post`](Post.md)\\>\n### getPostsByUser\n▸ `Static` **getPostsByUser**(`options`, `metadata?`): [`Listing`](Listing.md)< [`Post`](Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetPostsByUserOptions |\n| metadata? | Metadata |\n#### Returns\n[`Listing`](Listing.md)< [`Post`](Post.md)\\>\n### getRisingPosts",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: Post",
+        "Methods"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Post, Methods, remove, Parameters</path>\n▸ `Static` **getRisingPosts**(`options`, `metadata?`): [`Listing`](Listing.md)< [`Post`](Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetPostsOptions |\n| metadata? | Metadata |\n#### Returns\n[`Listing`](Listing.md)< [`Post`](Post.md)\\>\n### getSortedPosts\n▸ `Static` **getSortedPosts**(`options`, `metadata?`): [`Listing`](Listing.md)< [`Post`](Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetSortedPostsOptions |\n| metadata? | Metadata |\n#### Returns\n[`Listing`](Listing.md)< [`Post`](Post.md)\\>\n### getTopPosts\n▸ `Static` **getTopPosts**(`options?`, `metadata?`): [`Listing`](Listing.md)< [`Post`](Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetPostsOptionsWithTimeframe |\n| metadata? | Metadata |\n#### Returns\n[`Listing`](Listing.md)< [`Post`](Post.md)\\>\n### hide\n▸ `Static` **hide**(`id`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t3_${string}` |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n### ignoreReports\n▸ `Static` **ignoreReports**(`id`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t3_${string}` |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n### lock\n▸ `Static` **lock**(`id`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t3_${string}` |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n### markAsNsfw\n▸ `Static` **markAsNsfw**(`id`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t3_${string}` |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n### markAsSpoiler\n▸ `Static` **markAsSpoiler**(`id`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t3_${string}` |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n### remove\n▸ `Static` **remove**(`id`, `isSpam?`, `metadata?`): `Promise`< `void`\\>\n#### Parameters",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: Post",
+        "Methods",
+        "remove",
+        "Parameters"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Post, Methods, unmarkAsSpoiler</path>\n| Name | Type | Default value |\n|---|---|---|\n| id | `t3_${string}` | undefined |\n| isSpam | boolean | false |\n| metadata? | Metadata | undefined |\n#### Returns\n`Promise`< `void`\\>\n### sticky\n▸ `Static` **sticky**(`id`, `position?`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t3_${string}` |\n| position? | 2 | 1 | 3 | 4 |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n### submit\n▸ `Static` **submit**(`options`, `metadata?`): `Promise`< [`Post`](Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | SubmitPostOptions |\n| metadata? | Metadata |\n#### Returns\n`Promise`< [`Post`](Post.md)\\>\n### undistinguish\n▸ `Static` **undistinguish**(`id`, `metadata?`): `Promise`< { `distinguishedBy`: `undefined` | `string` = post.distinguished }>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t3_${string}` |\n| metadata? | Metadata |\n#### Returns\n`Promise`< { `distinguishedBy`: `undefined` | `string` = post.distinguished }>\n### unhide\n▸ `Static` **unhide**(`id`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t3_${string}` |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n### unignoreReports\n▸ `Static` **unignoreReports**(`id`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t3_${string}` |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n### unlock\n▸ `Static` **unlock**(`id`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t3_${string}` |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n### unmarkAsNsfw\n▸ `Static` **unmarkAsNsfw**(`id`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t3_${string}` |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n### unmarkAsSpoiler\n▸ `Static` **unmarkAsSpoiler**(`id`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t3_${string}` |\n| metadata? | Metadata |\n#### Returns",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: Post",
+        "Methods",
+        "unmarkAsSpoiler"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Post, Methods, unsticky, Returns</path>\n`Promise`< `void`\\>\n### unsticky\n▸ `Static` **unsticky**(`id`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t3_${string}` |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: Post",
+        "Methods",
+        "unsticky",
+        "Returns"
+      ],
+      "level": 3
+    }
+  }
+]

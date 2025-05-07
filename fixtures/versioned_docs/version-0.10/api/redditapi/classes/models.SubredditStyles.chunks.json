@@ -1,0 +1,91 @@
+[
+  {
+    "pageContent": "<path>Class: SubredditStyles, Table of contents, Accessors</path>\n# Class: SubredditStyles\n[models](../modules/models.md).SubredditStyles\nA class representing the styles of a Subreddit.\n## Table of contents\n### Accessors",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: SubredditStyles",
+        "Table of contents",
+        "Accessors"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: SubredditStyles, Table of contents, Accessors</path>\n-   [backgroundColor](models.SubredditStyles.md#backgroundColor)\n-   [backgroundImage](models.SubredditStyles.md#backgroundImage)\n-   [backgroundImagePosition](models.SubredditStyles.md#backgroundImagePosition)\n-   [bannerBackgroundColor](models.SubredditStyles.md#bannerBackgroundColor)\n-   [bannerBackgroundImage](models.SubredditStyles.md#bannerBackgroundImage)\n-   [bannerBackgroundImagePosition](models.SubredditStyles.md#bannerBackgroundImagePosition)\n-   [bannerCommunityName](models.SubredditStyles.md#bannerCommunityName)\n-   [bannerCommunityNameFormat](models.SubredditStyles.md#bannerCommunityNameFormat)\n-   [bannerHeight](models.SubredditStyles.md#bannerHeight)\n-   [bannerOverlayColor](models.SubredditStyles.md#bannerOverlayColor)\n-   [bannerPositionedImage](models.SubredditStyles.md#bannerPositionedImage)\n-   [bannerPositionedImagePosition](models.SubredditStyles.md#bannerPositionedImagePosition)\n-   [bannerShowCommunityIcon](models.SubredditStyles.md#bannerShowCommunityIcon)\n-   [highlightColor](models.SubredditStyles.md#highlightColor)\n-   [icon](models.SubredditStyles.md#icon)\n-   [legacyBannerBackgroundImage](models.SubredditStyles.md#legacyBannerBackgroundImage)\n-   [legacyPrimaryColor](models.SubredditStyles.md#legacyPrimaryColor)\n-   [menuBackgroundBlur](models.SubredditStyles.md#menuBackgroundBlur)\n-   [menuBackgroundColor](models.SubredditStyles.md#menuBackgroundColor)\n-   [menuBackgroundImage](models.SubredditStyles.md#menuBackgroundImage)\n-   [menuBackgroundOpacity](models.SubredditStyles.md#menuBackgroundOpacity)\n-   [menuLinkColorActive](models.SubredditStyles.md#menuLinkColorActive)\n-   [menuLinkColorHover](models.SubredditStyles.md#menuLinkColorHover)\n-   [menuLinkColorInactive](models.SubredditStyles.md#menuLinkColorInactive)\n-   [menuPosition](models.SubredditStyles.md#menuPosition)\n-   [mobileBannerImage](models.SubredditStyles.md#mobileBannerImage)\n-   [mobileKeyColor](models.SubredditStyles.md#mobileKeyColor)",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Class: SubredditStyles",
+        "Table of contents",
+        "Accessors"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Class: SubredditStyles, Table of contents, Accessors</path>\n-   [postBackgroundColor](models.SubredditStyles.md#postBackgroundColor)\n-   [postBackgroundImage](models.SubredditStyles.md#postBackgroundImage)\n-   [postBackgroundImagePosition](models.SubredditStyles.md#postBackgroundImagePosition)\n-   [postDownvoteCountColor](models.SubredditStyles.md#postDownvoteCountColor)\n-   [postDownvoteIconActive](models.SubredditStyles.md#postDownvoteIconActive)\n-   [postDownvoteIconInactive](models.SubredditStyles.md#postDownvoteIconInactive)\n-   [postPlaceholderImage](models.SubredditStyles.md#postPlaceholderImage)\n-   [postPlaceholderImagePosition](models.SubredditStyles.md#postPlaceholderImagePosition)\n-   [postTitleColor](models.SubredditStyles.md#postTitleColor)\n-   [postUpvoteCountColor](models.SubredditStyles.md#postUpvoteCountColor)\n-   [postUpvoteIconActive](models.SubredditStyles.md#postUpvoteIconActive)\n-   [postUpvoteIconInactive](models.SubredditStyles.md#postUpvoteIconInactive)\n-   [postVoteIcons](models.SubredditStyles.md#postVoteIcons)\n-   [primaryColor](models.SubredditStyles.md#primaryColor)\n-   [secondaryBannerPositionedImage](models.SubredditStyles.md#secondaryBannerPositionedImage)\n-   [sidebarWidgetBackgroundColor](models.SubredditStyles.md#sidebarWidgetBackgroundColor)\n-   [sidebarWidgetHeaderColor](models.SubredditStyles.md#sidebarWidgetHeaderColor)\n-   [submenuBackgroundColor](models.SubredditStyles.md#submenuBackgroundColor)\n-   [submenuBackgroundStyle](models.SubredditStyles.md#submenuBackgroundStyle)",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Class: SubredditStyles",
+        "Table of contents",
+        "Accessors"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Class: SubredditStyles, Accessors</path>\n## Accessors\n### backgroundColor\n• `get` **backgroundColor**: `string`\n#### Returns\n`string`\n### backgroundImage\n• `get` **backgroundImage**: `string`\n#### Returns\n`string`\n### backgroundImagePosition\n• `get` **backgroundImagePosition**: [`BackgroundImagePosition`](../modules/models.md#BackgroundImagePosition)\n#### Returns\n[`BackgroundImagePosition`](../modules/models.md#BackgroundImagePosition)\n### bannerBackgroundColor\n• `get` **bannerBackgroundColor**: `string`\n#### Returns\n`string`\n### bannerBackgroundImage\n• `get` **bannerBackgroundImage**: `string`\n#### Returns\n`string`\n### bannerBackgroundImagePosition\n• `get` **bannerBackgroundImagePosition**: [`ImagePosition`](../modules/models.md#ImagePosition)\n#### Returns\n[`ImagePosition`](../modules/models.md#ImagePosition)\n### bannerCommunityName\n• `get` **bannerCommunityName**: `string`\n#### Returns\n`string`\n### bannerCommunityNameFormat\n• `get` **bannerCommunityNameFormat**: [`CommunityNameFormat`](../modules/models.md#CommunityNameFormat)\n#### Returns\n[`CommunityNameFormat`](../modules/models.md#CommunityNameFormat)\n### bannerHeight\n• `get` **bannerHeight**: [`BannerHeight`](../modules/models.md#BannerHeight)\n#### Returns\n[`BannerHeight`](../modules/models.md#BannerHeight)\n### bannerOverlayColor\n• `get` **bannerOverlayColor**: `string`\n#### Returns\n`string`\n### bannerPositionedImage\n• `get` **bannerPositionedImage**: `string`\n#### Returns\n`string`\n### bannerPositionedImagePosition\n• `get` **bannerPositionedImagePosition**: [`PositionedImagePosition`](../modules/models.md#PositionedImagePosition)\n#### Returns\n[`PositionedImagePosition`](../modules/models.md#PositionedImagePosition)\n### bannerShowCommunityIcon\n• `get` **bannerShowCommunityIcon**: [`Visibility`](../modules/models.md#Visibility)\n#### Returns\n[`Visibility`](../modules/models.md#Visibility)\n### highlightColor\n• `get` **highlightColor**: `string`\n#### Returns\n`string`\n### icon\n• `get` **icon**: `string`\n#### Returns\n`string`\n### legacyBannerBackgroundImage",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: SubredditStyles",
+        "Accessors"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: SubredditStyles, Accessors, postPlaceholderImagePosition, Returns</path>\n• `get` **legacyBannerBackgroundImage**: `string`\n#### Returns\n`string`\n### legacyPrimaryColor\n• `get` **legacyPrimaryColor**: `string`\n#### Returns\n`string`\n### menuBackgroundBlur\n• `get` **menuBackgroundBlur**: `number`\n#### Returns\n`number`\n### menuBackgroundColor\n• `get` **menuBackgroundColor**: `string`\n#### Returns\n`string`\n### menuBackgroundImage\n• `get` **menuBackgroundImage**: `string`\n#### Returns\n`string`\n### menuBackgroundOpacity\n• `get` **menuBackgroundOpacity**: `number`\n#### Returns\n`number`\n### menuLinkColorActive\n• `get` **menuLinkColorActive**: `string`\n#### Returns\n`string`\n### menuLinkColorHover\n• `get` **menuLinkColorHover**: `string`\n#### Returns\n`string`\n### menuLinkColorInactive\n• `get` **menuLinkColorInactive**: `string`\n#### Returns\n`string`\n### menuPosition\n• `get` **menuPosition**: [`MenuPosition`](../modules/models.md#MenuPosition)\n#### Returns\n[`MenuPosition`](../modules/models.md#MenuPosition)\n### mobileBannerImage\n• `get` **mobileBannerImage**: `string`\n#### Returns\n`string`\n### mobileKeyColor\n• `get` **mobileKeyColor**: `string`\n#### Returns\n`string`\n### postBackgroundColor\n• `get` **postBackgroundColor**: `string`\n#### Returns\n`string`\n### postBackgroundImage\n• `get` **postBackgroundImage**: `string`\n#### Returns\n`string`\n### postBackgroundImagePosition\n• `get` **postBackgroundImagePosition**: [`ImagePosition`](../modules/models.md#ImagePosition)\n#### Returns\n[`ImagePosition`](../modules/models.md#ImagePosition)\n### postDownvoteCountColor\n• `get` **postDownvoteCountColor**: `string`\n#### Returns\n`string`\n### postDownvoteIconActive\n• `get` **postDownvoteIconActive**: `string`\n#### Returns\n`string`\n### postDownvoteIconInactive\n• `get` **postDownvoteIconInactive**: `string`\n#### Returns\n`string`\n### postPlaceholderImage\n• `get` **postPlaceholderImage**: `string`\n#### Returns\n`string`\n### postPlaceholderImagePosition\n• `get` **postPlaceholderImagePosition**: [`ImagePosition`](../modules/models.md#imageposition)\n#### Returns",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Class: SubredditStyles",
+        "Accessors",
+        "postPlaceholderImagePosition",
+        "Returns"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: SubredditStyles, Accessors, submenuBackgroundStyle, Returns</path>\n[`ImagePosition`](../modules/models.md#imageposition)\n### postTitleColor\n• `get` **postTitleColor**: `string`\n#### Returns\n`string`\n### postUpvoteCountColor\n• `get` **postUpvoteCountColor**: `string`\n#### Returns\n`string`\n### postUpvoteIconActive\n• `get` **postUpvoteIconActive**: `string`\n#### Returns\n`string`\n### postUpvoteIconInactive\n• `get` **postUpvoteIconInactive**: `string`\n#### Returns\n`string`\n### postVoteIcons\n• `get` **postVoteIcons**: [`CustomizationFlag`](../modules/models.md#customizationflag)\n#### Returns\n[`CustomizationFlag`](../modules/models.md#customizationflag)\n### primaryColor\n• `get` **primaryColor**: `string`\n#### Returns\n`string`\n### secondaryBannerPositionedImage\n• `get` **secondaryBannerPositionedImage**: `string`\n#### Returns\n`string`\n### sidebarWidgetBackgroundColor\n• `get` **sidebarWidgetBackgroundColor**: `string`\n#### Returns\n`string`\n### sidebarWidgetHeaderColor\n• `get` **sidebarWidgetHeaderColor**: `string`\n#### Returns\n`string`\n### submenuBackgroundColor\n• `get` **submenuBackgroundColor**: `string`\n#### Returns\n`string`\n### submenuBackgroundStyle\n• `get` **submenuBackgroundStyle**: [`CustomizationFlag`](../modules/models.md#customizationflag)\n#### Returns\n[`CustomizationFlag`](../modules/models.md#customizationflag)",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Class: SubredditStyles",
+        "Accessors",
+        "submenuBackgroundStyle",
+        "Returns"
+      ],
+      "level": 3
+    }
+  }
+]

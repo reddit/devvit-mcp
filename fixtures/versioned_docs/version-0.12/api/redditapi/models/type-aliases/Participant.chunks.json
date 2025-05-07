@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: Participant, Properties, name?</path>\n[**@devvit/public-api v0.12.0-dev**](../../README.md)\n# Type Alias: Participant\n**Participant** = `object`\nConversation participant\n## Properties\n### id?\n`optional` **id**: `number`\n### isAdmin?\n`optional` **isAdmin**: `boolean`\n### isApproved?\n`optional` **isApproved**: `boolean`\n### isDeleted?\n`optional` **isDeleted**: `boolean`\n### isHidden?\n`optional` **isHidden**: `boolean`\n### isMod?\n`optional` **isMod**: `boolean`\n### isOp?\n`optional` **isOp**: `boolean`\n### isParticipant?\n`optional` **isParticipant**: `boolean`\n### name?\n`optional` **name**: `string`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: Participant",
+        "Properties",
+        "name?"
+      ],
+      "level": 0
+    }
+  }
+]

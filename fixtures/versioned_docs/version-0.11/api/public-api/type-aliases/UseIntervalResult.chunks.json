@@ -1,0 +1,18 @@
+[
+  {
+    "pageContent": "<path>Type Alias: UseIntervalResult, Properties, stop(), Returns</path>\n[**@devvit/public-api v0.11.14-dev**](../README.md)\n# Type Alias: UseIntervalResult\n**UseIntervalResult** = `object`\nAn object that contains functions to start and stop the interval created by the `useInterval` hook\n## Properties\n### start()\n**start**: () => `void`\nStart the interval\n#### Returns\n`void`\n### stop()\n**stop**: () => `void`\nStop the interval\n#### Returns\n`void`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: UseIntervalResult",
+        "Properties",
+        "stop()",
+        "Returns"
+      ],
+      "level": 0
+    }
+  }
+]

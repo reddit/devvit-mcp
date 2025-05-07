@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>devvit install, devvit install APPSLUGWITHVERSION SUBREDDIT</path>\n# devvit install\nInstall an app from the App Directory\n-   [`devvit install APPSLUGWITHVERSION SUBREDDIT`](#devvit-install-appslugwithversion-subreddit)\n## devvit install APPSLUGWITHVERSION SUBREDDIT\nInstall an app from the App Directory\n```\nUSAGE\n  $ devvit install APPSLUGWITHVERSION SUBREDDIT\n\nARGUMENTS\n  APPSLUGWITHVERSION  The slug of the app you want to install, and what version of that app to install (default @latest)\n  SUBREDDIT           Install to the given subreddit. The \"r/\" prefix is optional\n\nDESCRIPTION\n  Install an app from the App Directory\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "devvit install",
+        "devvit install APPSLUGWITHVERSION SUBREDDIT"
+      ],
+      "level": 1
+    }
+  }
+]

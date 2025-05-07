@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: FlairSettings, Properties, usersCanAssign</path>\n# Interface: FlairSettings\n## Table of contents\n### Properties\n-   [enabled](FlairSettings.md#enabled)\n-   [usersCanAssign](FlairSettings.md#userscanassign)\n## Properties\n### enabled\n• **enabled**: `boolean`\n### usersCanAssign\n• **usersCanAssign**: `boolean`",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Interface: FlairSettings",
+        "Properties",
+        "usersCanAssign"
+      ],
+      "level": 1
+    }
+  }
+]

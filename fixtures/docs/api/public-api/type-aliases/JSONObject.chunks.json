@@ -1,0 +1,16 @@
+[
+  {
+    "pageContent": "<path>Type Alias: JSONObject, Index Signature</path>\n[**@devvit/public-api v0.11.15-dev**](../README.md)\n# Type Alias: JSONObject\n**JSONObject** = `object`\n## Index Signature\n\\[`key`: `string`\\]: [`JSONValue`](JSONValue.md)",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: JSONObject",
+        "Index Signature"
+      ],
+      "level": 0
+    }
+  }
+]

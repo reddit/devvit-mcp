@@ -1,0 +1,35 @@
+[
+  {
+    "pageContent": "<path>Class: TextAreaWidget, Accessors, text, Get Signature, Returns</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Class: TextAreaWidget\n## Extends\n-   [`Widget`](Widget.md)\n## Constructors\n### new TextAreaWidget()\n**new TextAreaWidget**(`widgetData`, `subredditName`, `metadata`): `TextAreaWidget`\n#### Parameters\n##### widgetData\n`GetWidgetsResponse_WidgetItem`\n##### subredditName\n`string`\n##### metadata\n`undefined` | `Metadata`\n#### Returns\n`TextAreaWidget`\n#### Overrides\n[`Widget`](Widget.md).[`constructor`](Widget.md#constructor)\n## Accessors\n### id\n#### Get Signature\n**get** **id**(): `string`\n##### Returns\n`string`\n#### Inherited from\n[`Widget`](Widget.md).[`id`](Widget.md#id)\n### name\n#### Get Signature\n**get** **name**(): `string`\n##### Returns\n`string`\n#### Inherited from\n[`Widget`](Widget.md).[`name`](Widget.md#name)\n### styles\n#### Get Signature\n**get** **styles**(): `WidgetStyles`\n##### Returns\n`WidgetStyles`\n### subredditName\n#### Get Signature\n**get** **subredditName**(): `string`\n##### Returns\n`string`\n#### Inherited from\n[`Widget`](Widget.md).[`subredditName`](Widget.md#subredditname)\n### text\n#### Get Signature\n**get** **text**(): `string`\n##### Returns\n`string`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Class: TextAreaWidget",
+        "Accessors",
+        "text",
+        "Get Signature",
+        "Returns"
+      ],
+      "level": 0
+    }
+  },
+  {
+    "pageContent": "<path>Class: TextAreaWidget, Methods, toJSON(), Overrides</path>\n## Methods\n### delete()\n**delete**(): `Promise`<`void`\\>\n#### Returns\n`Promise`<`void`\\>\n#### Inherited from\n[`Widget`](Widget.md).[`delete`](Widget.md#delete)\n### toJSON()\n**toJSON**(): `Pick`<[`Widget`](Widget.md), `\"subredditName\"` | `\"id\"` | `\"name\"`\\> & `Pick`<`TextAreaWidget`, `\"text\"` | `\"styles\"`\\>\n#### Returns\n`Pick`<[`Widget`](Widget.md), `\"subredditName\"` | `\"id\"` | `\"name\"`\\> & `Pick`<`TextAreaWidget`, `\"text\"` | `\"styles\"`\\>\n#### Overrides\n[`Widget`](Widget.md).[`toJSON`](Widget.md#tojson)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: TextAreaWidget",
+        "Methods",
+        "toJSON()",
+        "Overrides"
+      ],
+      "level": 2
+    }
+  }
+]

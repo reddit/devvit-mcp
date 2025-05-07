@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Enumeration: DeletionReason, Enumeration Members, UNSPECIFIED_DELETION_REASON</path>\n[**@devvit/public-api v0.11.15-dev**](../README.md)\n# Enumeration: DeletionReason\n## Enumeration Members\n### EXPLICIT_CONTENT\n**EXPLICIT\\_CONTENT**: `5`\n### LEGAL\n**LEGAL**: `2`\n### OTHER\n**OTHER**: `3`\n### SPAM\n**SPAM**: `1`\n### UNKNOWN\n**UNKNOWN**: `4`\n### UNRECOGNIZED\n**UNRECOGNIZED**: `-1`\n### UNSPECIFIED_DELETION_REASON\n**UNSPECIFIED\\_DELETION\\_REASON**: `0`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Enumeration: DeletionReason",
+        "Enumeration Members",
+        "UNSPECIFIED_DELETION_REASON"
+      ],
+      "level": 0
+    }
+  }
+]

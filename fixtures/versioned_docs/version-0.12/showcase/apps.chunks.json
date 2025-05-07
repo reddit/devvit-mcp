@@ -1,0 +1,16 @@
+[
+  {
+    "pageContent": "<path>Apps, Pixelary</path>\nimport Bingo from './apps/\\_Bingo.mdx'; import Pixelary from './apps/\\_Pixelary.mdx'; import LiveScores from './apps/\\_LiveScores.mdx';\n# Apps\n## Live scores\n## Bingo\n## Pixelary",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Apps",
+        "Pixelary"
+      ],
+      "level": 0
+    }
+  }
+]

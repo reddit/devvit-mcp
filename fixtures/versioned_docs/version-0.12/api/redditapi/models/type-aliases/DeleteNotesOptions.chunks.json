@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Type Alias: DeleteNotesOptions</path>\n[**@devvit/public-api v0.12.0-dev**](../../README.md)\n# Type Alias: DeleteNotesOptions\n**DeleteNotesOptions** = `Prettify`<`DeleteNotesRequest`\\>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: DeleteNotesOptions"
+      ],
+      "level": 0
+    }
+  }
+]

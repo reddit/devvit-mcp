@@ -1,0 +1,105 @@
+[
+  {
+    "pageContent": "<path>Class: Devvit, Methods, addMenuItem, Returns</path>\n# Class: Devvit\n## Hierarchy\n-   `Actor`\n    \n    ↳ **`Devvit`**\n## Table of contents\n### Properties\n-   [debug](Devvit-1.md#debug)\n### Methods\n-   [addCustomPostType](Devvit-1.md#addcustomposttype)\n-   [addMenuItem](Devvit-1.md#addmenuitem)\n-   [addSchedulerJob](Devvit-1.md#addschedulerjob)\n-   [addSettings](Devvit-1.md#addsettings)\n-   [addTrigger](Devvit-1.md#addtrigger)\n-   [configure](Devvit-1.md#configure)\n-   [createForm](Devvit-1.md#createform)\n## Properties\n### debug\n▪ `Static` **debug**: `Object`\nHome for debug flags, settings, and other information.\n#### Type declaration\n| Name | Type | Description |\n|---|---|---|\n| emitSnapshots | boolean | Should debug block rendering in console.log according to the reified JSX/XML output. Example: hi world |\n| emitState | boolean | Should console.log the state of the app after every event. |\n## Methods\n### addCustomPostType\n▸ **addCustomPostType**(`customPostType`): `void`\nAdd a custom post type for your app.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| customPostType | CustomPostType | The custom post type to add. |\n#### Returns\n`void`\n**`Example`**\n```ts\nimport { Devvit, useState } from '@devvit/public-api';\n\nDevvit.addCustomPostType({\n  name: 'Counter',\n  description: 'A simple click counter post.',\n  render: (context) => {\n    const [counter, setCounter] = useState();\n\n    return (\n      <vstack>\n        <text>{counter}</text>\n        <button onPress={() => setCounter((counter) => counter + 1)}>Click me!</button>\n      </vstack>\n    );\n  },\n});\n```\n### addMenuItem\n▸ **addMenuItem**(`menuItem`): `void`\nAdd a menu item to the Reddit UI.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| menuItem | MenuItem | The menu item to add. |\n#### Returns\n`void`\n**`Example`**",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: Devvit",
+        "Methods",
+        "addMenuItem",
+        "Returns"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: Devvit, Methods, addSettings</path>\n```ts\nDevvit.addMenuItem({\n  label: 'My Menu Item',\n  location: 'subreddit',\n  onPress: (event, context) => {\n    const location = event.location;\n    const targetId = event.targetId;\n    context.ui.showToast(`You clicked on ${location} ${targetId}`);\n  },\n});\n```\n### addSchedulerJob\n▸ **addSchedulerJob**(`job`): `void`\nAdd a scheduled job type for your app. This will allow you to schedule jobs using the `scheduler` API.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| job | ScheduledJobType | The scheduled job type to add. |\n#### Returns\n`void`\n**`Example`**\n```ts\nDevvit.addSchedulerJob({\n  name: 'checkNewPosts',\n  onRun: async (event, context) => {\n    const newPosts = await context.reddit.getNewPosts({ limit: 5 }).all();\n    for (const post of newPosts) {\n      if (post.title.includes('bad word')) {\n        await post.remove();\n      }\n    }\n  },\n});\n\nDevvit.addMenuItem({\n  label: 'Check for new posts',\n  location: 'location',\n  onPress: async (event, context) => {\n    const checkPostsJob = await context.scheduler.runJob({\n      name: 'checkNewPosts',\n      when: new Date(Date.now() + 5000), // in 5 seconds\n    });\n  },\n});\n```\n### addSettings\n▸ **addSettings**(`fields`): `void`",
+    "metadata": {
+      "type": [
+        "code",
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: Devvit",
+        "Methods",
+        "addSettings"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Devvit, Methods, addSettings, Returns</path>\nAdd settings that can be configured to customize the behavior of your app. There are two levels of settings: App settings (scope: 'app') and install settings (scope: 'installation' or unspecified scope). Install settings are meant to be configured by the user that installs your app. This is a good place to add anything that a user might want to change to personalize the app (e.g. the default city to show the weather for or a specific sport team that a subreddit follows). Note that these are good for subreddit level customization but not necessarily good for things that might be different for two users in a subreddit (e.g. setting the default city to show the weather for is only useful at a sub level if the sub is for a specific city or region). Install settings can be viewed and configured here: [https://developers.reddit.com/r/subreddit-name/apps/app-name](https://developers.reddit.com/r/subreddit-name/apps/app-name). App settings can be accessed and consumed by all installations of the app. This is mainly useful for developer secrets/API keys that your app needs to function. They can only be changed/viewed by you via the CLI (devvit settings set and devvit settings list). This ensures secrets are persisted in an encrypted store and don't get committed in the source code. You should never paste your actual key into any fields passed into Devvit.addSettings - this is merely where you state what your API key's name and description are. You will be able to set the actual value of the key via CLI. Note: setting names must be unique across all settings.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| fields | SettingsFormField[] | Fields for the app and installation settings. |\n#### Returns\n`void`\n**`Example`**",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: Devvit",
+        "Methods",
+        "addSettings",
+        "Returns"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Devvit, Methods, addTrigger</path>\n```ts\nDevvit.addSettings([\n  {\n    type: 'string',\n    name: 'weather-api-key',\n    label: 'My weather.com API key',\n    scope: SettingScope.App,\n    isSecret: true,\n  },\n  {\n    type: 'string',\n    name: 'Default City',\n    label: 'Default city to show the weather for by default',\n    scope: SettingScope.Installation,\n    onValidate: ({ value }) => {\n      if (isValidCity(value)) {\n        return 'You must ender a valid city: ${validCities.join(\", \")}';\n      }\n    },\n  },\n  {\n    type: 'number',\n    name: 'Default Forecast Window (in days)',\n    label: 'The number of days to show for forecast for by default',\n    scope: SettingScope.Installation,\n    onValidate: ({ value }) => {\n      if (value < 10 || value < 1) {\n        return 'Forecast window must be from 1 to 10 days';\n      }\n    },\n  },\n]);\n```\n### addTrigger\n▸ **addTrigger**(`triggerDefinition`): typeof [`Devvit`](../modules/Devvit.md)\nAdd a trigger handler that will be invoked when the given event occurs in a subreddit where the app is installed.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| triggerDefinition | PostDeleteDefinition | The trigger definition. |\n#### Returns\ntypeof [`Devvit`](../modules/Devvit.md)\n**`Example`**\n```ts\nDevvit.addTrigger({\n  event: 'PostSubmit',\n  async onEvent(event, context) {\n    console.log('a new post was created!');\n  },\n});\n\nDevvit.addTrigger({\n  events: ['PostSubmit', 'PostReport'],\n  async onEvent(event, context) {\n    if (event.type === 'PostSubmit') {\n      console.log('a new post was created!');\n    } else if (event.type === 'PostReport') {\n      console.log('a post was reported!');\n    }\n  },\n});\n```\n▸ **addTrigger**(`triggerDefinition`): typeof [`Devvit`](../modules/Devvit.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| triggerDefinition | PostSubmitDefinition |\n#### Returns\ntypeof [`Devvit`](../modules/Devvit.md)\n▸ **addTrigger**(`triggerDefinition`): typeof [`Devvit`](../modules/Devvit.md)\n#### Parameters",
+    "metadata": {
+      "type": [
+        "code",
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: Devvit",
+        "Methods",
+        "addTrigger"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Devvit, Methods, addTrigger</path>\n| Name | Type |\n|---|---|\n| triggerDefinition | PostUpdateDefinition |\n#### Returns\ntypeof [`Devvit`](../modules/Devvit.md)\n▸ **addTrigger**(`triggerDefinition`): typeof [`Devvit`](../modules/Devvit.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| triggerDefinition | PostReportDefinition |\n#### Returns\ntypeof [`Devvit`](../modules/Devvit.md)\n▸ **addTrigger**(`triggerDefinition`): typeof [`Devvit`](../modules/Devvit.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| triggerDefinition | PostCreateDefinition |\n#### Returns\ntypeof [`Devvit`](../modules/Devvit.md)\n▸ **addTrigger**(`triggerDefinition`): typeof [`Devvit`](../modules/Devvit.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| triggerDefinition | PostFlairUpdateDefinition |\n#### Returns\ntypeof [`Devvit`](../modules/Devvit.md)\n▸ **addTrigger**(`triggerDefinition`): typeof [`Devvit`](../modules/Devvit.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| triggerDefinition | CommentDeleteDefinition |\n#### Returns\ntypeof [`Devvit`](../modules/Devvit.md)\n▸ **addTrigger**(`triggerDefinition`): typeof [`Devvit`](../modules/Devvit.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| triggerDefinition | CommentSubmitDefinition |\n#### Returns\ntypeof [`Devvit`](../modules/Devvit.md)\n▸ **addTrigger**(`triggerDefinition`): typeof [`Devvit`](../modules/Devvit.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| triggerDefinition | CommentUpdateDefinition |\n#### Returns\ntypeof [`Devvit`](../modules/Devvit.md)\n▸ **addTrigger**(`triggerDefinition`): typeof [`Devvit`](../modules/Devvit.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| triggerDefinition | CommentCreateDefinition |\n#### Returns\ntypeof [`Devvit`](../modules/Devvit.md)\n▸ **addTrigger**(`triggerDefinition`): typeof [`Devvit`](../modules/Devvit.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| triggerDefinition | CommentReportDefinition |\n#### Returns\ntypeof [`Devvit`](../modules/Devvit.md)\n▸ **addTrigger**(`triggerDefinition`): typeof [`Devvit`](../modules/Devvit.md)\n#### Parameters",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: Devvit",
+        "Methods",
+        "addTrigger"
+      ],
+      "level": 4
+    }
+  },
+  {
+    "pageContent": "<path>Class: Devvit, Methods, createForm, Returns</path>\n| Name | Type |\n|---|---|\n| triggerDefinition | AppInstallDefinition |\n#### Returns\ntypeof [`Devvit`](../modules/Devvit.md)\n▸ **addTrigger**(`triggerDefinition`): typeof [`Devvit`](../modules/Devvit.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| triggerDefinition | AppUpgradeDefinition |\n#### Returns\ntypeof [`Devvit`](../modules/Devvit.md)\n▸ **addTrigger**(`triggerDefinition`): typeof [`Devvit`](../modules/Devvit.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| triggerDefinition | ModActionDefinition |\n#### Returns\ntypeof [`Devvit`](../modules/Devvit.md)\n▸ **addTrigger**(`triggerDefinition`): typeof [`Devvit`](../modules/Devvit.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| triggerDefinition | ModMailDefinition |\n#### Returns\ntypeof [`Devvit`](../modules/Devvit.md)\n▸ **addTrigger**<`Event`\\>(`triggerDefinition`): typeof [`Devvit`](../modules/Devvit.md)\n#### Type parameters\n| Name | Type |\n|---|---|\n| Event | extends TriggerEvent |\n#### Parameters\n| Name | Type |\n|---|---|\n| triggerDefinition | MultiTriggerDefinition<Event> |\n#### Returns\ntypeof [`Devvit`](../modules/Devvit.md)\n### configure\n▸ **configure**(`config`): `void`\nTo use certain APIs and features of Devvit, you must enable them using this function.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| config | Configuration | The configuration object. |\n#### Returns\n`void`\n**`Example`**\n```ts\nDevvit.configure({\n  http: true,\n  redditAPI: true,\n  kvStore: true,\n  media: true,\n});\n```\n### createForm\n▸ **createForm**(`form`, `onSubmit`): [`FormKey`](../README.md#formkey)\nCreate a form that can be opened from menu items and custom posts.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| form | Form | FormFunction | The form or a function that returns the form. |\n| onSubmit | FormOnSubmitEventHandler | The function to call when the form is submitted. |\n#### Returns\n[`FormKey`](../README.md#formkey)\nA unique key for the form that can used with `ui.showForm`.",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Class: Devvit",
+        "Methods",
+        "createForm",
+        "Returns"
+      ],
+      "level": 3
+    }
+  }
+]

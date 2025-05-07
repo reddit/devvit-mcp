@@ -1,0 +1,59 @@
+[
+  {
+    "pageContent": "<path>Building community games, Why build a community game?</path>\n# Building community games\nReddit offers a unique platform for a new category of social games. This guide will help you create engaging community games that thrive in Reddit's ecosystem with lessons from some of the games we've seen so far.\n## What are community games?\nCommunity games are asynchronous multiplayer experiences built specifically for Reddit's platform. They leverage Reddit's unique social dynamics and content mechanics to create engaging, bite-sized gaming experiences that scale from single players to thousands.\n## Why build a community game?\n-   _Played by millions_ - Successful apps will be distributed to millions of users in their home feed\n-   _Hosted services_ - We provide hosting, storage (redis), and robust backend capabilities (realtime, scheduler, trigger) with every app\n-   _Build once, play everywhere_ - if you build your apps once they will run on web, android, and iOS\n-   _Monetization opportunities_ - We have reddit developer funds and payments to reward successful apps with a handful of new monetization opportunities coming soon.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Building community games",
+        "Why build a community game?"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Building community games, Core design principles, 5. Scale from one to many</path>\n## Core design principles\n### 1. Keep it bite-sized\n-   Focus on quick, discrete gameplay loops\n-   Reduce \"time to fun\" - players should be having fun within seconds\n-   Small scope = faster development and easier maintenance\n-   Example: [r/ChessQuiz](https://reddit.com/r/chessquiz) offers daily chess puzzles rather than full matches\n### 2. Design for the feed\n-   Create an eye-catching first screen that stands out\n-   Include a clear, immediate call to action\n-   Remember: You're competing with cat videos and memes\n-   Example: [r/Pixelary](https://reddit.com/r/pixelary%5D) shows the drawing canvas right in the feed\n### 3. Build content flywheels\nReddit posts naturally decay after a few days. Your game needs a strategy to stay relevant:\n**Option A: Scheduled content**\n-   Daily/weekly challenges\n-   Automated post creation\n-   Regular tournaments or events\n-   Example: [r/Sections](https://reddit.com/r/sections) posts a new puzzle every day\n**Option B: Player-generated content**\n-   Players create content through gameplay\n-   Each play creates new posts/comments\n-   Moderation systems for quality control\n-   Example: [r/CaptionContest](https://reddit.com/r/captioncontest) turns each submission into new content\n### 4. Embrace asynchronous play\nBenefits:\n-   Players can participate anytime\n-   Lower commitment (one move vs. entire game)\n-   Larger player pool across time zones\n-   Better scalability\n### 5. Scale from one to many\nYour game should be fun at any player count:\n-   Single-player baseline experience\n-   Scales smoothly as more players join\n-   Uses leaderboards to create competition\n-   Example: [r/DarkDungeonGame](https://reddit.com/r/darkdungeongame) works solo but gets better with more players solving together",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Building community games",
+        "Core design principles",
+        "5. Scale from one to many"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Building community games, Common pitfalls to avoid</path>\n## Successful examples\n### Pixelary (drawing and guessing game)\n-   **Primary loop**: Draw (hard) → Creates posts\n-   **Secondary loop**: Guess (easy) → Creates comments (optionally)\n-   **Why it works**:\n    -   Clear mental model\n    -   Two-tiered engagement\n    -   Natural content generation\n    -   Scales with community size\n### ChezzQuiz (competitive chess puzzles)\n-   **Core loop**: Daily puzzles with competitive solving\n-   **Why it works**:\n    -   Consistent content schedule\n    -   Built-in competition\n    -   Leverages existing chess knowledge\n    -   Clear success metrics\n## Best practices checklist\n-   ✅ Create your own subreddit\n-   ✅ Can be played in under 2 minutes\n-   ✅ Has a striking first impression\n-   ✅ Creates new content regularly\n-   ✅ Works for both 1 and 1000 players\n-   ✅ Has clear user actions\n-   ✅ Includes social elements\n-   ✅ Uses moderation tools\n## Common pitfalls to avoid\n-   ❌ Complex game rules\n-   ❌ Long time commitments\n-   ❌ Requiring specific player counts\n-   ❌ Dependency on real-time interactions\n-   ❌ Unclear first actions\n-   ❌ No content refresh strategy",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Building community games",
+        "Common pitfalls to avoid"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Building community games, Key takeaway</path>\n## Key takeaway\nThe most successful Reddit community games create interesting content while being played, establishing a virtuous cycle of engagement and discovery. Focus on simplicity, scalability, and social interaction to make your game thrive.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "level": 2,
+      "path": [
+        "Building community games",
+        "Key takeaway"
+      ]
+    }
+  }
+]

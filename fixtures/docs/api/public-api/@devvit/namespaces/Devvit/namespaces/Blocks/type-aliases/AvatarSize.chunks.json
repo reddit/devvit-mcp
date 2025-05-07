@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Type Alias: AvatarSize</path>\n[**@devvit/public-api v0.11.15-dev**](../../../../../../README.md)\n# Type Alias: AvatarSize\n**AvatarSize** = `\"xxsmall\"` | `\"xsmall\"` | `\"small\"` | `\"medium\"` | `\"large\"` | `\"xlarge\"` | `\"xxlarge\"` | `\"xxxlarge\"`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: AvatarSize"
+      ],
+      "level": 0
+    }
+  }
+]

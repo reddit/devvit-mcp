@@ -1,0 +1,134 @@
+[
+  {
+    "pageContent": "<path>Class: ModMailService, Methods</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Class: ModMailService\nClass providing the methods for working with Mod Mail\n## Properties\n### notificationSubjectPrefix\n`readonly` **notificationSubjectPrefix**: `\"[notification]\"` = `'[notification]'`\n## Methods\n### approveConversation()\n**approveConversation**(`conversationId`): `Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md) & [`WithUserData`](../type-aliases/WithUserData.md)\\>\nApprove the non mod user associated with a particular conversation.\n#### Parameters\n##### conversationId\n`string`\nId of a modmail conversation\n#### Returns\n`Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md) & [`WithUserData`](../type-aliases/WithUserData.md)\\>\n#### Example\n```ts\nawait reddit.modMail.approveConversation('abcdef');\n```\n### archiveConversation()\n**archiveConversation**(`conversationId`): `Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md)\\>\nMarks a conversation as archived\n#### Parameters\n##### conversationId\n`string`\nId of a modmail conversation\n#### Returns\n`Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md)\\>\n#### Example\n```ts\nawait reddit.modMail.archive('abcdef');\n```\n### bulkReadConversations()\n**bulkReadConversations**(`subreddits`, `state`): `Promise`<`string`\\[\\]>\nMarks all conversations read for a particular conversation state within the passed list of subreddits.\n#### Parameters\n##### subreddits\n`string`\\[\\]\nArray of subreddit names\n##### state\n[`ConversationStateFilter`](../type-aliases/ConversationStateFilter.md)\nOne of the possible conversation states ('all' to read all conversations)\n#### Returns\n`Promise`<`string`\\[\\]>\nconversationIds\n#### Example\n```ts\nconst conversationIds = await reddit.modMail.bulkReadConversations(\n  ['askReddit', 'myAwesomeSubreddit'],\n  'filtered'\n);\n```\n### createConversation()",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Class: ModMailService",
+        "Methods"
+      ],
+      "level": 0
+    }
+  },
+  {
+    "pageContent": "<path>Class: ModMailService, Methods, createModDiscussionConversation()</path>\n**createConversation**(`params`): `Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md) & [`WithUserData`](../type-aliases/WithUserData.md)\\>\nCreates a new conversation for a particular SR.\nThis endpoint will create a ModmailConversation object as well as the first ModmailMessage within the ModmailConversation object.\n#### Parameters\n##### params\n###### body\n`string`\nmarkdown text\n###### isAuthorHidden?\n`boolean`\nis author hidden? (default: false)\n###### subject\n`string`\nsubject of the conversation. max 100 characters\n###### subredditName\n`string`\nsubreddit name\n###### to?\n`null` | `string`\na user (e.g. u/username), a subreddit (e.g. r/subreddit) or null\n#### Returns\n`Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md) & [`WithUserData`](../type-aliases/WithUserData.md)\\>\n#### Note\nNote on {param.to}: The to field for this endpoint is somewhat confusing. It can be:\n-   A User, passed like \"username\" or \"u/username\"\n-   A Subreddit, passed like \"r/subreddit\"\n-   null, meaning an internal moderator discussion\nIn this way to is a bit of a misnomer in modmail conversations. What it really means is the participant of the conversation who is not a mod of the subreddit.\nIf you plan to send a message to the app-account or a moderator of the subreddit, use [ModMailService.createModDiscussionConversation](#createmoddiscussionconversation), [ModMailService.createModInboxConversation](#createmodinboxconversation), or [ModMailService.createModNotification](#createmodnotification) instead. Otherwise, messages sent to the app-account or moderator will automatically be routed to Mod Discussions.\n#### Example\n```ts\nconst { conversation, messages, modActions } = await reddit.modMail.createConversation({\n  subredditName: 'askReddit',\n  subject: 'Test conversation',\n  body: 'Lorem ipsum sit amet',\n  to: null,\n});\n```\n### createModDiscussionConversation()\n**createModDiscussionConversation**(`params`): `Promise`<`string`\\>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Class: ModMailService",
+        "Methods",
+        "createModDiscussionConversation()"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: ModMailService, Methods, createModNotification()</path>\nCreates a conversation in Mod Discussions with the moderators of the given subredditId.\nNote: The app must be installed in the subreddit in order to create a conversation in Mod Discussions.\n#### Parameters\n##### params\n###### bodyMarkdown\n`string`\n###### subject\n`string`\n###### subredditId\n`string`\n#### Returns\n`Promise`<`string`\\>\nA Promise that resolves a string representing the conversationId of the message.\n#### Example\n```ts\nconst conversationId = await reddit.modMail.createModDiscussionConversation({\n  subject: 'Test conversation',\n  bodyMarkdown: '**Hello there** \\n\\n _Have a great day!_',\n  subredditId: context.subredditId,\n});\n```\n### createModInboxConversation()\n**createModInboxConversation**(`params`): `Promise`<`string`\\>\nCreates a conversation in the Modmail Inbox with the moderators of the given subredditId.\n#### Parameters\n##### params\n###### bodyMarkdown\n`string`\n###### subject\n`string`\n###### subredditId\n`string`\n#### Returns\n`Promise`<`string`\\>\nA Promise that resolves a string representing the conversationId of the message.\n#### Example\n```ts\nconst conversationId = await reddit.modMail.createModInboxConversation({\n  subject: 'Test conversation',\n  bodyMarkdown: '**Hello there** \\n\\n _Have a great day!_',\n  subredditId: context.subredditId,\n});\n```\n### createModNotification()\n**createModNotification**(`params`): `Promise`<`string`\\>\nCreates a notification in the Modmail Inbox. This function is different from [ModMailService.createModInboxConversation](#createmodinboxconversation) in that the conversation also appears in the \"Notifications\" section of Modmail.\n#### Parameters\n##### params\n###### bodyMarkdown\n`string`\n###### subject\n`string`\n###### subredditId\n`string`\n#### Returns\n`Promise`<`string`\\>\nA Promise that resolves a string representing the conversationId of the message.\n#### Example",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Class: ModMailService",
+        "Methods",
+        "createModNotification()"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: ModMailService, Methods, getConversations(), Example</path>\n```ts\nconst conversationId = await reddit.modMail.createModNotification({\n  subject: 'Test notification',\n  bodyMarkdown: '**Hello there** \\n\\n _This is a notification!_',\n  subredditId: context.subredditId,\n});\n```\n### disapproveConversation()\n**disapproveConversation**(`conversationId`): `Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md) & [`WithUserData`](../type-aliases/WithUserData.md)\\>\nDisapprove the non mod user associated with a particular conversation.\n#### Parameters\n##### conversationId\n`string`\nId of a modmail conversation\n#### Returns\n`Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md) & [`WithUserData`](../type-aliases/WithUserData.md)\\>\n#### Example\n```ts\nawait reddit.modMail.disapproveConversation('abcdef');\n```\n### getConversation()\n**getConversation**(`params`): `Promise`<[`GetConversationResponse`](../type-aliases/GetConversationResponse.md)\\>\nReturns all messages, mod actions and conversation metadata for a given conversation id\n#### Parameters\n##### params\n###### conversationId\n`string`\na modmail conversation id\n###### markRead?\n`boolean`\nmark read?\n#### Returns\n`Promise`<[`GetConversationResponse`](../type-aliases/GetConversationResponse.md)\\>\n#### Example\n```ts\nconst { conversation, messages, modActions, user } = await reddit.modMail.getConversation({\n  conversationId: 'abcdef',\n  markRead: true,\n});\n```\n### getConversations()\n**getConversations**(`params`): `Promise`<[`GetConversationsResponse`](../type-aliases/GetConversationsResponse.md)\\>\nGet conversations for a logged in user or subreddits\n#### Parameters\n##### params\n[`GetConversationsRequest`](../type-aliases/GetConversationsRequest.md)\n#### Returns\n`Promise`<[`GetConversationsResponse`](../type-aliases/GetConversationsResponse.md)\\>\n#### Example\n```ts\nconst { viewerId, conversations } = await reddit.modMail.getConversations({\n  after: 'abcdef',\n  limit: 42,\n});\n\nconst arrayOfConversations = Object.values(conversations);\n```",
+    "metadata": {
+      "type": [
+        "code",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: ModMailService",
+        "Methods",
+        "getConversations()",
+        "Example"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: ModMailService, Methods, muteConversation(), Parameters</path>\n### getSubreddits()\n**getSubreddits**(): `Promise`<{}>\nReturns a list of Subreddits that the user moderates with mail permission\n#### Returns\n`Promise`<{}>\n#### Example\n```ts\nconst subredditsData = await reddit.modMail.getSubreddits();\n\nfor (const subreddit of Object.values(subreddits)) {\n  console.log(subreddit.id);\n  console.log(subreddit.name);\n}\n```\n### getUnreadCount()\n**getUnreadCount**(): `Promise`<[`UnreadCountResponse`](../type-aliases/UnreadCountResponse.md)\\>\nEndpoint to retrieve the unread conversation count by conversation state.\n#### Returns\n`Promise`<[`UnreadCountResponse`](../type-aliases/UnreadCountResponse.md)\\>\n#### Example\n```ts\nconst response = await reddit.modMail.getUnreadCount();\n\nconsole.log(response.highlighted);\nconsole.log(response.new);\n```\n### getUserConversations()\n**getUserConversations**(`conversationId`): `Promise`<[`ConversationUserData`](../type-aliases/ConversationUserData.md)\\>\nReturns recent posts, comments and modmail conversations for a given user.\n#### Parameters\n##### conversationId\n`string`\nId of a modmail conversation\n#### Returns\n`Promise`<[`ConversationUserData`](../type-aliases/ConversationUserData.md)\\>\n#### Example\n```ts\nconst data = await reddit.modMail.getUserConversations('abcdef');\n\nconsole.log(data.recentComments);\nconsole.log(data.recentPosts);\n```\n### highlightConversation()\n**highlightConversation**(`conversationId`): `Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md)\\>\nMarks a conversation as highlighted.\n#### Parameters\n##### conversationId\n`string`\nId of a modmail conversation\n#### Returns\n`Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md)\\>\n#### Example\n```ts\nawait reddit.modMail.highlightConversation('abcdef');\n```\n### muteConversation()\n**muteConversation**(`params`): `Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md) & [`WithUserData`](../type-aliases/WithUserData.md)\\>\nMarks a conversation as read for the user.\n#### Parameters",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Class: ModMailService",
+        "Methods",
+        "muteConversation()",
+        "Parameters"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: ModMailService, Methods, tempBanConversation()</path>\n##### params\n###### conversationId\n`string`\nId of a modmail conversation\n###### numHours\n`72` | `168` | `672`\nFor how many hours the conversation needs to be muted. Must be one of 72, 168, or 672 hours\n#### Returns\n`Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md) & [`WithUserData`](../type-aliases/WithUserData.md)\\>\n#### Example\n```ts\nawait reddit.modMail.muteConversation({ conversationId: 'abcdef', numHours: 72 });\n```\n### readConversations()\n**readConversations**(`conversationIds`): `Promise`<`void`\\>\nMarks a conversations as read for the user.\n#### Parameters\n##### conversationIds\n`string`\\[\\]\nAn array of ids\n#### Returns\n`Promise`<`void`\\>\n#### Example\n```ts\nawait reddit.modMail.readConversations(['abcdef', 'qwerty']);\n```\n### reply()\n**reply**(`params`): `Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md) & [`WithUserData`](../type-aliases/WithUserData.md)\\>\nCreates a new message for a particular conversation.\n#### Parameters\n##### params\n###### body\n`string`\nmarkdown text\n###### conversationId\n`string`\nId of a modmail conversation\n###### isAuthorHidden?\n`boolean`\nis author hidden? (default: false)\n###### isInternal?\n`boolean`\nis internal message? (default: false)\n#### Returns\n`Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md) & [`WithUserData`](../type-aliases/WithUserData.md)\\>\n#### Example\n```ts\nawait reddit.modMail.reply({\n  body: 'Lorem ipsum sit amet',\n  conversationId: 'abcdef',\n});\n```\n### tempBanConversation()\n**tempBanConversation**(`params`): `Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md) & [`WithUserData`](../type-aliases/WithUserData.md)\\>\nTemporary ban (switch from permanent to temporary ban) the non mod user associated with a particular conversation.\n#### Parameters\n##### params\n###### conversationId\n`string`\na modmail conversation id\n###### duration\n`number`\nduration in days, max 999\n#### Returns",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Class: ModMailService",
+        "Methods",
+        "tempBanConversation()"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: ModMailService, Methods, unmuteConversation(), Parameters, conversationId</path>\n`Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md) & [`WithUserData`](../type-aliases/WithUserData.md)\\>\n#### Example\n```ts\nawait reddit.modMail.tempBanConversation({ conversationId: 'abcdef', duration: 42 });\n```\n### unarchiveConversation()\n**unarchiveConversation**(`conversationId`): `Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md)\\>\nMarks conversation as unarchived.\n#### Parameters\n##### conversationId\n`string`\nId of a modmail conversation\n#### Returns\n`Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md)\\>\n#### Example\n```ts\nawait reddit.modMail.unarchiveConversation('abcdef');\n```\n### unbanConversation()\n**unbanConversation**(`conversationId`): `Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md) & [`WithUserData`](../type-aliases/WithUserData.md)\\>\nUnban the non mod user associated with a particular conversation.\n#### Parameters\n##### conversationId\n`string`\na modmail conversation id\n#### Returns\n`Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md) & [`WithUserData`](../type-aliases/WithUserData.md)\\>\n#### Example\n```ts\nawait reddit.modMail.unbanConversation('abcdef');\n```\n### unhighlightConversation()\n**unhighlightConversation**(`conversationId`): `Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md)\\>\nRemoves a highlight from a conversation.\n#### Parameters\n##### conversationId\n`string`\nId of a modmail conversation\n#### Returns\n`Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md)\\>\n#### Example\n```ts\nawait reddit.modMail.unhighlightConversation('abcdef');\n```\n### unmuteConversation()\n**unmuteConversation**(`conversationId`): `Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md) & [`WithUserData`](../type-aliases/WithUserData.md)\\>\nUnmutes the non mod user associated with a particular conversation.\n#### Parameters\n##### conversationId\n`string`\nId of a modmail conversation",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Class: ModMailService",
+        "Methods",
+        "unmuteConversation()",
+        "Parameters",
+        "conversationId"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: ModMailService, Methods, unreadConversations(), Example</path>\n#### Returns\n`Promise`<[`ConversationResponse`](../type-aliases/ConversationResponse.md) & [`WithUserData`](../type-aliases/WithUserData.md)\\>\n#### Example\n```ts\nawait reddit.modMail.unmuteConversation('abcdef');\n```\n### unreadConversations()\n**unreadConversations**(`conversationIds`): `Promise`<`void`\\>\nMarks conversations as unread for the user.\n#### Parameters\n##### conversationIds\n`string`\\[\\]\nAn array of ids\n#### Returns\n`Promise`<`void`\\>\n#### Example\n```ts\nawait reddit.modMail.unreadConversations(['abcdef', 'qwerty']);\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Class: ModMailService",
+        "Methods",
+        "unreadConversations()",
+        "Example"
+      ],
+      "level": 3
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Enumeration: ModMailConversationState, Enumeration Members, New</path>\n# Enumeration: ModMailConversationState\n[models](../modules/models.md).ModMailConversationState\n## Table of contents\n### Enumeration Members\n-   [Appeals](models.ModMailConversationState.md#appeals)\n-   [Archived](models.ModMailConversationState.md#archived)\n-   [Filtered](models.ModMailConversationState.md#filtered)\n-   [InProgress](models.ModMailConversationState.md#inprogress)\n-   [JoinRequests](models.ModMailConversationState.md#joinrequests)\n-   [New](models.ModMailConversationState.md#new)\n## Enumeration Members\n### Appeals\n• **Appeals** = `\"Appeals\"`\n### Archived\n• **Archived** = `\"Archived\"`\n### Filtered\n• **Filtered** = `\"Filtered\"`\n### InProgress\n• **InProgress** = `\"InProgress\"`\n### JoinRequests\n• **JoinRequests** = `\"JoinRequests\"`\n### New\n• **New** = `\"New\"`",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Enumeration: ModMailConversationState",
+        "Enumeration Members",
+        "New"
+      ],
+      "level": 1
+    }
+  }
+]

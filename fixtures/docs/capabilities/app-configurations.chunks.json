@@ -1,0 +1,62 @@
+[
+  {
+    "pageContent": "<path>App configurations</path>\n# App configurations\nInclude configuration settings in your app.\n![An example form with all field types](../assets/capabilities/app-configurations/app-configurations-all-types.png)\nConfiguration settings let users change the functionality and behavior of an app. Use the following steps to add settings at the global app-scope.\n-   Use `Devvit.addSettings` to define the fields with scope as `SettingsScope.App`\n```tsx\nimport { Devvit, SettingScope } from '@devvit/public-api';\n\nDevvit.addSettings([\n  {\n    type: 'string',\n    name: 'my-feature-flag',\n    label: 'Feature Flag to rollout a new change',\n    scope: SettingScope.App, // this can be a string literal 'app' as well\n  },\n]);\n```\n-   Store the app setting value via CLI. Keep in mind this operation modifies the value across all installations.\n```bash\ndevvit settings set my-feature-flag\n```\n-   Access the global setting inside your app. Example menu item to show a toast with the setting value:\n```tsx\nDevvit.addMenuItem({\n  label: 'Test App Settings',\n  location: 'subreddit',\n  onPress: async (_event, { ui, settings }) => {\n    // retrieve the global setting\n    const featureFlag = await settings.get('my-feature-flag');\n    ui.showToast(`Retrieved the setting featureFlag as ${featureFlag}`);\n  },\n});\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "level": 1,
+      "path": [
+        "App configurations"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>App configurations, Configuring settings within your app</path>\nOnce the app is installed, the configuration settings are available on the Install Settings page. Moderators add the required input and save the changes to configure the app. Note that these configurations are limited to the subreddit where the app is installed, so your app can be uniquely configured to each subreddit’s specific needs.\n## Input types\nThere are currently five supported types of input:\n-   String or `'string'`\n-   Boolean or `'boolean'`\n-   Number or `'number'`\n-   Dropdown selection or `'select'`\n-   Paragraph or `'paragraph'`\nSee the [Forms page](./forms.md) for more detail.\n## Configuring settings within your app\nYou can use the following code snippets as a guide to adding configuration settings to your app:\n-   First, make sure this import is at the top of your file.\n```tsx\nimport { Devvit } from '@devvit/public-api';\n```\n-   Use `Devvit.addSettings` to define any input fields you want to add to your settings form. Each field needs to be assigned a type, name, and label. You can provide the dropdown options for selection fields, as well as determine if the user can select more than one option within the dropdown. The label is the only text that will be visible on the form, so use this to communicate what the moderator should enter in each input field.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "App configurations",
+        "Configuring settings within your app"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>App configurations, Configuring settings within your app, Input validation</path>\n```tsx\nDevvit.addSettings([\n  {\n    type: 'string',\n    name: 'text-input',\n    label: 'Enter your text input:',\n    onValidate: async ({ value }) => {\n      if (value !== 'bird') {\n        return 'Word must be \"bird\"';\n      }\n    },\n  },\n  {\n    type: 'boolean',\n    name: 'bool-input',\n    label: 'Use the switch to determine if some setting should be enabled:',\n  },\n  {\n    type: 'select',\n    name: 'select-input',\n    label: 'Select one of the options:',\n    options: [\n      {\n        label: 'Option 1',\n        value: 'Option 1',\n      },\n      {\n        label: 'Option 2',\n        value: 'Option 2',\n      },\n    ],\n    multiSelect: false,\n  },\n  {\n    type: 'select',\n    name: 'multiselect-input',\n    label: 'Select multiple options:',\n    options: [\n      {\n        label: 'Option 1',\n        value: 'Option 1',\n      },\n      {\n        label: 'Option 2',\n        value: 'Option 2',\n      },\n      {\n        label: 'Option 3',\n        value: 'Option 3',\n      },\n    ],\n    multiSelect: true,\n  },\n  {\n    type: 'number',\n    name: 'number-input',\n    label: 'Enter your number input:',\n  },\n  {\n    type: 'group',\n    label: 'This is a GROUP field',\n    fields: [\n      {\n        type: 'string',\n        name: 'group-text-input',\n        label: 'Group: Enter your text input:',\n      },\n      {\n        type: 'boolean',\n        name: 'group-bool-input',\n        label: 'Group: Use the switch to determine if some setting should be enabled:',\n      },\n    ],\n  },\n]);\n```\n### Input validation\n![Input validation](../assets/capabilities/app-configurations/app-configurations-validation.png)\nDevvit app configurations also support input validation. As the app developer, you can set restrictions on what kind of input must be entered in each field.\nFor example, setting a maximum number:\n```tsx\nonValidate: (event) => {\n  if (event.value! > 10) {\n    return 'Number too high!';\n  }\n};\n```\nTo use validation, add the `onValidate` handler to the settings field object, like this:",
+    "metadata": {
+      "type": [
+        "code",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "App configurations",
+        "Configuring settings within your app",
+        "Input validation"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>App configurations, Retrieving settings within your app</path>\n```tsx\n  {\n    type: 'number',\n    name: 'number-input',\n    label: 'Enter your number input:',\n    onValidate: (event) => {\n      if (event.value! > 10) { return 'Number too high! Must be lower than 10.' }\n    }\n  },\n```\n## Retrieving settings within your app\nAfter you've written the configuration settings for your app, you can see the input that has been entered by the moderator by using `getSettings`.\n-   Add the following imports to the top of your file:\n```tsx\nimport { Devvit } from '@devvit/public-api';\n```\n-   Use `Devvit.addMenuItem` to create a menu item that will trigger a toast message containing the form input.\n```tsx\nDevvit.addMenuItem({\n  label: 'Test Action',\n  location: Context.SUBREDDIT,\n  onPress: (_, context) {\n    // to get all settings\n    const settings = await context.settings.getAll();\n    // to get an individual setting\n    const textFieldInput = await context.settings.get('text-input');\n\n    ui.showToast(JSON.stringify(textFieldInput))\n  },\n});\n```\n![Settings retrieval](../assets/capabilities/app-configurations/app-configurations-data-toast.png)",
+    "metadata": {
+      "type": [
+        "code",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "App configurations",
+        "Retrieving settings within your app"
+      ],
+      "level": 2
+    }
+  }
+]

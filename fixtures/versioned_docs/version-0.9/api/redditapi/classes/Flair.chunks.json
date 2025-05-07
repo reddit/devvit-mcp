@@ -1,0 +1,19 @@
+[
+  {
+    "pageContent": "<path>Class: Flair, Methods, setUserFlair, Returns</path>\n# Class: Flair\n## Table of contents\n### Constructors\n-   [constructor](Flair.md#constructor)\n### Methods\n-   [removePostFlair](Flair.md#removepostflair)\n-   [removeUserFlair](Flair.md#removeuserflair)\n-   [setPostFlair](Flair.md#setpostflair)\n-   [setUserFlair](Flair.md#setuserflair)\n## Constructors\n### constructor\n• **new Flair**()\n## Methods\n### removePostFlair\n▸ `Static` **removePostFlair**(`subredditName`, `postId`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| subredditName | string |\n| postId | `t3_${string}` |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n### removeUserFlair\n▸ `Static` **removeUserFlair**(`subredditName`, `username`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| subredditName | string |\n| username | string |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n### setPostFlair\n▸ `Static` **setPostFlair**(`options`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | SetPostFlairOptions |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n### setUserFlair\n▸ `Static` **setUserFlair**(`options`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | SetUserFlairOptions |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: Flair",
+        "Methods",
+        "setUserFlair",
+        "Returns"
+      ],
+      "level": 1
+    }
+  }
+]

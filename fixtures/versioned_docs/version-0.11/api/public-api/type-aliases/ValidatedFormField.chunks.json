@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: ValidatedFormField<Field, ValueType>, Type Parameters, ValueType</path>\n[**@devvit/public-api v0.11.14-dev**](../README.md)\n# Type Alias: ValidatedFormField<Field, ValueType>\n**ValidatedFormField**<`Field`, `ValueType`\\> = `Omit`<`Field`, `\"required\"`\\> & `object`\n## Type declaration\n### onValidate?\n`optional` **onValidate**: [`OnValidateHandler`](OnValidateHandler.md)<`ValueType`\\>\n## Type Parameters\n### Field\n`Field`\n### ValueType\n`ValueType`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: ValidatedFormField<Field, ValueType>",
+        "Type Parameters",
+        "ValueType"
+      ],
+      "level": 0
+    }
+  }
+]

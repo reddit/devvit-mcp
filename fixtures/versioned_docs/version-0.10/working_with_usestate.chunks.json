@@ -1,0 +1,87 @@
+[
+  {
+    "pageContent": "<path>Working with useState, Arguments</path>\n# Working with useState\n`useState` is a hook that gives your component reactive memory. It allows you to preserve information across renders and trigger updates to your app when state is updated.\n## Arguments\n`useState` takes an initial state as an argument, and returns an array of two items:\n-   a state variable\n-   a setter function to update the state variable\nThe initializer for `useState` (the first argument of the function) can be a static value or a function. **Regardless of how it is initialized, it must return a valid JSON value.** This differs from React due to how Devvit components work across server and client boundaries.\n```ts\n// A static value\nconst [variable, setVariable] = useState('initialState');\n\n// An synchronous function\nconst [variable, setVariable] = useState(() => 'initialState');\n\n// An async function\nconst [count, setCount] = useState(async () => await redis.get('count'));\n```\n:::info If the initializer function is async it will block render under the value is resolved. This is a common performance pitfall so please use it sparingly or group async calls together into one state variable using [`Promise.all`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all).",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Working with useState",
+        "Arguments"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Working with useState, Using state hooks</path>\nA non-blocking equivalent for fetching data is [useAsync](/docs/working_with_useasync.md). :::\n## Updating state\nYou’ll want to retrieve and update state at various points in your app. There are a few common patterns you’ll see for doing this.\n```tsx\nimport { Devvit, useState } from '@devvit/public-api';\n\nconst MyComponent = (_, context) => {\n  // Setting up state\n  const [count, setCount] = useState(async () => {\n    return await context.redis.get('count');\n  });\n\n  return (\n    <hstack>\n      <text>Count: {count}</text>\n      {/* Update set count by using a setter function */}\n      <button onPress={() => setCount((x) => x + 1)}>Increment</button>\n      <button onPress={() => setCount((x) => x - 1)}>Decrement</button>\n      {/* Update set count by setting the value directly */}\n      <button onPress={() => setCount(0)}>Set to 0</button>\n    </hstack>\n  );\n};\n```\n## Using state hooks\nLeverage `useState` across components to preserve values and trigger reactive updates across your app.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Working with useState",
+        "Using state hooks"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Working with useState, Using state hooks</path>\nIn this example, state hooks are used to:\n-   Navigate between two app \"pages\"\n-   Add a simple counter that increments a value",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 2,
+      "path": [
+        "Working with useState",
+        "Using state hooks"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Working with useState, Using state hooks</path>\n```tsx\n//define types of props to pass to components\ninterface Props {\n  navigate: (page: PageType) => void;\n  setCount: (count: number) => void;\n  count: number;\n}\n\nenum PageType {\n  HOMEPAGE,\n  COUNTPAGE,\n}\n\n//useState is available in Context of the CustomPostComponent.\nconst App: Devvit.CustomPostComponent = ({ useState }: Devvit.Context) => {\n  // set state components\n  const [page, navigate] = useState(PageType.HOMEPAGE);\n  const [count, setCount] = useState(0);\n\n  // pass state into a Props object. This can be passed to components for passing state across components in your app\n  const props: Props = {\n    navigate,\n    setCount,\n    count,\n  };\n\n  // pass props into components\n  if (page === PageType.COUNTPAGE) {\n    return <CountPage {...props} />;\n  } else {\n    return <HomePage {...props} />;\n  }\n};\n\n//'HomePage' is a component that returns this app's default UI\nconst HomePage: Devvit.BlockComponent<Props> = ({ navigate }) => {\n  //defines how to handle 'onPress' button event on page\n  const countPage: Devvit.Blocks.OnPressEventHandler = () => {\n    navigate(PageType.COUNTPAGE);\n  };\n\n  //UI blocks comprising a page\n  return (\n    <vstack padding=\"medium\" gap=\"medium\" alignment=\"top center\" cornerRadius=\"medium\">\n      <text size=\"xxlarge\" weight=\"bold\" grow>\n        {'This app will teach you how to count!'}\n      </text>\n      <vstack alignment=\"center bottom\">\n        <button onPress={countPage} appearance=\"secondary\">\n          Start counting!\n        </button>\n      </vstack>\n    </vstack>\n  );\n};\n\n//'CountPage'component\nconst CountPage: Devvit.BlockComponent<Props> = ({ navigate, setCount, count }, { redis }) => {\n  const incrementCount: Devvit.Blocks.OnPressEventHandler = () => {\n    setCount((count) => count + 1);\n    // note: to preserve the value of 'count' longerterm\n    // you would need to add a separate method here. For example:\n    // await redis.set(\"count\", count)\n  };\n\n  return (\n```",
+    "metadata": {
+      "type": [
+        "code"
+      ],
+      "level": 2,
+      "path": [
+        "Working with useState",
+        "Using state hooks"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Working with useState, Redis vs useState</path>\n```tsx\n    <vstack padding=\"medium\" gap=\"medium\" alignment=\"top center\" cornerRadius=\"medium\">\n      <text size=\"xxlarge\" weight=\"bold\" grow>\n        {'Press the button to add +1'}\n      </text>\n      <text>{count}</text>\n      <vstack alignment=\"center bottom\">\n        <button onPress={incrementCount} appearance=\"secondary\">\n          Count!\n        </button>\n      </vstack>\n    </vstack>\n  );\n};\n\n//add your custom post\nDevvit.addCustomPostType({\n  name: 'AppName',\n  description: 'Navigate between pages and count!',\n  render: App,\n});\n```\nIn this example, when a user session ends, state will no longer be available to the app. To save and persist data between sessions you will need to [store data server-side via the Redis](https://developers.reddit.com/docs/redis).\n## Redis vs useState\nThe `redis` [plugin](https://developers.reddit.com/docs/redis) serves as your app’s long-term, server-side memory, while `useState` serves as its short-term, client-side memory.\n`useState` will keep your custom posts performant and responsive. UI that relies on too many server-side calls will slow down your app.",
+    "metadata": {
+      "type": [
+        "code",
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Working with useState",
+        "Redis vs useState"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Working with useState, Differences compared to React</path>\nThe `redis` plugin should be used for storing data that needs to persist across sessions. Make these updates to your app in the background i.e. separate from the UI updates you are making. This way, your app does not need to wait on expensive calls to render new components. You should retrieve `redis` data once on render.\nUse state hooks for single session memory, like changing tabs, selecting a checkbox within the UI, or changing values in the user’s view during their app session.\n## User sessions\n`useState` persists through a single user session. If a user scrolls away from the page, navigates away from the page, or disconnects, the session will end and the state is invalidated.\n## Differences compared to React\nThe Devvit `useState` hook is inspired by [React](https://react.dev/reference/react/useState) with a few key differences.\n-   `useState` can only return something that can be serialized to JSON. That is booleans, numbers, strings, arrays, and objects. This is due to how the hook persists across server/client boundaries under the hood.\n-   `useState` can be initialized with an async function. This allows you to get remote information from Redis, Reddit, or by using fetch to place on to state. Please use this sparingly, as using an async initializer blocks render until the promise resolves. This can make your app feel slow.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Working with useState",
+        "Differences compared to React"
+      ],
+      "level": 2
+    }
+  }
+]

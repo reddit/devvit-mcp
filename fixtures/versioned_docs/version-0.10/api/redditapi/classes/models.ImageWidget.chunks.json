@@ -1,0 +1,35 @@
+[
+  {
+    "pageContent": "<path>Class: ImageWidget, Accessors, subredditName, Inherited from</path>\n# Class: ImageWidget\n[models](../modules/models.md).ImageWidget\n## Hierarchy\n-   [`Widget`](models.Widget.md)\n    \n    ↳ **`ImageWidget`**\n## Table of contents\n### Constructors\n-   [constructor](models.ImageWidget.md#constructor)\n### Accessors\n-   [id](models.ImageWidget.md#id)\n-   [images](models.ImageWidget.md#images)\n-   [name](models.ImageWidget.md#name)\n-   [subredditName](models.ImageWidget.md#subredditname)\n### Methods\n-   [delete](models.ImageWidget.md#delete)\n-   [toJSON](models.ImageWidget.md#tojson)\n## Constructors\n### constructor\n• **new ImageWidget**(`widgetData`, `subredditName`, `metadata`): [`ImageWidget`](models.ImageWidget.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| widgetData | GetWidgetsResponse_WidgetItem |\n| subredditName | string |\n| metadata | undefined | Metadata |\n#### Returns\n[`ImageWidget`](models.ImageWidget.md)\n#### Overrides\n[Widget](models.Widget.md).[constructor](models.Widget.md#constructor)\n## Accessors\n### id\n• `get` **id**(): `string`\n#### Returns\n`string`\n#### Inherited from\nWidget.id\n### images\n• `get` **images**(): `WidgetImage`\\[\\]\n#### Returns\n`WidgetImage`\\[\\]\n### name\n• `get` **name**(): `string`\n#### Returns\n`string`\n#### Inherited from\nWidget.name\n### subredditName\n• `get` **subredditName**(): `string`\n#### Returns\n`string`\n#### Inherited from\nWidget.subredditName",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: ImageWidget",
+        "Accessors",
+        "subredditName",
+        "Inherited from"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: ImageWidget, Methods, toJSON, Overrides</path>\n## Methods\n### delete\n▸ **delete**(): `Promise`<`void`\\>\n#### Returns\n`Promise`<`void`\\>\n#### Inherited from\n[Widget](models.Widget.md).[delete](models.Widget.md#delete)\n### toJSON\n▸ **toJSON**(): `Pick`<[`Widget`](models.Widget.md), `\"name\"` | `\"subredditName\"` | `\"id\"`\\> & `Pick`<[`ImageWidget`](models.ImageWidget.md), `\"images\"`\\>\n#### Returns\n`Pick`<[`Widget`](models.Widget.md), `\"name\"` | `\"subredditName\"` | `\"id\"`\\> & `Pick`<[`ImageWidget`](models.ImageWidget.md), `\"images\"`\\>\n#### Overrides\n[Widget](models.Widget.md).[toJSON](models.Widget.md#tojson)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: ImageWidget",
+        "Methods",
+        "toJSON",
+        "Overrides"
+      ],
+      "level": 2
+    }
+  }
+]

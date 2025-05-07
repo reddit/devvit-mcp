@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: GetConversationsResponse, Properties, viewerId?</path>\n[**@devvit/public-api v0.12.0-dev**](../../README.md)\n# Type Alias: GetConversationsResponse\n**GetConversationsResponse** = `object`\n## Properties\n### conversationIds\n**conversationIds**: `string`\\[\\]\nArray of conversation ids, ordered by the sort parameter specified in [GetConversationsRequest](GetConversationsRequest.md).\n### conversations\n**conversations**: `object`\nConversations key-value map\n#### Index Signature\n\\[`id`: `string`\\]: [`ConversationData`](ConversationData.md)\n### viewerId?\n`optional` **viewerId**: `string`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: GetConversationsResponse",
+        "Properties",
+        "viewerId?"
+      ],
+      "level": 0
+    }
+  }
+]

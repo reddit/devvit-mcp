@@ -1,0 +1,46 @@
+[
+  {
+    "pageContent": "<path>Intro to Devvit, Step 4: Upload and build</path>\nimport Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';\n# Intro to Devvit\n:::note This tutorial assumes that you have already set up your environment and installed Devvit via the [Quickstart](https://developers.reddit.com/docs/quickstart). :::\n## Step 1: Create a project\nOnce you are logged in, create a new project (aka a new app). Run:\n```\ndevvit new\n```\n## Step 2: Name your project\nFor this tutorial, we suggest using:\n```\nHello-[username]\n```\n## Step 3: Select the template\nWhen prompted to chose a template, scroll and select:\n```\nintro-to-devvit\n```\n## Step 4: Upload and build\nRun the following commands to get your app up and running:\n```\ncd <project-name>\ndevvit upload\ndevvit playtest <subreddit-name>\n```\nEvery app you make will have a corresponding project folder on your local machine. Here you are \"changing directory\"[1](#user-content-fn-1) into the project folder so you can run app-specific devvit commands. Uploading your project from this folder converts it to a private test app on the platform, which you can view from [my apps](https://developers.reddit.com/my/apps).",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Intro to Devvit",
+        "Step 4: Upload and build"
+      ],
+      "level": 0
+    }
+  },
+  {
+    "pageContent": "<path>Intro to Devvit, Step 7: Playtesting</path>\nThe \"playtest\" command is for testing your code - more on that soon.\n## Step 5: Open your project\nOpen your project from your IDE[2](#user-content-fn-2). It should look like this:\n```text\nmy-project\n├── assets\n├── src\n│   └── main.tsx\n│   └── weird.tsx\n│   └── guts // don't worry about this section\n├── devvit.yaml\n├── package.json\n├── tsconfig.json\n├── README.md\n```\nYou'll be making updates to `main.tsx` and the `assets` folder in this tutorial.\n## Step 6: Create a post\nVisit your test subreddit. From the subreddit menu, select \"Hello Devvit\" and wait for your post to load.\n![menu_item](../../assets/intro-to-devvit-sub-action.png)\n## Step 7: Playtesting\nAs you make and save code modifications, playtest will automatically build and deploy the app to your subreddit. Simply refresh the post to view the latest changes. Press Ctrl + C to exit the playtest.\n![playtest-app-building](../../assets/intro-to-devvit-playtesting.png)\nFrom here, the post will guide you through three simple code changes! You can stop there, but we encourage you to experiment and make the post your own.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Intro to Devvit",
+        "Step 7: Playtesting"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Intro to Devvit, More resources</path>\n## Step 8: Share your post\nWhen you're happy with your post, considering sharing it with the community. You can see [creations made by other devs here](https://www.reddit.com/r/hello_user/?f=flair_name%3A%22hello%20devvitor%22).\nMake sure your subreddit is set to public, and select \"Share with Devvit\" from the mod menu on the post:\n![menu_item](../../assets/intro-to-devvit-mod-action.png)\n## More resources\nNow you know how to create and deploy apps! Next up, try the following:\n-   Check out the [showcase](/docs/showcase/) to see what others have created.\n-   Learn how to [publish](/publishing) your app and make it public in the Apps directory.\n-   Follow the [Remind Me](/docs/showcase/tutorials/remind_me.md) tutorial.\n## Footnotes\n\n1.  If you're less familiar with the terminal and command line interfaces, check out this [overview with some common commands](https://tutorials.codebar.io/command-line/introduction/tutorial.html). [↩](#user-content-fnref-1)\n    \n2.  If you don't have an IDE on your machine, we recommend using [VS Code](https://code.visualstudio.com/). [↩](#user-content-fnref-2)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Intro to Devvit",
+        "More resources"
+      ],
+      "level": 2
+    }
+  }
+]

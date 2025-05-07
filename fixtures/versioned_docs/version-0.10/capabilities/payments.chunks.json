@@ -1,0 +1,150 @@
+[
+  {
+    "pageContent": "<path>Payments, Getting started</path>\n# Payments\nAdd products to your app and get paid for what you sell.\n:::note Payments is a beta feature that is only available to developers in our Developer Payments Pilot Program.  \n:::\nThe payments plugin lets you prompt users to buy premium features for your app, such as additional lives in a game or custom flair.\n## Getting started\nBefore you can sell products in your app, you’ll need to enroll in the [Reddit Contributor Program](https://support.reddithelp.com/hc/en-us/articles/17331620007572-What-is-the-Contributor-Program-and-how-can-I-participate), and meet the [eligibility criteria](https://support.reddithelp.com/hc/en-us/articles/17331620007572-What-is-the-Contributor-Program-and-how-can-I-participate#h_01H9RRRH1X765RE40ST0049F8M). You’ll also need to accept and comply with our [Contributor Terms](https://www.redditinc.com/policies/contributor-terms), [Contributor Monetization Policy](https://www.redditinc.com/policies/contributor-monetization-policy), and Developer Platform Policies to sell products.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Payments",
+        "Getting started"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Payments, What products can I sell?</path>\n:::note Karma- and gold-earning requirements are waived for developers. :::\nInstall Payments in your app by running the following command:\n```bash\ndevvit install @devvit/payments@next\n```\n## How it works\nUsers make in-app purchases with Reddit [gold](https://support.reddithelp.com/hc/en-us/articles/17331548463764-What-is-gold-and-how-do-I-use-it). When you configure your products, you’ll set the price of your product in gold. The gold you receive for your products accumulates in your app account. The payout rate for gold is $0.01 per Reddit gold spent in your app.\n:::note Payouts are calculated at the end of each calendar month, and you should receive your payout in your Stripe account within 30 days. There may be an additional 5 - 7 day delay for non-US developers. :::\n## What products can I sell?\nYou can build products in your app for things like in-game items or exclusive features for tools or bots.\n![Sample payment app screen](../assets/payments_example.png)\nAll products must be approved by the Developer Platform team. Products are approved during the [app review process](../publishing.md) when you publish your app.",
+    "metadata": {
+      "type": [
+        "text",
+        "code",
+        "heading"
+      ],
+      "path": [
+        "Payments",
+        "What products can I sell?"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Payments, Register products</path>\n:::note Some products are not allowed and will not be approved:\n-   Sexually explicit or suggestive content\n-   Real money gambling\n-   Requests for donations\n-   Advertising or pay-for-promotion :::\n## Register products\nProducts are registered via a `src/products.json` file in your local app. The JSON schema for the file format is available at [https://developers.reddit.com/schema/products.json](https://developers.reddit.com/schema/products.json)\nEach product in the `products` field comprises of the following attributes:\n| Attribute | Description |\n|---|---|\n| sku | A product identifier that can be used to group orders or organize your products. Each sku must be unique for each product in your app. |\n| displayName | The official name of the product that is displayed in purchase confirmation screens. The name must be fewer than 50 characters, including spaces. |\n| description | A text string that describes the product and is displayed in purchase confirmation screens. The description must be fewer than 150 characters, including spaces. |\n| price | An predefined integer that sets the product price in Reddit gold. See details below. |\n| image.icon | (optional) The path to the icon that represents your product in your assets folder. |\n| metadata | (optional) An optional object that contains additional attributes you want to use to group and filter products. Keys and values must be alphanumeric (a - Z, 0 - 9, and - ) and contain 30 characters or less. You can add up to 10 metadata keys. |",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Payments",
+        "Register products"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Payments, Register products, Image requirements</path>\n:::note Actual payments will not be processed until your products are approved. While your app is under development, you can use sandbox payments, which only simulates payment and does not deduct real gold. More on that below. :::\n:::note Registered products are updated every time an app is uploaded, including when you use [Devvit playtest](../playtest). :::\n### Pricing\nProduct prices are predefined and must be one of the following gold values:\n-   5 gold ($0.10)\n-   25 gold ($0.50)\n-   50 gold ($1)\n-   100 gold ($2)\n-   150 gold ($3)\n-   250 gold ($5)\n-   500 gold ($10)\n-   1000 gold ($20)\n-   2500 gold ($50)\n### Image requirements\n-   Min size: 256x256\n-   Supported file type: .png\nIf you do not provide an image, the default Reddit product image will be used.\n**Example**\n```json\n{\n  \"$schema\": \"https://developers.reddit.com/schema/products.json\",\n  \"products\": [\n    {\n      \"sku\": \"extra_life\",\n      \"displayName\": \"Extra Life\",\n      \"description\": \"An extra life for the snake game\",\n      \"price\": 10,\n      \"images\": {\n        // not required, we can have default. Add guidelines on size\n        \"icon\": \"assets/products/extra_life_icon.png\"\n      },\n      \"metadata\": {\n        \"category\": \"powerup\"\n      }\n    }\n  ]\n}\n```",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Payments",
+        "Register products",
+        "Image requirements"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Payments, Add custom handlers to complete the payment flow</path>\n## Add custom handlers to complete the payment flow\nYou must specify a function that is called during the order flow using the `addPaymentHandler`. This will to customize how your app will fulfill product orders and provide the ability for the developer to reject an order. (refunds are in progress!).\nAny error thrown within the payment handler will automatically reject the order. If you would like to provide a custom error message to the frontend of your application, you can return `{success: false, reason: <string>}` with a reason for order rejection.\nFor example, imagine a scenario where you would want to issue an \"extra life\" to a user when they purchase the \"extra\\_life\" product.\n```ts\nimport { type Context } from '@devvit/public-api';\nimport { addPaymentHandler, type Order } from '@devvit/payments';\n\nconst MAX_LIVES = 3;\nconst EXTRA_LIVES_SKU = 'extra_lives';\n\naddPaymentHandler({\n  fulfillOrder: async (order: Order, ctx: Context) => {\n    if (!order.products.some(({ sku }) => sku === EXTRA_LIVES_SKU)) {\n      // this error will be visible to your logs but not users; the order will be rejected\n      throw new Error('Unable to fulfill order: sku not found');\n    }\n\n    // redis key for storing number of lives user has left\n    const livesKey = `${ctx.userId}:lives`;\n\n    // get the current life count\n    const curLives = await ctx.redis.get(livesKey);\n\n    // reject the order if the user already has more than or equal MAX_LIVES\n    if (curLives != null && Number(curLives) >= MAX_LIVES) {\n      // the reason provided here will be delivered to the `usePayments` callback function\n      // as `result.errorMessage` to optionally display to the end-user.\n      return { success: false, reason: 'Max lives exceeded' };\n    }\n\n    // fulfill the order by incrementing the lives count for the user\n    await ctx.redis.incrBy(`${ctx.userId}:lives`, 1);\n  },\n});\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "level": 2,
+      "path": [
+        "Payments",
+        "Add custom handlers to complete the payment flow"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Payments, Implement purchases of in-app goods</path>\n:::note Products are tied to app versions. This means if you create a product in version 2.0 of your app, and change it in version 2.1, the 2.0 version will still be available in subreddits that use version 2.0 of your app. :::\n## Implement purchases of in-app goods\n![Order workflow diagram](../assets/payments_order_flow.jpg)\nOrder processing happens in coordination with the frontend and backend of your application. From the frontend, you launch the payment flow by creating a hook with `usePayments()` followed by `hook.purchase()` when you want to initiate the purchase. This triggers a native payment flow on each platform (web, iOS, Android). The native workflow works with the Reddit backend to process the order, and your app is called via the `fulfillOrder()` hook during this process. This gives your app the opportunity to acknowledge or reject the order. For example, for goods that have limited quantities, your app may not fulfill an order once the product is sold out and instead reject the order.\n### Get your product details\nYou can fetch details about products by using the `useProducts` hook or `getProducts` function.\n```tsx\nimport { useProducts } from '@devvit/payments';\n\nexport function ProductsList(context: Devvit.Context): JSX.Element {\n  const { products } = useProducts(context, {\n    skus: ['extra_life', 'cosmic_sword'],\n  });\n\n  return (\n    <vstack>\n      {products.map((product) => (\n        <hstack>\n          <text>{product.name}</text>\n          <text>{product.price}</text>\n        </hstack>\n      ))}\n    </vstack>\n  );\n}\n```\nYou can also fetch all products using custom-defined metadata or by an array of skus. Only one is required; if you provide both then they will be AND’d.\n```tsx\nimport { getProducts } from '@devvit/payments';\nconst products = await getProducts({\n  skus: ['extra_life', 'cosmic_sword'],\n  metadata: {\n    category: 'powerup',\n  },\n});\n```\n### Initiate orders",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Payments",
+        "Implement purchases of in-app goods"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Payments, Test your app, Simulate purchases</path>\nProvide the product sku to trigger a purchase. This automatically populates the most recently approved product metadata for that product id.\n```tsx\nimport { usePayments } from '@devvit/payments';\n\n// handles purchase results\nconst payments = usePayments((result: OnPurchaseResult) => { console.log('Tried to buy:', result.sku, '; result:', result.success); });\n\n// foreach sku in products:\n<button onPress{payments.purchase(sku)}>Buy a {sku}</button>\n```\n## Test your app\nThe payments sandbox environment simulates payment transactions. All apps automatically start in the payments sandbox.\n### Start a playtest\nTo test your app:\n-   Run `devvit upload` to upload your app to the Apps directory.\n-   Run `devvit playtest` .\nOnce you start a playtest session, a new pre-release version of your app is automatically created and installed on your test subreddit. The pre-release version has a fourth decimal place, so if your current app is 0.0.1, the first pre-release version will be 0.0.1.1.\nThe pre-release version is updated and uploaded to your test subreddit every time you save your app code. You’ll need to refresh your subreddit to see the updated app. This may take a couple of seconds, so be patient.\n### Simulate purchases\nIn your test subreddit, you can make simulated purchases to test your app. No gold deducted in this state.\n![Sample payment simulation](../assets/payment_simulation.png)\nTo end your playtest, press CTRL + C in the terminal session where you started it.",
+    "metadata": {
+      "type": [
+        "text",
+        "code",
+        "heading"
+      ],
+      "path": [
+        "Payments",
+        "Test your app",
+        "Simulate purchases"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Payments</path>\n## Check orders\nReddit keeps track of historical purchases and lets you query user purchases.\nOrders are returned in reverse chronological order and can be filtered based on user, product, success state, or other attributes.\n```tsx\nimport { useOrders, OrderStatus } from '@devvit/payments';\n\nexport function CosmicSwordShop(context: Devvit.Context): JSX.Element {\n  const { orders } = useOrders(context, {\n    sku: 'cosmic_sword',\n  });\n\n  // if the user hasn’t already bought the cosmic sword\n  // then show them the purchase button\n  if (orders.length > 0) {\n    return <text>Purchased!</text>;\n  } else {\n    return <button onPress={/* Trigger purchase */}>Buy Cosmic Sword</button>;\n  }\n}\n```\n:::note Once your app is in production, existing installations will need to be manually updated via the admin tool if you release a new version. Contact the Developer Platform team if you need to update your app installation versions.\nAutomatic updates will be supported in the future. :::\n## Submit your app for approval",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Payments"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Payments, Accept real payments</path>\nWhen you’re satisfied with your app, it’s time to submit your app and products to the Developer Platform team for review and approval. To submit your products and app, run `devvit publish` and select how you want your app to appear in the Apps directory:\n-   **Unlisted** means that the app is only visible to you in the directory, and you can install your app on larger subreddits that you moderate.\n-   **Public** means that your app is visible to all users in the Apps directory and can be installed by mods and admins across Reddit.\nYou can change your app visibility at any time. See [publishing an app](publishing.md) for details.\n:::note All products will be reviewed to ensure compliance with our content policy. There is no partial approval. If one product is not approved, the app will be rejected. :::\n## Accept real payments\nOnce your app and products have been approved, you’re ready to use Reddit’s production payments system. Real payments will be triggered automatically when invoked from approved app versions. No code changes are required.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Payments",
+        "Accept real payments"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Payments, Features coming soon</path>\n## Features coming soon\n-   Triggering refunds\n-   Issuing refunds\n-   Removing a product\n-   Limits and quotas",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "level": 2,
+      "path": [
+        "Payments",
+        "Features coming soon"
+      ]
+    }
+  }
+]

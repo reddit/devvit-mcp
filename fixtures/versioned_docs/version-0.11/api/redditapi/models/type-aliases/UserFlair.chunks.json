@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: UserFlair, Properties, user?</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Type Alias: UserFlair\n**UserFlair** = `object`\n## Properties\n### flairCssClass?\n`optional` **flairCssClass**: `string`\nThe CSS class applied to this flair in the UI.\n### flairText?\n`optional` **flairText**: `string`\nThe text displayed in the UI for this flair.\n### user?\n`optional` **user**: `string`\nThe username of the user to which this flair is assigned.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: UserFlair",
+        "Properties",
+        "user?"
+      ],
+      "level": 0
+    }
+  }
+]

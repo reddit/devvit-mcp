@@ -1,0 +1,16 @@
+[
+  {
+    "pageContent": "<path>Test payments, Simulate purchases</path>\n# Test payments\nUse the payments sandbox environment to simulate payment transactions. All apps automatically start in the payments sandbox.\n## Start a playtest\nTo test your app:\n-   Run `devvit upload` to upload your app to the Apps directory.\n-   Run `devvit playtest` .\nOnce you start a playtest session, a new pre-release version of your app is automatically created and installed on your test subreddit. The pre-release version has a fourth decimal place, so if your current app is 0.0.1, the first pre-release version will be 0.0.1.1.\nThe pre-release version is updated and uploaded to your test subreddit every time you save your app code. You’ll need to refresh your subreddit to see the updated app. This may take a couple of seconds, so be patient.\n## Simulate purchases\nIn your test subreddit, you can make simulated purchases to test your app. No gold deducted in this state.\n![Sample payment simulation](../assets/payment_simulation.png)\nTo end your playtest, press CTRL + C in the terminal session where you started it.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Test payments",
+        "Simulate purchases"
+      ],
+      "level": 1
+    }
+  }
+]

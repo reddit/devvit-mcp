@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Enumeration: Context, Enumeration Members, SUBREDDIT</path>\n# Enumeration: Context\n## Table of contents\n### Enumeration Members\n-   [COMMENT](Context.md#comment)\n-   [POST](Context.md#post)\n-   [SUBREDDIT](Context.md#subreddit)\n## Enumeration Members\n### COMMENT\n• **COMMENT** = `\"comment\"`\n### POST\n• **POST** = `\"post\"`\n### SUBREDDIT\n• **SUBREDDIT** = `\"subreddit\"`",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Enumeration: Context",
+        "Enumeration Members",
+        "SUBREDDIT"
+      ],
+      "level": 1
+    }
+  }
+]

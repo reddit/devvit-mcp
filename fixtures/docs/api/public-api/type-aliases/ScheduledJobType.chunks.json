@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: ScheduledJobType<Data>, Properties, onRun</path>\n[**@devvit/public-api v0.11.15-dev**](../README.md)\n# Type Alias: ScheduledJobType<Data>\n**ScheduledJobType**<`Data`\\> = `object`\n## Type Parameters\n### Data\n`Data` _extends_ [`JSONObject`](JSONObject.md) | `undefined`\n## Properties\n### name\n**name**: `string`\nThe name of the scheduled job type\n### onRun\n**onRun**: [`ScheduledJobHandler`](ScheduledJobHandler.md)<`Data`\\>\nThe function that will be called when the job is scheduled to run",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: ScheduledJobType<Data>",
+        "Properties",
+        "onRun"
+      ],
+      "level": 0
+    }
+  }
+]

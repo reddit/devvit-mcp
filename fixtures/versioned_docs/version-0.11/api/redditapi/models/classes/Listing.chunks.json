@@ -1,0 +1,18 @@
+[
+  {
+    "pageContent": "<path>Class: Listing<T>, Methods, setMore(), Returns</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Class: Listing<T>\n## Type Parameters\n### T\n`T`\n## Properties\n### limit\n**limit**: `number` = `DEFAULT_LIMIT`\n### pageSize\n**pageSize**: `number` = `DEFAULT_PAGE_SIZE`\n## Accessors\n### hasMore\n#### Get Signature\n**get** **hasMore**(): `boolean`\n##### Returns\n`boolean`\n## Methods\n### [asyncIterator]()\n**\\[asyncIterator\\]**(): `AsyncIterator`<`T`\\>\n#### Returns\n`AsyncIterator`<`T`\\>\n### all()\n**all**(): `Promise`<`T`\\[\\]>\n#### Returns\n`Promise`<`T`\\[\\]>\n### get()\n**get**(`count`): `Promise`<`T`\\[\\]>\n#### Parameters\n##### count\n`number`\n#### Returns\n`Promise`<`T`\\[\\]>\n### preventInitialFetch()\n**preventInitialFetch**(): `void`\n#### Returns\n`void`\n### setMore()\n**setMore**(`more`): `void`\n#### Parameters\n##### more\n`undefined` | [`MoreObject`](../type-aliases/MoreObject.md)\n#### Returns\n`void`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Class: Listing<T>",
+        "Methods",
+        "setMore()",
+        "Returns"
+      ],
+      "level": 0
+    }
+  }
+]

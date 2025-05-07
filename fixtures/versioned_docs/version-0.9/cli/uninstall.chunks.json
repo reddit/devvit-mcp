@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>devvit uninstall, devvit uninstall APPSLUG SUBREDDIT</path>\n# devvit uninstall\nUninstall an app\n-   [`devvit uninstall APPSLUG SUBREDDIT`](#devvit-uninstall-appslug-subreddit)\n## devvit uninstall APPSLUG SUBREDDIT\nUninstall an app\n```\nUSAGE\n  $ devvit uninstall APPSLUG SUBREDDIT\n\nARGUMENTS\n  APPSLUG    The slug of the app you want to uninstall\n  SUBREDDIT  Uninstall from the given subreddit. The \"r/\" prefix is optional\n\nDESCRIPTION\n  Uninstall an app\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "devvit uninstall",
+        "devvit uninstall APPSLUG SUBREDDIT"
+      ],
+      "level": 1
+    }
+  }
+]

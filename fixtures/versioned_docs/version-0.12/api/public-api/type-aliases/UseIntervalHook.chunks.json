@@ -1,0 +1,16 @@
+[
+  {
+    "pageContent": "<path>Type Alias: UseIntervalHook(), Returns</path>\n[**@devvit/public-api v0.12.0-dev**](../README.md)\n# Type Alias: UseIntervalHook()\n**UseIntervalHook** = (`callback`, `delay`) => [`UseIntervalResult`](UseIntervalResult.md)\nA hook that can used to run a callback on an interval between Block renders. Only one useInterval hook may be running at a time.\n## Parameters\n### callback\n() => `void` | `Promise`<`void`\\>\n### delay\n`number`\n## Returns\n[`UseIntervalResult`](UseIntervalResult.md)",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: UseIntervalHook()",
+        "Returns"
+      ],
+      "level": 0
+    }
+  }
+]

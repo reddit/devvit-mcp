@@ -1,0 +1,48 @@
+[
+  {
+    "pageContent": "<path>JSON, Solutions, Prefer type Instead of interface</path>\n## JSON\nSeveral APIs in Devvit only accept plain [JSON](https://www.json.org) data which is typed as `JSONValue`. The JSON format is used to save data because it's lossless, simple, and ubiquitous. If you attempt to pass a `class` instance, `interface` instance, or other incompatible type, the TypeScript compiler will flag it as an error. Type errors such as these are intended to provide quick feedback that your program probably won't work as intended.\n### Example Problem: Class and Context.useState()\n```ts\nimport { Devvit, useState } from '@devvit/public-api';\n\nclass Foo {}\nconst [foo, setFoo] = useState(new Foo()); // Error!\n```\n```\nNo overload matches this call.\n  The last overload gave the following error.\n    Argument of type 'Foo' is not assignable to parameter of type 'void | JSONValue | (() => void | JSONValue | Promise<void | JSONValue>)'.ts(2769)\n```\n### Example Problem: Interface and KVStore.put()\n```ts\ninterface Bar {}\nconst bar: Bar = {};\nawait context.kvStore.put('foo', bar); // Error!\n```\n```\nArgument of type 'Bar' is not assignable to parameter of type 'JSONValue'.\n```\n### What Is JSON?\nIn Devvit, JSON is typed as `JSONValue` which is a string, number, boolean, null, an array of any of these, or an object of these values, recursively.\nAll of the following are examples of valid JSON values:\n```ts\nconst a: JSONValue = 'abc';\nconst b: JSONValue = 1;\nconst c: JSONValue = false;\nconst d: JSONValue = null;\nconst e: JSONValue = [];\nconst f: JSONValue = {};\nconst g: JSONValue = { a: 123 };\nconst h: JSONValue = [{ a: 123 }, 1, null];\n```\nNone of the following are valid JSON values:\n```ts\nclass Foo {}\nconst a: JSONValue = new Foo(); // Error!\nconst b: JSONValue = new Map(); // Error!\nconst c: JSONValue = new Set(); // Error!\nconst d: JSONValue = new Date(); // Error!\n```\n### Solutions\n#### Prefer type Instead of interface\nIt's always safe to favor `type` over `interface`. The compiler will tell you if there's a problem.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "JSON",
+        "Solutions",
+        "Prefer type Instead of interface"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>JSON, Solutions, Serialize and Deserialize</path>\n```ts\n// Problem\ninterface Fruit {\n  type: 'Apple' | 'Banana';\n}\n```\n```ts\n// Solution\ntype Fruit = { type: 'Apple' | 'Banana' };\n```\n`interface` is open, `type` is closed. You don't normally need or want open typing because they're harder to reason about. See [a playground demonstrating their distinction](https://www.typescriptlang.org/play?ssl=11&ssc=1&pln=12&pc=1#code/PTAEEkDsBcFMCcBmBDAxrAzqZ9bYDYDuyAnlgPYAOskAdALABQAljAiuqAPLWRRxI0eAN5NQ2AFyhIAVwC2AIwRMAvkyYgIbQeiypkkAsTKgloWAA84kACawbDFto54eNfuyGhRjcQqmyisqMaowaYAAC0BgAtJbUqNBx8PDk8Eyo5JAY0KBUNFJufM5eALzeyFIAjAA0plIATCqgmgCiFglwNqDQ5KAAFsgAbnjI2LamAITqjJoAKiTUWDijRKR6+OQY9rSgAJrkMqD6hln4JKB2iKyjoAAG0Iuwd3mQ6NOzkdFxHbCJyal0oxHtRQABhTbbGwLUHlHziSrSeRKIGhcKgKKxeJ-JIIQFMEF4CFbewwvBwsT1JFBVFAA) and [a related discussion in the TypeScript issue tracker](https://github.com/microsoft/TypeScript/issues/15300).\n##### When Would I Need an Interface?\nRarely. A good example are Lit components. These are the default tags TypeScript knows of:\n```ts\ninterface HTMLElementTagNameMap {\n    \"a\": HTMLAnchorElement;\n    \"abbr\": HTMLElement;\n    \"address\": HTMLElement;\n    \"area\": HTMLAreaElement;\n    \"article\": HTMLElement;\n    ...\n```\nIf we were to define a custom component like `foo-bar`, we can augment TypeScripts knowledge:\n```ts\ndeclare global {\n  interface HTMLElementTagNameMap {\n    'foo-bar': FooBar;\n  }\n}\n```\n#### Separate Data and Behavior\n```ts\n// Problem\nclass XY {\n  constructor(\n    public x: number,\n    public y: number\n  ) {}\n\n  add(xy: XY): void {\n    this.x += xy.x;\n    this.y += xy.y;\n  }\n}\n```\n```ts\n// Solution\ntype XY = { x: number; y: number };\n\nfunction addEq(lhs: XY, rhs: XY): void {\n  lhs.x += rhs.x;\n  lhs.y += rhs.y;\n}\n```\n#### Serialize and Deserialize\nThis is an example program for rectangle and coordinate classes. Both classes are typical in that they have state and methods. Additionally, the rectangle composes the coordinate.",
+    "metadata": {
+      "type": [
+        "code",
+        "text",
+        "heading"
+      ],
+      "path": [
+        "JSON",
+        "Solutions",
+        "Serialize and Deserialize"
+      ],
+      "level": 4
+    }
+  },
+  {
+    "pageContent": "<path>JSON, Solutions, Serialize and Deserialize</path>\n```ts\ntype BoxJSON = { start: XYJSON; end: XYJSON };\nclass Box {\n  static fromJSON(json: Partial<BoxJSON> | undefined): Box {\n    const start = XY.fromJSON(json?.start);\n    const end = XY.fromJSON(json?.end);\n    return new Box(start.x, start.y, end.x, end.y);\n  }\n\n  #start: XY;\n  #end: XY;\n\n  constructor(x: number, y: number, w: number, h: number) {\n    this.#start = new XY(x, y);\n    this.#end = new XY(x + w, y + h);\n  }\n\n  /** Return as a vector. */\n  toXY(): XY {\n    return this.#end.sub(this.#start);\n  }\n\n  toJSON(): BoxJSON {\n    return { start: this.#start.toJSON(), end: this.#end.toJSON() };\n  }\n}\n\ntype XYJSON = { x: number; y: number };\nclass XY {\n  static fromJSON(json: Partial<XYJSON> | undefined): XY {\n    return new XY(json?.x ?? 0, json?.y ?? 0);\n  }\n\n  constructor(\n    public x: number,\n    public y: number\n  ) {}\n\n  sub(xy: Readonly<XY>): XY {\n    return new XY(this.x - xy.x, this.y - xy.y);\n  }\n\n  toJSON(): XYJSON {\n    return { x: this.x, y: this.y };\n  }\n\n  toString(): string {\n    return `(${this.x}, ${this.y})`;\n  }\n}\n\nconst original = new Box(0, 0, 1, 1);\nconst json = JSON.stringify(original);\nconsole.log(`BoxJSON: ${json}`);\nconst revived = Box.fromJSON(JSON.parse(json));\nconsole.log(`Revived Box: ${revived instanceof Box}; as vec: ${revived.toXY()}`);\n```",
+    "metadata": {
+      "type": [
+        "code"
+      ],
+      "level": 4,
+      "path": [
+        "JSON",
+        "Solutions",
+        "Serialize and Deserialize"
+      ]
+    }
+  }
+]

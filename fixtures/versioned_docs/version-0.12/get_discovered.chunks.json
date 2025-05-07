@@ -1,0 +1,30 @@
+[
+  {
+    "pageContent": "<path>Get discovered, Get support</path>\n# Get discovered\nAs a developer, you have the power to create a Reddit community around your app. Whether it’s a game or just a place where you want feedback on your newest creation, the subreddit is yours.\n## Learn to mod\nTo get started, check out the ultimate guide to [building a new community](https://redditforcommunity.com/ultimate-guide-to-building-a-community-reddit) on Reddit. You can learn best practices for things like how to gain community members, how to set up community rules, add icons and banners, use flairs, and more.\nOr if you don’t feel like reading a novel, we’ve got a bite-sized [video series](https://redditforcommunity.com/video-lab-making-your-new-subreddit-100) that will help you get started and learn best practices along the way.\n## Get support\nIf you’re not already a member, come join our developer subreddit [r/devvit](https://www.reddit.com/r/Devvit/) and our [Discord server](https://discord.com/invite/R7yu2wh9Qz). You can chat with other devs and ask questions about growing your community.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Get discovered",
+        "Get support"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Get discovered, SEO optimization</path>\n## SEO optimization\nTips coming soon!",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "level": 2,
+      "path": [
+        "Get discovered",
+        "SEO optimization"
+      ]
+    }
+  }
+]

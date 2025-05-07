@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>devvit create, devvit create app [APPNAME]</path>\n# devvit create\nCreate a new app\n-   [`devvit create app [APPNAME]`](#devvit-create-app-appname)\n## devvit create app [APPNAME]\nCreate a new app\n```\nUSAGE\n  $ devvit create app [APPNAME] [--here] [-t empty|hello-world|remind-me|three-strikes]\n\nARGUMENTS\n  APPNAME  Name of the app. A new directory with the provided app name will be created\n\nFLAGS\n  -t, --template=<option>  Template name\n                           <options: empty|hello-world|remind-me|three-strikes>\n  --here                   Flag to generate the project here, and not in a subdirectory\n\nDESCRIPTION\n  Create a new app\n\nALIASES\n  $ devvit new\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "devvit create",
+        "devvit create app [APPNAME]"
+      ],
+      "level": 1
+    }
+  }
+]

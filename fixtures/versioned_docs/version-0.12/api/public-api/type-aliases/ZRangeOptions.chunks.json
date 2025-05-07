@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: ZRangeOptions, Properties, reverse?</path>\n[**@devvit/public-api v0.12.0-dev**](../README.md)\n# Type Alias: ZRangeOptions\n**ZRangeOptions** = `object`\n## Properties\n### by\n**by**: `\"score\"` | `\"lex\"` | `\"rank\"`\n### limit?\n`optional` **limit**: `object`\n#### count\n**count**: `number`\n#### offset\n**offset**: `number`\n### reverse?\n`optional` **reverse**: `boolean`\nReverses the sorted set, with index 0 as the element with the highest score.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: ZRangeOptions",
+        "Properties",
+        "reverse?"
+      ],
+      "level": 0
+    }
+  }
+]

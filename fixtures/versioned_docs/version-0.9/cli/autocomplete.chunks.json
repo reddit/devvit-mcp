@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>devvit autocomplete, devvit autocomplete [SHELL]</path>\n# devvit autocomplete\ndisplay autocomplete installation instructions\n-   [`devvit autocomplete [SHELL]`](#devvit-autocomplete-shell)\n## devvit autocomplete [SHELL]\ndisplay autocomplete installation instructions\n```\nUSAGE\n  $ devvit autocomplete [SHELL] [-r]\n\nARGUMENTS\n  SHELL  shell type\n\nFLAGS\n  -r, --refresh-cache  Refresh cache (ignores displaying instructions)\n\nDESCRIPTION\n  display autocomplete installation instructions\n\nEXAMPLES\n  $ devvit autocomplete\n\n  $ devvit autocomplete bash\n\n  $ devvit autocomplete zsh\n\n  $ devvit autocomplete --refresh-cache\n```\n_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v2.1.5/src/commands/autocomplete/index.ts)_",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "devvit autocomplete",
+        "devvit autocomplete [SHELL]"
+      ],
+      "level": 1
+    }
+  }
+]

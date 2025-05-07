@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: SubredditSubscribe, Properties, subscriber?</path>\n[**@devvit/public-api v0.11.15-dev**](../../../../README.md)\n# Interface: SubredditSubscribe\n## Properties\n### subreddit?\n`optional` **subreddit**: `SubredditV2`\n### subscriber?\n`optional` **subscriber**: `UserV2`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Interface: SubredditSubscribe",
+        "Properties",
+        "subscriber?"
+      ],
+      "level": 0
+    }
+  }
+]

@@ -1,0 +1,198 @@
+[
+  {
+    "pageContent": "<path>Class: Subreddit, Table of contents</path>\n# Class: Subreddit\n[models](../modules/models.md).Subreddit\nA class representing a subreddit.\n## Table of contents\n### Accessors\n-   [createdAt](models.Subreddit.md#createdat)\n-   [description](models.Subreddit.md#description)\n-   [id](models.Subreddit.md#id)\n-   [language](models.Subreddit.md#language)\n-   [name](models.Subreddit.md#name)\n-   [nsfw](models.Subreddit.md#nsfw)\n-   [numberOfActiveUsers](models.Subreddit.md#numberofactiveusers)\n-   [numberOfSubscribers](models.Subreddit.md#numberofsubscribers)\n-   [permalink](models.Subreddit.md#permalink)\n-   [postFlairsEnabled](models.Subreddit.md#postflairsenabled)\n-   [settings](models.Subreddit.md#settings)\n-   [title](models.Subreddit.md#title)\n-   [type](models.Subreddit.md#type)\n-   [url](models.Subreddit.md#url)\n-   [userFlairsEnabled](models.Subreddit.md#userflairsenabled)\n-   [usersCanAssignPostFlairs](models.Subreddit.md#userscanassignpostflairs)\n-   [usersCanAssignUserFlairs](models.Subreddit.md#userscanassignuserflairs)\n### Methods",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: Subreddit",
+        "Table of contents"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: Subreddit, Table of contents, Methods</path>\n-   [addWikiContributor](models.Subreddit.md#addwikicontributor)\n-   [approveUser](models.Subreddit.md#approveuser)\n-   [banUser](models.Subreddit.md#banuser)\n-   [banWikiContributor](models.Subreddit.md#banwikicontributor)\n-   [createPostFlairTemplate](models.Subreddit.md#createpostflairtemplate)\n-   [createUserFlairTemplate](models.Subreddit.md#createuserflairtemplate)\n-   [getApprovedUsers](models.Subreddit.md#getapprovedusers)\n-   [getBannedUsers](models.Subreddit.md#getbannedusers)\n-   [getBannedWikiContributors](models.Subreddit.md#getbannedwikicontributors)\n-   [getCommentsAndPostsByIds](models.Subreddit.md#getcommentsandpostsbyids)\n-   [getControversialPosts](models.Subreddit.md#getcontroversialposts)\n-   [getEdited](models.Subreddit.md#getedited)\n-   [getModQueue](models.Subreddit.md#getmodqueue)\n-   [getModerationLog](models.Subreddit.md#getmoderationlog)\n-   [getModerators](models.Subreddit.md#getmoderators)\n-   [getMutedUsers](models.Subreddit.md#getmutedusers)\n-   [getPostFlairTemplates](models.Subreddit.md#getpostflairtemplates)\n-   [getReports](models.Subreddit.md#getreports)\n-   [getSpam](models.Subreddit.md#getspam)\n-   [getTopPosts](models.Subreddit.md#gettopposts)\n-   [getUnmoderated](models.Subreddit.md#getunmoderated)\n-   [getUserFlair](models.Subreddit.md#getuserflair)\n-   [getUserFlairTemplates](models.Subreddit.md#getuserflairtemplates)\n-   [getWikiContributors](models.Subreddit.md#getwikicontributors)\n-   [inviteModerator](models.Subreddit.md#invitemoderator)\n-   [muteUser](models.Subreddit.md#muteuser)\n-   [removeModerator](models.Subreddit.md#removemoderator)\n-   [removeUser](models.Subreddit.md#removeuser)\n-   [removeWikiContributor](models.Subreddit.md#removewikicontributor)\n-   [revokeModeratorInvite](models.Subreddit.md#revokemoderatorinvite)\n-   [setModeratorPermissions](models.Subreddit.md#setmoderatorpermissions)\n-   [submitPost](models.Subreddit.md#submitpost)\n-   [toJSON](models.Subreddit.md#tojson)",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Class: Subreddit",
+        "Table of contents",
+        "Methods"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Class: Subreddit, Accessors, type, Returns</path>\n-   [unbanUser](models.Subreddit.md#unbanuser)\n-   [unbanWikiContributor](models.Subreddit.md#unbanwikicontributor)\n-   [unmuteUser](models.Subreddit.md#unmuteuser)\n## Accessors\n### createdAt\n• `get` **createdAt**(): `Date`\nThe creation date of the subreddit.\n#### Returns\n`Date`\n### description\n• `get` **description**(): `undefined` | `string`\nThe description of the subreddit.\n#### Returns\n`undefined` | `string`\n### id\n• `get` **id**(): \\`t5\\_${string}\\`\nThe ID (starting with t5\\_) of the subreddit to retrieve. e.g. t5\\_2qjpg\n#### Returns\n\\`t5\\_${string}\\`\n### language\n• `get` **language**(): `string`\nThe language of the subreddit.\n#### Returns\n`string`\n### name\n• `get` **name**(): `string`\nThe name of a subreddit omitting the r/.\n#### Returns\n`string`\n### nsfw\n• `get` **nsfw**(): `boolean`\nWhether the subreddit is marked as NSFW (Not Safe For Work).\n#### Returns\n`boolean`\n### numberOfActiveUsers\n• `get` **numberOfActiveUsers**(): `number`\nThe number of active users of the subreddit.\n#### Returns\n`number`\n### numberOfSubscribers\n• `get` **numberOfSubscribers**(): `number`\nThe number of subscribers of the subreddit.\n#### Returns\n`number`\n### permalink\n• `get` **permalink**(): `string`\nReturns a permalink path (R2 bug: subreddit.url is a permalink, and does not have a subreddit.permalink field)\n#### Returns\n`string`\n### postFlairsEnabled\n• `get` **postFlairsEnabled**(): `boolean`\nWhether the post flairs are enabled for this subreddit.\n#### Returns\n`boolean`\n### settings\n• `get` **settings**(): [`SubredditSettings`](../modules/models.md#subredditsettings)\nThe settings of the subreddit.\n#### Returns\n[`SubredditSettings`](../modules/models.md#subredditsettings)\n### title\n• `get` **title**(): `undefined` | `string`\nThe title of the subreddit.\n#### Returns\n`undefined` | `string`\n### type\n• `get` **type**(): [`SubredditType`](../modules/models.md#subreddittype)\nThe type of subreddit (public, private, etc.).\n#### Returns\n[`SubredditType`](../modules/models.md#subreddittype)",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Class: Subreddit",
+        "Accessors",
+        "type",
+        "Returns"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: Subreddit, Methods, createUserFlairTemplate, Parameters</path>\n### url\n• `get` **url**(): `string`\nReturns the HTTP URL for the subreddit. (R2 bug: subreddit.url is a permalink path and does not return a fully qualified URL in subreddit.url)\n#### Returns\n`string`\n### userFlairsEnabled\n• `get` **userFlairsEnabled**(): `boolean`\nWhether the user flairs are enabled for this subreddit.\n#### Returns\n`boolean`\n### usersCanAssignPostFlairs\n• `get` **usersCanAssignPostFlairs**(): `boolean`\nWhether the user can assign post flairs. This is only true if the post flairs are enabled.\n#### Returns\n`boolean`\n### usersCanAssignUserFlairs\n• `get` **usersCanAssignUserFlairs**(): `boolean`\nWhether the user can assign user flairs. This is only true if the user flairs are enabled.\n#### Returns\n`boolean`\n## Methods\n### addWikiContributor\n▸ **addWikiContributor**(`username`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`<`void`\\>\n### approveUser\n▸ **approveUser**(`username`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`<`void`\\>\n### banUser\n▸ **banUser**(`options`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | Omit<BanUserOptions, \"subredditName\"> |\n#### Returns\n`Promise`<`void`\\>\n### banWikiContributor\n▸ **banWikiContributor**(`options`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | Omit<BanWikiContributorOptions, \"subredditName\"> |\n#### Returns\n`Promise`<`void`\\>\n### createPostFlairTemplate\n▸ **createPostFlairTemplate**(`options`): `Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | Omit<CreateFlairTemplateOptions, \"subredditName\"> |\n#### Returns\n`Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\>\n### createUserFlairTemplate\n▸ **createUserFlairTemplate**(`options`): `Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\>\n#### Parameters",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: Subreddit",
+        "Methods",
+        "createUserFlairTemplate",
+        "Parameters"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: Subreddit, Methods</path>\n| Name | Type |\n|---|---|\n| options | Omit<CreateFlairTemplateOptions, \"subredditName\"> |\n#### Returns\n`Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\>\n### getApprovedUsers\n▸ **getApprovedUsers**(`options?`): [`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetUsersOptions |\n#### Returns\n[`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\n### getBannedUsers\n▸ **getBannedUsers**(`options?`): [`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetUsersOptions |\n#### Returns\n[`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\n### getBannedWikiContributors\n▸ **getBannedWikiContributors**(`options?`): [`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetUsersOptions |\n#### Returns\n[`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\n### getCommentsAndPostsByIds\n▸ **getCommentsAndPostsByIds**(`ids`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\nReturn a listing of things specified by their fullnames.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| ids | string[] | Array of thing full ids (e.g. t3_abc123) |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n**`Example`**\n```ts\nconst subreddit = await reddit.getSubredditByName('askReddit');\nconst listing = subreddit.getCommentsAndPostsByIds(['t3_abc123', 't1_xyz123']);\nconst items = await listing.all();\nconsole.log(items); // [Post, Comment]\n```\n### getControversialPosts\n▸ **getControversialPosts**(`options?`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | Omit<GetPostsOptionsWithTimeframe, \"subredditName\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n### getEdited",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Class: Subreddit",
+        "Methods"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Subreddit, Methods, getModQueue, Parameters</path>\n▸ **getEdited**(`options`): [`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\nReturn a listing of things that have been edited recently.\n#### Parameters\n| Name | Type |\n|---|---|\n| options | AboutSubredditOptions<\"comment\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\n**`Example`**\n```ts\nconst subreddit = await reddit.getSubredditByName('mysubreddit');\nlet listing = await subreddit.getEdited();\nconsole.log('Posts and Comments: ', await listing.all());\nlisting = await subreddit.getEdited({ type: 'post' });\nconsole.log('Posts: ', await listing.all());\n```\n▸ **getEdited**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | AboutSubredditOptions<\"post\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n▸ **getEdited**(`options?`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options? | AboutSubredditOptions<\"all\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n### getModQueue\n▸ **getModQueue**(`options`): [`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\nReturn a listing of things requiring moderator review, such as reported things and items.\n#### Parameters\n| Name | Type |\n|---|---|\n| options | AboutSubredditOptions<\"comment\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\n**`Example`**\n```ts\nconst subreddit = await reddit.getSubredditByName('mysubreddit');\nlet listing = await subreddit.getModQueue();\nconsole.log('Posts and Comments: ', await listing.all());\nlisting = await subreddit.getModQueue({ type: 'post' });\nconsole.log('Posts: ', await listing.all());\n```\n▸ **getModQueue**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | AboutSubredditOptions<\"post\"> |",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: Subreddit",
+        "Methods",
+        "getModQueue",
+        "Parameters"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Subreddit, Methods, getReports, Returns</path>\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n▸ **getModQueue**(`options?`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options? | AboutSubredditOptions<\"all\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n### getModerationLog\n▸ **getModerationLog**(`options`): [`Listing`](models.Listing.md)<[`ModAction`](../interfaces/models.ModAction.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetModerationLogOptions |\n#### Returns\n[`Listing`](models.Listing.md)<[`ModAction`](../interfaces/models.ModAction.md)\\>\n### getModerators\n▸ **getModerators**(`options?`): [`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetUsersOptions |\n#### Returns\n[`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\n### getMutedUsers\n▸ **getMutedUsers**(`options?`): [`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetUsersOptions |\n#### Returns\n[`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\n### getPostFlairTemplates\n▸ **getPostFlairTemplates**(): `Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\[\\]>\n#### Returns\n`Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\[\\]>\n### getReports\n▸ **getReports**(`options`): [`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\nReturn a listing of things that have been reported.\n#### Parameters\n| Name | Type |\n|---|---|\n| options | AboutSubredditOptions<\"comment\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\n**`Example`**",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: Subreddit",
+        "Methods",
+        "getReports",
+        "Returns"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Subreddit, Methods, getSpam</path>\n```ts\nconst subreddit = await reddit.getSubredditByName('mysubreddit');\nlet listing = await subreddit.getReports();\nconsole.log('Posts and Comments: ', await listing.all());\nlisting = await subreddit.getReports({ type: 'post' });\nconsole.log('Posts: ', await listing.all());\n```\n▸ **getReports**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | AboutSubredditOptions<\"post\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n▸ **getReports**(`options?`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options? | AboutSubredditOptions<\"all\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n### getSpam\n▸ **getSpam**(`options`): [`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\nReturn a listing of things that have been marked as spam or otherwise removed.\n#### Parameters\n| Name | Type |\n|---|---|\n| options | AboutSubredditOptions<\"comment\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\n**`Example`**\n```ts\nconst subreddit = await reddit.getSubredditByName('mysubreddit');\nlet listing = await subreddit.getSpam();\nconsole.log('Posts and Comments: ', await listing.all());\nlisting = await subreddit.getSpam({ type: 'post' });\nconsole.log('Posts: ', await listing.all());\n```\n▸ **getSpam**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | AboutSubredditOptions<\"post\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n▸ **getSpam**(`options?`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options? | AboutSubredditOptions<\"all\"> |\n#### Returns",
+    "metadata": {
+      "type": [
+        "code",
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: Subreddit",
+        "Methods",
+        "getSpam"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Subreddit, Methods, getUserFlair</path>\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n### getTopPosts\n▸ **getTopPosts**(`options?`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | Omit<GetPostsOptionsWithTimeframe, \"subredditName\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n### getUnmoderated\n▸ **getUnmoderated**(`options`): [`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\nReturn a listing of things that have yet to be approved/removed by a mod.\n#### Parameters\n| Name | Type |\n|---|---|\n| options | AboutSubredditOptions<\"comment\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\n**`Example`**\n```ts\nconst subreddit = await reddit.getSubredditByName('mysubreddit');\nlet listing = await subreddit.getUnmoderated();\nconsole.log('Posts and Comments: ', await listing.all());\nlisting = await subreddit.getUnmoderated({ type: 'post' });\nconsole.log('Posts: ', await listing.all());\n```\n▸ **getUnmoderated**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | AboutSubredditOptions<\"post\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\n▸ **getUnmoderated**(`options?`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options? | AboutSubredditOptions<\"all\"> |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md) | [`Comment`](models.Comment.md)\\>\n### getUserFlair\n▸ **getUserFlair**(`options?`): `Promise`<[`GetUserFlairBySubredditResponse`](../modules/models.md#getuserflairbysubredditresponse)\\>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: Subreddit",
+        "Methods",
+        "getUserFlair"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Subreddit, Methods, muteUser, Parameters</path>\nGet the user flair for the given subreddit. If `usernames` is provided then it will return only the flair for the specified users. If retrieving the list of flair for a given subreddit and the list is long then this method will return a `next` field which can be passed into the `after` field on the next call to retrieve the next slice of data. To retrieve the previous slice of data pass the `prev` field into the `before` field during the subsequent call.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options? | GetUserFlairOptions | See interface |\n#### Returns\n`Promise`<[`GetUserFlairBySubredditResponse`](../modules/models.md#getuserflairbysubredditresponse)\\>\n**`Example`**\n```ts\nconst subredditName = 'mysubreddit';\nconst subreddit = await reddit.getSubredditByName(subredditName);\nconst response = await subreddit.getUserFlair();\nconst userFlairList = response.users;\n```\n**`Example`**\n```ts\nconst response = await subreddit.getUserFlair({ after: 't2_awefae' });\nconst userFlairList = response.users;\n```\n**`Example`**\n```ts\nconst response = await subreddit.getUserFlair({ usernames: ['toxictoad', 'badapple'] });\nconst userFlairList = response.users;\n```\n### getUserFlairTemplates\n▸ **getUserFlairTemplates**(): `Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\[\\]>\n#### Returns\n`Promise`<[`FlairTemplate`](models.FlairTemplate.md)\\[\\]>\n### getWikiContributors\n▸ **getWikiContributors**(`options?`): [`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetUsersOptions |\n#### Returns\n[`Listing`](models.Listing.md)<[`User`](models.User.md)\\>\n### inviteModerator\n▸ **inviteModerator**(`username`, `permissions?`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n| permissions? | ModeratorPermission[] |\n#### Returns\n`Promise`<`void`\\>\n### muteUser\n▸ **muteUser**(`username`, `note?`): `Promise`<`void`\\>\n#### Parameters",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: Subreddit",
+        "Methods",
+        "muteUser",
+        "Parameters"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Subreddit, Methods</path>\n| Name | Type |\n|---|---|\n| username | string |\n| note? | string |\n#### Returns\n`Promise`<`void`\\>\n### removeModerator\n▸ **removeModerator**(`username`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`<`void`\\>\n### removeUser\n▸ **removeUser**(`username`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`<`void`\\>\n### removeWikiContributor\n▸ **removeWikiContributor**(`username`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`<`void`\\>\n### revokeModeratorInvite\n▸ **revokeModeratorInvite**(`username`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`<`void`\\>\n### setModeratorPermissions\n▸ **setModeratorPermissions**(`username`, `permissions`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n| permissions | ModeratorPermission[] |\n#### Returns\n`Promise`<`void`\\>\n### submitPost\n▸ **submitPost**(`options`): `Promise`<[`Post`](models.Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | SubmitLinkOptions | { text: string } & CommonSubmitPostOptions | { richtext: object | RichTextBuilder } & CommonSubmitPostOptions |\n#### Returns\n`Promise`<[`Post`](models.Post.md)\\>\n### toJSON\n▸ **toJSON**(): `Pick`<[`Subreddit`](models.Subreddit.md), `\"name\"` | `\"type\"` | `\"description\"` | `\"id\"` | `\"title\"` | `\"language\"` | `\"nsfw\"` | `\"settings\"` | `\"createdAt\"` | `\"numberOfSubscribers\"` | `\"numberOfActiveUsers\"`\\>\n#### Returns\n`Pick`<[`Subreddit`](models.Subreddit.md), `\"name\"` | `\"type\"` | `\"description\"` | `\"id\"` | `\"title\"` | `\"language\"` | `\"nsfw\"` | `\"settings\"` | `\"createdAt\"` | `\"numberOfSubscribers\"` | `\"numberOfActiveUsers\"`\\>\n### unbanUser\n▸ **unbanUser**(`username`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`<`void`\\>\n### unbanWikiContributor",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: Subreddit",
+        "Methods"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Subreddit, Methods, unmuteUser, Returns</path>\n▸ **unbanWikiContributor**(`username`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`<`void`\\>\n### unmuteUser\n▸ **unmuteUser**(`username`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`<`void`\\>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: Subreddit",
+        "Methods",
+        "unmuteUser",
+        "Returns"
+      ],
+      "level": 3
+    }
+  }
+]

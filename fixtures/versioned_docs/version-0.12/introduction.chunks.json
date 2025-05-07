@@ -1,0 +1,44 @@
+[
+  {
+    "pageContent": "<path>Welcome to Devvit, Tools at your fingertips</path>\n## slug: /\n# Welcome to Devvit\nMeet Devvit: Reddit’s Developer Platform that lets you build powerful apps to enhance the communities you love.\n## Bring your imagination to life\nDevvit lets you create rich, immersive posts that seamlessly integrate into Reddit’s ecosystem.\nBuild interactive posts that ignite your community:\n-   [Live scoreboards](./showcase/apps#live-scores) that give your community play-by-play updates and a space for shitposting during the game.\n-   [Polls](./showcase/playgrounds) to provoke spicy conversations or take the pulse of your community.\n-   [Multiplayer games](./showcase/apps#bingo) played asynchronously or with other redditors in real time.\nOr create an entirely new [community game](./community_games.md) around an app, like [r/Pixelary](https://www.reddit.com/r/Pixelary/), a multiplayer game created just for redditors to draw, guess, and compete for bragging rights.\n## Tools at your fingertips\nBuilding on Devvit is simple and comes with built-in tools to help you succeed:",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Welcome to Devvit",
+        "Tools at your fingertips"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Welcome to Devvit, Community and support</path>\n-   [Playground](playground.md) – an interactive code editor with a live preview window that lets you experiment with blocks and try out your ideas.\n-   [@devvit/kit](devvit_kit.md) – a library of UI components and backend patterns you can use to build your apps fast.\n-   [Devvit CLI](devvit_cli.md) – the bridge between your codebase and Reddit.\nReddit hosts your code with dedicated Redis-backed storage. The UI toolkit lets you build [interactive posts](interactive_posts.md), add new buttons, and create unique post layouts. Triggers let you listen to and respond to events. You only have to write code once, and it’s available on web, iOS, and Android platforms.\n## Community and support\nReddit’s Developer Platform provides a supportive environment where you can collaborate, ask questions, share knowledge, and inspire one another. Join [r/devvit](https://www.reddit.com/r/devvit/) or become a member of our [Discord](https://discord.com/invite/R7yu2wh9Qz) channel. Browse example apps in our [public repo](https://github.com/reddit/devvit/tree/main/packages/apps) for project code you can fork and make your own.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Welcome to Devvit",
+        "Community and support"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Welcome to Devvit, Ready to explore?</path>\n## Ready to explore?\nIf you're a dev, checkout the [quickstart](quickstart.mdx).\nIf you’re a mod, here’s [everything you need to know](mod_resources.md) about adding apps to your community.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "level": 2,
+      "path": [
+        "Welcome to Devvit",
+        "Ready to explore?"
+      ]
+    }
+  }
+]

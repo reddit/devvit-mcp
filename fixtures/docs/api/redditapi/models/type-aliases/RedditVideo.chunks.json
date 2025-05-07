@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: RedditVideo, Properties, width?</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Type Alias: RedditVideo\n**RedditVideo** = `object`\nContains the data for a video hosted on Reddit that is in a post\n## Properties\n### bitrateKbps?\n`optional` **bitrateKbps**: `number`\nThe bitrate of the video in kilobits per second. E.g. 450\n### dashUrl?\n`optional` **dashUrl**: `string`\nThe URL to the DASH playlist file. E.g. \"[https://v.redd.it/abc123/DASHPlaylist.mpd](https://v.redd.it/abc123/DASHPlaylist.mpd)\"\n### duration?\n`optional` **duration**: `number`\nThe duration of the video in seconds. E.g. 30\n### fallbackUrl?\n`optional` **fallbackUrl**: `string`\nThe direct URL to the video. E.g. \"[https://v.redd.it/abc123/DASH\\_1080.mp4?source=fallback](https://v.redd.it/abc123/DASH_1080.mp4?source=fallback)\"\n### height?\n`optional` **height**: `number`\nThe height of the video in pixels. E.g. 1080\n### hlsUrl?\n`optional` **hlsUrl**: `string`\nThe URL to the HLS playlist file. E.g. \"[https://v.redd.it/abc123/HLSPlaylist.m3u8](https://v.redd.it/abc123/HLSPlaylist.m3u8)\"\n### isGif?\n`optional` **isGif**: `boolean`\nIf `true`, the video is a GIF\n### scrubberMediaUrl?\n`optional` **scrubberMediaUrl**: `string`\nThe URL to the scrubber media file. E.g. \"[https://v.redd.it/abc123/DASH\\_96.mp4](https://v.redd.it/abc123/DASH_96.mp4)\"\n### transcodingStatus?\n`optional` **transcodingStatus**: `string`\nThe status of the transcoding process. E.g. \"completed\"\n### width?\n`optional` **width**: `number`\nThe width of the video in pixels. E.g. 1920",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: RedditVideo",
+        "Properties",
+        "width?"
+      ],
+      "level": 0
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "pageContent": "<path>Menu actions, Limitations</path>\n# Menu actions\nAdd an item to the three dot menu.\nYou can add custom menu actions to posts and comments using the `Devvit.addMenuItem()` function.\n:::note On new Reddit, comment menu actions in modqueue are only available in card view. :::\n![Subreddit menu actions](../assets/capabilities/menu-actions/menu-actions-subreddit.png)\n## Supported Contexts\nYou can decide where the menu action shows up by specifying the context property. For example, setting the location to ‘comment’ will only show the menu action on comments.\n| Property | Values | Description |\n|---|---|---|\n| location (required) | comment, post, subreddit | Determines where the menu action appears in the custom post. |\n| postFilter (optional) | currentApp | Shows the action created by your app. The default is no filtering. |\n| forUserType (optional) | moderator | Specifies the user types that can see the menu action. The default is everyone. |\n## Limitations\n-   A sort order of actions in the context menu can't be specified.\n-   The context, name, and description fields do not support dynamic logic.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Menu actions",
+        "Limitations"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Menu actions, Example</path>\n## Example\nThis example uses `Devvit.addMenuItem()` to create menu actions for comments, posts and subreddits.\n```ts\nimport { Devvit } from '@devvit/public-api';\n\n// Declare multiple actions to be added to the menu\nDevvit.addMenuItem({\n  label: 'Say Hello',\n  location: 'post', // accepts 'post', 'comment', 'subreddit', or a combination as an array\n  forUserType: 'moderator', // restricts this action to moderators, leave blank for any user\n  onPress: (event, context) => {\n    context.ui.showToast(`Hello from a ${event.location}!`);\n  },\n});\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "level": 2,
+      "path": [
+        "Menu actions",
+        "Example"
+      ]
+    }
+  }
+]

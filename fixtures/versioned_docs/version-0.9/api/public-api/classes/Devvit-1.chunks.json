@@ -1,0 +1,116 @@
+[
+  {
+    "pageContent": "<path>Class: Devvit, Table of contents, Methods</path>\n# Class: Devvit\nDevvit's non-class-based API for Bundle programs. Bundles are expected to reexport their Devvit singleton. Config state is retained statically so that when a Bundle exports their static instance of Devvit, its constructor can populate the passed in Config with that static state.\nFor the class API, see Actor.\n## Hierarchy\n-   `Actor`\n    \n    ↳ **`Devvit`**\n## Table of contents\n### Constructors\n-   [constructor](Devvit-1.md#constructor)\n### Properties\n-   [ContextAction](Devvit-1.md#contextaction)\n-   [KVStore](Devvit-1.md#kvstore)\n-   [SchedulerHandler](Devvit-1.md#schedulerhandler)\n-   [Types](Devvit-1.md#types)\n-   [UserConfigurable](Devvit-1.md#userconfigurable)\n### Methods\n-   [addAction](Devvit-1.md#addaction)\n-   [addActions](Devvit-1.md#addactions)\n-   [addSchedulerHandler](Devvit-1.md#addschedulerhandler)\n-   [addTrigger](Devvit-1.md#addtrigger)\n-   [getApiClient](Devvit-1.md#getapiclient)\n-   [onAppInstall](Devvit-1.md#onappinstall)\n-   [onAppUpgrade](Devvit-1.md#onappupgrade)\n-   [onCommentReport](Devvit-1.md#oncommentreport)\n-   [onCommentSubmit](Devvit-1.md#oncommentsubmit)\n-   [onCommentUpdate](Devvit-1.md#oncommentupdate)\n-   [onPostReport](Devvit-1.md#onpostreport)\n-   [onPostSubmit](Devvit-1.md#onpostsubmit)\n-   [onPostUpdate](Devvit-1.md#onpostupdate)\n-   [onSubredditSubscribe](Devvit-1.md#onsubredditsubscribe)\n-   [use](Devvit-1.md#use)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: Devvit",
+        "Table of contents",
+        "Methods"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: Devvit, Properties</path>\n## Constructors\n### constructor\n• **new Devvit**(`cfg`)\n#### Parameters\n| Name | Type |\n|---|---|\n| cfg | Config |\n#### Overrides\nActor.constructor\n## Properties\n### ContextAction\n▪ `Static` **ContextAction**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| onAction | (cb: (args: ContextActionRequest, metadata?: Metadata) => Promise< { message?: string ; success?: boolean }>) => void |\n| onGetActions | (cb: (_?: Empty, metadata?: Metadata) => Promise< { actions?: { actionId?: string | undefined; name?: string | undefined; description?: string | undefined; contexts?: { post?: boolean | undefined; comment?: boolean | undefined; subreddit?: boolean | undefined; } | undefined; users?: { ...; } | undefined; userInput?: { ...; } | undefined; }[] }>) => void |\n### KVStore\n▪ `Static` **KVStore**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| onDel | (cb: (args: KeySet, metadata?: Metadata) => Promise< void>) => void |\n| onGet | (cb: (args: KeySet, metadata?: Metadata) => Promise< { messages?: { [x: string]: string | undefined; } }>) => void |\n| onList | (cb: (args: ListFilter, metadata?: Metadata) => Promise< { keys?: string[] }>) => void |\n| onPut | (cb: (args: MessageSet, metadata?: Metadata) => Promise< void>) => void |\n### SchedulerHandler\n▪ `Static` **SchedulerHandler**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| onHandleScheduledAction | (cb: (args: ScheduledAction, metadata?: Metadata) => Promise< void>) => void |\n### Types",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: Devvit",
+        "Properties"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: Devvit, Properties, UserConfigurable, Type declaration</path>\n▪ `Static` **Types**: `Readonly`< { `ContextAction`: `BoundType`< `ContextAction`\\> ; `HTTP`: `BoundType`< `HTTP`\\> ; `KVStore`: `BoundType`< `KVStore`\\> ; `Logger`: `BoundType`< `Logger`\\> ; `OnAppInstall`: `BoundType`< `OnAppInstall`\\> ; `OnAppUpgrade`: `BoundType`< `OnAppUpgrade`\\> ; `OnCommentReport`: `BoundType`< `OnCommentReport`\\> ; `OnCommentSubmit`: `BoundType`< `OnCommentSubmit`\\> ; `OnCommentUpdate`: `BoundType`< `OnCommentUpdate`\\> ; `OnPostReport`: `BoundType`< `OnPostReport`\\> ; `OnPostSubmit`: `BoundType`< `OnPostSubmit`\\> ; `OnPostUpdate`: `BoundType`< `OnPostUpdate`\\> ; `OnSubredditSubscribe`: `BoundType`< `OnSubredditSubscribe`\\> ; `RedditAPI`: { `Flair`: `BoundType`< `Flair`\\> ; `LinksAndComments`: `BoundType`< `LinksAndComments`\\> ; `Listings`: `BoundType`< `Listings`\\> ; `ModNote`: `BoundType`< `ModNote`\\> ; `Moderation`: `BoundType`< `Moderation`\\> ; `NewModmail`: `BoundType`< `NewModmail`\\> ; `PrivateMessages`: `BoundType`< `PrivateMessages`\\> ; `Subreddits`: `BoundType`< `Subreddits`\\> ; `Users`: `BoundType`< `Users`\\> ; `Widgets`: `BoundType`< `Widgets`\\> ; `Wiki`: `BoundType`< `Wiki`\\> } ; `Scheduler`: `BoundType`< `Scheduler`\\> ; `SchedulerHandler`: `BoundType`< `SchedulerHandler`\\> ; `Timer`: `BoundType`< `Timer`\\> ; `UserConfigurable`: `BoundType`< `UserConfigurable`\\> }>\n### UserConfigurable\n▪ `Static` **UserConfigurable**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| onHandleFormResponse | (cb: (args: ConfigForm, metadata?: Metadata) => Promise< { messages?: string[] ; success?: boolean }>) => void |\n| onRenderForm | (cb: (_?: Empty, metadata?: Metadata) => Promise< { fields?: { fieldType?: ConfigFieldType | undefined; key?: string | undefined; prompt?: string | undefined; response?: string | undefined; }[] }>) => void |",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: Devvit",
+        "Properties",
+        "UserConfigurable",
+        "Type declaration"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Devvit, Methods, addTrigger, Parameters</path>\n## Methods\n### addAction\n▸ `Static` **addAction**(`contextAction`): typeof [`Devvit`](Devvit-1.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| contextAction | ContextAction |\n#### Returns\ntypeof [`Devvit`](Devvit-1.md)\n▸ `Static` **addAction**(`contextAction`): typeof [`Devvit`](Devvit-1.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| contextAction | MultiContextAction |\n#### Returns\ntypeof [`Devvit`](Devvit-1.md)\n### addActions\n▸ `Static` **addActions**(`contextActions`): typeof [`Devvit`](Devvit-1.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| contextActions | (MultiContextAction | ContextAction)[] |\n#### Returns\ntypeof [`Devvit`](Devvit-1.md)\n### addSchedulerHandler\n▸ `Static` **addSchedulerHandler**(`schedulerHandler`): typeof [`Devvit`](Devvit-1.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| schedulerHandler | SchedulerHandler |\n#### Returns\ntypeof [`Devvit`](Devvit-1.md)\n### addTrigger\n▸ `Static` **addTrigger**(`config`): typeof [`Devvit`](Devvit-1.md)\nAdd a trigger handler that will be invoked when the given event happens in subreddit the in which the app is installed.\n**`Example`**\n```ts\nimport Devvit from '@devvit/public-api';\nDevvit.addTrigger({\n  event: Devvit.Trigger.PostSubmit,\n  handler(postSubmitEvent) {\n    console.log('a new post was created!');\n  },\n});\n\nimport Devvit from '@devvit/public-api';\nDevvit.addTrigger({\n  events: [Devvit.Trigger.PostSubmit, Devvit.Trigger.PostReport],\n  handler(event) {\n    if (event.type === Devvit.Trigger.PostSubmit) {\n      console.log('a new post was created!');\n    } else if (event.type === Devvit.Trigger.PostReport) {\n      console.log('a post was reported!');\n    }\n  },\n});\n```\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| config | PostSubmitConfig | {Devvit.TriggerConfig} the configuration of the added trigger |\n#### Returns\ntypeof [`Devvit`](Devvit-1.md)\n▸ `Static` **addTrigger**(`config`): typeof [`Devvit`](Devvit-1.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| config | PostUpdateConfig |",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: Devvit",
+        "Methods",
+        "addTrigger",
+        "Parameters"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: Devvit, Methods, onAppUpgrade</path>\n#### Returns\ntypeof [`Devvit`](Devvit-1.md)\n▸ `Static` **addTrigger**(`config`): typeof [`Devvit`](Devvit-1.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| config | PostReportConfig |\n#### Returns\ntypeof [`Devvit`](Devvit-1.md)\n▸ `Static` **addTrigger**(`config`): typeof [`Devvit`](Devvit-1.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| config | CommentSubmitConfig |\n#### Returns\ntypeof [`Devvit`](Devvit-1.md)\n▸ `Static` **addTrigger**(`config`): typeof [`Devvit`](Devvit-1.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| config | CommentUpdateConfig |\n#### Returns\ntypeof [`Devvit`](Devvit-1.md)\n▸ `Static` **addTrigger**(`config`): typeof [`Devvit`](Devvit-1.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| config | CommentReportConfig |\n#### Returns\ntypeof [`Devvit`](Devvit-1.md)\n▸ `Static` **addTrigger**(`config`): typeof [`Devvit`](Devvit-1.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| config | SubredditSubscribeConfig |\n#### Returns\ntypeof [`Devvit`](Devvit-1.md)\n▸ `Static` **addTrigger**(`config`): typeof [`Devvit`](Devvit-1.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| config | AppInstallConfig |\n#### Returns\ntypeof [`Devvit`](Devvit-1.md)\n▸ `Static` **addTrigger**(`config`): typeof [`Devvit`](Devvit-1.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| config | AppUpgradeConfig |\n#### Returns\ntypeof [`Devvit`](Devvit-1.md)\n▸ `Static` **addTrigger**(`config`): typeof [`Devvit`](Devvit-1.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| config | MultiTriggerConfig |\n#### Returns\ntypeof [`Devvit`](Devvit-1.md)\n### getApiClient\n▸ `Static` **getApiClient**< `T`\\>(`type`): `T`\n#### Type parameters\n| Name | Type |\n|---|---|\n| T | extends ActorType |\n#### Parameters\n| Name | Type |\n|---|---|\n| type | BoundType< T> |\n#### Returns\n`T`\n### onAppInstall\n▸ `Static` **onAppInstall**(`cb`): `void`\n#### Parameters\n| Name | Type |\n|---|---|\n| cb | (args: AppInstall, metadata?: Metadata) => Promise< {}> |\n#### Returns\n`void`\n### onAppUpgrade\n▸ `Static` **onAppUpgrade**(`cb`): `void`",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: Devvit",
+        "Methods",
+        "onAppUpgrade"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Devvit, Methods, use</path>\n#### Parameters\n| Name | Type |\n|---|---|\n| cb | (args: AppUpgrade, metadata?: Metadata) => Promise< {}> |\n#### Returns\n`void`\n### onCommentReport\n▸ `Static` **onCommentReport**(`cb`): `void`\n#### Parameters\n| Name | Type |\n|---|---|\n| cb | (args: CommentReport, metadata?: Metadata) => Promise< {}> |\n#### Returns\n`void`\n### onCommentSubmit\n▸ `Static` **onCommentSubmit**(`cb`): `void`\n#### Parameters\n| Name | Type |\n|---|---|\n| cb | (args: CommentSubmit, metadata?: Metadata) => Promise< {}> |\n#### Returns\n`void`\n### onCommentUpdate\n▸ `Static` **onCommentUpdate**(`cb`): `void`\n#### Parameters\n| Name | Type |\n|---|---|\n| cb | (args: CommentUpdate, metadata?: Metadata) => Promise< {}> |\n#### Returns\n`void`\n### onPostReport\n▸ `Static` **onPostReport**(`cb`): `void`\n#### Parameters\n| Name | Type |\n|---|---|\n| cb | (args: PostReport, metadata?: Metadata) => Promise< {}> |\n#### Returns\n`void`\n### onPostSubmit\n▸ `Static` **onPostSubmit**(`cb`): `void`\n#### Parameters\n| Name | Type |\n|---|---|\n| cb | (args: PostSubmit, metadata?: Metadata) => Promise< {}> |\n#### Returns\n`void`\n### onPostUpdate\n▸ `Static` **onPostUpdate**(`cb`): `void`\n#### Parameters\n| Name | Type |\n|---|---|\n| cb | (args: PostUpdate, metadata?: Metadata) => Promise< {}> |\n#### Returns\n`void`\n### onSubredditSubscribe\n▸ `Static` **onSubredditSubscribe**(`cb`): `void`\n#### Parameters\n| Name | Type |\n|---|---|\n| cb | (args: SubredditSubscribe, metadata?: Metadata) => Promise< {}> |\n#### Returns\n`void`\n### use\n▸ `Static` **use**< `T`\\>(`type`, `opts?`): `T`\n#### Type parameters\n| Name | Type |\n|---|---|\n| T | extends ActorType |\n#### Parameters",
+    "metadata": {
+      "type": [
+        "heading",
+        "table",
+        "text"
+      ],
+      "path": [
+        "Class: Devvit",
+        "Methods",
+        "use"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Devvit, Methods, use, Returns</path>\n| Name | Type | Description |\n|---|---|---|\n| type | BoundType< T> | - |\n| opts? | Object | - |\n| opts.name? | string | Limit resolution to a Bundle or plugins (PLUGIN_APP_NAME). Eg, com.devvit.example/foo. |\n| opts.owner? | string | Limit resolution to owner. Eg, com.reddit. |\n| opts.typeName? | string | Limit resolution to type. No slashes. Eg, \"devvit.plugin.logger.Logger\". See Definition.fullName. |\n| opts.versions? | string | Limit resolution to versions. Eg, \">=0\" or \"1.0.0\". |\n#### Returns\n`T`",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: Devvit",
+        "Methods",
+        "use",
+        "Returns"
+      ],
+      "level": 4
+    }
+  }
+]

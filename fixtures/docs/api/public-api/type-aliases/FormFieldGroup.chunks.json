@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: FormFieldGroup, Properties, type</path>\n[**@devvit/public-api v0.11.15-dev**](../README.md)\n# Type Alias: FormFieldGroup\n**FormFieldGroup** = `object`\nA grouping of fields\n## Properties\n### fields\n**fields**: readonly [`FormField`](FormField.md)\\[\\]\nThe fields that will be displayed in the group\n### helpText?\n`optional` **helpText**: `string`\nAn optional help text that will be displayed below the group\n### label\n**label**: `string`\nThe label of the group that will be displayed to the user\n### required?\n`optional` **required**: `never`\n### type\n**type**: `\"group\"`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: FormFieldGroup",
+        "Properties",
+        "type"
+      ],
+      "level": 0
+    }
+  }
+]

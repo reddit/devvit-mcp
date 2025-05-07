@@ -1,0 +1,46 @@
+[
+  {
+    "pageContent": "<path>Working with useInterval, How it works</path>\n# Working with useInterval\nUpdate live experiences in real time.\n:::note This feature is experimental. There are known issues with interval timing especially when using server side calls, like calling Redis, within the useInterval function. This would result in intervals longer than what a developer specifies. :::\nThe `useInterval` method lets you build live apps that automatically update in real time. You can use this method to trigger a render of your experience post to do things like add a countdown timer, update a scoreboard with new play information, or set up a clock.\n![Countdown timer](./assets/custom-posts/custom-posts-useinterval.png)\n## How it works\nThe `useInterval` method lets you request that your experience be re-rendered at a specified interval. Intervals are set in milliseconds, with a 1000ms minimum.\n```tsx\nimport { Devvit, useState, useInterval } from '@devvit/public-api';\n\nconst [counter, setCounter] = useState(1000);\n\nconst updateInterval = useInterval(() => {\n  setCounter((counter) => counter - 1);\n}, 1000);\n\nupdateInterval.start();\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Working with useInterval",
+        "How it works"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Working with useInterval, useInterval vs scheduler</path>\n## Key limitations\n-   You can only use one active, running `useInterval` per app.\n-   The minimum allowed interval time is 1 second.\n-   The timing is specific to the app. Timing begins when a user engages with the app, and the time interval triggers a refresh. For example:\n    -   If you build a stopwatch and add 1000 ms each time the interval runs, the actual elapsed time would include the time between interval triggers and would be something like 1020 ms.\n    -   If you build a countdown timer, the time interval trigger subtracts the current time at render, so it will match the elapsed time.\n-   An interval runs while the post is visible on screen. If a user navigates away, it is suspended.\n## useInterval vs scheduler\nThe `useInterval` method is different from the scheduler, in a few important ways:\n-   `useInterval`executes on the client and triggers updates to your app locally (it’s similar to setInterval on the web). It can re-render on the user's device to do things like create animations or refresh the screen.\n-   Scheduler executes on the server and can be used to run background processes.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Working with useInterval",
+        "useInterval vs scheduler"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Working with useInterval, Example clock app, Code sample</path>\n## Example clock app\n### Playground link\n### Code sample\n```tsx\nimport { Devvit, useState, useInterval } from '@devvit/public-api';\n\nfunction getCurrentTime() {\n  const now = new Date();\n  const hours = String(now.getHours()).padStart(2, '0');\n  const minutes = String(now.getMinutes()).padStart(2, '0');\n  const seconds = String(now.getSeconds()).padStart(2, '0');\n  return `${hours}:${minutes}:${seconds}`;\n}\n\nDevvit.addCustomPostType({\n  name: 'Clock',\n  render: (context) => {\n    const [time, setTime] = useState(() => getCurrentTime());\n    const tick = () => setTime(() => getCurrentTime());\n    useInterval(tick, 1000).start();\n\n    return (\n      <vstack alignment=\"center middle\" height=\"100%\">\n        <text size=\"xxlarge\">{time}</text>\n      </vstack>\n    );\n  },\n});\n\nexport default Devvit;\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Working with useInterval",
+        "Example clock app",
+        "Code sample"
+      ],
+      "level": 2
+    }
+  }
+]

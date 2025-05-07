@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: ModLogOptions<T>, Type Parameters, T</path>\n[**@devvit/public-api v0.12.0-dev**](../../README.md)\n# Type Alias: ModLogOptions<T>\n**ModLogOptions**<`T`\\> = `Omit`<`AboutSubredditHelperOptions`<`T`\\>, `\"location\"`\\>\n## Type Parameters\n### T\n`T` _extends_ [`AboutSubredditTypes`](AboutSubredditTypes.md)",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: ModLogOptions<T>",
+        "Type Parameters",
+        "T"
+      ],
+      "level": 0
+    }
+  }
+]

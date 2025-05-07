@@ -1,0 +1,16 @@
+[
+  {
+    "pageContent": "<path>Type Alias: AsyncUseStateInitializer()<S>, Returns</path>\n[**@devvit/public-api v0.11.15-dev**](../README.md)\n# Type Alias: AsyncUseStateInitializer()<S>\n**AsyncUseStateInitializer**<`S`\\> = () => `Promise`<`S`\\>\n## Type Parameters\n### S\n`S`\n## Returns\n`Promise`<`S`\\>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: AsyncUseStateInitializer()<S>",
+        "Returns"
+      ],
+      "level": 0
+    }
+  }
+]

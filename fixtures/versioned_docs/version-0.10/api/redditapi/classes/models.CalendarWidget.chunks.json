@@ -1,0 +1,35 @@
+[
+  {
+    "pageContent": "<path>Class: CalendarWidget, Constructors, constructor, Overrides</path>\n# Class: CalendarWidget\n[models](../modules/models.md).CalendarWidget\n## Hierarchy\n-   [`Widget`](models.Widget.md)\n    \n    ↳ **`CalendarWidget`**\n## Table of contents\n### Constructors\n-   [constructor](models.CalendarWidget.md#constructor)\n### Accessors\n-   [configuration](models.CalendarWidget.md#configuration)\n-   [googleCalendarId](models.CalendarWidget.md#googlecalendarid)\n-   [id](models.CalendarWidget.md#id)\n-   [name](models.CalendarWidget.md#name)\n-   [styles](models.CalendarWidget.md#styles)\n-   [subredditName](models.CalendarWidget.md#subredditname)\n### Methods\n-   [delete](models.CalendarWidget.md#delete)\n-   [toJSON](models.CalendarWidget.md#tojson)\n## Constructors\n### constructor\n• **new CalendarWidget**(`widgetData`, `subredditName`, `metadata`): [`CalendarWidget`](models.CalendarWidget.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| widgetData | GetWidgetsResponse_WidgetItem |\n| subredditName | string |\n| metadata | undefined | Metadata |\n#### Returns\n[`CalendarWidget`](models.CalendarWidget.md)\n#### Overrides\n[Widget](models.Widget.md).[constructor](models.Widget.md#constructor)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: CalendarWidget",
+        "Constructors",
+        "constructor",
+        "Overrides"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: CalendarWidget, Methods, toJSON, Overrides</path>\n## Accessors\n### configuration\n• `get` **configuration**(): `CalendarWidgetConfiguration`\n#### Returns\n`CalendarWidgetConfiguration`\n### googleCalendarId\n• `get` **googleCalendarId**(): `string`\n#### Returns\n`string`\n### id\n• `get` **id**(): `string`\n#### Returns\n`string`\n#### Inherited from\nWidget.id\n### name\n• `get` **name**(): `string`\n#### Returns\n`string`\n#### Inherited from\nWidget.name\n### styles\n• `get` **styles**(): `WidgetStyles`\n#### Returns\n`WidgetStyles`\n### subredditName\n• `get` **subredditName**(): `string`\n#### Returns\n`string`\n#### Inherited from\nWidget.subredditName\n## Methods\n### delete\n▸ **delete**(): `Promise`<`void`\\>\n#### Returns\n`Promise`<`void`\\>\n#### Inherited from\n[Widget](models.Widget.md).[delete](models.Widget.md#delete)\n### toJSON\n▸ **toJSON**(): `Pick`<[`Widget`](models.Widget.md), `\"name\"` | `\"subredditName\"` | `\"id\"`\\> & `Pick`<[`CalendarWidget`](models.CalendarWidget.md), `\"googleCalendarId\"` | `\"configuration\"` | `\"styles\"`\\>\n#### Returns\n`Pick`<[`Widget`](models.Widget.md), `\"name\"` | `\"subredditName\"` | `\"id\"`\\> & `Pick`<[`CalendarWidget`](models.CalendarWidget.md), `\"googleCalendarId\"` | `\"configuration\"` | `\"styles\"`\\>\n#### Overrides\n[Widget](models.Widget.md).[toJSON](models.Widget.md#tojson)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: CalendarWidget",
+        "Methods",
+        "toJSON",
+        "Overrides"
+      ],
+      "level": 2
+    }
+  }
+]

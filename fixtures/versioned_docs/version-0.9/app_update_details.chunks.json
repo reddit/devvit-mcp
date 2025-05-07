@@ -1,0 +1,32 @@
+[
+  {
+    "pageContent": "<path>Update, Update Devvit</path>\n# Update\n## Update your app\nTo edit your app name and description, select “Edit app details” from your app page.\nNote that when you publish an updated app, subreddits using your app will remain on the prior version until the moderator chooses to upgrade to the updated version. If your app is listed publicly, the new version will be available after it has been reviewed.\n### Failed builds\n:::info If your build fails, the affected version of your app will not be able to be installed until it is fixed. As the app developer you will see a notification in the App details section, telling you which version failed.\n![app failed build error](./assets/app_failed_build_error.png)\nYou can install a previous version using the CLI:\n```ts\ndevvit install app-slug@version r/location\n```\nAs a moderator, you will always see the most recent successfully built version of the app. Your installation process should not be affected. :::\n## Update Devvit\nRun the following `npm` command to update your Devvit CLI:",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Update",
+        "Update Devvit"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Update, Upgrade your app to the latest version of Devvit</path>\n:::note\nThis assumes you have installed `Node.js` and have `npm` available. If you are unsure if these tools are installed, see our [Quickstart](quickstart)\n:::\n```bash\nnpm update -g @devvit/cli\n```\n## Upgrade your app to the latest version of Devvit\nYou'll need to upgrade any existing apps to the latest version of Devvit if you plan to use any features in the new release. You can do this using `devvit update app`.\nFirst, move into the top-level directory of your app\n```bash\n\nmy-simpler-project  # <- you should be here\n├── devvit.yaml\n├── package.json\n├── src\n│   └── main.ts\n├── tsconfig.json\n├── yarn.lock\n```\nNext, run:\n```bash\ndevvit update app\n```\nFinally, you can check the version of Devvit your app is using by looking in the top-level `package.json` file.\n```bash\n\nmy-simpler-project\n├── devvit.yaml\n├── package.json      # <- open this file\n├── src\n│   └── main.ts\n├── tsconfig.json\n├── yarn.lock\n```\nYou should see the devvit version under `devDependencies`:\n```bash\n{\n  \"name\": \"mrt-0-8-remind-me\",\n  \"version\": \"0.0.0\",\n  \"type\": \"module\",\n  \"private\": true,\n  \"license\": \"BSD-3-Clause\",\n  \"main\": \"index.js\",\n  \"workspaces\": [\n    \"actors/my-actor\"\n  ],\n  \"devDependencies\": {\n    \"@devvit/tsconfig\": \"0.8.0\",     #<- should be the new version of devvit\n    \"typescript\": \"4.9.3\"\n  },\n}\n```",
+    "metadata": {
+      "type": [
+        "text",
+        "code",
+        "heading"
+      ],
+      "path": [
+        "Update",
+        "Upgrade your app to the latest version of Devvit"
+      ],
+      "level": 2
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: AppUpgradeDefinition, Properties, onEvent</path>\n[**@devvit/public-api v0.12.0-dev**](../README.md)\n# Type Alias: AppUpgradeDefinition\n**AppUpgradeDefinition** = `object`\n## Properties\n### event\n**event**: [`AppUpgrade`](AppUpgrade.md)\n### onEvent\n**onEvent**: [`TriggerOnEventHandler`](TriggerOnEventHandler.md)<[`AppUpgrade`](../@devvit/namespaces/EventTypes/interfaces/AppUpgrade.md)\\>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: AppUpgradeDefinition",
+        "Properties",
+        "onEvent"
+      ],
+      "level": 0
+    }
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Type Alias: ImagePosition</path>\n[**@devvit/public-api v0.12.0-dev**](../../README.md)\n# Type Alias: ImagePosition\n**ImagePosition** = `\"cover\"` | `\"tiled\"`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: ImagePosition"
+      ],
+      "level": 0
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "pageContent": "<path>Publishing an app, App review</path>\n# Publishing an app\nOnce you [upload](./dev_guide.mdx#7upload) your app, a private version of it is added to the [Apps](https://developers.reddit.com/apps) directory. Only you will be able to see your app in the directory, and it’s available for you to use in small subreddits with fewer than 200 subscribers for testing purposes.\nTo use your app in larger subreddits, you’ll need to publish your app. To do this from the CLI, run:\n```\ndevvit publish\n```\nYour app is automatically submitted to the Devvit team for review and approval. From the CLI, you’ll be prompted to select how you want your app to appear in the Apps directory:\n-   **Unlisted** means that the app is only visible to you in the directory, and you can install your app on larger subreddits that you moderate.\n-   **Public** means that your app is visible to all users in the Apps directory and can be installed by mods and admins across Reddit.\nDon’t worry, you can change your app visibility at any time.\n## App review\nThe Developer Platform team will review your code, read through your app README.md file, and potentially test your app. The review process typically takes one week, and you’ll be notified of your app status, which could be:",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Publishing an app",
+        "App review"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Publishing an app, Changing app visibility, Unlisted to public</path>\n-   Approved\n-   Approved with non-blocking feedback\n-   Rejected with feedback on how to get your app approved\n-   Rejected on the basis of a policy, guideline, or conflict with the intended behavior of our products\n:::note We recommend thoroughly playtesting your app, familiarizing yourself with Devvit guidelines, and providing a detailed app overview in your README.md to expedite the app review cycle. :::\n## Changing app visibility\nAfter your app has been approved, you may want to change the visibility status.\n### Public to unlisted\nTo hide your app from the public after it’s been listed, run:\n```tsx\ndevvit upload\ndevvit publish --unlisted\n```\n:::note This will not remove the code from the directory, and it will not remove the app from subreddits that have installed previous versions. Once an app is published and installed, that version will continue to exist until a moderator explicitly removes it. :::\n### Unlisted to public\nTo make your unlisted app public after it's been approved, run:\n```tsx\ndevvit upload\ndevvit publish --public\n```",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Publishing an app",
+        "Changing app visibility",
+        "Unlisted to public"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Publishing an app, Promotion</path>\n## Promotion\nIf you need help finding the right place on Reddit for your app, reach out to our team. In some cases we may be able to:\n-   Provide guidance on the right home(s) for your app\n-   Help you coordinate with subreddit moderators\n-   Connect you with users that would be interested in your app\n-   Run playtests for your app, provide feedback, and improve your app\n-   Provide other materials, like visual assets, to help you market your app\n-   Give guidance on how to grow a subreddit\nWe cannot help facilitate the success of all apps, but we will provide guidance whenever possible. Reach out to one of our support channels to chat with our team.\n:::note Make sure you don’t break subreddit rules or sitewide content policies when promoting your app on Reddit. :::",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "level": 2,
+      "path": [
+        "Publishing an app",
+        "Promotion"
+      ]
+    }
+  }
+]

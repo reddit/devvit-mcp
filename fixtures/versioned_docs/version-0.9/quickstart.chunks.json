@@ -1,0 +1,137 @@
+[
+  {
+    "pageContent": "<path>Quickstart, Before you begin</path>\nimport Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';\n# Quickstart\nThe following quickstart shows you how to install the Devvit command line tool and use it to get an app running on a test subreddit.\n## Requirements\nMake sure you have the following software installed:\n-   Node.js 14.17.0 or higher\n-   Node.js package manager: either npm or Yarn 1.x\n-   Git 2.28.0 or higher\n-   the latest version of Chrome or Firefox\n## What you'll learn\nIn this quickstart, you'll learn how to:\n-   Set up your development environment\n-   Create an app using a template\n-   Install an app on a subreddit\n-   View logging messages for your app\n-   Update your app\n## Before you begin\nThis guide assumes you have no Javascript or Node.js experience, but are familiar with basic coding principles and working from a command line.\nBefore you begin, you need:\n-   A Reddit account that has been allowlisted for access to the Reddit Developer Platform ([contact us](help.md) if you don't have one yet).\n-   A [subreddit](https://mods.reddithelp.com/hc/en-us/articles/360001766991-How-to-create-a-subreddit) with full moderator permissions and fewer than 10 members. Your test subreddit can be any type: public, restricted, private, or Not Safe For Work (NSFW).\n-   An editor for viewing and editing code (we recommend [VS Code](https://code.visualstudio.com/)).",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Quickstart",
+        "Before you begin"
+      ],
+      "level": 0
+    }
+  },
+  {
+    "pageContent": "<path>Quickstart, Set up your environment</path>\n:::note If you've never installed Node.js on your computer, please use the installation instructions below. :::\n## Set up your environment\n### Install Node.js\n#### Option 1: Use node version manager (nvm)\nInstall or update [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) to use as a handy command-line tool for managing multiple Node.js versions on your system. This will allow you to switch between different versions easily. If you to use a different node version manager, check out these [suggestions](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) from nmpjs.org.\nFor macOS or Linux:\n-   Run the following command line in your terminal to install nvm.\n```bash\ncurl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash\n```\n-   Close and re-open your terminal to have nvm available.\n    \n-   Install the latest version of Node.js.\n```bash\nnvm install node\n```\nFor Windows:\n-   Download and install nvm-windows by following the instructions in the repository.\n    \n-   Restart your terminal or command prompt.\n    \n-   Install the latest version of Node.js.\n```bash\nnvm install node\n```\n#### Option 2: Use Node.js installer from nodejs.org\n-   Visit the official [Node.js website](https://nodejs.org) to download the installer for your operating system (Windows, macOS, or Linux).\n-   Run the installer and follow the prompts to install Node.js and npm (the package manager for Node.js).\n:::note If you install Node.js this way, you may experience permissions issues when trying to run Devvit, which is [documented on NPM's website](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm). Both NPM and us here at Reddit highly encourage you to use nvm if possible. If that's not possible, here are some tips on how to [fix these permissions issues](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm). For Windows users specifically, please use a node version manager. :::\n### Verify Node.js installation",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Quickstart",
+        "Set up your environment"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Quickstart, Set up your environment, Log in to Devvit</path>\nCheck that Node.js is installed correctly by running the following commands:\n```bash\nnode --version\nnpm --version\n```\nYou should see the version numbers for Node.js and npm as output.\n### Install Devvit\nTo download and install the Devvit CLI, run one of the following commands:\n```bash\nnpm install -g devvit\n```\n\\-OR-\n```bash\nyarn global add devvit\n```\n:::note If you see permission errors, please read [npm's official guide](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) . Yarn depends on the same configuration as npm. :::\n### Log in to Devvit\nUse your **Reddit username** to log into Devvit. When you run the Devvit login, a Reddit authentication page will open in your browser (if the page doesn’t open automatically, you can use the link in the command line output).\nThe Devvit login will run until you follow the link and complete the [authentication process](authentication.md).\nRun:\n```bash\ndevvit login\n```\n:::note\nIf you can't log in, make sure you are using a Reddit account that has been allowlisted for the Reddit Developer Platform.\n:::\nTo verify your authentication, run:\n```bash\ndevvit whoami\n```\nThe output will be similar to this:\n`Logged in as u/yourredditusername`",
+    "metadata": {
+      "type": [
+        "text",
+        "code",
+        "heading"
+      ],
+      "path": [
+        "Quickstart",
+        "Set up your environment",
+        "Log in to Devvit"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Quickstart, Create an app, Upload your app</path>\n## Create an app\nNow that your environment is set up, you’re ready to create an app! In this exercise, you’ll use the [hello-world template](templates.md) to create a menu app that says \"Hello World\" when clicked.\nTo create a new directory with code for the app:\n-   From the terminal, navigate to a directory where you'd like to store your code.\n-   Enter the following command to create the app\n```bash\ndevvit new --template hello-world\n```\n-   At the prompt, enter a name for your app and press the return key.\n:::info\nRemember that app names must be between 3 - 16 characters in length, all lowercase, can't start with numerals, and include only a-z, 0-9 or '-' (for example, my-hello-world).\n:::\n### Explore your app\nYou now have a full directory with your app name. There are several files and folders in this directory. You can ignore most files, but make note of `src/main.ts`. This contains the main code for your app.\n```text\nmy-simpler-project\n├── devvit.yaml\n├── package.json\n├── src\n│   └── main.ts         # <- the main code is here (ignore the rest for now)\n├── tsconfig.json\n├── yarn.lock\n```\n### Upload your app\nNext you’ll upload your app to the [Community App Directory](https://developers.reddit.com). Don’t worry, this is a private version that only you can see.\n-   Navigate to the directory you just created (in our example, `cd my-hello-world`).\n-   Run `npm install` to install relevant dependencies.\n-   Run `devvit upload`.\n-   At the prompt, confirm the creation of your app.\n-   Add a description of your app that is at least 15 characters. You can always change your description later.\n-   Indicate if your app is Not Safe For Work (NSFW). The default is \"no\", so you can hit enter for this step.\n-   Make sure that you’re in the appropriate directory. In our example, you should be in the yourredditusername-hello-world directory.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Quickstart",
+        "Create an app",
+        "Upload your app"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Quickstart, Install your app, View your app</path>\n```text\nmy-simpler-project     # <- you should be here before uploading\n├── devvit.yaml\n├── package.json\n├── src\n│   └── main.ts\n├── tsconfig.json\n├── yarn.lock\n```\n-   Enter `devvit upload`.\nYou should see something like this:\n```text\n\nPublishing new version \"1.0.0.0\" to Reddit...... Success!\n```\n:::note\nWhen you upload a new app, an [app account](https://developers.reddit.com/docs/app_accounts) is automatically created just for your app.\n:::\n## Install your app\nYou can install your app on any subreddit that you moderate with full permissions. There are two ways to install an app on your subreddit: the Community App Directory or the Devvit CLI.\n:::note\nFor the beta, you must [create a test subreddit](https://mods.reddithelp.com/hc/en-us/articles/360001766991-How-to-create-a-subreddit) with fewer than 10 members for your personal testing. [Contact us](help.md) to allowlist larger subreddits on a case-by-case basis.\n:::\n### Use the Community App Directory\n-   Navigate to [My apps](https://developers.reddit.com/my/apps) and find your app in the list.\n![my apps](./assets/my-apps-5.png)\n-   Click on the entry for your app to open the app details page.\n![app details](./assets/app-details-5.png)\n-   Click the **Install** button. You will see a list of subreddits you are allowed to use to install your app.\n![app install](./assets/app-install-2.png)\n:::note\nIf the **Install** button is not active, you are not the moderator of an eligible subreddit. Try creating a new test subreddit with fewer than 10 members.\n:::\n### Use the Devvit CLI\nYou can use the CLI command `devvit install <app-name> <subreddit>` to install apps. From the CLI, enter:\n```bash\ndevvit install your-app-name r/devvit_test\n```\n### View your app\nYou're ready to use the app!",
+    "metadata": {
+      "type": [
+        "code",
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Quickstart",
+        "Install your app",
+        "View your app"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Quickstart, Debug your app</path>\n-   Navigate to [reddit.com](https://www.reddit.com) on your desktop web browser (Android and iOS support are coming soon!).\n-   Go to the subreddit where you installed your app\n-   **Refresh the page** (new apps may take a second to load)\n-   Make sure there is at least one post.\n-   Click the three dots on the bottom of the post. You'll see several robot icons with with associated actions at the bottom of the menu.\n![qs complete](./assets/qs_complete.png)\n-   Click on any of the robot icons to create an informational toast message at the bottom of the screen.\n![qs toast](./assets/qs_toast.png)\n## Debug your app\nYou can stream log events from your installed app to your command line. The hello-world template uses `Devvit.Types.Logger` to log information every time a menu app is clicked (See [Create a logger](logging.md) to learn more. For now, you'll see the logs as they are produced.\nTo view logs:\n-   Open a command line and navigate to the app directory.\n-   Enter `devvit logs <subreddit name>` to start streaming logs to your console.\n-   On a desktop browser, go to your test subreddit.\n-   Click on a menu item.\n-   You'll see a log appear in your console.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Quickstart",
+        "Debug your app"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Quickstart, Update your App, Upload a new version</path>\n```bash\n\ndevvit logs r/yourtestsubreddit yourredditname-hello-world\n```\nThe output should look similar to the following, where the `[DEBUG]` lines are logs.\n```text\n============================ streaming logs for a-fancy-hello-to-you on r/testingdevvit456 =============================\n[DEBUG] Nov 11 14:10:39 Hello, stranger!\n[DEBUG] Nov 11 14:10:43 Post action! Post ID: ysnmsd\n[DEBUG] Nov 11 14:10:48 Post action! Post ID: ysnmsd\n[DEBUG] Nov 11 14:10:51 Mod action! You clicked on this from the 0 context!\n[DEBUG] Nov 11 14:10:55 Subreddit action! Subreddit ID: 7d5f8c\n```\n-   To exit the streaming logger, enter `CTRL-c`.\n## Update your App\nNow that you've got a first version running, let's upload and install an updated version of your app. Here you’ll simply change the title of the first menu item, but you can refer to the tutorials (like [Creating a \"remind me\" app](remind_me_guide.md)) for how to add more interesting features later.\n### Change a menu action\nUsing your favorite editor:\n-   Open the `main.ts` file in your apps directory.\n-   Locate the first call to `Devvit.addAction`.\n-   Change the value of `name` from `Custom Post Action` to `My Fancy Action` (this should be on line 8).\n-   Save your changes.\nWhen you are done, the first `Devvit.addAction` should look like this:\n```typescript\nDevvit.addAction({\n  context: Context.POST,\n  name: 'My Fancy Action', // <- Change this line\n  description: 'Do something with this post',\n  handler: async (event) => {\n    const message = `Post action! Post ID: ${event.post?.id}`;\n    console.log(message);\n    /**\n     * We need to return two things from this call:\n     *  - success: whether the Action succeeded\n     *  - message: A bit of text to show the user as\n     *             feedback (confirmation, warning, error, etc.)\n     */\n    return { success: true, message };\n  },\n});\n```\n### Upload a new version\nTo upload your updated app:\n-   Move to the top level of your apps directory.",
+    "metadata": {
+      "type": [
+        "code",
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Quickstart",
+        "Update your App",
+        "Upload a new version"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Quickstart, Next steps</path>\n```text\nmy-simpler-project     # <- remember, you should be here before uploading\n├── devvit.yaml\n├── package.json\n├── src\n│   └── main.ts\n├── tsconfig.json\n├── yarn.lock\n```\n-   Run `devvit upload`.\nYour version number will update automatically.\n### Update your installation\nAfter you update your app, every subreddit that has installed your app has to **manually update** to the new version (don’t worry, this won’t last forever). To update your subreddit app installation:\n-   Go to [Apps I developed](https://developers.reddit.com/my/apps).\n-   Click on your app's listing. You’ll see a **Communities** section that shows the subreddits that have installed your app and the version each subreddit is currently using.\n-   When a new version of an app is available for a given subreddit, you will see a blue **Update** button. Click the button and follow the prompts to upgrade each installation.\n![app update](./assets/app-update.png)\n## Next steps\nNow you know how to create and deploy apps! Next up, try the following:",
+    "metadata": {
+      "type": [
+        "code",
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Quickstart",
+        "Next steps"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Quickstart, Next steps</path>\n-   Create a [remind me app](remind_me_guide.md).\n-   Check out our other [app templates](templates.md).\n-   Learn about [Reddit API plugins](reddit_api_plugin.md).",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 2,
+      "path": [
+        "Quickstart",
+        "Next steps"
+      ]
+    }
+  }
+]

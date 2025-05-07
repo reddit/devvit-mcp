@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Image Uploads, Example</path>\n# Image Uploads\nYou can upload an image via Devvit and embed it in a post or comment using rich-text builder.\n## Devvit configure\n```ts\nimport { Devvit } from '@devvit/public-api-old';\n\nconst media = Devvit.use(Devvit.Types.MediaService);\n```\n## Limitations\n-   Images must be 20 MB or less.\n-   Image uploads don’t work in Developer Studio, but you can use `devvit upload` to check your app in a test subreddit.\n## Example\n```ts\nimport { Devvit, Context } from '@devvit/public-api-old';\n\nconst media = Devvit.use(Devvit.Types.MediaService);\nconst links = Devvit.use(Devvit.Types.RedditAPI.LinksAndComments);\n\nDevvit.addAction({\n  context: Context.SUBREDDIT,\n  name: 'Post with Media',\n  description: 'Uploads external image and creates a post with media',\n  handler: async (event, metadata) => {\n    const { subreddit } = event;\n    try {\n      const response = await media.Upload(\n        {\n          url: 'https://media2.giphy.com/media/xTiN0CNHgoRf1Ha7CM/giphy.gif',\n          type: 'gif',\n        },\n        metadata\n      );\n      await links.Submit(\n        {\n          richtextJson: JSON.stringify({\n            document: [\n              {\n                c: [\n                  {\n                    e: 'text',\n                    t: 'Hello World!',\n                  },\n                ],\n                e: 'par',\n              },\n              {\n                e: 'img',\n                id: response.mediaId,\n              },\n            ],\n          }),\n          sr: subreddit!.displayName!,\n          kind: 'self',\n          title: 'Post with Embedded Media',\n        },\n        metadata\n      );\n      return {\n        success: true,\n        message: `created post with media: ${response.mediaId}`,\n      };\n    } catch (err) {\n      throw new Error(`Error uploading media: ${err}`);\n    }\n  },\n});\n\nexport default Devvit;\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Image Uploads",
+        "Example"
+      ],
+      "level": 1
+    }
+  }
+]

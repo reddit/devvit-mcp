@@ -1,0 +1,34 @@
+[
+  {
+    "pageContent": "<path>Interface: EditFlairTemplateOptions, Properties, modOnly, Inherited from</path>\n# Interface: EditFlairTemplateOptions\n## Hierarchy\n-   [`CreateFlairTemplateOptions`](CreateFlairTemplateOptions.md)\n    \n    ↳ **`EditFlairTemplateOptions`**\n## Table of contents\n### Properties\n-   [allowUserEdits](EditFlairTemplateOptions.md#allowuseredits)\n-   [allowableContent](EditFlairTemplateOptions.md#allowablecontent)\n-   [backgroundColor](EditFlairTemplateOptions.md#backgroundcolor)\n-   [id](EditFlairTemplateOptions.md#id)\n-   [maxEmojis](EditFlairTemplateOptions.md#maxemojis)\n-   [modOnly](EditFlairTemplateOptions.md#modonly)\n-   [subredditName](EditFlairTemplateOptions.md#subredditname)\n-   [text](EditFlairTemplateOptions.md#text)\n-   [textColor](EditFlairTemplateOptions.md#textcolor)\n## Properties\n### allowUserEdits\n• `Optional` **allowUserEdits**: `boolean`\nWhether or not users are allowed to edit this flair template before using it.\n#### Inherited from\n[CreateFlairTemplateOptions](CreateFlairTemplateOptions.md).[allowUserEdits](CreateFlairTemplateOptions.md#allowuseredits)\n### allowableContent\n• `Optional` **allowableContent**: [`AllowableFlairContent`](../README.md#allowableflaircontent)\nThe flair template's allowable content. Either 'all', 'emoji', or 'text'.\n#### Inherited from\n[CreateFlairTemplateOptions](CreateFlairTemplateOptions.md).[allowableContent](CreateFlairTemplateOptions.md#allowablecontent)\n### backgroundColor\n• `Optional` **backgroundColor**: `string`\nThe background color of the flair. Either 'transparent' or a hex color code. e.g. #FFC0CB\n#### Inherited from\n[CreateFlairTemplateOptions](CreateFlairTemplateOptions.md).[backgroundColor](CreateFlairTemplateOptions.md#backgroundcolor)\n### id\n• **id**: `string`\n### maxEmojis\n• `Optional` **maxEmojis**: `number`\n#### Inherited from\n[CreateFlairTemplateOptions](CreateFlairTemplateOptions.md).[maxEmojis](CreateFlairTemplateOptions.md#maxemojis)\n### modOnly\n• `Optional` **modOnly**: `boolean`\nWhether or not this flair template is only available to moderators.\n#### Inherited from",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Interface: EditFlairTemplateOptions",
+        "Properties",
+        "modOnly",
+        "Inherited from"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Interface: EditFlairTemplateOptions, Properties, textColor, Inherited from</path>\n[CreateFlairTemplateOptions](CreateFlairTemplateOptions.md).[modOnly](CreateFlairTemplateOptions.md#modonly)\n### subredditName\n• **subredditName**: `string`\nThe name of the subreddit to create the flair template in.\n#### Inherited from\n[CreateFlairTemplateOptions](CreateFlairTemplateOptions.md).[subredditName](CreateFlairTemplateOptions.md#subredditname)\n### text\n• **text**: `string`\nThe text to display in the flair.\n#### Inherited from\n[CreateFlairTemplateOptions](CreateFlairTemplateOptions.md).[text](CreateFlairTemplateOptions.md#text)\n### textColor\n• `Optional` **textColor**: [`FlairTextColor`](../README.md#flairtextcolor)\nEither 'dark' or 'light'.\n#### Inherited from\n[CreateFlairTemplateOptions](CreateFlairTemplateOptions.md).[textColor](CreateFlairTemplateOptions.md#textcolor)",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Interface: EditFlairTemplateOptions",
+        "Properties",
+        "textColor",
+        "Inherited from"
+      ],
+      "level": 3
+    }
+  }
+]

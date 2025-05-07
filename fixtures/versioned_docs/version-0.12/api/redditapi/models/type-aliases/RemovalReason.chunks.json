@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: RemovalReason, Properties, title</path>\n[**@devvit/public-api v0.12.0-dev**](../../README.md)\n# Type Alias: RemovalReason\n**RemovalReason** = `object`\nAn individual Removal Reason object.\n## Properties\n### id\n**id**: `string`\nThe ID of the removal reason.\n### message\n**message**: `string`\nThe message associated with the removal reason.\n### title\n**title**: `string`\nThe title of the removal reason.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: RemovalReason",
+        "Properties",
+        "title"
+      ],
+      "level": 0
+    }
+  }
+]

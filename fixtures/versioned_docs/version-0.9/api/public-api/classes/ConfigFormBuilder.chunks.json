@@ -1,0 +1,36 @@
+[
+  {
+    "pageContent": "<path>Class: ConfigFormBuilder, Methods, textarea, Parameters</path>\n# Class: ConfigFormBuilder\nHelper class that provides a Builder-style interface for generating a UserConfigurable ConfigForm\n## Table of contents\n### Constructors\n-   [constructor](ConfigFormBuilder.md#constructor)\n### Methods\n-   [booleanField](ConfigFormBuilder.md#booleanfield)\n-   [build](ConfigFormBuilder.md#build)\n-   [numberField](ConfigFormBuilder.md#numberfield)\n-   [textField](ConfigFormBuilder.md#textfield)\n-   [textarea](ConfigFormBuilder.md#textarea)\n## Constructors\n### constructor\n• **new ConfigFormBuilder**()\n## Methods\n### booleanField\n▸ **booleanField**(`key`, `label`, `currentValue?`): [`ConfigFormBuilder`](ConfigFormBuilder.md)\nAdd a BOOLEAN parameter to the configuration\n#### Parameters\n| Name | Type | Default value |\n|---|---|---|\n| key | string | undefined |\n| label | string | undefined |\n| currentValue | boolean | false |\n#### Returns\n[`ConfigFormBuilder`](ConfigFormBuilder.md)\n### build\n▸ **build**(): `ConfigForm`\nReturns the constructed ConfigForm\n#### Returns\n`ConfigForm`\n### numberField\n▸ **numberField**(`key`, `label`, `currentValue?`): [`ConfigFormBuilder`](ConfigFormBuilder.md)\nAdd a NUMBER parameter to the configuration\n#### Parameters\n| Name | Type | Default value |\n|---|---|---|\n| key | string | undefined |\n| label | string | undefined |\n| currentValue | number | 0 |\n#### Returns\n[`ConfigFormBuilder`](ConfigFormBuilder.md)\n### textField\n▸ **textField**(`key`, `label`, `currentValue?`): [`ConfigFormBuilder`](ConfigFormBuilder.md)\nAdd a STRING parameter to the configuration (single-line string)\n#### Parameters\n| Name | Type | Default value |\n|---|---|---|\n| key | string | undefined |\n| label | string | undefined |\n| currentValue | string | '' |\n#### Returns\n[`ConfigFormBuilder`](ConfigFormBuilder.md)\n### textarea\n▸ **textarea**(`key`, `label`, `currentValue?`): [`ConfigFormBuilder`](ConfigFormBuilder.md)\nAdd a PARAGRAPH parameter to the configuration (multi-line string)\n#### Parameters",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: ConfigFormBuilder",
+        "Methods",
+        "textarea",
+        "Parameters"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: ConfigFormBuilder, Methods, textarea, Returns</path>\n| Name | Type | Default value |\n|---|---|---|\n| key | string | undefined |\n| label | string | undefined |\n| currentValue | string | '' |\n#### Returns\n[`ConfigFormBuilder`](ConfigFormBuilder.md)",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: ConfigFormBuilder",
+        "Methods",
+        "textarea",
+        "Returns"
+      ],
+      "level": 4
+    }
+  }
+]

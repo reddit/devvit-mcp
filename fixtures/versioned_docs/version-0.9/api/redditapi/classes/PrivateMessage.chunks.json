@@ -1,0 +1,19 @@
+[
+  {
+    "pageContent": "<path>Class: PrivateMessage, Methods, sendAsSubreddit, Returns</path>\n# Class: PrivateMessage\n## Table of contents\n### Constructors\n-   [constructor](PrivateMessage.md#constructor)\n### Methods\n-   [send](PrivateMessage.md#send)\n-   [sendAsSubreddit](PrivateMessage.md#sendassubreddit)\n## Constructors\n### constructor\n• **new PrivateMessage**()\n## Methods\n### send\n▸ `Static` **send**(`«destructured»`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| «destructured» | SendPrivateMessageOptions |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n### sendAsSubreddit\n▸ `Static` **sendAsSubreddit**(`«destructured»`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| «destructured» | SendPrivateMessageAsSubredditOptions |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: PrivateMessage",
+        "Methods",
+        "sendAsSubreddit",
+        "Returns"
+      ],
+      "level": 1
+    }
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Type Alias: CommentCreate</path>\n[**@devvit/public-api v0.11.14-dev**](../README.md)\n# Type Alias: CommentCreate\n**CommentCreate** = `\"CommentCreate\"`\nThe event name for when a comment is created, after safety delay",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: CommentCreate"
+      ],
+      "level": 0
+    }
+  }
+]

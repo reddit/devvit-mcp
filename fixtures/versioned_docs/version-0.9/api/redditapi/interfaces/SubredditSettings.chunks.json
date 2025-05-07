@@ -1,0 +1,60 @@
+[
+  {
+    "pageContent": "<path>Interface: SubredditSettings, Table of contents, Properties</path>\n# Interface: SubredditSettings\n## Table of contents\n### Properties",
+    "metadata": {
+      "type": [
+        "heading"
+      ],
+      "path": [
+        "Interface: SubredditSettings",
+        "Table of contents",
+        "Properties"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Interface: SubredditSettings, Table of contents, Properties</path>\n-   [acceptFollowers](SubredditSettings.md#acceptfollowers)\n-   [allOriginalContent](SubredditSettings.md#alloriginalcontent)\n-   [allowChatPostCreation](SubredditSettings.md#allowchatpostcreation)\n-   [allowDiscovery](SubredditSettings.md#allowdiscovery)\n-   [allowGalleries](SubredditSettings.md#allowgalleries)\n-   [allowImages](SubredditSettings.md#allowimages)\n-   [allowPolls](SubredditSettings.md#allowpolls)\n-   [allowPredictionContributors](SubredditSettings.md#allowpredictioncontributors)\n-   [allowPredictions](SubredditSettings.md#allowpredictions)\n-   [allowPredictionsTournament](SubredditSettings.md#allowpredictionstournament)\n-   [allowTalks](SubredditSettings.md#allowtalks)\n-   [allowVideoGifs](SubredditSettings.md#allowvideogifs)\n-   [allowVideos](SubredditSettings.md#allowvideos)\n-   [allowedMediaInComments](SubredditSettings.md#allowedmediaincomments)\n-   [allowedPostType](SubredditSettings.md#allowedposttype)\n-   [bannerBackgroundColor](SubredditSettings.md#bannerbackgroundcolor)\n-   [bannerBackgroundImage](SubredditSettings.md#bannerbackgroundimage)\n-   [bannerImage](SubredditSettings.md#bannerimage)\n-   [chatPostEnabled](SubredditSettings.md#chatpostenabled)\n-   [collectionsEnabled](SubredditSettings.md#collectionsenabled)\n-   [communityIcon](SubredditSettings.md#communityicon)\n-   [crosspostable](SubredditSettings.md#crosspostable)\n-   [emojisEnabled](SubredditSettings.md#emojisenabled)\n-   [eventPostsEnabled](SubredditSettings.md#eventpostsenabled)\n-   [headerTitle](SubredditSettings.md#headertitle)\n-   [linkFlairEnabled](SubredditSettings.md#linkflairenabled)\n-   [mobileBannerImage](SubredditSettings.md#mobilebannerimage)\n-   [originalContentTagEnabled](SubredditSettings.md#originalcontenttagenabled)\n-   [postFlairs](SubredditSettings.md#postflairs)\n-   [restrictCommenting](SubredditSettings.md#restrictcommenting)\n-   [restrictPosting](SubredditSettings.md#restrictposting)\n-   [shouldArchivePosts](SubredditSettings.md#shouldarchiveposts)",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Interface: SubredditSettings",
+        "Table of contents",
+        "Properties"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Interface: SubredditSettings, Properties, bannerBackgroundColor</path>\n-   [spoilersEnabled](SubredditSettings.md#spoilersenabled)\n-   [userFlairs](SubredditSettings.md#userflairs)\n-   [wikiEnabled](SubredditSettings.md#wikienabled)\n## Properties\n### acceptFollowers\n• **acceptFollowers**: `boolean`\nWhether the subreddit accepts followers or not.\n### allOriginalContent\n• **allOriginalContent**: `boolean`\nWhether all content posted on the subreddit is original.\n### allowChatPostCreation\n• **allowChatPostCreation**: `boolean`\nWhether users are allowed to create chat posts on the subreddit.\n### allowDiscovery\n• **allowDiscovery**: `boolean`\nWhether the subreddit can be discovered through search.\n### allowGalleries\n• **allowGalleries**: `boolean`\nWhether the subreddit allows galleries.\n### allowImages\n• **allowImages**: `boolean`\nWhether the subreddit allows images.\n### allowPolls\n• **allowPolls**: `boolean`\nWhether the subreddit allows polls.\n### allowPredictionContributors\n• **allowPredictionContributors**: `boolean`\nWhether contributors are allowed to make predictions on the subreddit.\n### allowPredictions\n• **allowPredictions**: `boolean`\nWhether predictions are allowed on the subreddit.\n### allowPredictionsTournament\n• **allowPredictionsTournament**: `boolean`\nWhether prediction tournaments are allowed on the subreddit.\n### allowTalks\n• **allowTalks**: `boolean`\nWhether talks are allowed on the subreddit.\n### allowVideoGifs\n• **allowVideoGifs**: `boolean`\nWhether video GIFs are allowed on the subreddit.\n### allowVideos\n• **allowVideos**: `boolean`\nWhether videos are allowed on the subreddit.\n### allowedMediaInComments\n• **allowedMediaInComments**: [`CommentMediaTypes`](../README.md#commentmediatypes)\\[\\]\nList of allowed media types in the comments made in the subreddit.\n### allowedPostType\n• **allowedPostType**: `\"link\"` | `\"self\"` | `\"any\"`\nThe types of post allowed in this subreddit. Either \"any\", \"link\", or \"self\".\n### bannerBackgroundColor\n• `Optional` **bannerBackgroundColor**: `string`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Interface: SubredditSettings",
+        "Properties",
+        "bannerBackgroundColor"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Interface: SubredditSettings, Properties, wikiEnabled</path>\na 6-digit rgb hex color of the banner e.g. `#AABBCC`,\n### bannerBackgroundImage\n• `Optional` **bannerBackgroundImage**: `string`\nThe background image of the banner.\n### bannerImage\n• `Optional` **bannerImage**: `string`\nThe URL of the banner image.\n### chatPostEnabled\n• **chatPostEnabled**: `boolean`\nWhether chat posts are enabled on the subreddit.\n### collectionsEnabled\n• **collectionsEnabled**: `boolean`\nWhether collections are enabled on the subreddit.\n### communityIcon\n• `Optional` **communityIcon**: `string`\nThe URL of the community icon.\n### crosspostable\n• **crosspostable**: `boolean`\nWhether crossposts can be made to this subreddit.\n### emojisEnabled\n• **emojisEnabled**: `boolean`\nWhether emojis are enabled on the subreddit.\n### eventPostsEnabled\n• **eventPostsEnabled**: `boolean`\nWhether event posts are enabled on the subreddit.\n### headerTitle\n• `Optional` **headerTitle**: `string`\nThe header title.\n### linkFlairEnabled\n• **linkFlairEnabled**: `boolean`\nWhether link flairs are enabled on the subreddit.\n### mobileBannerImage\n• `Optional` **mobileBannerImage**: `string`\nBanner image used on mobile apps.\n### originalContentTagEnabled\n• **originalContentTagEnabled**: `boolean`\nWhether the Original Content tag is enabled.\n### postFlairs\n• **postFlairs**: [`FlairSettings`](FlairSettings.md)\nThe post flair settings for the subreddit.\n### restrictCommenting\n• **restrictCommenting**: `boolean`\nWhether commenting is restricted in the subreddit.\n### restrictPosting\n• **restrictPosting**: `boolean`\nWhether posting is restricted in the subreddit.\n### shouldArchivePosts\n• **shouldArchivePosts**: `boolean`\nWhether posts in the subreddit should be automatically archived after 6 months.\n### spoilersEnabled\n• **spoilersEnabled**: `boolean`\nWhether the Spoiler tag is enabled.\n### userFlairs\n• **userFlairs**: [`FlairSettings`](FlairSettings.md)\nThe user flair settings for the subreddit.\n### wikiEnabled\n• **wikiEnabled**: `boolean`\nWhether the wiki is enabled for the subreddit.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Interface: SubredditSettings",
+        "Properties",
+        "wikiEnabled"
+      ],
+      "level": 3
+    }
+  }
+]

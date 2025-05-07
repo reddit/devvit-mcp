@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: SubmitCustomPostOptions, Type declaration, userGeneratedContent?</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Type Alias: SubmitCustomPostOptions\n**SubmitCustomPostOptions** = [`CommonSubmitPostOptions`](CommonSubmitPostOptions.md) & [`SubmitCustomPostTextFallbackOptions`](SubmitCustomPostTextFallbackOptions.md) & `object`\n## Type declaration\n### preview\n**preview**: `JSX.Element`\n### userGeneratedContent?\n`optional` **userGeneratedContent**: `UserGeneratedContent`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: SubmitCustomPostOptions",
+        "Type declaration",
+        "userGeneratedContent?"
+      ],
+      "level": 0
+    }
+  }
+]

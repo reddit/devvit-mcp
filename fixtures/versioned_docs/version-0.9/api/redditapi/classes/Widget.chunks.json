@@ -1,0 +1,52 @@
+[
+  {
+    "pageContent": "<path>Class: Widget, Constructors, constructor, Parameters</path>\n# Class: Widget\n## Hierarchy\n-   **`Widget`**\n    \n    ↳ [`ImageWidget`](ImageWidget.md)\n    \n    ↳ [`CalendarWidget`](CalendarWidget.md)\n    \n    ↳ [`TextAreaWidget`](TextAreaWidget.md)\n    \n    ↳ [`ButtonWidget`](ButtonWidget.md)\n    \n    ↳ [`CommunityListWidget`](CommunityListWidget.md)\n    \n    ↳ [`PostFlairWidget`](PostFlairWidget.md)\n    \n    ↳ [`CustomWidget`](CustomWidget.md)\n## Table of contents\n### Constructors\n-   [constructor](Widget.md#constructor)\n### Accessors\n-   [id](Widget.md#id)\n-   [name](Widget.md#name)\n-   [subredditName](Widget.md#subredditname)\n### Methods\n-   [delete](Widget.md#delete)\n-   [toJSON](Widget.md#tojson)\n-   [add](Widget.md#add)\n-   [delete](Widget.md#delete-1)\n-   [getWidgets](Widget.md#getwidgets)\n-   [reorder](Widget.md#reorder)\n## Constructors\n### constructor\n• **new Widget**(`widgetData`, `subredditName`, `metadata?`)\n#### Parameters\n| Name | Type |\n|---|---|\n| widgetData | GetWidgetsResponse_WidgetItem |\n| subredditName | string |\n| metadata? | Metadata |",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: Widget",
+        "Constructors",
+        "constructor",
+        "Parameters"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: Widget, Methods, getWidgets</path>\n## Accessors\n### id\n• `get` **id**(): `string`\n#### Returns\n`string`\n### name\n• `get` **name**(): `string`\n#### Returns\n`string`\n### subredditName\n• `get` **subredditName**(): `string`\n#### Returns\n`string`\n## Methods\n### delete\n▸ **delete**(): `Promise`<`void`\\>\n#### Returns\n`Promise`<`void`\\>\n### toJSON\n▸ **toJSON**(): `Object`\n#### Returns\n`Object`\n| Name | Type |\n|---|---|\n| id | string |\n| name | string |\n| subredditName | string |\n### add\n▸ `Static` **add**(`widgetData`, `metadata`): `Promise`<[`ImageWidget`](ImageWidget.md) | [`CalendarWidget`](CalendarWidget.md) | [`TextAreaWidget`](TextAreaWidget.md) | [`ButtonWidget`](ButtonWidget.md) | [`CommunityListWidget`](CommunityListWidget.md) | [`PostFlairWidget`](PostFlairWidget.md) | [`CustomWidget`](CustomWidget.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| widgetData | AddWidgetData |\n| metadata | undefined | Metadata |\n#### Returns\n`Promise`<[`ImageWidget`](ImageWidget.md) | [`CalendarWidget`](CalendarWidget.md) | [`TextAreaWidget`](TextAreaWidget.md) | [`ButtonWidget`](ButtonWidget.md) | [`CommunityListWidget`](CommunityListWidget.md) | [`PostFlairWidget`](PostFlairWidget.md) | [`CustomWidget`](CustomWidget.md)\\>\n### delete\n▸ `Static` **delete**(`subredditName`, `id`, `metadata?`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| subredditName | string |\n| id | string |\n| metadata? | Metadata |\n#### Returns\n`Promise`<`void`\\>\n### getWidgets\n▸ `Static` **getWidgets**(`subredditName`, `metadata?`): `Promise`<([`ImageWidget`](ImageWidget.md) | [`CalendarWidget`](CalendarWidget.md) | [`TextAreaWidget`](TextAreaWidget.md) | [`ButtonWidget`](ButtonWidget.md) | [`CommunityListWidget`](CommunityListWidget.md) | [`PostFlairWidget`](PostFlairWidget.md) | [`CustomWidget`](CustomWidget.md))\\[\\]>\n#### Parameters\n| Name | Type |\n|---|---|\n| subredditName | string |\n| metadata? | Metadata |\n#### Returns",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: Widget",
+        "Methods",
+        "getWidgets"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: Widget, Methods, reorder, Returns</path>\n`Promise`<([`ImageWidget`](ImageWidget.md) | [`CalendarWidget`](CalendarWidget.md) | [`TextAreaWidget`](TextAreaWidget.md) | [`ButtonWidget`](ButtonWidget.md) | [`CommunityListWidget`](CommunityListWidget.md) | [`PostFlairWidget`](PostFlairWidget.md) | [`CustomWidget`](CustomWidget.md))\\[\\]>\n### reorder\n▸ `Static` **reorder**(`subredditName`, `orderByIds`, `metadata?`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| subredditName | string |\n| orderByIds | string[] |\n| metadata? | Metadata |\n#### Returns\n`Promise`<`void`\\>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: Widget",
+        "Methods",
+        "reorder",
+        "Returns"
+      ],
+      "level": 3
+    }
+  }
+]

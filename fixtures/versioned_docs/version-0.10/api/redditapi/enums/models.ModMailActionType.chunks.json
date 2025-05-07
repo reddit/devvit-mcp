@@ -1,0 +1,32 @@
+[
+  {
+    "pageContent": "<path>Enumeration: ModMailActionType, Table of contents, Enumeration Members</path>\n# Enumeration: ModMailActionType\n[models](../modules/models.md).ModMailActionType\nAn ActionType describes a particular logged action within a conversation. For example, if a mod highlights a conversation, a ModerationAction record with the type `Highlighted` would be created.\n## Table of contents\n### Enumeration Members\n-   [Approved](models.ModMailActionType.md#approved)\n-   [Archived](models.ModMailActionType.md#archived)\n-   [Banned](models.ModMailActionType.md#banned)\n-   [Disapproved](models.ModMailActionType.md#disapproved)\n-   [Filtered](models.ModMailActionType.md#filtered)\n-   [Highlighted](models.ModMailActionType.md#highlighted)\n-   [Muted](models.ModMailActionType.md#muted)\n-   [ReportedToAdmins](models.ModMailActionType.md#reportedtoadmins)\n-   [Unarchived](models.ModMailActionType.md#unarchived)\n-   [Unbanned](models.ModMailActionType.md#unbanned)\n-   [Unfiltered](models.ModMailActionType.md#unfiltered)\n-   [Unhighlighted](models.ModMailActionType.md#unhighlighted)\n-   [Unmuted](models.ModMailActionType.md#unmuted)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Enumeration: ModMailActionType",
+        "Table of contents",
+        "Enumeration Members"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Enumeration: ModMailActionType, Enumeration Members, Unmuted</path>\n## Enumeration Members\n### Approved\n• **Approved** = `\"Approved\"`\n### Archived\n• **Archived** = `\"Archived\"`\n### Banned\n• **Banned** = `\"Banned\"`\n### Disapproved\n• **Disapproved** = `\"Disapproved\"`\n### Filtered\n• **Filtered** = `\"Filtered\"`\n### Highlighted\n• **Highlighted** = `\"Highlighted\"`\n### Muted\n• **Muted** = `\"Muted\"`\n### ReportedToAdmins\n• **ReportedToAdmins** = `\"ReportedToAdmins\"`\n### Unarchived\n• **Unarchived** = `\"Unarchived\"`\n### Unbanned\n• **Unbanned** = `\"Unbanned\"`\n### Unfiltered\n• **Unfiltered** = `\"Unfiltered\"`\n### Unhighlighted\n• **Unhighlighted** = `\"Unhighlighted\"`\n### Unmuted\n• **Unmuted** = `\"Unmuted\"`",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Enumeration: ModMailActionType",
+        "Enumeration Members",
+        "Unmuted"
+      ],
+      "level": 2
+    }
+  }
+]

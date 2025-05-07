@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: InviteModeratorOptions, Properties, username</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Type Alias: InviteModeratorOptions\n**InviteModeratorOptions** = `object`\n## Properties\n### permissions?\n`optional` **permissions**: [`ModeratorPermission`](../../models/type-aliases/ModeratorPermission.md)\\[\\]\nThe permissions to grant the user\n### subredditName\n**subredditName**: `string`\nThe name of the subreddit to invite the user to moderate\n### username\n**username**: `string`\nThe name of the user to invite as a moderator",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: InviteModeratorOptions",
+        "Properties",
+        "username"
+      ],
+      "level": 0
+    }
+  }
+]

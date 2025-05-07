@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: HasElementChildren, Properties, children?</path>\n[**@devvit/public-api v0.11.15-dev**](../../../../../../README.md)\n# Type Alias: HasElementChildren\n**HasElementChildren** = `object`\n## Properties\n### children?\n`optional` **children**: [`ElementChildren`](../../../type-aliases/ElementChildren.md)",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: HasElementChildren",
+        "Properties",
+        "children?"
+      ],
+      "level": 0
+    }
+  }
+]

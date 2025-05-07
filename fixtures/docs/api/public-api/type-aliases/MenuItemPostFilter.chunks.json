@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Type Alias: MenuItemPostFilter</path>\n[**@devvit/public-api v0.11.15-dev**](../README.md)\n# Type Alias: MenuItemPostFilter\n**MenuItemPostFilter** = `\"currentApp\"`\nYou can use the \"currentApp\" filter to only display the menu item on custom posts that were created by your app.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: MenuItemPostFilter"
+      ],
+      "level": 0
+    }
+  }
+]

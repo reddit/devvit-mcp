@@ -1,0 +1,46 @@
+[
+  {
+    "pageContent": "<path>How apps work, App permissions</path>\n# How apps work\nDevvit apps are designed to interact with Reddit communities.\n## App accounts\nWhen you upload an app, an app account is automatically created. An app account is a separate user account that your app uses to interact with a subreddit.\nOnce a mod or admin installs your app, the app account appears as a user in the mod list. When the app is executed, the action comes from the app’s user account. This is helpful for tracking posts and comments.\nThe app account has the same permissions that are granted to your app.\n## App permissions\nApp permissions help users understand how your app will interact with a subreddit and users.\nIf your app accesses user data or interacts with the UI, that information is listed in the [Apps](https://developers.reddit.com) directory and in the CLI on installation. Permissions fall into one of three categories.\n| Category | Description | Capabilities involved |\n|---|---|---|\n| UI | Permissions your app needs for the UI elements it uses. | Menu actions, custom posts, or asset use all require UI permissions. |\n| User data handling | Permissions your app needs for the way it manages user data. | The specific permissions your app requires will depend on the capabilities you’ve used: app settings, key value store, HTTP fetch, media, Redis, Reddit API, scheduler, and triggers. |\n| Moderator permissions (required) | Permission your app needs to create a mod account with everything permissions on the installing subreddit. | This permission is required for every app. |",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "How apps work",
+        "App permissions"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>How apps work, Understanding client-side apps</path>\nHere’s an example of the permissions displayed on the app detail page in the Developer Portal.\n![app permissions](./assets/app_permissions.png)\n## App versions\nWhen you update your app, every subreddit that has installed your app has to be **manually updated** to the new version (don’t worry, this won’t last forever). To update your subreddit app installation:\n-   Go to [My Communities](https://developers.reddit.com/my/communities) from the profile dropdown in the Developer Portal.\n-   Click the community you want to view.\n-   When a new version of an app is available for a given subreddit, you will see a blue **Update** button next to the app tile. Click the button and follow the prompts to upgrade each community.\n![app update](./assets/app-update.png)\n## Understanding client-side apps\nClient-side apps run on the user’s device instead of a remote server. This increases the speed and responsiveness of the app and provides a better user experience. Devvit apps operate like most client-side apps (browser extensions, html5 games, etc). When a user visits an [experience post](experiences.md) that has a running Devvit app, the bundled source code is transmitted to the user. The app runs in the user’s client for optimal app performance, which exposes app details to clients during runtime.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "How apps work",
+        "Understanding client-side apps"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>How apps work, Development stages</path>\nWhat is available to the client:\n-   App source code\n-   Anything stored in state (e.g. useState)\nWhat is not available to the client:\n-   Any server side plugins (outside of state), like data from Redis, secrets, and settings\n-   Fetch calls to external services from within an app\n:::note We are working on mechanisms to split your code into server portions (hidden) and client portions (exposed). :::\n## Development stages\nDevvit apps go through three stages during development. This lets you build and iterate on your app until you're ready to share it with the rest of Reddit.\n| Stage | Description |\n|---|---|\n| Private | When you are building and testing your app, it’s only visible to you, and it can only be installed by you in small subreddits with fewer than 200 subscribers. |\n| Unlisted | After you publish your app, it is still only visible to you in the Apps directory, but you can install it on larger subreddits. |\n| Public | Once you submit your app review form and it's been approved by the Developer Platform team, your app is visible to all users in the Apps directory and can be installed by mods and admins across Reddit. |",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "How apps work",
+        "Development stages"
+      ],
+      "level": 2
+    }
+  }
+]

@@ -1,0 +1,140 @@
+[
+  {
+    "pageContent": "<path>Class: ModMailService, Table of contents, Methods</path>\n# Class: ModMailService\n[models](../modules/models.md).ModMailService\nClass providing the methods for working with Mod Mail\n## Table of contents\n### Methods\n-   [approveConversation](models.ModMailService.md#approveconversation)\n-   [archiveConversation](models.ModMailService.md#archiveconversation)\n-   [bulkReadConversations](models.ModMailService.md#bulkreadconversations)\n-   [createConversation](models.ModMailService.md#createconversation)\n-   [disapproveConversation](models.ModMailService.md#disapproveconversation)\n-   [getConversation](models.ModMailService.md#getconversation)\n-   [getConversations](models.ModMailService.md#getconversations)\n-   [getSubreddits](models.ModMailService.md#getsubreddits)\n-   [getUnreadCount](models.ModMailService.md#getunreadcount)\n-   [getUserConversations](models.ModMailService.md#getuserconversations)\n-   [highlightConversation](models.ModMailService.md#highlightconversation)\n-   [muteConversation](models.ModMailService.md#muteconversation)\n-   [readConversations](models.ModMailService.md#readconversations)\n-   [reply](models.ModMailService.md#reply)\n-   [tempBanConversation](models.ModMailService.md#tempbanconversation)\n-   [unarchiveConversation](models.ModMailService.md#unarchiveconversation)\n-   [unbanConversation](models.ModMailService.md#unbanconversation)\n-   [unhighlightConversation](models.ModMailService.md#unhighlightconversation)\n-   [unmuteConversation](models.ModMailService.md#unmuteconversation)\n-   [unreadConversations](models.ModMailService.md#unreadconversations)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: ModMailService",
+        "Table of contents",
+        "Methods"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: ModMailService, Methods, createConversation</path>\n## Methods\n### approveConversation\n▸ **approveConversation**(`conversationId`): `Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse) & [`WithUserData`](../modules/models.md#withuserdata)\\>\nApprove the non mod user associated with a particular conversation.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| conversationId | string | Id of a modmail conversation |\n#### Returns\n`Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse) & [`WithUserData`](../modules/models.md#withuserdata)\\>\n**`Example`**\n```ts\nawait reddit.modMail.approveConversation('abcdef');\n```\n### archiveConversation\n▸ **archiveConversation**(`conversationId`): `Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse)\\>\nMarks a conversation as archived\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| conversationId | string | Id of a modmail conversation |\n#### Returns\n`Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse)\\>\n**`Example`**\n```ts\nawait reddit.modMail.archive('abcdef');\n```\n### bulkReadConversations\n▸ **bulkReadConversations**(`subreddits`, `state`): `Promise`<`string`\\[\\]>\nMarks all conversations read for a particular conversation state within the passed list of subreddits.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| subreddits | string[] | Array of subreddit names |\n| state | ConversationStateFilter | One of the possible conversation states ('all' to read all conversations) |\n#### Returns\n`Promise`<`string`\\[\\]>\nconversationIds\n**`Example`**\n```ts\nconst conversationIds = await reddit.modMail.bulkReadConversations(\n  ['askReddit', 'myAwesomeSubreddit'],\n  'filtered'\n);\n```\n### createConversation\n▸ **createConversation**(`params`): `Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse) & [`WithUserData`](../modules/models.md#withuserdata)\\>\nCreates a new conversation for a particular SR.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: ModMailService",
+        "Methods",
+        "createConversation"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: ModMailService, Methods</path>\nThis endpoint will create a ModmailConversation object as well as the first ModmailMessage within the ModmailConversation object.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| params | Object | - |\n| params.body | string | markdown text |\n| params.isAuthorHidden? | boolean | is author hidden? (default: false) |\n| params.subject | string | subject of the conversation. max 100 characters |\n| params.subredditName | string | subreddit name |\n| params.to? | null | string | a user (e.g. u/username), a subreddit (e.g. r/subreddit) or null |\n#### Returns\n`Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse) & [`WithUserData`](../modules/models.md#withuserdata)\\>\n**`Note`**\nNote on {param.to}: The to field for this endpoint is somewhat confusing. It can be:\n-   A User, passed like \"username\" or \"u/username\"\n-   A Subreddit, passed like \"r/subreddit\"\n-   null, meaning an internal moderator discussion\nIn this way to is a bit of a misnomer in modmail conversations. What it really means is the participant of the conversation who is not a mod of the subreddit.\n**`Example`**\n```ts\nconst { conversation, messages, modActions } = await reddit.modMail.createConversation({\n  subredditName: 'askReddit',\n  subject: 'Test conversation',\n  body: 'Lorem ipsum sit amet',\n  to: null,\n});\n```\n### disapproveConversation\n▸ **disapproveConversation**(`conversationId`): `Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse) & [`WithUserData`](../modules/models.md#withuserdata)\\>\nDisapprove the non mod user associated with a particular conversation.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| conversationId | string | Id of a modmail conversation |\n#### Returns\n`Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse) & [`WithUserData`](../modules/models.md#withuserdata)\\>\n**`Example`**\n```ts\nawait reddit.modMail.disapproveConversation('abcdef');\n```\n### getConversation",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: ModMailService",
+        "Methods"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: ModMailService, Methods, getUnreadCount, Returns</path>\n▸ **getConversation**(`params`): `Promise`<[`GetConversationResponse`](../modules/models.md#getconversationresponse)\\>\nReturns all messages, mod actions and conversation metadata for a given conversation id\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| params | Object | - |\n| params.conversationId | string | a modmail conversation id |\n| params.markRead? | boolean | mark read? |\n#### Returns\n`Promise`<[`GetConversationResponse`](../modules/models.md#getconversationresponse)\\>\n**`Example`**\n```ts\nconst { conversation, messages, modActions, user } = await reddit.modMail.getConversation({\n  conversationId: 'abcdef',\n  markRead: true,\n});\n```\n### getConversations\n▸ **getConversations**(`params`): `Promise`<[`GetConversationsResponse`](../modules/models.md#getconversationsresponse)\\>\nGet conversations for a logged in user or subreddits\n#### Parameters\n| Name | Type |\n|---|---|\n| params | GetConversationsRequest |\n#### Returns\n`Promise`<[`GetConversationsResponse`](../modules/models.md#getconversationsresponse)\\>\n**`Example`**\n```ts\nconst { viewerId, conversations } = await reddit.modMail.getConversations({\n  after: 'abcdef',\n  limit: 42,\n});\n\nconst arrayOfConversations = Object.values(conversations);\n```\n### getSubreddits\n▸ **getSubreddits**(): `Promise`<{ `[key: string]`: [`SubredditData`](../modules/models.md#subredditdata); }>\nReturns a list of Subreddits that the user moderates with mail permission\n#### Returns\n`Promise`<{ `[key: string]`: [`SubredditData`](../modules/models.md#subredditdata); }>\n**`Example`**\n```ts\nconst subredditsData = await reddit.modMail.getSubreddits();\n\nfor (const subreddit of Object.values(subreddits)) {\n  console.log(subreddit.id);\n  console.log(subreddit.name);\n}\n```\n### getUnreadCount\n▸ **getUnreadCount**(): `Promise`<[`UnreadCountResponse`](../modules/models.md#unreadcountresponse)\\>\nEndpoint to retrieve the unread conversation count by conversation state.\n#### Returns",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table",
+        "code"
+      ],
+      "path": [
+        "Class: ModMailService",
+        "Methods",
+        "getUnreadCount",
+        "Returns"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: ModMailService, Methods, muteConversation, Returns</path>\n`Promise`<[`UnreadCountResponse`](../modules/models.md#unreadcountresponse)\\>\n**`Example`**\n```ts\nconst response = await reddit.modMail.getUnreadCount();\n\nconsole.log(response.highlighted);\nconsole.log(response.new);\n```\n### getUserConversations\n▸ **getUserConversations**(`conversationId`): `Promise`<[`ConversationUserData`](../modules/models.md#conversationuserdata)\\>\nReturns recent posts, comments and modmail conversations for a given user.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| conversationId | string | Id of a modmail conversation |\n#### Returns\n`Promise`<[`ConversationUserData`](../modules/models.md#conversationuserdata)\\>\n**`Example`**\n```ts\nconst data = await reddit.modMail.getUserConversations('abcdef');\n\nconsole.log(data.recentComments);\nconsole.log(data.recentPosts);\n```\n### highlightConversation\n▸ **highlightConversation**(`conversationId`): `Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse)\\>\nMarks a conversation as highlighted.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| conversationId | string | Id of a modmail conversation |\n#### Returns\n`Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse)\\>\n**`Example`**\n```ts\nawait reddit.modMail.highlightConversation('abcdef');\n```\n### muteConversation\n▸ **muteConversation**(`params`): `Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse) & [`WithUserData`](../modules/models.md#withuserdata)\\>\nMarks a conversation as read for the user.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| params | Object | - |\n| params.conversationId | string | Id of a modmail conversation |\n| params.numHours | number | For how many hous the conversation needs to be muted |\n#### Returns\n`Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse) & [`WithUserData`](../modules/models.md#withuserdata)\\>\n**`Example`**",
+    "metadata": {
+      "type": [
+        "text",
+        "code",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: ModMailService",
+        "Methods",
+        "muteConversation",
+        "Returns"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: ModMailService, Methods, tempBanConversation, Returns</path>\n```ts\nawait reddit.modMail.muteConversation({ conversationId: 'abcdef', numHours: 2 });\n```\n### readConversations\n▸ **readConversations**(`conversationIds`): `Promise`<`void`\\>\nMarks a conversations as read for the user.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| conversationIds | string[] | An array of ids |\n#### Returns\n`Promise`<`void`\\>\n**`Example`**\n```ts\nawait reddit.modMail.readConversations(['abcdef', 'qwerty']);\n```\n### reply\n▸ **reply**(`params`): `Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse) & [`WithUserData`](../modules/models.md#withuserdata)\\>\nCreates a new message for a particular conversation.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| params | Object | - |\n| params.body | string | markdown text |\n| params.conversationId | string | Id of a modmail conversation |\n| params.isAuthorHidden? | boolean | is author hidden? (default: false) |\n| params.isInternal? | boolean | is internal message? (default: false) |\n#### Returns\n`Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse) & [`WithUserData`](../modules/models.md#withuserdata)\\>\n**`Example`**\n```ts\nawait reddit.modMail.reply({\n  body: 'Lorem ipsum sit amet',\n  conversationId: 'abcdef',\n});\n```\n### tempBanConversation\n▸ **tempBanConversation**(`params`): `Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse) & [`WithUserData`](../modules/models.md#withuserdata)\\>\nTemporary ban (switch from permanent to temporary ban) the non mod user associated with a particular conversation.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| params | Object | - |\n| params.conversationId | string | a modmail conversation id |\n| params.duration | number | duration in days, max 999 |\n#### Returns\n`Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse) & [`WithUserData`](../modules/models.md#withuserdata)\\>\n**`Example`**",
+    "metadata": {
+      "type": [
+        "code",
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: ModMailService",
+        "Methods",
+        "tempBanConversation",
+        "Returns"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: ModMailService, Methods, unmuteConversation, Parameters</path>\n```ts\nawait reddit.modMail.tempBanConversation({ conversationId: 'abcdef', duration: 42 });\n```\n### unarchiveConversation\n▸ **unarchiveConversation**(`conversationId`): `Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse)\\>\nMarks conversation as unarchived.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| conversationId | string | Id of a modmail conversation |\n#### Returns\n`Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse)\\>\n**`Example`**\n```ts\nawait reddit.modMail.unarchiveConversation('abcdef');\n```\n### unbanConversation\n▸ **unbanConversation**(`conversationId`): `Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse) & [`WithUserData`](../modules/models.md#withuserdata)\\>\nUnban the non mod user associated with a particular conversation.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| conversationId | string | a modmail conversation id |\n#### Returns\n`Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse) & [`WithUserData`](../modules/models.md#withuserdata)\\>\n**`Example`**\n```ts\nawait reddit.modMail.unbanConversation('abcdef');\n```\n### unhighlightConversation\n▸ **unhighlightConversation**(`conversationId`): `Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse)\\>\nRemoves a highlight from a conversation.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| conversationId | string | Id of a modmail conversation |\n#### Returns\n`Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse)\\>\n**`Example`**\n```ts\nawait reddit.modMail.unhighlightConversation('abcdef');\n```\n### unmuteConversation\n▸ **unmuteConversation**(`conversationId`): `Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse) & [`WithUserData`](../modules/models.md#withuserdata)\\>\nUnmutes the non mod user associated with a particular conversation.\n#### Parameters",
+    "metadata": {
+      "type": [
+        "code",
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: ModMailService",
+        "Methods",
+        "unmuteConversation",
+        "Parameters"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: ModMailService, Methods, unreadConversations, Returns</path>\n| Name | Type | Description |\n|---|---|---|\n| conversationId | string | Id of a modmail conversation |\n#### Returns\n`Promise`<[`ConversationResponse`](../modules/models.md#conversationresponse) & [`WithUserData`](../modules/models.md#withuserdata)\\>\n**`Example`**\n```ts\nawait reddit.modMail.unmuteConversation('abcdef');\n```\n### unreadConversations\n▸ **unreadConversations**(`conversationIds`): `Promise`<`void`\\>\nMarks conversations as unread for the user.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| conversationIds | string[] | An array of ids |\n#### Returns\n`Promise`<`void`\\>\n**`Example`**\n```ts\nawait reddit.modMail.unreadConversations(['abcdef', 'qwerty']);\n```",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Class: ModMailService",
+        "Methods",
+        "unreadConversations",
+        "Returns"
+      ],
+      "level": 3
+    }
+  }
+]

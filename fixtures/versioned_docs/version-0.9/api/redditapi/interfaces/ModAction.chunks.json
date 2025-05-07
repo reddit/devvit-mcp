@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: ModAction, Properties, type</path>\n# Interface: ModAction\n## Table of contents\n### Properties\n-   [createdAt](ModAction.md#createdat)\n-   [description](ModAction.md#description)\n-   [details](ModAction.md#details)\n-   [id](ModAction.md#id)\n-   [moderatorId](ModAction.md#moderatorid)\n-   [moderatorName](ModAction.md#moderatorname)\n-   [subredditId](ModAction.md#subredditid)\n-   [subredditName](ModAction.md#subredditname)\n-   [target](ModAction.md#target)\n-   [type](ModAction.md#type)\n## Properties\n### createdAt\n• **createdAt**: `Date`\n### description\n• `Optional` **description**: `string`\n### details\n• `Optional` **details**: `string`\n### id\n• **id**: `string`\n### moderatorId\n• **moderatorId**: `string`\n### moderatorName\n• **moderatorName**: `string`\n### subredditId\n• **subredditId**: `string`\n### subredditName\n• **subredditName**: `string`\n### target\n• `Optional` **target**: [`ModActionTarget`](ModActionTarget.md)\n### type\n• **type**: [`ModActionType`](../README.md#modactiontype)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Interface: ModAction",
+        "Properties",
+        "type"
+      ],
+      "level": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: MenuItemOnPressEvent, Properties, targetId</path>\n[**@devvit/public-api v0.11.14-dev**](../README.md)\n# Type Alias: MenuItemOnPressEvent\n**MenuItemOnPressEvent** = `object`\n## Properties\n### location\n**location**: [`MenuItemLocation`](MenuItemLocation.md)\nThe location where the menu item was pressed\n### targetId\n**targetId**: `string`\nThe ID of subreddit, post, or comment that the menu item was pressed; includes Thing ID prefix:\n-   t1\\_ - comment\n-   t5\\_ - subreddit\n-   t3\\_ - post",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: MenuItemOnPressEvent",
+        "Properties",
+        "targetId"
+      ],
+      "level": 0
+    }
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Type Alias: PostNsfwUpdate</path>\n[**@devvit/public-api v0.11.14-dev**](../README.md)\n# Type Alias: PostNsfwUpdate\n**PostNsfwUpdate** = `\"PostNsfwUpdate\"`\nThe event name for when a post is marked/unmarked as nsfw",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: PostNsfwUpdate"
+      ],
+      "level": 0
+    }
+  }
+]

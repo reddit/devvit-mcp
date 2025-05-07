@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: SetUserFlairBatchConfig, Properties, username</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Type Alias: SetUserFlairBatchConfig\n**SetUserFlairBatchConfig** = `object`\n## Properties\n### cssClass?\n`optional` **cssClass**: `string`\nThe flair CSS class\n### text?\n`optional` **text**: `string`\nThe flair text. Can't contain the comma character (\",\")\n### username\n**username**: `string`\nThe username of the user to edit the flair on",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: SetUserFlairBatchConfig",
+        "Properties",
+        "username"
+      ],
+      "level": 0
+    }
+  }
+]

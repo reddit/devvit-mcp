@@ -1,0 +1,19 @@
+[
+  {
+    "pageContent": "<path>Type Alias: Vault, Properties, userId, Example</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Type Alias: Vault\n**Vault** = `object`\nA type representing a Vault (crypto wallet).\n## Properties\n### address\n**address**: `string`\nThe address of the Vault.\n#### Example\n```ts\n'0x205ee28744456bDBf180A0Fa7De51e0F116d54Ed';\n```\n### createdAt\n**createdAt**: `string`\nThe date the Vault was created.\n### isActive\n**isActive**: `boolean`\nWhether the Vault is active.\n### provider\n**provider**: `string`\nThe provider of the Vault address.\n#### Example\n```ts\n'ethereum';\n```\n### userId\n**userId**: `T2ID`\nThe ID (starting with t2\\_) of the user owning the Vault.\n#### Example\n```ts\n't2_1w72';\n```",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Type Alias: Vault",
+        "Properties",
+        "userId",
+        "Example"
+      ],
+      "level": 0
+    }
+  }
+]

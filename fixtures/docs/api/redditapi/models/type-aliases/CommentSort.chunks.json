@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Type Alias: CommentSort</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Type Alias: CommentSort\n**CommentSort** = `\"confidence\"` | `\"top\"` | `\"new\"` | `\"controversial\"` | `\"old\"` | `\"random\"` | `\"qa\"` | `\"live\"`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: CommentSort"
+      ],
+      "level": 0
+    }
+  }
+]

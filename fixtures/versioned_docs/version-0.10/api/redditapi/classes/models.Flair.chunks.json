@@ -1,0 +1,18 @@
+[
+  {
+    "pageContent": "<path>Class: Flair, Constructors, constructor, Returns</path>\n# Class: Flair\n[models](../modules/models.md).Flair\n## Table of contents\n### Constructors\n-   [constructor](models.Flair.md#constructor)\n## Constructors\n### constructor\n• **new Flair**(): [`Flair`](models.Flair.md)\n#### Returns\n[`Flair`](models.Flair.md)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: Flair",
+        "Constructors",
+        "constructor",
+        "Returns"
+      ],
+      "level": 1
+    }
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "pageContent": "<path></path>\nimport PercentDimensionWarning from './\\_percent\\_dimension\\_warning.mdx';\nA `string` that sets a width of the block. Possible values:\n-   Absolute: `100px`\n-   Relative: `50%` (The default if the unit is not specified, i.e. `width=\"50\"`)",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 0,
+      "path": []
+    }
+  }
+]

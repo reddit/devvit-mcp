@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Enumeration: SettingScope, Enumeration Members, Installation</path>\n[**@devvit/public-api v0.12.0-dev**](../README.md)\n# Enumeration: SettingScope\n## Enumeration Members\n### App\n**App**: `\"app\"`\n### Installation\n**Installation**: `\"installation\"`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Enumeration: SettingScope",
+        "Enumeration Members",
+        "Installation"
+      ],
+      "level": 0
+    }
+  }
+]

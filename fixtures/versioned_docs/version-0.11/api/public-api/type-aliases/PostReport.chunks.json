@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Type Alias: PostReport</path>\n[**@devvit/public-api v0.11.14-dev**](../README.md)\n# Type Alias: PostReport\n**PostReport** = `\"PostReport\"`\nThe event name for when a post is reported",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: PostReport"
+      ],
+      "level": 0
+    }
+  }
+]

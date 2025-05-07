@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Type Alias: PostSubmit</path>\n[**@devvit/public-api v0.12.0-dev**](../README.md)\n# Type Alias: PostSubmit\n**PostSubmit** = `\"PostSubmit\"`\nThe event name for when a post is submitted",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: PostSubmit"
+      ],
+      "level": 0
+    }
+  }
+]

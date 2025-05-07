@@ -1,4 +1,14 @@
 {
-  "cSpell.words": ["devvit", "modelcontextprotocol", "nodenext"],
+  "cSpell.words": [
+    "Arabold",
+    "devvit",
+    "langchain",
+    "mixedbread",
+    "modelcontextprotocol",
+    "mxbai",
+    "nodenext",
+    "Rabold",
+    "xenova"
+  ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }

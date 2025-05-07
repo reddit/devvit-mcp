@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: SubredditLeaderboard, Properties, summary</path>\n[**@devvit/public-api v0.12.0-dev**](../../README.md)\n# Type Alias: SubredditLeaderboard\n**SubredditLeaderboard** = `object`\nAn individual Leaderboard object.\n## Properties\n### id\n**id**: `string`\n### summary\n**summary**: [`SubredditLeaderboardSummary`](SubredditLeaderboardSummary.md)",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: SubredditLeaderboard",
+        "Properties",
+        "summary"
+      ],
+      "level": 0
+    }
+  }
+]

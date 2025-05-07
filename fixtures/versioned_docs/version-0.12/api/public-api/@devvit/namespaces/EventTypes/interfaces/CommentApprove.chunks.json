@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: CommentApprove, Properties, subreddit?</path>\n[**@devvit/public-api v0.12.0-dev**](../../../../README.md)\n# Interface: CommentApprove\n## Properties\n### approvedAt?\n`optional` **approvedAt**: `Date`\n### author?\n`optional` **author**: `UserV2`\n### comment?\n`optional` **comment**: `CommentV2`\n### post?\n`optional` **post**: `PostV2`\n### source\n**source**: [`EventSource`](../../../../enumerations/EventSource.md)\n### subreddit?\n`optional` **subreddit**: `SubredditV2`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Interface: CommentApprove",
+        "Properties",
+        "subreddit?"
+      ],
+      "level": 0
+    }
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Type Alias: TextStyle</path>\n[**@devvit/public-api v0.11.15-dev**](../../../../../../README.md)\n# Type Alias: TextStyle\n**TextStyle** = `\"body\"` | `\"metadata\"` | `\"heading\"`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: TextStyle"
+      ],
+      "level": 0
+    }
+  }
+]

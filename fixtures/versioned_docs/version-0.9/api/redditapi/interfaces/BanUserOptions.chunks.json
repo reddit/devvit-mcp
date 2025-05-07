@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: BanUserOptions, Properties, username</path>\n# Interface: BanUserOptions\n## Table of contents\n### Properties\n-   [context](BanUserOptions.md#context)\n-   [duration](BanUserOptions.md#duration)\n-   [message](BanUserOptions.md#message)\n-   [note](BanUserOptions.md#note)\n-   [reason](BanUserOptions.md#reason)\n-   [subredditName](BanUserOptions.md#subredditname)\n-   [username](BanUserOptions.md#username)\n## Properties\n### context\n• `Optional` **context**: `string`\n### duration\n• `Optional` **duration**: `number`\n### message\n• `Optional` **message**: `string`\n### note\n• `Optional` **note**: `string`\n### reason\n• `Optional` **reason**: `string`\n### subredditName\n• **subredditName**: `string`\n### username\n• **username**: `string`",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Interface: BanUserOptions",
+        "Properties",
+        "username"
+      ],
+      "level": 1
+    }
+  }
+]

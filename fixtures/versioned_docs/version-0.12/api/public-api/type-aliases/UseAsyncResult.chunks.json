@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: UseAsyncResult<S>, Properties, loading</path>\n[**@devvit/public-api v0.12.0-dev**](../README.md)\n# Type Alias: UseAsyncResult<S>\n**UseAsyncResult**<`S`\\> = `object`\n## Type Parameters\n### S\n`S`\n## Properties\n### data\n**data**: `S` | `null`\n### error\n**error**: [`AsyncError`](AsyncError.md) | `null`\n### loading\n**loading**: `boolean`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: UseAsyncResult<S>",
+        "Properties",
+        "loading"
+      ],
+      "level": 0
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Class: ModNote, Properties, userNote?</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Class: ModNote\n## Properties\n### createdAt\n**createdAt**: `Date`\n### id\n**id**: `string`\n### modAction?\n`optional` **modAction**: [`ModAction`](../interfaces/ModAction.md)\n### operator\n**operator**: `object`\n#### id?\n`optional` **id**: `` `t2_${string}` ``\n#### name?\n`optional` **name**: `string`\n### subreddit\n**subreddit**: `object`\n#### id?\n`optional` **id**: `` `t5_${string}` ``\n#### name?\n`optional` **name**: `string`\n### type\n**type**: [`ModNoteType`](../type-aliases/ModNoteType.md)\n### user\n**user**: `object`\n#### id?\n`optional` **id**: `` `t2_${string}` ``\n#### name?\n`optional` **name**: `string`\n### userNote?\n`optional` **userNote**: [`UserNote`](../type-aliases/UserNote.md)",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Class: ModNote",
+        "Properties",
+        "userNote?"
+      ],
+      "level": 0
+    }
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "pageContent": "<path>Type Alias: SubredditSettings, Properties, bannerBackgroundImage?</path>\n[**@devvit/public-api v0.12.0-dev**](../../README.md)\n# Type Alias: SubredditSettings\n**SubredditSettings** = `object`\n## Properties\n### acceptFollowers\n**acceptFollowers**: `boolean`\nWhether the subreddit accepts followers or not.\n### allOriginalContent\n**allOriginalContent**: `boolean`\nWhether all content posted on the subreddit is original.\n### allowChatPostCreation\n**allowChatPostCreation**: `boolean`\nWhether users are allowed to create chat posts on the subreddit.\n### allowDiscovery\n**allowDiscovery**: `boolean`\nWhether the subreddit can be discovered through search.\n### allowedMediaInComments\n**allowedMediaInComments**: [`CommentMediaTypes`](CommentMediaTypes.md)\\[\\]\nList of allowed media types in the comments made in the subreddit.\n### allowedPostType\n**allowedPostType**: `\"any\"` | `\"link\"` | `\"self\"`\nThe types of post allowed in this subreddit. Either \"any\", \"link\", or \"self\".\n### allowGalleries\n**allowGalleries**: `boolean`\nWhether the subreddit allows galleries.\n### allowImages\n**allowImages**: `boolean`\nWhether the subreddit allows images.\n### allowPolls\n**allowPolls**: `boolean`\nWhether the subreddit allows polls.\n### allowPredictionContributors\n**allowPredictionContributors**: `boolean`\nWhether contributors are allowed to make predictions on the subreddit.\n### allowPredictions\n**allowPredictions**: `boolean`\nWhether predictions are allowed on the subreddit.\n### allowPredictionsTournament\n**allowPredictionsTournament**: `boolean`\nWhether prediction tournaments are allowed on the subreddit.\n### allowTalks\n**allowTalks**: `boolean`\nWhether talks are allowed on the subreddit.\n### allowVideoGifs\n**allowVideoGifs**: `boolean`\nWhether video GIFs are allowed on the subreddit.\n### allowVideos\n**allowVideos**: `boolean`\nWhether videos are allowed on the subreddit.\n### bannerBackgroundColor?\n`optional` **bannerBackgroundColor**: `string`\na 6-digit rgb hex color of the banner e.g. `#AABBCC`,\n### bannerBackgroundImage?\n`optional` **bannerBackgroundImage**: `string`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: SubredditSettings",
+        "Properties",
+        "bannerBackgroundImage?"
+      ],
+      "level": 0
+    }
+  },
+  {
+    "pageContent": "<path>Type Alias: SubredditSettings, Properties</path>\nThe background image of the banner.\n### bannerImage?\n`optional` **bannerImage**: `string`\nThe URL of the banner image.\n### chatPostEnabled\n**chatPostEnabled**: `boolean`\nWhether chat posts are enabled on the subreddit.\n### collectionsEnabled\n**collectionsEnabled**: `boolean`\nWhether collections are enabled on the subreddit.\n### communityIcon?\n`optional` **communityIcon**: `string`\nThe URL of the community icon.\n### crosspostable\n**crosspostable**: `boolean`\nWhether crossposts can be made to this subreddit.\n### emojisEnabled\n**emojisEnabled**: `boolean`\nWhether emojis are enabled on the subreddit.\n### eventPostsEnabled\n**eventPostsEnabled**: `boolean`\nWhether event posts are enabled on the subreddit.\n### headerTitle?\n`optional` **headerTitle**: `string`\nThe header title.\n### keyColor?\n`optional` **keyColor**: `string`\nThe 6-digit rgb hex color of the subreddit's key color, e.g. `#AABBCC`,\n### linkFlairEnabled\n**linkFlairEnabled**: `boolean`\nWhether link flairs are enabled on the subreddit.\n### mobileBannerImage?\n`optional` **mobileBannerImage**: `string`\nBanner image used on mobile apps.\n### originalContentTagEnabled\n**originalContentTagEnabled**: `boolean`\nWhether the Original Content tag is enabled.\n### postFlairs\n**postFlairs**: [`FlairSettings`](FlairSettings.md)\nThe post flair settings for the subreddit.\n### primaryColor?\n`optional` **primaryColor**: `string`\nThe 6-digit rgb hex color of the subreddit's primary color, e.g. `#AABBCC`,\n### restrictCommenting\n**restrictCommenting**: `boolean`\nWhether commenting is restricted in the subreddit.\n### restrictPosting\n**restrictPosting**: `boolean`\nWhether posting is restricted in the subreddit.\n### shouldArchivePosts\n**shouldArchivePosts**: `boolean`\nWhether posts in the subreddit should be automatically archived after 6 months.\n### spoilersEnabled\n**spoilersEnabled**: `boolean`\nWhether the Spoiler tag is enabled.\n### url\n**url**: `string`\nHTTP URL to the subreddit\n### userFlairs",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: SubredditSettings",
+        "Properties"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Type Alias: SubredditSettings, Properties, wikiEnabled</path>\n**userFlairs**: [`FlairSettings`](FlairSettings.md)\nThe user flair settings for the subreddit.\n### wikiEnabled\n**wikiEnabled**: `boolean`\nWhether the wiki is enabled for the subreddit.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: SubredditSettings",
+        "Properties",
+        "wikiEnabled"
+      ],
+      "level": 3
+    }
+  }
+]

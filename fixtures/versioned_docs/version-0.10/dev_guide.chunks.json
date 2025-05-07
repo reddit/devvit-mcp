@@ -1,0 +1,90 @@
+[
+  {
+    "pageContent": "<path>Building an app, 1. Environment setup</path>\nimport Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';\n# Building an app\nThis guide explains how to build, test, and publish an app in 10 easy steps.\n:::note If you just want to dive into the code, check out the [quickstart](quickstart.mdx). :::\n## 1. Environment setup\nMake sure you have the following software installed:\n-   Node.js v22.2.0 or higher\n-   Git v2.28.0 or higher\nYou'll also need an editor for viewing and editing code (we recommend [VS Code](https://code.visualstudio.com/)).\n**Option 1: Use node version manager (nvm)**\nInstall or update [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) to use as a handy command-line tool for managing multiple Node.js versions on your system. This will allow you to switch between different versions easily. If you to use a different node version manager, check out these [suggestions from npmjs.org](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).\nFor macOS or Linux:\n-   Run the following command line in your terminal to install nvm.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Building an app",
+        "1. Environment setup"
+      ],
+      "level": 0
+    }
+  },
+  {
+    "pageContent": "<path>Building an app, 1. Environment setup</path>\n```bash\ncurl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.6/install.sh | bash\n```\n-   Close and re-open your terminal to have nvm available.\n    \n-   Install the latest version of Node.js.\n```bash\nnvm install node\n```\nFor Windows:\n-   Download and install nvm-windows by following the instructions in the repository.\n    \n-   Restart your terminal or command prompt.\n    \n-   Install the latest version of Node.js.\n```bash\nnvm install node\n```\n**Option 2: Use Node.js installer from nodejs.org**\n-   Visit the official [Node.js website](https://nodejs.org) to download the installer for your operating system (Windows, macOS, or Linux).\n-   Run the installer and follow the prompts to install Node.js and npm (the package manager for Node.js).\n:::note If you install Node.js this way, you may experience permissions issues when trying to run Devvit, which is [documented on NPM's website](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm). Both NPM and us here at Reddit highly encourage you to use nvm if possible. If that's not possible, here are some tips on how to [fix these permissions issues](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm). For Windows users specifically, please use a node version manager. :::",
+    "metadata": {
+      "type": [
+        "code",
+        "text"
+      ],
+      "level": 2,
+      "path": [
+        "Building an app",
+        "1. Environment setup"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Building an app, 5. Choose a template</path>\nCheck that Node.js is installed correctly by running the following commands:\n```bash\nnode --version\nnpm --version\n```\nYou should see the version numbers for Node.js and npm as output.\n## 2. Install Devvit\nTo download and install the Devvit CLI, run one of the following commands:\n## 3. Log in\nLog in to devvit using the Reddit account that has been allowlisted for the Developer Platform.\n```bash\ndevvit login\n```\nYou’ll be prompted to open an authorization page in your browser to allow the Devvit CLI to connect with your Reddit account. Click **Allow** to complete the login process.\n## 4. Make a project\nPick a project name that is six or more characters, all lowercase, using kebab-case. Your project name must start with a letter and can include the numbers 0 - 9. Use the following command to make your project:\n```bash\n$ devvit new <my-project>\n```\n## 5. Choose a template\nNext you’ll be prompted to select a [template](./templates.mdx). Select `experience-post`.\n```text\n$ devvit new my-project\n? Choose a template: (Use arrow keys)\n  app-settings\n  empty\n❯ experience-post\n  experience-post-pro\n  forms\n  image-uploads\n(Move up and down to reveal more choices)\n```",
+    "metadata": {
+      "type": [
+        "text",
+        "code",
+        "heading"
+      ],
+      "path": [
+        "Building an app",
+        "5. Choose a template"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Building an app, 7. Upload your app</path>\nThis creates a full directory for your project. The `src/main.tsx` file contains the main code for your app.\n```text\nmy-project\n├── devvit.yaml\n├── package.json\n├── src\n│   └── main.tsx\n├── tsconfig.json\n```\n## 6. Start coding\nNavigate to your new folder:\n```bash\n$ cd <my-project>\n```\nThe `main.tsx` file contains the main code for your app. The template you selected has all the code you need to create a complete experience post that counts clicks. You can make and save changes or upload the app as is to try it out.\n## 7. Upload your app\nTo test your app, upload it to the [Apps](https://developers.reddit.com/) directory. This creates a private version of your app that only you can see.\nFrom your project directory, run:\n```tsx\n$ devvit upload\n```\nYou’ll be prompted to do three things:\n-   Pick a name for your app (app names must be unique, between 3-16 characters, all lowercase, can't start with numerals, and include only a-z, 0-9 or '-'.).\n-   Indicate if your app is Not Safe For Work (NSFW).\n-   Copy the CAPTCHA link into a browser window and verify that you’re human.",
+    "metadata": {
+      "type": [
+        "text",
+        "code",
+        "heading"
+      ],
+      "path": [
+        "Building an app",
+        "7. Upload your app"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Building an app, 9. Publish</path>\nOnce you’re done, you’ll see this:\n```tsx\nCreating app...... Successfully created your app in Reddit!\nAutomatically bumped app version to: 0.0.1\n```\n## 8. Playtest\nPlaytest lets you test your app while it’s still in development. You can install your app on a subreddit you moderate that has less than 200 subscribers.\nFrom your project directory, run:\n```tsx\n$ devvit playtest <test-subreddit-name>\n```\nGo to your subreddit and select the three-dot menu next to the **Mod Tools** button. Click on the **Add my post** to open your app in your feed (you might need to refresh the page).\nPlaytest automatically builds and deploys your app every time you save your code, so you can edit and save your code to see the results in realtime. Refresh the page to view the latest changes. Check out the developer tools section for more [playtest features](playtest.md).\nTo end the playtest, press Ctrl + c.\n## 9. Publish\nPublishing your app will put it into an unlisted state in the [Apps](https://developers.reddit.com/) directory. This means that only you can see your app.",
+    "metadata": {
+      "type": [
+        "text",
+        "code",
+        "heading"
+      ],
+      "path": [
+        "Building an app",
+        "9. Publish"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Building an app, 10. Go public</path>\nFrom your project directory, run:\n```tsx\ndevvit publish\n```\nOnce you’ve published your app, you can install it on larger subreddits that you moderate. Some things to note:\n-   Your app is still only visible to you in the Apps directory.\n-   You can install the app on subreddits with more than 100 subscribers.\n-   The app will automatically be reviewed by the Developer Platform team.\n:::note [Experience](experience_post.md) apps or NSFW apps must go through the review process before they can be published. Apps that use http fetch must provide terms & conditions and a privacy policy before they can be published. :::\n## 10. Go public\nIf you want your app to be publicly listed in the [Apps](https://developers.reddit.com/) directory, you’ll need to submit an [app review form](https://docs.google.com/forms/d/e/1FAIpQLSdEyE5vrqOBlojue_mkrV25RiiHv_sxe-xqtcdzCMBTWmoROA/viewform). Once approved, your app will be publicly listed for everyone to see, and it can be installed by any mod in any subreddit.",
+    "metadata": {
+      "type": [
+        "text",
+        "code",
+        "heading"
+      ],
+      "path": [
+        "Building an app",
+        "10. Go public"
+      ],
+      "level": 2
+    }
+  }
+]

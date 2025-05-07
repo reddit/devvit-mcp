@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Type Alias: StringChild</path>\n[**@devvit/public-api v0.11.14-dev**](../../../../README.md)\n# Type Alias: StringChild\n**StringChild** = [`Fragment`](Fragment.md) | `string` | `number`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: StringChild"
+      ],
+      "level": 0
+    }
+  }
+]

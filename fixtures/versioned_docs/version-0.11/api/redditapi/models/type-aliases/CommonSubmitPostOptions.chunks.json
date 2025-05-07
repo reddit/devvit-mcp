@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: CommonSubmitPostOptions, Properties, title</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Type Alias: CommonSubmitPostOptions\n**CommonSubmitPostOptions** = `object`\n## Properties\n### flairId?\n`optional` **flairId**: `string`\n### flairText?\n`optional` **flairText**: `string`\n### nsfw?\n`optional` **nsfw**: `boolean`\n### runAs?\n`optional` **runAs**: `\"USER\"` | `\"APP\"`\n### sendreplies?\n`optional` **sendreplies**: `boolean`\n### spoiler?\n`optional` **spoiler**: `boolean`\n### title\n**title**: `string`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: CommonSubmitPostOptions",
+        "Properties",
+        "title"
+      ],
+      "level": 0
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: StateSetter<S>, Type Parameters, S</path>\n[**@devvit/public-api v0.11.14-dev**](../README.md)\n# Type Alias: StateSetter<S>\n**StateSetter**<`S`\\> = [`Dispatch`](Dispatch.md)<[`SetStateAction`](SetStateAction.md)<`S`\\>>\n## Type Parameters\n### S\n`S`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: StateSetter<S>",
+        "Type Parameters",
+        "S"
+      ],
+      "level": 0
+    }
+  }
+]

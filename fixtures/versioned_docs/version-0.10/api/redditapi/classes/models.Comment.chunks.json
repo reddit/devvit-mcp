@@ -1,0 +1,80 @@
+[
+  {
+    "pageContent": "<path>Class: Comment, Table of contents</path>\n# Class: Comment\n[models](../modules/models.md).Comment\n## Table of contents\n### Accessors\n-   [approved](models.Comment.md#approved)\n-   [authorId](models.Comment.md#authorid)\n-   [authorName](models.Comment.md#authorname)\n-   [body](models.Comment.md#body)\n-   [collapsedBecauseCrowdControl](models.Comment.md#collapsedbecausecrowdcontrol)\n-   [createdAt](models.Comment.md#createdat)\n-   [distinguishedBy](models.Comment.md#distinguishedby)\n-   [edited](models.Comment.md#edited)\n-   [id](models.Comment.md#id)\n-   [locked](models.Comment.md#locked)\n-   [modReportReasons](models.Comment.md#modreportreasons)\n-   [numReports](models.Comment.md#numreports)\n-   [parentId](models.Comment.md#parentid)\n-   [permalink](models.Comment.md#permalink)\n-   [postId](models.Comment.md#postid)\n-   [removed](models.Comment.md#removed)\n-   [replies](models.Comment.md#replies)\n-   [score](models.Comment.md#score)\n-   [spam](models.Comment.md#spam)\n-   [stickied](models.Comment.md#stickied)\n-   [subredditId](models.Comment.md#subredditid)\n-   [subredditName](models.Comment.md#subredditname)\n-   [url](models.Comment.md#url)\n-   [userReportReasons](models.Comment.md#userreportreasons)\n### Methods",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: Comment",
+        "Table of contents"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: Comment, Accessors, parentId, Returns</path>\n-   [addRemovalNote](models.Comment.md#addremovalnote)\n-   [approve](models.Comment.md#approve)\n-   [delete](models.Comment.md#delete)\n-   [distinguish](models.Comment.md#distinguish)\n-   [distinguishAsAdmin](models.Comment.md#distinguishasadmin)\n-   [edit](models.Comment.md#edit)\n-   [getAuthor](models.Comment.md#getauthor)\n-   [isApproved](models.Comment.md#isapproved)\n-   [isDistinguished](models.Comment.md#isdistinguished)\n-   [isEdited](models.Comment.md#isedited)\n-   [isLocked](models.Comment.md#islocked)\n-   [isRemoved](models.Comment.md#isremoved)\n-   [isSpam](models.Comment.md#isspam)\n-   [isStickied](models.Comment.md#isstickied)\n-   [lock](models.Comment.md#lock)\n-   [remove](models.Comment.md#remove)\n-   [reply](models.Comment.md#reply)\n-   [toJSON](models.Comment.md#tojson)\n-   [undistinguish](models.Comment.md#undistinguish)\n-   [unlock](models.Comment.md#unlock)\n## Accessors\n### approved\n• `get` **approved**(): `boolean`\n#### Returns\n`boolean`\n### authorId\n• `get` **authorId**(): `undefined` | \\`t2\\_${string}\\`\n#### Returns\n`undefined` | \\`t2\\_${string}\\`\n### authorName\n• `get` **authorName**(): `string`\n#### Returns\n`string`\n### body\n• `get` **body**(): `string`\n#### Returns\n`string`\n### collapsedBecauseCrowdControl\n• `get` **collapsedBecauseCrowdControl**(): `boolean`\n#### Returns\n`boolean`\n### createdAt\n• `get` **createdAt**(): `Date`\n#### Returns\n`Date`\n### distinguishedBy\n• `get` **distinguishedBy**(): `undefined` | `string`\n#### Returns\n`undefined` | `string`\n### edited\n• `get` **edited**(): `boolean`\n#### Returns\n`boolean`\n### id\n• `get` **id**(): \\`t1\\_${string}\\`\n#### Returns\n\\`t1\\_${string}\\`\n### locked\n• `get` **locked**(): `boolean`\n#### Returns\n`boolean`\n### modReportReasons\n• `get` **modReportReasons**(): `string`\\[\\]\n#### Returns\n`string`\\[\\]\n### numReports\n• `get` **numReports**(): `number`\n#### Returns\n`number`\n### parentId\n• `get` **parentId**(): \\`t1\\_${string}\\` | \\`t3\\_${string}\\`\n#### Returns\n\\`t1\\_${string}\\` | \\`t3\\_${string}\\`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Class: Comment",
+        "Accessors",
+        "parentId",
+        "Returns"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: Comment, Methods</path>\n### permalink\n• `get` **permalink**(): `string`\n#### Returns\n`string`\n### postId\n• `get` **postId**(): \\`t3\\_${string}\\`\n#### Returns\n\\`t3\\_${string}\\`\n### removed\n• `get` **removed**(): `boolean`\n#### Returns\n`boolean`\n### replies\n• `get` **replies**(): [`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\n#### Returns\n[`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\n### score\n• `get` **score**(): `number`\n#### Returns\n`number`\n### spam\n• `get` **spam**(): `boolean`\n#### Returns\n`boolean`\n### stickied\n• `get` **stickied**(): `boolean`\n#### Returns\n`boolean`\n### subredditId\n• `get` **subredditId**(): \\`t5\\_${string}\\`\n#### Returns\n\\`t5\\_${string}\\`\n### subredditName\n• `get` **subredditName**(): `string`\n#### Returns\n`string`\n### url\n• `get` **url**(): `string`\n#### Returns\n`string`\n### userReportReasons\n• `get` **userReportReasons**(): `string`\\[\\]\n#### Returns\n`string`\\[\\]\n## Methods\n### addRemovalNote\n▸ **addRemovalNote**(`options`): `Promise`<`void`\\>\nAdd a mod note for why the comment was removed\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | Object | - |\n| options.modNote? | string | the reason for removal (maximum 100 characters) (optional) |\n| options.reasonId | string | id of a Removal Reason - you can leave this as an empty string if you don't have one |\n#### Returns\n`Promise`<`void`\\>\n### approve\n▸ **approve**(): `Promise`<`void`\\>\n#### Returns\n`Promise`<`void`\\>\n### delete\n▸ **delete**(): `Promise`<`void`\\>\n#### Returns\n`Promise`<`void`\\>\n### distinguish\n▸ **distinguish**(`makeSticky?`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type | Default value |\n|---|---|---|\n| makeSticky | boolean | false |\n#### Returns\n`Promise`<`void`\\>\n### distinguishAsAdmin\n▸ **distinguishAsAdmin**(`makeSticky?`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type | Default value |\n|---|---|---|\n| makeSticky | boolean | false |\n#### Returns\n`Promise`<`void`\\>\n### edit",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: Comment",
+        "Methods"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: Comment, Methods, toJSON, Returns</path>\n▸ **edit**(`options`): `Promise`<[`Comment`](models.Comment.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | CommentSubmissionOptions |\n#### Returns\n`Promise`<[`Comment`](models.Comment.md)\\>\n### getAuthor\n▸ **getAuthor**(): `Promise`<[`User`](models.User.md)\\>\n#### Returns\n`Promise`<[`User`](models.User.md)\\>\n### isApproved\n▸ **isApproved**(): `boolean`\n#### Returns\n`boolean`\n### isDistinguished\n▸ **isDistinguished**(): `boolean`\n#### Returns\n`boolean`\n### isEdited\n▸ **isEdited**(): `boolean`\n#### Returns\n`boolean`\n### isLocked\n▸ **isLocked**(): `boolean`\n#### Returns\n`boolean`\n### isRemoved\n▸ **isRemoved**(): `boolean`\n#### Returns\n`boolean`\n### isSpam\n▸ **isSpam**(): `boolean`\n#### Returns\n`boolean`\n### isStickied\n▸ **isStickied**(): `boolean`\n#### Returns\n`boolean`\n### lock\n▸ **lock**(): `Promise`<`void`\\>\n#### Returns\n`Promise`<`void`\\>\n### remove\n▸ **remove**(`isSpam?`): `Promise`<`void`\\>\n#### Parameters\n| Name | Type | Default value |\n|---|---|---|\n| isSpam | boolean | false |\n#### Returns\n`Promise`<`void`\\>\n### reply\n▸ **reply**(`options`): `Promise`<[`Comment`](models.Comment.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | CommentSubmissionOptions |\n#### Returns\n`Promise`<[`Comment`](models.Comment.md)\\>\n### toJSON\n▸ **toJSON**(): `Pick`<[`Comment`](models.Comment.md), `\"subredditName\"` | `\"id\"` | `\"score\"` | `\"url\"` | `\"subredditId\"` | `\"postId\"` | `\"body\"` | `\"spam\"` | `\"replies\"` | `\"permalink\"` | `\"authorName\"` | `\"createdAt\"` | `\"approved\"` | `\"stickied\"` | `\"removed\"` | `\"edited\"` | `\"locked\"` | `\"distinguishedBy\"` | `\"userReportReasons\"` | `\"modReportReasons\"` | `\"parentId\"` | `\"numReports\"` | `\"collapsedBecauseCrowdControl\"`\\>\n#### Returns",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: Comment",
+        "Methods",
+        "toJSON",
+        "Returns"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Comment, Methods, unlock, Returns</path>\n`Pick`<[`Comment`](models.Comment.md), `\"subredditName\"` | `\"id\"` | `\"score\"` | `\"url\"` | `\"subredditId\"` | `\"postId\"` | `\"body\"` | `\"spam\"` | `\"replies\"` | `\"permalink\"` | `\"authorName\"` | `\"createdAt\"` | `\"approved\"` | `\"stickied\"` | `\"removed\"` | `\"edited\"` | `\"locked\"` | `\"distinguishedBy\"` | `\"userReportReasons\"` | `\"modReportReasons\"` | `\"parentId\"` | `\"numReports\"` | `\"collapsedBecauseCrowdControl\"`\\>\n### undistinguish\n▸ **undistinguish**(): `Promise`<`void`\\>\n#### Returns\n`Promise`<`void`\\>\n### unlock\n▸ **unlock**(): `Promise`<`void`\\>\n#### Returns\n`Promise`<`void`\\>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Class: Comment",
+        "Methods",
+        "unlock",
+        "Returns"
+      ],
+      "level": 3
+    }
+  }
+]

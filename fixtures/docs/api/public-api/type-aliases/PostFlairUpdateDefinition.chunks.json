@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: PostFlairUpdateDefinition, Properties, onEvent</path>\n[**@devvit/public-api v0.11.15-dev**](../README.md)\n# Type Alias: PostFlairUpdateDefinition\n**PostFlairUpdateDefinition** = `object`\n## Properties\n### event\n**event**: [`PostFlairUpdate`](PostFlairUpdate.md)\n### onEvent\n**onEvent**: [`TriggerOnEventHandler`](TriggerOnEventHandler.md)<[`PostFlairUpdate`](../@devvit/namespaces/EventTypes/interfaces/PostFlairUpdate.md)\\>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: PostFlairUpdateDefinition",
+        "Properties",
+        "onEvent"
+      ],
+      "level": 0
+    }
+  }
+]

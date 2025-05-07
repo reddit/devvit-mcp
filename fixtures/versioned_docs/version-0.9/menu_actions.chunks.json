@@ -1,0 +1,29 @@
+[
+  {
+    "pageContent": "<path>Menu actions, Example</path>\n# Menu actions\nYou can add custom menu actions to posts and comments using the addAction or addActions function. These functions serve as an entry point for apps.addActions.\n![custom menu actions](./assets/custom_menu_actions.png)\n## Supported Contexts\nThe context lets you define where the menu action shows up. The options are:\n-   COMMENT\n-   POST\n-   SUBREDDIT\nYou can also define the userContext (optional) to specify the types of users that can see the menu action. The options are:\n-   LOGGED\\_IN\n-   MEMBER\n-   MODERATORY\n## Limitations\n-   If there are multiple apps, there is no way to sort order of actions in the menu.\n-   The context, name, and description fields do not support dynamic logic.\n## Example\nHere you'll use `Devvit.addActions` to create a post menu action that is visible to members, a comment menu action that is visisble to moderators, and a subreddit menu action that is available to all users.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Menu actions",
+        "Example"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Menu actions, Example</path>\n```ts\n\nimport { Context, Devvit, UserContext } from '@devvit/public-api';\n\n// Declare multiple actions to be added to the menu\nDevvit.addActions([\n  {\n    context: Context.POST,// Can be on a post, comment, subreddit, or member\n    userContext: UserContext.MEMBER,  // optional, specify type of user context necessary\n    name: 'Custom Post Action', // Displayed text in the menu (keep it short!)\n    description: 'Do something with this post', // Short blurb describing the action\n    handler: async (event) => {\n      const message = `Post action! Post ID: ${event.post?.id}`;\n      console.log(message);\n\n      // Return success status and a message to show the user as feedback\n      return { success: true, message };\n    },\n  },\n  {\n    context: Context.COMMENT,\n    userContext: UserContext.MODERATOR, // only moderators are able to see\n    name: 'Custom Comment Action',\n    description: 'Do something with this comment',\n    handler: async (event) => {\n      const message = `Comment action! Comment ID: ${event.comment?.id}`;\n      console.log(message);\n      return { success: true, message };\n    },\n  },\n]);\n\n\nDevvit.addAction({\n  context: Context.SUBREDDIT,\n  name: 'Custom Subreddit Action', // text to display in the menu (keep it short!)\n  description: 'Do something on this Subreddit, // short blurb describing what we're going to do\n  handler: async (event) => {\n    const message = `Subreddit action! Comment ID: ${event.subreddit?.id}`;\n    console.log(message);\n    return { success: true, message };\n  },\n});\n```",
+    "metadata": {
+      "type": [
+        "code"
+      ],
+      "level": 2,
+      "path": [
+        "Menu actions",
+        "Example"
+      ]
+    }
+  }
+]

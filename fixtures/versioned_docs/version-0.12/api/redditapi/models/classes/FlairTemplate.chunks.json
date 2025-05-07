@@ -1,0 +1,35 @@
+[
+  {
+    "pageContent": "<path>Class: FlairTemplate, Accessors, textColor, Get Signature, Returns</path>\n[**@devvit/public-api v0.12.0-dev**](../../README.md)\n# Class: FlairTemplate\n## Accessors\n### allowableContent\n#### Get Signature\n**get** **allowableContent**(): [`AllowableFlairContent`](../type-aliases/AllowableFlairContent.md)\nThe flair template's allowable content. Either 'all', 'emoji', or 'text'.\n##### Returns\n[`AllowableFlairContent`](../type-aliases/AllowableFlairContent.md)\n### allowUserEdits\n#### Get Signature\n**get** **allowUserEdits**(): `boolean`\nDoes the flair template allow users to edit their flair?\n##### Returns\n`boolean`\n### backgroundColor\n#### Get Signature\n**get** **backgroundColor**(): [`FlairBackgroundColor`](../type-aliases/FlairBackgroundColor.md)\nThe flair template's background color. Either 'transparent' or a hex color code. e.g. #FFC0CB\n##### Returns\n[`FlairBackgroundColor`](../type-aliases/FlairBackgroundColor.md)\n### id\n#### Get Signature\n**get** **id**(): `string`\nThe flair template's ID\n##### Returns\n`string`\n### maxEmojis\n#### Get Signature\n**get** **maxEmojis**(): `number`\nThe flair template's maximum number of emojis.\n##### Returns\n`number`\n### modOnly\n#### Get Signature\n**get** **modOnly**(): `boolean`\nIs the flair template only available to moderators?\n##### Returns\n`boolean`\n### text\n#### Get Signature\n**get** **text**(): `string`\nThe flair template's text\n##### Returns\n`string`\n### textColor\n#### Get Signature\n**get** **textColor**(): [`FlairTextColor`](../type-aliases/FlairTextColor.md)\nThe flair template's text color. Either 'dark' or 'light'.\n##### Returns\n[`FlairTextColor`](../type-aliases/FlairTextColor.md)",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Class: FlairTemplate",
+        "Accessors",
+        "textColor",
+        "Get Signature",
+        "Returns"
+      ],
+      "level": 0
+    }
+  },
+  {
+    "pageContent": "<path>Class: FlairTemplate, Methods, edit(), Returns</path>\n## Methods\n### delete()\n**delete**(): `Promise`<`void`\\>\nDelete this flair template\n#### Returns\n`Promise`<`void`\\>\n### edit()\n**edit**(`options`): `Promise`<`FlairTemplate`\\>\nEdit this flair template\n#### Parameters\n##### options\n`Partial`<`Omit`<[`EditFlairTemplateOptions`](../type-aliases/EditFlairTemplateOptions.md), `\"subredditName\"` | `\"id\"`\\>>\n#### Returns\n`Promise`<`FlairTemplate`\\>",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: FlairTemplate",
+        "Methods",
+        "edit()",
+        "Returns"
+      ],
+      "level": 2
+    }
+  }
+]

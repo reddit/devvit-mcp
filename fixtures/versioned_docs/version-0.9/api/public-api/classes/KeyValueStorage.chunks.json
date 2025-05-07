@@ -1,0 +1,19 @@
+[
+  {
+    "pageContent": "<path>Class: KeyValueStorage, Methods, put, Returns</path>\n# Class: KeyValueStorage\nSimplified wrapper around KVStore which stores all data as serialized JSON objects\n## Table of contents\n### Constructors\n-   [constructor](KeyValueStorage.md#constructor)\n### Methods\n-   [delete](KeyValueStorage.md#delete)\n-   [get](KeyValueStorage.md#get)\n-   [list](KeyValueStorage.md#list)\n-   [put](KeyValueStorage.md#put)\n## Constructors\n### constructor\n• **new KeyValueStorage**(`storage?`)\n#### Parameters\n| Name | Type |\n|---|---|\n| storage | KVStore |\n## Methods\n### delete\n▸ **delete**(`key`, `metadata?`): `Promise`< `void`\\>\nDeletes a key from the store if present\n#### Parameters\n| Name | Type |\n|---|---|\n| key | string |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n### get\n▸ **get**< `T`\\>(`key`, `metadata?`, `defaultValue?`): `Promise`< `undefined` | `T`\\>\nRetrieves a value from the store at the given key or defaultValue if not found or falsy\nto-do: remove defaultValue and use builtin nullish coalescing at call sites. to-do: change falsy comparison to an undefined check since undefineds are stripped by JSON parsing. This will allow KV to represent sets with any values and be less surprising.\n#### Type parameters\n| Name | Type |\n|---|---|\n| T | extends JSONValue |\n#### Parameters\n| Name | Type |\n|---|---|\n| key | string |\n| metadata? | Metadata |\n| defaultValue? | T |\n#### Returns\n`Promise`< `undefined` | `T`\\>\n### list\n▸ **list**(`metadata?`): `Promise`< `string`\\[\\]>\nReturns a list of keys in the store\n#### Parameters\n| Name | Type |\n|---|---|\n| metadata? | Metadata |\n#### Returns\n`Promise`< `string`\\[\\]>\n### put\n▸ **put**(`key`, `value`, `metadata?`): `Promise`< `void`\\>\nAssigns a value to a key in the store\n#### Parameters\n| Name | Type |\n|---|---|\n| key | string |\n| value | JSONValue |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: KeyValueStorage",
+        "Methods",
+        "put",
+        "Returns"
+      ],
+      "level": 1
+    }
+  }
+]

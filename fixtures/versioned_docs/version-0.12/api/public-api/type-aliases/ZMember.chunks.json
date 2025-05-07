@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: ZMember, Properties, score</path>\n[**@devvit/public-api v0.12.0-dev**](../README.md)\n# Type Alias: ZMember\n**ZMember** = `object`\n## Properties\n### member\n**member**: `string`\n### score\n**score**: `number`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: ZMember",
+        "Properties",
+        "score"
+      ],
+      "level": 0
+    }
+  }
+]

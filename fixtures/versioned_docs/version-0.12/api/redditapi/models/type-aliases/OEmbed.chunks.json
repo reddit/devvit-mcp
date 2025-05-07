@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: OEmbed, Properties, width?</path>\n[**@devvit/public-api v0.12.0-dev**](../../README.md)\n# Type Alias: OEmbed\n**OEmbed** = `object`\noEmbed is a format for allowing an embedded representation of a URL on third party sites. The simple API allows a website to display embedded content (such as photos or videos) when a user posts a link to that resource, without having to parse the resource directly. See: [https://oembed.com/](https://oembed.com/)\n## Properties\n### authorName?\n`optional` **authorName**: `string`\nThe name of the author/owner of the resource. E.g. \"Reddit\"\n### authorUrl?\n`optional` **authorUrl**: `string`\nA URL for the author/owner of the resource. E.g. \"[https://www.youtube.com/@Reddit](https://www.youtube.com/@Reddit)\"\n### height?\n`optional` **height**: `number`\nThe width in pixels required to display the HTML.\n### html\n**html**: `string`\nThe HTML required to embed a video player. The HTML should have no padding or margins. Consumers may wish to load the HTML in an off-domain iframe to avoid XSS vulnerabilities.\n### providerName?\n`optional` **providerName**: `string`\nA URL for the author/owner of the resource. E.g. \"YouTube\"\n### providerUrl?\n`optional` **providerUrl**: `string`\nThe name of the resource provider. E.g \"[https://www.youtube.com/](https://www.youtube.com/)\"\n### thumbnailHeight?\n`optional` **thumbnailHeight**: `number`\nThe height of the optional thumbnail in pixels\n### thumbnailUrl?\n`optional` **thumbnailUrl**: `string`\nA URL to a thumbnail image representing the resource.\n### thumbnailWidth?\n`optional` **thumbnailWidth**: `number`\nThe width of the optional thumbnail in pixels\n### title?\n`optional` **title**: `string`\nA text title, describing the resource.\n### type\n**type**: `string`\nThe resource type. Valid values, along with value-specific parameters, are described below. E.g. \"video\"\n### version\n**version**: `string`\nThe oEmbed version number. This must be 1.0.\n### width?\n`optional` **width**: `number`\nThe height in pixels required to display the HTML.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: OEmbed",
+        "Properties",
+        "width?"
+      ],
+      "level": 0
+    }
+  }
+]

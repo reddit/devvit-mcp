@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: CommentDeleteDefinition, Properties, onEvent</path>\n[**@devvit/public-api v0.11.15-dev**](../README.md)\n# Type Alias: CommentDeleteDefinition\n**CommentDeleteDefinition** = `object`\n## Properties\n### event\n**event**: [`CommentDelete`](CommentDelete.md)\n### onEvent\n**onEvent**: [`TriggerOnEventHandler`](TriggerOnEventHandler.md)<[`CommentDelete`](../@devvit/namespaces/EventTypes/interfaces/CommentDelete.md)\\>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: CommentDeleteDefinition",
+        "Properties",
+        "onEvent"
+      ],
+      "level": 0
+    }
+  }
+]

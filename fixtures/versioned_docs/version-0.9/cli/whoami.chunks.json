@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>devvit whoami, devvit whoami</path>\n# devvit whoami\nDisplay the currently logged in reddit.com user\n-   [`devvit whoami`](#devvit-whoami)\n## devvit whoami\nDisplay the currently logged in reddit.com user\n```\nUSAGE\n  $ devvit whoami\n\nDESCRIPTION\n  Display the currently logged in reddit.com user\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "devvit whoami",
+        "devvit whoami"
+      ],
+      "level": 1
+    }
+  }
+]

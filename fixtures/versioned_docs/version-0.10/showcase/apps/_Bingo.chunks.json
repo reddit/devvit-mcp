@@ -1,0 +1,12 @@
+[
+  {
+    "pageContent": "<path></path>\nimport Bingo from '../../assets/examples/app-bingo.png';\n<a target=\"\\_blank\" href=\"[https://www.reddit.com/r/eurovision/comments/1co2ofv/eurovision\\_bingo\\_semi\\_final\\_2/](https://www.reddit.com/r/eurovision/comments/1co2ofv/eurovision_bingo_semi_final_2/)\"\n<img src={Bingo} alt=\"Bingo\" style={{ width: '512px', borderRadius: '16px' }} /> An asynchronous bingo game customized to your locale.\n**[Demo](https://www.reddit.com/r/eurovision/comments/1co2ofv/eurovision_bingo_semi_final_2/)**\n**[View source code](https://github.com/reddit/devvit/tree/main/packages/apps/bingo)**",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 0,
+      "path": []
+    }
+  }
+]

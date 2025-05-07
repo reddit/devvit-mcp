@@ -1,0 +1,16 @@
+[
+  {
+    "pageContent": "<path>Type Alias: FormOnSubmitEventHandler()<Data>, Returns</path>\n[**@devvit/public-api v0.11.14-dev**](../README.md)\n# Type Alias: FormOnSubmitEventHandler()<Data>\n**FormOnSubmitEventHandler**<`Data`\\> = (`event`, `context`) => `void` | `Promise`<`void`\\>\n## Type Parameters\n### Data\n`Data` _extends_ `Partial`<[`JSONObject`](JSONObject.md)\\>\n## Parameters\n### event\n[`FormOnSubmitEvent`](FormOnSubmitEvent.md)<`Data`\\>\n### context\n[`Context`](../@devvit/namespaces/Devvit/type-aliases/Context.md)\n## Returns\n`void` | `Promise`<`void`\\>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: FormOnSubmitEventHandler()<Data>",
+        "Returns"
+      ],
+      "level": 0
+    }
+  }
+]

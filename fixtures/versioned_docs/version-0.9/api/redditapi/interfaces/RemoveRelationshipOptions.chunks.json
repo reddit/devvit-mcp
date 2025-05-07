@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: RemoveRelationshipOptions, Properties, username</path>\n# Interface: RemoveRelationshipOptions\n## Table of contents\n### Properties\n-   [subredditName](RemoveRelationshipOptions.md#subredditname)\n-   [type](RemoveRelationshipOptions.md#type)\n-   [username](RemoveRelationshipOptions.md#username)\n## Properties\n### subredditName\n• **subredditName**: `string`\n### type\n• **type**: `\"moderator\"` | [`RelationshipType`](../README.md#relationshiptype)\n### username\n• **username**: `string`",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Interface: RemoveRelationshipOptions",
+        "Properties",
+        "username"
+      ],
+      "level": 1
+    }
+  }
+]

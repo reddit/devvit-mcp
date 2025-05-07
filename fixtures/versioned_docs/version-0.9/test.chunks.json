@@ -1,0 +1,32 @@
+[
+  {
+    "pageContent": "<path>Debug, Viewing streaming logs</path>\n# Debug\nYou can debug your app by collecting log output using `devvit logs`.\n## Logs\nAny logs sent to `console` will be available via the `devvit logs` CLI on installed apps. For example, `console.log()`, `console.info()` and `console.error()` will produce logs with timestamps as expected.\nThe following example creates a basic app that simply creates a single log.\n```typescript\nimport { Context, Devvit } from '@devvit/public-api';\n\nDevvit.addAction({\n  context: Context.POST,\n  name: 'Create a log!',\n  description: 'Creates a log',\n  async handler(event, metadata) {\n    console.log('Action called!');\n    return {\n      success: true,\n      message: 'Log complete!',\n    };\n  },\n});\n\nexport default Devvit;\n```\n## Viewing streaming logs\nOnce you have installed the app, open a terminal on your local machine and run `devvit logs <app name> <subreddit name>`. For example:\n```bash\n\n  devvit logs my-app my-subreddit\n```\nYou should now see logs streaming onto your console:\n```bash\n=============================== streaming logs for my-app on my-subrredit ================================\n[DEBUG] Dec 8 15:55:50 Action called!\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Debug",
+        "Viewing streaming logs"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Debug, Viewing historical logs</path>\n## Viewing historical logs\nYou can view historical logs by using the `--since=XX` flag. You can use the following shorthand:\n-   `Xh`: show logs in the past X hours\n-   `Xd`: show logs in the past X days\n-   `Xw`: show logs in the past X weeks\n-   `Xm`: show logs in the past X months\nThe following example will show logs from `my-app` on `my-subreddit` in the past day.\n```bash\ndevvit logs my-app my-subreddit --since=1d\n```\nYou will now see historical logs created by your app on this subreddit:\n```bash\n\n=============================== streaming logs for my-app on my-subrredit ================================\n[DEBUG] Dec 8 15:55:23 Action called!\n[DEBUG] Dec 8 15:55:50 Action called!\n[DEBUG] Dec 8 15:57:29 Action called!\n[DEBUG] Dec 8 15:57:32 Action called!\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "level": 2,
+      "path": [
+        "Debug",
+        "Viewing historical logs"
+      ]
+    }
+  }
+]

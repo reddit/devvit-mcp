@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: GetPostsByUserOptions, Properties, username</path>\n# Interface: GetPostsByUserOptions\n## Table of contents\n### Properties\n-   [after](GetPostsByUserOptions.md#after)\n-   [before](GetPostsByUserOptions.md#before)\n-   [limit](GetPostsByUserOptions.md#limit)\n-   [pageSize](GetPostsByUserOptions.md#pagesize)\n-   [sort](GetPostsByUserOptions.md#sort)\n-   [timeframe](GetPostsByUserOptions.md#timeframe)\n-   [username](GetPostsByUserOptions.md#username)\n## Properties\n### after\n• `Optional` **after**: `string`\n### before\n• `Optional` **before**: `string`\n### limit\n• `Optional` **limit**: `number`\n### pageSize\n• `Optional` **pageSize**: `number`\n### sort\n• `Optional` **sort**: `\"hot\"` | `\"new\"` | `\"top\"` | `\"controversial\"`\n### timeframe\n• `Optional` **timeframe**: `\"day\"` | `\"hour\"` | `\"month\"` | `\"all\"` | `\"week\"` | `\"year\"`\n### username\n• **username**: `string`",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Interface: GetPostsByUserOptions",
+        "Properties",
+        "username"
+      ],
+      "level": 1
+    }
+  }
+]

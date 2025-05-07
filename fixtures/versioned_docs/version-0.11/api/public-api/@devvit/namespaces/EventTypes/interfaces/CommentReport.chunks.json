@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: CommentReport, Properties, subreddit?</path>\n[**@devvit/public-api v0.11.14-dev**](../../../../README.md)\n# Interface: CommentReport\n## Properties\n### comment?\n`optional` **comment**: `CommentV2`\n### reason\n**reason**: `string`\n### subreddit?\n`optional` **subreddit**: `SubredditV2`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Interface: CommentReport",
+        "Properties",
+        "subreddit?"
+      ],
+      "level": 0
+    }
+  }
+]

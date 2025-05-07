@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Enumeration: WikiPagePermissionLevel, Enumeration Members, SUBREDDIT_PERMISSIONS</path>\n# Enumeration: WikiPagePermissionLevel\n## Table of contents\n### Enumeration Members\n-   [APPROVED\\_CONTRIBUTORS\\_ONLY](WikiPagePermissionLevel.md#approved_contributors_only)\n-   [MODS\\_ONLY](WikiPagePermissionLevel.md#mods_only)\n-   [SUBREDDIT\\_PERMISSIONS](WikiPagePermissionLevel.md#subreddit_permissions)\n## Enumeration Members\n### APPROVED_CONTRIBUTORS_ONLY\n• **APPROVED\\_CONTRIBUTORS\\_ONLY** = `1`\nOnly approved wiki contributors for this page may edit\n### MODS_ONLY\n• **MODS\\_ONLY** = `2`\nOnly mods may edit and view\n### SUBREDDIT_PERMISSIONS\n• **SUBREDDIT\\_PERMISSIONS** = `0`\nUse subreddit wiki permissions",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Enumeration: WikiPagePermissionLevel",
+        "Enumeration Members",
+        "SUBREDDIT_PERMISSIONS"
+      ],
+      "level": 1
+    }
+  }
+]

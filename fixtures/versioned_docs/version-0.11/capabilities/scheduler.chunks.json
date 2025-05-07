@@ -1,0 +1,76 @@
+[
+  {
+    "pageContent": "<path>Scheduler, Schedule the job</path>\n# Scheduler\nStore and execute future actions.\nUse the scheduler to do things like send a private message at a specified time, track upvotes, or schedule time-outs for user actions.\n## Create a job\nCreate a job definition using `Devvit.addSchedulerJob` method.\n```ts\nDevvit.addSchedulerJob({\n  name: 'thing-todo', // you can use an arbitrary name here\n  onRun: async (event, context) => {\n    // do stuff when the job is executed\n  },\n});\n```\n## Schedule the job\nUse the `context.scheduler.runJob()` method to schedule the job you created. You can schedule the job to run once at at a particular time in the future or schedule it to be called repeatedly at a specific time.\n-   To schedule the job to run once, use the `runAt` parameter:\n```ts\nDevvit.addMenuItem({\n  label: 'Remind me about this post',\n  location: 'post',\n  onPress: async (event, context) => {\n    const jobId = await context.scheduler.runJob({\n      name: 'thing-todo', // the name of the job that we specified in addSchedulerJob() above\n      runAt: new Date('2099-01-01'),\n    });\n  },\n});\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Scheduler",
+        "Schedule the job"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Scheduler, Schedule the job</path>\nOptionally, you can save the `jobId` in [Redis storage](./redis.md) to be able to [cancel the scheduled action](#cancel-an-action) in the future.\n```ts\nawait context.redis.set('thing-todo:jobId', jobId);\n```\n-   To schedule a recurring action, use a `cron` parameter:\n:::note `scheduler.runJob()` uses the same format that is used in UNIX `cron`, a command-line utility is a job scheduler on Unix-like operating systems [https://en.wikipedia.org/wiki/Cron](https://en.wikipedia.org/wiki/Cron)\n```\n# * * * * *\n# | | | | |\n# | | | | day of the week (0–6) Sunday to Saturday; 7 is also Sunday on some systems\n# | | | month (1–12)\n# | | day of the month (1–31)\n# | hour (0–23)\n# minute (0–59)\n```\n:::\n```ts\nDevvit.addMenuItem({\n  label: 'Run every day',\n  location: 'post',\n  onPress: async (event, context) => {\n    const jobId = await context.scheduler.runJob({\n      name: 'thing-todo',\n      cron: '0 12 * * *',\n    });\n  },\n});\n```\n:::note We recommend using [Cronitor](https://crontab.guru/) to build out strings. :::",
+    "metadata": {
+      "type": [
+        "text",
+        "code"
+      ],
+      "level": 2,
+      "path": [
+        "Scheduler",
+        "Schedule the job"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Scheduler, Examples</path>\n## Cancel an action\nUse the job ID to cancel a scheduled action and remove it from your app.\n```ts\nDevvit.addMenuItem({\n  label: 'clear',\n  location: 'post',\n  forUserType: 'moderator',\n  onPress: async (_, context) => {\n    const jobId = (await context.redis.get('jobId')) || '0';\n    await context.scheduler.cancelJob(jobId);\n  },\n});\n\nexport default Devvit;\n```\n## Examples\n### Schedule a one-off action\nYou can schedule an action to run once at a specific time, like sending a private message in the [Remind Me](/docs/showcase/tutorials/remind_me.md) tutorial.\n```ts\nimport { Devvit } from '@devvit/public-api';\n\nconst REMIND_ME_ACTION_NAME = 'remindme';\n\nDevvit.addSchedulerJob({\n  name: REMIND_ME_ACTION_NAME,\n  onRun: async (event, context) => {\n    const { userId, postId, fromWhen } = event.data!;\n\n    const user = await context.reddit.getUserById(userId);\n    const post = await context.reddit.getPostById(postId);\n\n    // Send a private message to the user\n    await context.reddit.sendPrivateMessage({\n      to: user.username,\n      subject: 'RemindMe',\n      text: `Beep boop! You asked me to remind you about [${post.title}](${post.permalink}) at ${fromWhen}!`,\n    });\n  },\n});\n\nDevvit.addMenuItem({\n  label: 'Remind me about this post',\n  location: 'post',\n  onPress: async (event, context) => {\n    // Code below could also be run from another capability, like an event trigger or another scheduled job\n    const today = new Date();\n    const tomorrow = new Date(today);\n    tomorrow.setDate(tomorrow.getDate() + 1);\n\n    await context.scheduler.runJob({\n      name: REMIND_ME_ACTION_NAME,\n      data: {\n        userId: context.userId!,\n        postId: `t3_${context.postId}`,\n      },\n      runAt: tomorrow,\n    });\n  },\n});\n\nexport default Devvit;\n```\n### Schedule a recurring action",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Scheduler",
+        "Examples"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Scheduler, Examples, Schedule a recurring action</path>\nYou can schedule an action that repeats at a specific time. This sample code creates a recurring action to post a new daily thread every day at 12:00 UTC. In this example, the recurring action is initiated when the app is installed, but you can also schedule a recurring action from a menu action instead.\n```ts\nimport { Devvit } from '@devvit/public-api';\n\nDevvit.addSchedulerJob({\n  name: 'daily_thread',\n  onRun: async (_, context) => {\n    console.log('daily_thread handler called');\n    const subreddit = await context.reddit.getCurrentSubreddit();\n    const resp = await context.reddit.submitPost({\n      subredditName: subreddit.name,\n      title: 'Daily Thread',\n      text: 'This is a daily thread, comment here!',\n    });\n    console.log('posted resp', JSON.stringify(resp));\n  },\n});\n\nDevvit.addTrigger({\n  event: 'AppInstall',\n  onEvent: async (_, context) => {\n    try {\n      const jobId = await context.scheduler.runJob({\n        cron: '0 12 * * *',\n        name: 'daily_thread',\n        data: {},\n      });\n      await context.redis.set('jobId', jobId);\n    } catch (e) {\n      console.log('error was not able to schedule:', e);\n      throw e;\n    }\n  },\n});\n\nexport default Devvit;\n```\n:::note We recommend using [Cronitor](https://crontab.guru/) to build out strings. :::",
+    "metadata": {
+      "type": [
+        "text",
+        "code"
+      ],
+      "level": 3,
+      "path": [
+        "Scheduler",
+        "Examples",
+        "Schedule a recurring action"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Scheduler, Limitations</path>\n## Faster scheduler\n:::note This feature is experimental, which means the design is not final but it's still available for you to use. :::\nScheduled jobs currently perform one scheduled run per minute. To go faster, you can now run jobs every second by adding seconds granularity to your cron expression.\n```tsx\nawait scheduler.runJob({\n  name: 'run_every_30_seconds',\n  cron: '*/30 * * * * *',\n});\n```\nHow frequent a scheduled job runs will depend on how long the job takes to complete and how many jobs are running in parallel. This means a job may take a bit longer than scheduled, but the overall resolution should be better than a minute.\n## Limitations\n_Limits are per installation of an app_\n-   An installation can have up to 10 live recurring actions.\n    \n-   There are two rate limits enforced by the `runJob()` method when actions are created:\n    \n    -   Creation rate: up to 60 calls to `runJob()` per minute\n    -   Delivery rate: up to 60 deliveries per minute",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Scheduler",
+        "Limitations"
+      ],
+      "level": 2
+    }
+  }
+]

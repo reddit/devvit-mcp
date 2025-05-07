@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: Actionable, Properties, onPress?</path>\n[**@devvit/public-api v0.11.15-dev**](../../../../../../README.md)\n# Type Alias: Actionable\n**Actionable** = `object`\n## Properties\n### onPress?\n`optional` **onPress**: [`OnPressEventHandler`](OnPressEventHandler.md)",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: Actionable",
+        "Properties",
+        "onPress?"
+      ],
+      "level": 0
+    }
+  }
+]

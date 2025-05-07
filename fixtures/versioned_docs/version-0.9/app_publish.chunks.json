@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Publish your app</path>\n## Publish your app\nPublishing your app will make it discoverable to other users with permissions to install apps on developers.reddit.com. It is not yet possible for you to publish your own app. To publish your app, please [contact us](https://reddit.com/message/compose/?to=/r/Devvit).\n:::note\nPublishing a new version does not automatically upgrade existing installations of your app.\n:::",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "level": 2,
+      "path": [
+        "Publish your app"
+      ]
+    }
+  }
+]

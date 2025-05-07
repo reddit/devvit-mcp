@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: ModAction, Properties, type</path>\n# Interface: ModAction\n[models](../modules/models.md).ModAction\n## Table of contents\n### Properties\n-   [createdAt](models.ModAction.md#createdat)\n-   [description](models.ModAction.md#description)\n-   [details](models.ModAction.md#details)\n-   [id](models.ModAction.md#id)\n-   [moderatorId](models.ModAction.md#moderatorid)\n-   [moderatorName](models.ModAction.md#moderatorname)\n-   [subredditId](models.ModAction.md#subredditid)\n-   [subredditName](models.ModAction.md#subredditname)\n-   [target](models.ModAction.md#target)\n-   [type](models.ModAction.md#type)\n## Properties\n### createdAt\n• **createdAt**: `Date`\n### description\n• `Optional` **description**: `string`\n### details\n• `Optional` **details**: `string`\n### id\n• **id**: `string`\n### moderatorId\n• **moderatorId**: `string`\n### moderatorName\n• **moderatorName**: `string`\n### subredditId\n• **subredditId**: `string`\n### subredditName\n• **subredditName**: `string`\n### target\n• `Optional` **target**: [`ModActionTarget`](../modules/models.md#modactiontarget)\n### type\n• **type**: [`ModActionType`](../modules/models.md#modactiontype)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Interface: ModAction",
+        "Properties",
+        "type"
+      ],
+      "level": 1
+    }
+  }
+]

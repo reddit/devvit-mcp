@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Type Alias: AboutSubredditTypes</path>\n[**@devvit/public-api v0.12.0-dev**](../../README.md)\n# Type Alias: AboutSubredditTypes\n**AboutSubredditTypes** = `\"comment\"` | `\"post\"` | `\"all\"`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: AboutSubredditTypes"
+      ],
+      "level": 0
+    }
+  }
+]

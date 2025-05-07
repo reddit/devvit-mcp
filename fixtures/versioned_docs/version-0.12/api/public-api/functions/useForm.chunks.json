@@ -1,0 +1,16 @@
+[
+  {
+    "pageContent": "<path>Function: useForm(), Returns</path>\n[**@devvit/public-api v0.12.0-dev**](../README.md)\n# Function: useForm()\n**useForm**<`T`\\>(`form`, `onSubmit`): [`FormKey`](../type-aliases/FormKey.md)\n## Type Parameters\n### T\n`T` _extends_ [`Form`](../type-aliases/Form.md) | [`FormFunction`](../type-aliases/FormFunction.md)\n## Parameters\n### form\n`T`\n### onSubmit\n(`values`) => `void` | `Promise`<`void`\\>\n## Returns\n[`FormKey`](../type-aliases/FormKey.md)",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Function: useForm()",
+        "Returns"
+      ],
+      "level": 0
+    }
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "pageContent": "<path>Class: WikiPageSettings, Methods, toJSON, Returns</path>\n# Class: WikiPageSettings\n## Table of contents\n### Constructors\n-   [constructor](WikiPageSettings.md#constructor)\n### Accessors\n-   [editors](WikiPageSettings.md#editors)\n-   [listed](WikiPageSettings.md#listed)\n-   [permLevel](WikiPageSettings.md#permlevel)\n### Methods\n-   [toJSON](WikiPageSettings.md#tojson)\n## Constructors\n### constructor\n• **new WikiPageSettings**(`data`, `metadata`)\n#### Parameters\n| Name | Type |\n|---|---|\n| data | WikiPageSettings_Data |\n| metadata | undefined | Metadata |\n## Accessors\n### editors\n• `get` **editors**(): [`User`](User.md)\\[\\]\n#### Returns\n[`User`](User.md)\\[\\]\n### listed\n• `get` **listed**(): `boolean`\n#### Returns\n`boolean`\n### permLevel\n• `get` **permLevel**(): [`WikiPagePermissionLevel`](../enums/WikiPagePermissionLevel.md)\n#### Returns\n[`WikiPagePermissionLevel`](../enums/WikiPagePermissionLevel.md)\n## Methods\n### toJSON\n▸ **toJSON**(): `Object`\n#### Returns\n`Object`\n| Name | Type |\n|---|---|\n| editors | { commentKarma: number ; createdAt: Date ; id: `t2_${string}` ; linkKarma: number ; modPermissionsBySubreddit: { [k: string]: T; } ; nsfw: boolean ; username: string }[] |\n| listed | boolean |\n| permLevel | WikiPagePermissionLevel |",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: WikiPageSettings",
+        "Methods",
+        "toJSON",
+        "Returns"
+      ],
+      "level": 1
+    }
+  }
+]

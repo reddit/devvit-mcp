@@ -1,0 +1,19 @@
+[
+  {
+    "pageContent": "<path>Type Alias: MediaPlugin, Methods, upload(), Example</path>\n[**@devvit/public-api v0.12.0-dev**](../README.md)\n# Type Alias: MediaPlugin\n**MediaPlugin** = `object`\n## Methods\n### upload()\n**upload**(`opts`): `Promise`<[`MediaAsset`](MediaAsset.md)\\>\nUploads media from external URL to Reddit\n#### Parameters\n##### opts\n[`UploadMediaOptions`](UploadMediaOptions.md)\n#### Returns\n`Promise`<[`MediaAsset`](MediaAsset.md)\\>\nA Promise that resolves to a MediaAsset object.\n#### Example\n```ts\nconst response = await context.media.upload({\n  url: 'https://media2.giphy.com/media/xTiN0CNHgoRf1Ha7CM/giphy.gif',\n  type: 'gif',\n});\nawait submitPost({\n  subredditName: subreddit.name,\n  title: 'Hello World with Media',\n  richtext: new RichTextBuilder()\n    .image({ mediaId: response.mediaId })\n    .codeBlock({}, (cb) => cb.rawText('This post was created from a Devvit App')),\n});\n```",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Type Alias: MediaPlugin",
+        "Methods",
+        "upload()",
+        "Example"
+      ],
+      "level": 0
+    }
+  }
+]

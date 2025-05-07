@@ -1,0 +1,115 @@
+[
+  {
+    "pageContent": "<path>Devvit for Pythonistas, 1. Your first Devvit app: a playground adventure</path>\n# Devvit for Pythonistas\nHey there, Python folks! If you're new to Typescript and React-like concepts, this guide is here to show you important Devvit concepts and explain things in terms of the Python you know and love.\n## 1. Your first Devvit app: a playground adventure\nLet's start with a simple \"Hello World\" app using the Devvit playground, which is a handy online code editor.\n-   **Open the playground.** Go to [developers.reddit.com/play](https://developers.reddit.com/play).\n    \n-   **You'll see a code editor and a live preview.** The code editor is where you'll write your app's code, and the live preview will show you what your app looks like in realtime.\n    \n-   **Add the following code.**\n    \n    ```tsx\n    import { Devvit, useState } from '@devvit/public-api';\n    \n    Devvit.addCustomPostType({\n      name: 'Say Hello',\n      render: (context) => {\n        const [counter, setCounter] = useState(0);\n        return (\n          <vstack alignment=\"center middle\" height=\"100%\" gap=\"large\">\n            <text size=\"xxlarge\" weight=\"bold\">\n              Hello Pythonistas! 👋\n            </text>\n            <button appearance=\"primary\" onPress={() => setCounter((counter) => counter + 1)}>\n              Click me!\n            </button>\n            {counter ? <text>{`You clicked ${counter} time(s)!`}</text> : <text>&nbsp;</text>}\n          </vstack>\n        );\n      },\n    });\n    \n    export default Devvit;\n    ```\n    \n-   **See your app come to life.** The live preview will update automatically as you type, showing you your \"Hello, Pythonistas!\" message and a clickable button. Each click will increment a counter and display the number of clicks.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Devvit for Pythonistas",
+        "1. Your first Devvit app: a playground adventure"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Devvit for Pythonistas, 2. Typescript’s scariest syntax, Syntactic shortcuts</path>\n## 2. Typescript’s scariest syntax\nTypescript might seem intimidating, but it's just a superset of Javascript. Typescript adds some extra features to make your code more robust and easier to manage. Here's a quick comparison:\n### Objects\nObjects in Typescript are basically Python dictionaries.\n**Python dictionary**\n```python\nperson = { \"name\": \"Alice\", \"age\": 30, \"city\": \"New York\" }\n```\n**Typescript object**\n```typescript\nconst person = {\n  name: 'Alice',\n  age: 30,\n  city: 'New York',\n};\n```\n### Functions\n**Python**\n```python\ndef greet(name):\n  print(f\"Hello, {name}!\")\n\ngreet(\"Alice\")\n```\n**Typescript**\n```typescript\nfunction greet(name: string): void {\n  console.log(`Hello, ${name}!`);\n}\n\ngreet('Alice');\n```\nSee? Pretty similar! Typescript just adds type annotations (like `: string` and `: void`) to define types to help catch errors early.\n### Syntactic shortcuts\nDevvit examples use some Typescript shortcuts that might look unfamiliar. Here's a breakdown:\n-   **Object destructuring** lets you extract values from objects and arrays in less code.\n    \n    ```typescript\n    const user = { name: 'Bob', age: 30 };\n    const { name, age } = user; // Now you have variables 'name' and 'age'\n    ```\n    \n-   **Array destructuring** lets you extract values from an array.\n    \n    ```typescript\n    const [user1, user2]  = [“Anne Plank”, “Joe Smith” ]\n    console.log(user1); // “Anne Plank”\n    console.log(user2); // “Joe Smith”\n    ```\n    \n-   **Arrow functions** are a concise way to write functions.\n    \n    ```typescript\n    // Traditional function\n    function add(a, b) {\n      return a + b;\n    }\n    \n    // Arrow function\n    const add = (a, b) => a + b;\n    ```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Devvit for Pythonistas",
+        "2. Typescript’s scariest syntax",
+        "Syntactic shortcuts"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Devvit for Pythonistas, 3. Typescript: Python's cousin</path>\n## 3. Typescript: Python's cousin\nLet's break down the code you just wrote. Think of Typescript as Python's cousin who speaks a slightly different dialect, where being grammatically correct and is as important as having the right amount of whitespace. Here's a line-by-line explanation.\n### Imports\n-   **`import {Devvit} from '@devvit/public-api'`:** This line imports the Devvit library, just like you'd import modules in Python using `import`. You mainly need this line for simple apps, but you can save a lot of time by importing and using public packages just like you can with pip.\n### Creating an experience post\n-   **`Devvit.addCustomPostType({...})`:** This tells Devvit you're creating a new type of post on Reddit.\n    \n-   **`name: 'Say Hello'`:** This gives your post type a name.\n    \n-   **`render: context => { ... }`:** This is where the magic happens. The `render` function defines what your post looks like and how it behaves. It receives a `context` object that gives you access to Devvit's features.\n### Hooks (the hardest part)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Devvit for Pythonistas",
+        "3. Typescript: Python's cousin"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Devvit for Pythonistas, 3. Typescript: Python's cousin, Hooks (the hardest part)</path>\n-   **`const [counter, setCounter] = useState(0)`:** This line uses a “hook” (in this case, `useState`). `useState` creates a special variable that Devvit can track and update automatically. **Unlike a regular variable, when a hook's value changes, Devvit knows to re-render your app that use that value when it changes.**\n    \n    -   `useState` returns two values: the variable itself and a function for setting that variable. (The syntactic trick of object destructuring is used to assign both variables at once here.) Again, every time `setCounter` is called, the value for counter updates and Devvit is told to re-render the post. This is what makes your app interactive.\n    -   `useState` variables are not like plain variables. Plain variables will reset every re-render, and they don’t tell the app to re-render. Hooks solve this problem. In this case, `useState(0)` creates a variable called `counter` with an initial value of `0`. It also gives you a function called `setCounter` that you can use to update the counter's value.\n:::note Hooks are a concept borrowed from React, and the reason we need hooks is because of the way Devvit renders things. It's is complex, but basically when Devvit renders a view, it does so in several passes. For more info, check out [what is react](https://www.reddit.com/r/learnprogramming/comments/8yi54n/please_explain_what_react_is_like_im_5/) and [what are hooks](https://www.reddit.com/r/react/comments/11ftu0p/what_are_hooks/). :::\n-   **`return ( ... )`:** The `render` function returns JSX code, which defines the structure of your post's user interface. JSX looks a lot like HTML, but it's actually Javascript/Typescript code that Devvit understands.\n-   **`<vstack alignment='center middle' height='100%' gap='large'>`:** This creates a vertical stack layout. Think of it as a container that arranges its children vertically. The `alignment`, `height`, and `gap` attributes control how the children are positioned within the stack.",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Devvit for Pythonistas",
+        "3. Typescript: Python's cousin",
+        "Hooks (the hardest part)"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Devvit for Pythonistas, 3. Typescript: Python's cousin, Hooks (the hardest part)</path>\n-   **`<text size='xxlarge' weight='bold'>Hello Pythonistas! 👋</text>`:** This displays the text \"Hello Pythonistas! 👋\". The `size` and `weight` attributes control the text's appearance.\n-   **`<button appearance='primary' onPress={() => setCounter(counter => counter + 1)}>Click me!</button>`:** This creates a button labeled \"Click me!\". The `appearance` attribute controls the button's style, and the `onPress` attribute defines what happens when the button is clicked.\nIn this case, clicking the button calls the `setCounter` function, which updates the `counter` variable by adding 1 to its current value.\n-   **`{counter ? (<text>{`You clicked ${counter} time(s)!`}</text>) : (<text>&nbsp;</text>)}`:** This part uses a ternary operator to conditionally render text based on the value of `counter`. The ternary operator works like a compact `if-else` statement.\n_Ternary Operator Breakdown:_\n-   `condition ? expression1 : expression2`\n    -   If `condition` is true, `expression1` is evaluated.\n    -   If `condition` is false, `expression2` is evaluated.\n_Truthiness in Typescript:_\n-   In Typescript (and Javascript), values like `0`, `null`, `undefined`, and `''` (empty string) are considered \"falsy\".\n    -   All other values are considered \"truthy\".\nIn this case, the condition is `counter`. Since `counter` starts at 0 (which is falsy), the second expression (`<text>&nbsp;</text>`) is evaluated, displaying a non-breaking space. After the button is clicked, `counter` becomes truthy, so the first expression is evaluated, displaying the click count.\n-   **`export default Devvit;`:** This line exports the Devvit object, making your app available to Reddit.",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Devvit for Pythonistas",
+        "3. Typescript: Python's cousin",
+        "Hooks (the hardest part)"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Devvit for Pythonistas</path>\n## 3. Node, npm, and npx: Devvit's power tools\nTo run Devvit code outside the Playground tool, you'll need a few extra tools:\n-   **Node.js:** Node.js is like a special Python interpreter for Javascript/Typescript. It lets you run this code on your computer, not just in a web browser.\n    \n    **Python analogy:** Node.js is to Javascript/Typescript what the Python interpreter is to Python code.\n    \n-   **npm:** npm is like `pip` for Javascript/Typescript. It's a package manager that lets you install and manage libraries (like Devvit).\n    \n    **Python analogy:** npm is to Javascript/Typescript what `pip` is to Python packages.\n    \n-   **npx:** npx is a handy tool that comes with npm. It lets you run commands from packages you've installed without having to add them to your system's PATH.\n    \n    **Python analogy:** Imagine you could run a command from a Python package directly without having to install it globally. That's what npx does for Javascript/Typescript packages.\n## 4. Installing the power tools",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Devvit for Pythonistas"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Devvit for Pythonistas, 6. Embrace the Devvit playground</path>\n-   **Install Node.js.** Download and install Node.js from [https://nodejs.org/](https://nodejs.org/).\n    \n-   **You get npm for free.** npm is included with Node.js, so you don't need to install it separately.\n    \n-   **Install Devvit.** Open your terminal and run `npm install -g devvit`.\n## 5. Exporting your app from play\nNow let's bring your \"Hello World\" app from the Playground tool to your computer:\n-   **Click the \"Export\" button in the Play tool.** This will copy a command to your clipboard.\n    \n-   **Open your terminal and paste the command.** The command will look something like this:\n    \n    ```bash\n    npx devvit new my-hello-world-app --template=<your-playground-url>\n    ```\n    \n-   **Run the command.** This will create a new folder on your computer containing your \"Hello World\" app.\n## 6. Embrace the Devvit playground\nThe Devvit playground is a Pythonista's best friend. It lets you test your code in real-time, so you can experiment and iterate quickly. Don't be afraid to break things and try new ideas.",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Devvit for Pythonistas",
+        "6. Embrace the Devvit playground"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Devvit for Pythonistas, 7. Keep Learning and Exploring</path>\n## 7. Keep Learning and Exploring\nThis is just the beginning. Devvit has a ton of features and capabilities, and you can join the Devvit community for help and inspiration. You'll be building amazing Reddit apps in no time!",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "level": 2,
+      "path": [
+        "Devvit for Pythonistas",
+        "7. Keep Learning and Exploring"
+      ]
+    }
+  }
+]

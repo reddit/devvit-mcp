@@ -1,0 +1,220 @@
+[
+  {
+    "pageContent": "<path>Redis, Limits and Quotas</path>\n# Redis\nYou can add a database to your app to store and retrieve data. The Redis plugin is designed to be fast, scalable, and secure. It supports a subset of the full Redis API, including:\n-   [Transactions](#transactions) for things like counting votes atomically in polls\n-   [String operations](#strings) for persisting information\n-   [Number operations](#numbers) for incrementing numbers\n-   [Sorted sets](#sorted-set) for creating leaderboards\n-   [Hashes](#hash) for managing a collection of key-value pairs\n-   [Bitfields](#bitfield) for efficient operation on sequences of bits\nEach app version installed on a subreddit is namespaced, which means Redis data is siloed from other subreddits. Keep in mind that there won’t be a single source of truth for all installations of your app, since each app installation can only access the data that it has stored in the Redis database.\n## Limits and Quotas\n-   Max commands per second: 1000\n-   Max request size: 5 MB\n-   Max storage: 500 MB\nAll limits are applied at a per-installation granularity.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Redis",
+        "Limits and Quotas"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Redis, Supported Redis commands, Batch read/write</path>\n## Examples\n### Menu items\n```tsx\nDevvit.addMenuItem({\n  location: 'subreddit',\n  label: 'Test Redis',\n  onPress: async (event, { redis }) => {\n    const key = 'hello';\n    await redis.set(key, 'world');\n    const value = await redis.get(key);\n    console.log(`${key}: ${value}`);\n  },\n});\n```\n### Interactive posts\nYou can copy this [template](https://github.com/reddit/devvit/tree/main/packages/cli/src/templates/redis) to create an interactive post containing an interactive progress bar backed by Redis.\n## Supported Redis commands\n:::note Not all Redis features are supported. If you would like to request a specific Redis feature, please reach out to our team [via modmail](https://www.reddit.com/message/compose/?to=%2Fr%2FDevvit) or Discord. :::\n### Simple read/write\n| Command | Action |\n|---|---|\n| get | Gets the value of key. |\n| set | Sets key to hold a string value. |\n| exists | Returns number of given keys that exist. |\n| del | Removes the specified keys. |\n| type | Returns the string representation of the type of value stored at key. |\n| rename | Renames a key. |\n```tsx\nasync function simpleReadWriteExample(context: Devvit.Context) {\n  // Set a key\n  await context.redis.set('color', 'red');\n\n  // Check if a key exists\n  console.log('Key exists: ' + (await context.redis.exists('color')));\n\n  // Get a key\n  console.log('Color: ' + (await context.redis.get('color')));\n\n  // Get the type of a key\n  console.log('Type: ' + (await context.redis.type('color')));\n\n  // Delete a key\n  await context.redis.del('color');\n}\n```\n```bash\nColor: red\nType: string\n```\n### Batch read/write\n| Command | Action |\n|---|---|\n| mGet | Returns the values of all specified keys. |\n| mSet | Sets the given keys to their respective values. |",
+    "metadata": {
+      "type": [
+        "heading",
+        "code",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Redis",
+        "Supported Redis commands",
+        "Batch read/write"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Redis, Supported Redis commands, Hash</path>\n```tsx\nasync function batchReadWriteExample(context: Devvit.Context) {\n  // Set multiple keys at once\n  await context.redis.mSet({\n    name: 'Devvit',\n    occupation: 'Developer',\n    yearsOfExperience: '9000',\n  });\n\n  // Get multiple keys\n  console.log('Result: ' + (await context.redis.mGet(['name', 'occupation'])));\n}\n```\n```bash\nResult: Devvit,Developer\n```\n### Strings\n| Command | Action |\n|---|---|\n| getRange | Returns the substring of the string value stored at key, determined by the offsets start and end (both are inclusive). |\n| setRange | Overwrites part of the string stored at key, starting at the specified offset, for the entire length of value. |\n| strLen | Returns the length of the string value stored at key. |\n```tsx\nasync function stringsExample(context: Devvit.Context) {\n  // First, set 'word' to 'tacocat'\n  await context.redis.set('word', 'tacocat');\n\n  // Use getRange() to get the letters in 'word' between index 0 to 3, inclusive\n  console.log('Range from index 0 to 3: ' + (await context.redis.getRange('word', 0, 3)));\n\n  // Use setRange() to insert 'blue' at index 0\n  await context.redis.setRange('word', 0, 'blue');\n\n  console.log('Word after using setRange(): ' + (await context.redis.get('word')));\n\n  // Use strLen() to verify the word length\n  console.log('Word length: ' + (await context.redis.strLen('word')));\n}\n```\n```bash\nRange from index 0 to 3: taco\nWord after using setRange(): bluecat\nWord length: 7\n```\n### Hash\nRedis hashes can store up to ~ 4.2 billion key-value pairs. We recommend using hash for managing collections of key-value pairs whenever possible and iterating over it using a combination of `hscan`, `hkeys` and `hgetall`.",
+    "metadata": {
+      "type": [
+        "code",
+        "heading",
+        "table",
+        "text"
+      ],
+      "path": [
+        "Redis",
+        "Supported Redis commands",
+        "Hash"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Redis, Supported Redis commands, Hash</path>\n| Command | Action |\n|---|---|\n| hGet | Returns the value associated with field in the hash stored at key. |\n| hMGet | Returns the value of all specified field in the hash stored at multiple keys. |\n| hSet | Sets the specified fields to their respective values in the hash stored at key. |\n| hSetNX | Sets field in the hash stored at key to value, only if field does not yet exist.ƒ |\n| hDel | Removes the specified fields from the hash stored at key. |\n| hGetAll | Returns a map of fields and their values stored in the hash. |\n| hKeys | Returns all field names in the hash stored at key. |\n| hScan | Iterates fields of Hash types and their associated values. |\n| hIncrBy | Increments the score of member in the sorted set stored at key by value. |\n| hLen | Returns the number of fields contained in the hash stored at key. |\n**Example 1**\n```tsx\n// Example using hGet(), hSet(), and hDel()\nasync function hashExample1(context: Devvit.Context) {\n  // Set 'inventory' with multiple fields and values\n  await context.redis.hSet('inventory', {\n    sword: '1',\n    potion: '4',\n    shield: '2',\n    stones: '8',\n  });\n\n  // Get the value of 'shield' from 'inventory'\n  console.log('Shield count: ' + await context.redis.hGet('inventory', 'shield'));\n\n  // Get the values of both of 'shield' and 'potion' from 'inventory'\n  console.log('Shield and potion count: ' + await context.redis.hMGet('inventory', ['shield', 'potion']));\n\n  // Delete some fields from 'inventory'\n  console.log(\n    'Number of fields deleted: ' +\n      await context.redis.hDel('inventory', ['sword', 'shield', 'stones']);\n  );\n}\n```\n```bash\nShield count: 2\nShield and potion count: 2,4\nNumber of fields deleted: 3\n```\n**Example 2**",
+    "metadata": {
+      "type": [
+        "table",
+        "text",
+        "code"
+      ],
+      "level": 3,
+      "path": [
+        "Redis",
+        "Supported Redis commands",
+        "Hash"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Redis, Supported Redis commands, Hash</path>\n```tsx\n// Example using hGetAll()\nasync function hashExample2(context: Devvit.Context) {\n  // Set 'groceryList' to fields containing products with quantities\n  await context.redis.hSet('groceryList', {\n    eggs: '12',\n    apples: '3',\n    milk: '1',\n  });\n\n  // Get the groceryList record\n  const record = await context.redis.hGetAll('groceryList');\n\n  if (record != undefined) {\n    console.log('Eggs: ' + record.eggs + ', Apples: ' + record.apples + ', Milk: ' + record.milk);\n  }\n}\n```\n```bash\nEggs: 12, Apples: 3, Milk: 1\n```\n**Example 3**\n```tsx\n// Example using hKeys()\nasync function hashExample3(context: Devvit.Context) {\n  await context.redis.hSet('prices', {\n    chair: '48',\n    desk: '95',\n    whiteboard: '23',\n  });\n\n  console.log('Keys: ' + (await context.redis.hKeys('prices')));\n}\n```\n```bash\nKeys: chair,desk,whiteboard\n```\n**Example 4**\n```tsx\n// Example using hScan()\nasync function hashExample4(context: Devvit.Context) {\n  await context.redis.hSet('userInfo', {\n    name: 'Bob',\n    startDate: '01-05-20',\n    totalAwards: '12',\n  });\n\n  // Scan and interate over all the fields within 'userInfo'\n  const hScanResponse = await context.redis.hScan('userInfo', 0);\n\n  hScanResponse.fieldValues.forEach((x) => {\n    console.log(\"Field: '\" + x.field + \"', Value: '\" + x.value + \"'\");\n  });\n}\n```\n```bash\nField: 'name', Value: 'Bob'\nField: 'totalAwards', Value: '12'\nField: 'startDate', Value: '01-05-20'\n```\n**Example 5**\n```tsx\n// Example using hIncrBy()\nasync function hashExample5(context: Devvit.Context) {\n  // Set user123's karma to 100\n  await context.redis.hSet('user123', { karma: '100' });\n\n  // Increase user123's karma by 5\n  console.log('Updated karma: ' + (await context.redis.hIncrBy('user123', 'karma', 5)));\n}\n```\n```bash\nUpdated karma: 105\n```\n**Example 6**",
+    "metadata": {
+      "type": [
+        "code",
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Redis",
+        "Supported Redis commands",
+        "Hash"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Redis, Supported Redis commands, Transactions</path>\n```tsx\n// Example using hLen()\nasync function hashExample6(context: Devvit.Context) {\n  await context.redis.hSet('supplies', {\n    paperclips: '25',\n    pencils: '10',\n    erasers: '5',\n    pens: '7',\n  });\n\n  console.log('Number of fields: ' + (await context.redis.hLen('supplies')));\n}\n```\n```bash\nNumber of fields: 4\n```\n### Numbers\n| Command | Action |\n|---|---|\n| incrBy | Increments the number stored at key by increment. |\n```tsx\nasync function numbersExample(context: Devvit.Context) {\n  await context.redis.set('totalPoints', '53');\n\n  console.log('Updated points: ' + (await context.redis.incrBy('totalPoints', 100)));\n}\n```\n```bash\nUpdated points: 153\n```\n### Key expiration\n| Command | Action |\n|---|---|\n| expire | Sets a timeout on key. |\n| expireTime | Returns the remaining seconds at which the given key will expire. |\n```tsx\nasync function keyExpirationExample(context: Devvit.Context) {\n  // Set a key 'product' with value 'milk'\n  await context.redis.set('product', 'milk');\n\n  // Get the current expireTime for the product\n  console.log('Expire time: ' + (await context.redis.expireTime('product')));\n\n  // Set the product to expire in 60 seconds\n  await context.redis.expire('product', 60);\n\n  // Get the updated expireTime for the product\n  console.log('Updated expire time: ' + (await context.redis.expireTime('product')));\n}\n```\n```bash\nExpire time: 0\nUpdated expire time: 60\n```\n### Transactions\nRedis transactions allow a group of commands to be executed in a single isolated step. For example, to implement voting action in a polls app, these three actions need to happen together:\n-   Store the selected option for the user.\n-   Increment the count for selected option.\n-   Add the user to voted user list.",
+    "metadata": {
+      "type": [
+        "code",
+        "heading",
+        "table",
+        "text"
+      ],
+      "path": [
+        "Redis",
+        "Supported Redis commands",
+        "Transactions"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Redis, Supported Redis commands, Transactions</path>\nThe `watch` command provides an entrypoint for transactions. It returns a [TxClientLike](https://developers.reddit.com/docs/api/public-api/#-txclientlike) which can be used to call `multi`, `exec`, `discard`, `unwatch`, and all other Redis commands to be executed within a transaction.\nYou can sequence all of the above steps in a single transaction using `multi` and `exec` to ensure that either all of the steps happen together or none at all.\nIf an error occurs inside a transaction before `exec` is called, Redis discards the transaction automatically. See the Redis docs: [Errors inside a transaction](https://redis.io/docs/latest/develop/interact/transactions/#errors-inside-a-transaction) for more info.\n| Command | Action |\n|---|---|\n| multi | Marks the start of a transaction block. |\n| exec | Executes all previously queued commands in a transaction and restores the connection state to normal. |\n| discard | Flushes all previously queued commands in a transaction and restores the connection state to normal. |\n| watch | Marks the given keys to be watched for conditional execution of a transaction. watch returns a TxClientLike which should be used to call Redis commands in a transaction. |\n| unwatch | Flushes all the previously watched keys for a transaction. |\n**Example 1**\n```tsx\n// Example using exec()\nasync function transactionsExample1(context: Devvit.Context) {\n  await context.redis.mSet({ quantity: '5', karma: '32' });\n\n  const txn = await context.redis.watch('quantity');\n\n  await txn.multi(); // Begin a transaction\n  await txn.incrBy('karma', 10);\n  await txn.set('name', 'Devvit');\n  await txn.exec(); // Execute the commands in the transaction\n\n  console.log(\n    'Keys after completing transaction: ' +\n      (await context.redis.mGet(['quantity', 'karma', 'name']))\n  );\n}\n```\n```bash\nKeys after completing transaction: 5,42,Devvit\n```\n**Example 2**",
+    "metadata": {
+      "type": [
+        "text",
+        "table",
+        "code"
+      ],
+      "level": 3,
+      "path": [
+        "Redis",
+        "Supported Redis commands",
+        "Transactions"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Redis, Supported Redis commands</path>\n```tsx\n// Example using discard()\nasync function transactionsExample2(context: Devvit.Context) {\n  await context.redis.set('price', '25');\n\n  const txn = await context.redis.watch('price');\n\n  await txn.multi(); // Begin a transaction\n  await txn.incrBy('price', 5);\n  await txn.discard(); // Discard the commands in the transaction\n\n  console.log('Price value: ' + (await context.redis.get('price'))); // 'price' should still be '25'\n}\n```\n```bash\nPrice value: 25\n```\n**Example 3**\n```tsx\n// Example using unwatch()\nasync function transactionsExample3(context: Devvit.Context) {\n  await context.redis.set('gold', '50');\n\n  const txn = await context.redis.watch('gold');\n\n  await txn.multi(); // Begin a transaction\n  await txn.incrBy('gold', 30);\n  await txn.unwatch(); // Unwatch \"gold\"\n\n  // Now that \"gold\" has been unwatched, we can increment its value\n  // outside the transaction without canceling the transaction\n  await context.redis.incrBy('gold', -20);\n\n  await txn.exec(); // Execute the commands in the transaction\n\n  console.log('Gold value: ' + (await context.redis.get('gold'))); // The value of 'gold' should be 50 + 30 - 20 = 60\n}\n```\n```bash\nGold value: 60\n```\n### Sorted set",
+    "metadata": {
+      "type": [
+        "code",
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Redis",
+        "Supported Redis commands"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Redis, Supported Redis commands, Sorted set</path>\n| Command | Action |\n|---|---|\n| zAdd | Adds all the specified members with the specified scores to the sorted set stored at key. |\n| zCard | Returns the sorted set cardinality (number of elements) of the sorted set stored at key. |\n| zRange | Returns the specified range of elements in the sorted set stored at key. When using by: 'lex', the start and stop inputs will be prepended with [ by default, unless they already begin with [, ( or are one of the special values + or -. |\n| zRem | Removes the specified members from the sorted set stored at key. |\n| zScore | Returns the score of member in the sorted set at key. |\n| zRank | Returns the rank of member in the sorted set stored at key. |\n| zIncrBy | Increments the score of member in the sorted set stored at key by value. |\n| zScan | Iterates elements of sorted set types and their associated scores. Note that there is no guaranteed ordering of elements in the result. |\n| zRemRangeByLex | When all elements in a sorted set are inserted with the same score, this command removes the elements at key between the lexicographical range specified by min and max. |\n| zRemRangeByRank | Removes all elements in the sorted set stored at key with rank between start and stop. |\n| zRemRangeByScore | Removes all elements in the sorted set stored at key with a score between min and max (inclusive). |\n**Example 1**",
+    "metadata": {
+      "type": [
+        "table",
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Redis",
+        "Supported Redis commands",
+        "Sorted set"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Redis, Supported Redis commands, Sorted set</path>\n```tsx\n// Example using zRange() with by 'score'\nasync function sortedSetExample1(context: Devvit.Context) {\n  await context.redis.zAdd(\n    'leaderboard',\n    { member: 'louis', score: 37 },\n    { member: 'fernando', score: 10 },\n    { member: 'caesar', score: 20 },\n    { member: 'alexander', score: 25 }\n  );\n\n  // Cardinality should be '4' as there are 4 elements in the leaderboard set\n  console.log('Cardinality: ' + (await context.redis.zCard('leaderboard')));\n\n  // View elements with scores between 0 and 30 inclusive, sorted by score\n  let scores = await context.redis.zRange('leaderboard', 0, 30, { by: 'score' });\n  console.log('Scores: ' + JSON.stringify(scores));\n\n  // Remove 'fernando' from the leaderboard\n  await context.redis.zRem('leaderboard', ['fernando']);\n\n  // View the elements sorted by score again. This time 'fernando' should not appear in the output\n  scores = await context.redis.zRange('leaderboard', 0, 30, { by: 'score' });\n  console.log('Updated scores: ' + JSON.stringify(scores));\n\n  // View caesar's score\n  console.log(\"Caesar's score: \" + (await context.redis.zScore('leaderboard', 'caesar')));\n}\n```\n```bash\nCardinality: 4\nScores: [{\"score\":10,\"member\":\"fernando\"},{\"score\":20,\"member\":\"caesar\"},{\"score\":25,\"member\":\"alexander\"}]\nUpdated scores: [{\"score\":20,\"member\":\"caesar\"},{\"score\":25,\"member\":\"alexander\"}]\nCaesar's score: 20\n```\n**Example 2**",
+    "metadata": {
+      "type": [
+        "code",
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Redis",
+        "Supported Redis commands",
+        "Sorted set"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Redis, Supported Redis commands, Sorted set</path>\n```tsx\n// Example using zRange() with by 'lex'\nasync function sortedSetExample2(context: Devvit.Context) {\n  await context.redis.zAdd(\n    'checkpoints',\n    { member: 'delta', score: 0 },\n    { member: 'omega', score: 0 },\n    { member: 'alpha', score: 0 },\n    { member: 'charlie', score: 0 }\n  );\n\n  // View elements between the words 'alpha' and 'fox' inclusive, sorted lexicographically\n  // Note that 'by: \"lex\"' only works if all elements have the same score\n  const members = await context.redis.zRange('checkpoints', 'alpha', 'fox', { by: 'lex' });\n  console.log('Members: ' + JSON.stringify(members));\n}\n```\n```bash\nMembers: [{\"score\":0,\"member\":\"alpha\"},{\"score\":0,\"member\":\"charlie\"},{\"score\":0,\"member\":\"delta\"}]\n```\n**Example 3**\n```tsx\n// Example using zRange() with by 'rank'\nasync function sortedSetExample3(context: Devvit.Context) {\n  await context.redis.zAdd(\n    'grades',\n    { member: 'sam', score: 80 },\n    { member: 'norma', score: 95 },\n    { member: 'alex', score: 77 },\n    { member: 'don', score: 84 },\n    { member: 'zeek', score: 92 }\n  );\n\n  // View elements with a rank between 2 and 4 inclusive. Note that ranks start at index 0.\n  const members = await context.redis.zRange('grades', 2, 4, { by: 'rank' });\n  console.log('Members: ' + JSON.stringify(members));\n}\n```\n```bash\nMembers: [{\"score\":84,\"member\":\"don\"},{\"score\":92,\"member\":\"zeek\"},{\"score\":95,\"member\":\"norma\"}]\n```\n**Example 4**",
+    "metadata": {
+      "type": [
+        "code",
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Redis",
+        "Supported Redis commands",
+        "Sorted set"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Redis, Supported Redis commands, Sorted set</path>\n```tsx\n// Example using zRank() and zIncrBy()\nasync function sortedSetExample4(context: Devvit.Context) {\n  await context.redis.zAdd(\n    'animals',\n    { member: 'zebra', score: 92 },\n    { member: 'cat', score: 100 },\n    { member: 'dog', score: 95 },\n    { member: 'elephant', score: 97 }\n  );\n\n  // View the rank of 'dog' in the animals set\n  // Rank should be '1' since 'dog' has the second lowest score. Note that ranks start at index 0.\n  console.log(\"Dog's rank: \" + (await context.redis.zRank('animals', 'dog')));\n\n  // View the rank of 'zebra'\n  console.log(\"Zebra's rank: \" + (await context.redis.zRank('animals', 'zebra')));\n\n  // Increase the score of 'dog' by 10\n  await context.redis.zIncrBy('animals', 'dog', 10);\n\n  // View the rank of 'dog' again. This time it should be '3' because dog has the highest score.\n  console.log(\n    \"Dog's rank after incrementing score: \" + (await context.redis.zRank('animals', 'dog'))\n  );\n}\n```\n```bash\nDog's rank: 1\nZebra's rank: 0\nDog's rank after incrementing score: 3\n```\n**Example 5**\n```tsx\n// Example using zRemRangeByLex()\nasync function sortedSetExample5(context: Devvit.Context) {\n  await context.redis.zAdd(\n    'fruits',\n    { member: 'kiwi', score: 0 },\n    { member: 'mango', score: 0 },\n    { member: 'banana', score: 0 },\n    { member: 'orange', score: 0 },\n    { member: 'apple', score: 0 }\n  );\n\n  // Remove fruits alphabetically ordered between 'kiwi' inclusive and 'orange' exclusive\n  // Note: The symbols '[' and '(' indicate inclusive or exclusive, respectively. These must be included in the call to zRemRangeByLex().\n  await context.redis.zRemRangeByLex('fruits', '[kiwi', '(orange');\n\n  // Only 'apple', 'banana', and 'orange' should remain in the set\n  const zScanResponse = await context.redis.zScan('fruits', 0);\n  console.log('zScanResponse: ' + JSON.stringify(zScanResponse));\n}\n```",
+    "metadata": {
+      "type": [
+        "code",
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Redis",
+        "Supported Redis commands",
+        "Sorted set"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Redis, Supported Redis commands, Bitfield</path>\n```bash\nzScanResponse: {\"cursor\":0,\"members\":[{\"score\":0,\"member\":\"apple\"},{\"score\":0,\"member\":\"banana\"},{\"score\":0,\"member\":\"orange\"}]}\n```\n**Example 6**\n```tsx\n// Example using zRemRangeByRank()\nasync function sortedSetExample6(context: Devvit.Context) {\n  await context.redis.zAdd(\n    'fruits',\n    { member: 'kiwi', score: 10 },\n    { member: 'mango', score: 20 },\n    { member: 'banana', score: 30 },\n    { member: 'orange', score: 40 },\n    { member: 'apple', score: 50 }\n  );\n\n  // Remove fruits ranked 1 through 3 inclusive\n  await context.redis.zRemRangeByRank('fruits', 1, 3);\n\n  // Only 'kiwi' and 'apple' should remain in the set\n  const zScanResponse = await context.redis.zScan('fruits', 0);\n  console.log('zScanResponse: ' + JSON.stringify(zScanResponse));\n}\n```\n```bash\nzScanResponse: {\"cursor\":0,\"members\":[{\"score\":10,\"member\":\"kiwi\"},{\"score\":50,\"member\":\"apple\"}]}\n```\n**Example 7**\n```tsx\n// Example using zRemRangeByScore() example\nasync function sortedSetExample7(context: Devvit.Context) {\n  await context.redis.zAdd(\n    'fruits',\n    { member: 'kiwi', score: 10 },\n    { member: 'mango', score: 20 },\n    { member: 'banana', score: 30 },\n    { member: 'orange', score: 40 },\n    { member: 'apple', score: 50 }\n  );\n\n  // Remove fruits scored between 30 and 50 inclusive\n  await context.redis.zRemRangeByScore('fruits', 30, 50);\n\n  // Only 'kiwi' and 'mango' should remain in the set\n  const zScanResponse = await context.redis.zScan('fruits', 0);\n  console.log('zScanResponse: ' + JSON.stringify(zScanResponse));\n}\n```\n```bash\nzScanResponse: {\"cursor\":0,\"members\":[{\"score\":10,\"member\":\"kiwi\"},{\"score\":20,\"member\":\"mango\"}]}\n```\n### Bitfield\n| Command | Action |\n|---|---|\n| bitfield | Performs a sequence of operations on a bit string |",
+    "metadata": {
+      "type": [
+        "code",
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Redis",
+        "Supported Redis commands",
+        "Bitfield"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Redis, Supported Redis commands, Bitfield</path>\n```tsx\nasync function bitfieldExample(context: Devvit.Context) {\n  const setBits: number[] = await context.redis.bitfield('foo', 'set', 'i5', '#0', 11);\n  console.log('Set result: ' + setBits); // [0]\n\n  const getBits: number[] = await context.redis.bitfield('foo', 'get', 'i5', '#0');\n  console.log('Get result: ' + setBits); // [11]\n\n  const manyOperations: number[] = await context.redis.bitfield(\n    'bar',\n    'set',\n    'u2',\n    0,\n    3,\n    'get',\n    'u2',\n    0,\n    'incrBy',\n    'u2',\n    0,\n    1,\n    'overflow',\n    'sat',\n    'get',\n    'u2',\n    0,\n    'set',\n    'u2',\n    0,\n    3,\n    'incrBy',\n    'u2',\n    0,\n    1\n  );\n  console.log('Results of many operations: ' + manyOperations); // [0, 3, 0, 0, 3, 3]\n}\n```\n```bash\nfooResults: [1, 0]\nbarResults: [0, 3, 0, 0, 3, 3]\n```",
+    "metadata": {
+      "type": [
+        "code"
+      ],
+      "level": 3,
+      "path": [
+        "Redis",
+        "Supported Redis commands",
+        "Bitfield"
+      ]
+    }
+  }
+]

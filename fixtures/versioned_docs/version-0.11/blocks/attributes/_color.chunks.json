@@ -1,0 +1,12 @@
+[
+  {
+    "pageContent": "<path></path>\nA `string` for setting the color to any [Blocks-compatible color value](./colors). Possible values:\n-   HTML color names: `red`\n-   HEX: `#ff4500`\n-   RGB: `rgb(255, 69, 0)`\n-   RGBA: `rgba(255, 69, 0, 0.5)`\n-   RPL Token: `neutral-content`",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 0,
+      "path": []
+    }
+  }
+]

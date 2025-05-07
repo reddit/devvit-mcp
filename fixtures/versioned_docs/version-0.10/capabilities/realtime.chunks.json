@@ -1,0 +1,48 @@
+[
+  {
+    "pageContent": "<path>Realtime, Create a live experience post, 3. Send messages to a channel.</path>\n# Realtime\nCreate live and event-driven experience posts. Realtime provides a set of primitives that lets you build experience posts that are:\n-   **Live**. Users engaging with the same experience post see each others’ changes without any observable lag.\n-   **Event-driven**. Posts render automatically in response to server events.\n-   **Synced**. Using realtime with [Redis](/docs/capabilities/redis.md) lets you build persistent community experiences that are backed by high performance data synchronization.\n## Create a live experience post\n#### 1. Configure realtime.\n```tsx\nDevvit.configure({\n  realtime: true,\n});\n```\n#### 2. Create and subscribe to a channel.\n`useChannel` hook allows experience posts to subscribe and send to an event stream.\nA new channel can be setup with function handlers containing custom logic to update state:\n-   `onMessage` - called every time a message is received on a channel\n-   `onSubscribed` - optional hook to be informed when channel has connected\n-   `onUnsubscribed` - optional hook to be informed when channel has disconnected\n```tsx\nimport { Devvit, useChannel } from '@devvit/public-api';\n\n// Defined within render function of an experience post\n\n// Choose a channel name that works for you\n\n// You have the flexibility to define the message data shape to be published\n// via channel.send - same shape will be received in the onMessage handler\n\nconst channel = useChannel({\n  name: 'events',\n  onMessage: (data) => {\n    // modify local state\n  },\n  onSubscribed: () => {\n    // handle connection setup\n  },\n  onUnsubscribed: () => {\n    // handle network degradation with fallback scenarios\n  },\n});\n\n// subscribe to the channel to receive messages\nchannel.subscribe();\n```\n#### 3. Send messages to a channel.\n`channel.send` is recommended for peer-to-peer synchronization across clients. See [Mini Place](#mini-place) and [Snoo Club](#snoo-club)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Realtime",
+        "Create a live experience post",
+        "3. Send messages to a channel."
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Realtime, Create a live experience post, 3. Send messages to a channel.</path>\n```tsx\n<button\n  icon=\"add-fill\"\n  width={50}\n  onPress={async () => {\n    const newProgress = Math.max(progress + 10, 0);\n    const message: RealtimeMessage = {\n      payload: { progress: newProgress },\n      session: UUID,\n    };\n    setProgress(newProgress); // set local state\n    await channel.send(message); // publish message to the channel\n  }}\n/>\n```\n`realtime.send` is recommended for re-rendering experience posts based on server events. This can be invoked on an event trigger, scheduled job, or after a HTTP fetch call. [Server-Push](#server-push) example illustrates how to compose scheduler and realtime together.\n```tsx\n// During app installation, we create a scheduled job 'publish_to_channel' that runs\n// every minute - it uses realtime plugin to publish events to an arbitrary channel\n\nDevvit.addTrigger({\n  event: 'AppInstall',\n  onEvent: async (_, context) => {\n    await context.scheduler.runJob({\n      name: 'publish_to_channel',\n      cron: '* * * * *',\n    });\n  },\n});\n\n// Experience posts subscribed to the 'events' channel via useChannel hook will start\n// receiving messages which can processed in the onMessage handler to update local state.\nDevvit.addSchedulerJob({\n  name: 'publish_to_channel',\n  onRun: async (_, context) => {\n    await context.realtime.send('events', {\n      message: payload,\n    });\n  },\n});\n```",
+    "metadata": {
+      "type": [
+        "code",
+        "text"
+      ],
+      "level": 4,
+      "path": [
+        "Realtime",
+        "Create a live experience post",
+        "3. Send messages to a channel."
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Realtime, Examples, Server Push</path>\n## Limits and Quotas\n-   Messages/sec per installation: 100\n-   Maximum message payload: 1 MB\n-   Channels per app installation: 5\n## Examples\n:::note Try the demos with multiple browser windows and see local changes sync across sessions without any lag. :::\n### Mini Place\n![mini_place_high](../assets/realtime/mini_place_high.gif)\n**[Demo](https://sh.reddit.com/r/devvit_sandbox/comments/1bumd7e/mini_place/)**, **[Source Code](https://github.com/reddit/devvit/tree/main/packages/apps/mini-place)**\n### Snoo Club\n![snoo_club](../assets/realtime/snoo_club.gif)\n**[Demo](https://sh.reddit.com/r/devvit_sandbox/comments/1bunpzv/interactive_snooclub/)**, **[Source Code](https://github.com/reddit/devvit/tree/main/packages/apps/snooclub)**\n### Synced Progress Bar\n![synced_progress_bar](../assets/realtime/synced_progress_bar.gif)\n**[Demo](https://sh.reddit.com/r/devvit_sandbox/comments/1b3ccp9/synced_progress_bar/),** **[Source Code](https://github.com/reddit/devvit/tree/main/packages/apps/synced-progress-bar)**\n### Devvit Emoji Chat\n![devvit_emoji_chat](../assets/realtime/devvit_emoji_chat.gif)\n**[Demo](https://sh.reddit.com/r/devvit_sandbox/comments/1bvf6if/emoji_chat/),** **[Source Code](https://github.com/reddit/devvit/tree/main/packages/apps/devvit-emoji-chat)**\n### Server Push\n![server_push](../assets/realtime/server_push.gif)\n**[Demo](https://sh.reddit.com/r/devvit_sandbox/comments/1bnnc60/server_push/),** **[Source Code](https://github.com/reddit/devvit/tree/main/packages/apps/server-push)**",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Realtime",
+        "Examples",
+        "Server Push"
+      ],
+      "level": 2
+    }
+  }
+]

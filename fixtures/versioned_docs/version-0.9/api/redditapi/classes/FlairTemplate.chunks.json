@@ -1,0 +1,49 @@
+[
+  {
+    "pageContent": "<path>Class: FlairTemplate, Accessors, text</path>\n# Class: FlairTemplate\n## Table of contents\n### Accessors\n-   [allowUserEdits](FlairTemplate.md#allowuseredits)\n-   [allowableContent](FlairTemplate.md#allowablecontent)\n-   [backgroundColor](FlairTemplate.md#backgroundcolor)\n-   [id](FlairTemplate.md#id)\n-   [maxEmojis](FlairTemplate.md#maxemojis)\n-   [modOnly](FlairTemplate.md#modonly)\n-   [text](FlairTemplate.md#text)\n-   [textColor](FlairTemplate.md#textcolor)\n### Methods\n-   [delete](FlairTemplate.md#delete)\n-   [edit](FlairTemplate.md#edit)\n-   [createPostFlairTemplate](FlairTemplate.md#createpostflairtemplate)\n-   [createUserFlairTemplate](FlairTemplate.md#createuserflairtemplate)\n-   [deleteFlairTemplate](FlairTemplate.md#deleteflairtemplate)\n-   [editFlairTemplate](FlairTemplate.md#editflairtemplate)\n-   [getPostFlairTemplates](FlairTemplate.md#getpostflairtemplates)\n-   [getUserFlairTemplates](FlairTemplate.md#getuserflairtemplates)\n## Accessors\n### allowUserEdits\n• `get` **allowUserEdits**(): `boolean`\nWhether or not the flair template allows users to edit their flair.\n#### Returns\n`boolean`\n### allowableContent\n• `get` **allowableContent**(): [`AllowableFlairContent`](../README.md#allowableflaircontent)\nThe flair template's allowable content. Either 'all', 'emoji', or 'text'.\n#### Returns\n[`AllowableFlairContent`](../README.md#allowableflaircontent)\n### backgroundColor\n• `get` **backgroundColor**(): [`FlairBackgroundColor`](../README.md#flairbackgroundcolor)\nThe flair template's background color. Either 'transparent' or a hex color code. e.g. #FFC0CB\n#### Returns\n[`FlairBackgroundColor`](../README.md#flairbackgroundcolor)\n### id\n• `get` **id**(): `string`\nThe flair template's ID\n#### Returns\n`string`\n### maxEmojis\n• `get` **maxEmojis**(): `number`\nThe flair template's maximum number of emojis.\n#### Returns\n`number`\n### modOnly\n• `get` **modOnly**(): `boolean`\nWhether or not the flair template is only available to moderators.\n#### Returns\n`boolean`\n### text\n• `get` **text**(): `string`",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: FlairTemplate",
+        "Accessors",
+        "text"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: FlairTemplate, Methods</path>\nThe flair template's text\n#### Returns\n`string`\n### textColor\n• `get` **textColor**(): [`FlairTextColor`](../README.md#flairtextcolor)\nThe flair template's text color. Either 'dark' or 'light'.\n#### Returns\n[`FlairTextColor`](../README.md#flairtextcolor)\n## Methods\n### delete\n▸ **delete**(): `Promise`< `void`\\>\nDelete this flair template\n#### Returns\n`Promise`< `void`\\>\n### edit\n▸ **edit**(`options`): `Promise`< [`FlairTemplate`](FlairTemplate.md)\\>\nEdit this flair template\n#### Parameters\n| Name | Type |\n|---|---|\n| options | Partial< Omit< EditFlairTemplateOptions, \"id\" | \"subredditName\">> |\n#### Returns\n`Promise`< [`FlairTemplate`](FlairTemplate.md)\\>\n### createPostFlairTemplate\n▸ `Static` **createPostFlairTemplate**(`options`, `metadata?`): `Promise`< [`FlairTemplate`](FlairTemplate.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | CreateFlairTemplateOptions |\n| metadata? | Metadata |\n#### Returns\n`Promise`< [`FlairTemplate`](FlairTemplate.md)\\>\n### createUserFlairTemplate\n▸ `Static` **createUserFlairTemplate**(`options`, `metadata?`): `Promise`< [`FlairTemplate`](FlairTemplate.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | CreateFlairTemplateOptions |\n| metadata? | Metadata |\n#### Returns\n`Promise`< [`FlairTemplate`](FlairTemplate.md)\\>\n### deleteFlairTemplate\n▸ `Static` **deleteFlairTemplate**(`subredditName`, `flairTemplateId`, `metadata?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| subredditName | string |\n| flairTemplateId | string |\n| metadata? | Metadata |\n#### Returns\n`Promise`< `void`\\>\n### editFlairTemplate\n▸ `Static` **editFlairTemplate**(`editOptions`, `metadata?`): `Promise`< [`FlairTemplate`](FlairTemplate.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| editOptions | EditFlairTemplateOptions |\n| metadata? | Metadata |\n#### Returns\n`Promise`< [`FlairTemplate`](FlairTemplate.md)\\>\n### getPostFlairTemplates",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: FlairTemplate",
+        "Methods"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: FlairTemplate, Methods, getUserFlairTemplates, Returns</path>\n▸ `Static` **getPostFlairTemplates**(`subredditName`, `metadata?`): `Promise`< [`FlairTemplate`](FlairTemplate.md)\\[\\]>\n#### Parameters\n| Name | Type |\n|---|---|\n| subredditName | string |\n| metadata? | Metadata |\n#### Returns\n`Promise`< [`FlairTemplate`](FlairTemplate.md)\\[\\]>\n### getUserFlairTemplates\n▸ `Static` **getUserFlairTemplates**(`subredditName`, `metadata?`): `Promise`< [`FlairTemplate`](FlairTemplate.md)\\[\\]>\n#### Parameters\n| Name | Type |\n|---|---|\n| subredditName | string |\n| metadata? | Metadata |\n#### Returns\n`Promise`< [`FlairTemplate`](FlairTemplate.md)\\[\\]>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: FlairTemplate",
+        "Methods",
+        "getUserFlairTemplates",
+        "Returns"
+      ],
+      "level": 3
+    }
+  }
+]

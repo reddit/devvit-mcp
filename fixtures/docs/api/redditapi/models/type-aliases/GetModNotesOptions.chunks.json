@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Type Alias: GetModNotesOptions</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Type Alias: GetModNotesOptions\n**GetModNotesOptions** = `Prettify`<`Pick`<`GetNotesRequest`, `\"subreddit\"` | `\"user\"`\\> & `object` & `Pick`<[`ListingFetchOptions`](ListingFetchOptions.md), `\"limit\"` | `\"before\"`\\>>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: GetModNotesOptions"
+      ],
+      "level": 0
+    }
+  }
+]

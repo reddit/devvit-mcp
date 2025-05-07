@@ -1,0 +1,18 @@
+[
+  {
+    "pageContent": "<path>Class: WikiPageSettings, Methods, toJSON(), Returns</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Class: WikiPageSettings\n## Constructors\n### new WikiPageSettings()\n**new WikiPageSettings**(`data`, `metadata`): `WikiPageSettings`\n#### Parameters\n##### data\n`WikiPageSettings_Data`\n##### metadata\n`undefined` | `Metadata`\n#### Returns\n`WikiPageSettings`\n## Accessors\n### editors\n#### Get Signature\n**get** **editors**(): [`User`](User.md)\\[\\]\n##### Returns\n[`User`](User.md)\\[\\]\n### listed\n#### Get Signature\n**get** **listed**(): `boolean`\n##### Returns\n`boolean`\n### permLevel\n#### Get Signature\n**get** **permLevel**(): [`WikiPagePermissionLevel`](../enumerations/WikiPagePermissionLevel.md)\n##### Returns\n[`WikiPagePermissionLevel`](../enumerations/WikiPagePermissionLevel.md)\n## Methods\n### toJSON()\n**toJSON**(): `Pick`<`WikiPageSettings`, `\"listed\"` | `\"permLevel\"`\\> & `object`\n#### Returns\n`Pick`<`WikiPageSettings`, `\"listed\"` | `\"permLevel\"`\\> & `object`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Class: WikiPageSettings",
+        "Methods",
+        "toJSON()",
+        "Returns"
+      ],
+      "level": 0
+    }
+  }
+]

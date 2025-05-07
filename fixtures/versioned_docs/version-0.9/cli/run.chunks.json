@@ -1,0 +1,16 @@
+[
+  {
+    "pageContent": "<path>devvit run, devvit run</path>\n# devvit run\nDEPRECATED. Please use `devvit start` instead\n-   [`devvit run`](#devvit-run)\n## devvit run\nDEPRECATED. Please use `devvit start` instead",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "devvit run",
+        "devvit run"
+      ],
+      "level": 1
+    }
+  }
+]

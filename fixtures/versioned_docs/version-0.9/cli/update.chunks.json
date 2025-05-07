@@ -1,0 +1,32 @@
+[
+  {
+    "pageContent": "<path>devvit update, devvit update app</path>\n# devvit update\nUpdate @devvit project dependencies to the currently installed CLI's version\n-   [`devvit update APPSLUGWITHVERSION SUBREDDIT`](#devvit-update-appslugwithversion-subreddit)\n-   [`devvit update app`](#devvit-update-app)\n-   [`devvit update install APPSLUGWITHVERSION SUBREDDIT`](#devvit-update-install-appslugwithversion-subreddit)\n## devvit update APPSLUGWITHVERSION SUBREDDIT\nUpgrade an installation to a later version of the same app\n```\nUSAGE\n  $ devvit update APPSLUGWITHVERSION SUBREDDIT\n\nARGUMENTS\n  APPSLUGWITHVERSION  The slug of the app you want to install, and what version of that app to install (default @latest)\n  SUBREDDIT           Install to the given subreddit. The \"r/\" prefix is optional\n\nDESCRIPTION\n  Upgrade an installation to a later version of the same app\n\nALIASES\n  $ devvit update\n```\n## devvit update app\nUpdate @devvit project dependencies to the currently installed CLI's version\n```\nUSAGE\n  $ devvit update app [-f]\n\nFLAGS\n  -f, --force  Force update @devvit package versions without safety prompt\n\nDESCRIPTION\n  Update @devvit project dependencies to the currently installed CLI's version\n\nEXAMPLES\n  $ devvit update app\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "devvit update",
+        "devvit update app"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>devvit update, devvit update install APPSLUGWITHVERSION SUBREDDIT</path>\n## devvit update install APPSLUGWITHVERSION SUBREDDIT\nUpgrade an installation to a later version of the same app\n```\nUSAGE\n  $ devvit update install APPSLUGWITHVERSION SUBREDDIT\n\nARGUMENTS\n  APPSLUGWITHVERSION  The slug of the app you want to install, and what version of that app to install (default @latest)\n  SUBREDDIT           Install to the given subreddit. The \"r/\" prefix is optional\n\nDESCRIPTION\n  Upgrade an installation to a later version of the same app\n\nALIASES\n  $ devvit update\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "level": 2,
+      "path": [
+        "devvit update",
+        "devvit update install APPSLUGWITHVERSION SUBREDDIT"
+      ]
+    }
+  }
+]

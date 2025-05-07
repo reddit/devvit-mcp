@@ -1,0 +1,35 @@
+[
+  {
+    "pageContent": "<path>Class: WikiPageSettings, Accessors, permLevel, Returns</path>\n# Class: WikiPageSettings\n[models](../modules/models.md).WikiPageSettings\n## Table of contents\n### Constructors\n-   [constructor](models.WikiPageSettings.md#constructor)\n### Accessors\n-   [editors](models.WikiPageSettings.md#editors)\n-   [listed](models.WikiPageSettings.md#listed)\n-   [permLevel](models.WikiPageSettings.md#permlevel)\n### Methods\n-   [toJSON](models.WikiPageSettings.md#tojson)\n## Constructors\n### constructor\n• **new WikiPageSettings**(`data`, `metadata`): [`WikiPageSettings`](models.WikiPageSettings.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| data | WikiPageSettings_Data |\n| metadata | undefined | Metadata |\n#### Returns\n[`WikiPageSettings`](models.WikiPageSettings.md)\n## Accessors\n### editors\n• `get` **editors**(): [`User`](models.User.md)\\[\\]\n#### Returns\n[`User`](models.User.md)\\[\\]\n### listed\n• `get` **listed**(): `boolean`\n#### Returns\n`boolean`\n### permLevel\n• `get` **permLevel**(): [`WikiPagePermissionLevel`](../enums/models.WikiPagePermissionLevel.md)\n#### Returns\n[`WikiPagePermissionLevel`](../enums/models.WikiPagePermissionLevel.md)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: WikiPageSettings",
+        "Accessors",
+        "permLevel",
+        "Returns"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: WikiPageSettings, Methods, toJSON, Returns</path>\n## Methods\n### toJSON\n▸ **toJSON**(): `Pick`<[`WikiPageSettings`](models.WikiPageSettings.md), `\"listed\"` | `\"permLevel\"`\\> & { `editors`: `Pick`<[`User`](models.User.md), `\"username\"` | `\"id\"` | `\"nsfw\"` | `\"createdAt\"` | `\"linkKarma\"` | `\"commentKarma\"`\\> & { `modPermissionsBySubreddit`: `Record`<`string`, [`ModeratorPermission`](../modules/models.md#moderatorpermission)\\[\\]> }\\[\\] }\n#### Returns\n`Pick`<[`WikiPageSettings`](models.WikiPageSettings.md), `\"listed\"` | `\"permLevel\"`\\> & { `editors`: `Pick`<[`User`](models.User.md), `\"username\"` | `\"id\"` | `\"nsfw\"` | `\"createdAt\"` | `\"linkKarma\"` | `\"commentKarma\"`\\> & { `modPermissionsBySubreddit`: `Record`<`string`, [`ModeratorPermission`](../modules/models.md#moderatorpermission)\\[\\]> }\\[\\] }",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: WikiPageSettings",
+        "Methods",
+        "toJSON",
+        "Returns"
+      ],
+      "level": 2
+    }
+  }
+]

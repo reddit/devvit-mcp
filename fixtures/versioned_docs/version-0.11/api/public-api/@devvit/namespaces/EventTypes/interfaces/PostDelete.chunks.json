@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: PostDelete, Properties, subreddit?</path>\n[**@devvit/public-api v0.11.14-dev**](../../../../README.md)\n# Interface: PostDelete\n## Properties\n### author?\n`optional` **author**: `UserV2`\n### createdAt?\n`optional` **createdAt**: `Date`\n### deletedAt?\n`optional` **deletedAt**: `Date`\n### postId\n**postId**: `string`\n### reason\n**reason**: [`DeletionReason`](../../../../enumerations/DeletionReason.md)\n### source\n**source**: [`EventSource`](../../../../enumerations/EventSource.md)\n### subreddit?\n`optional` **subreddit**: `SubredditV2`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Interface: PostDelete",
+        "Properties",
+        "subreddit?"
+      ],
+      "level": 0
+    }
+  }
+]

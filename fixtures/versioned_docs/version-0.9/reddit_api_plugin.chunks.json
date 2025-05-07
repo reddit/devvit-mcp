@@ -1,0 +1,250 @@
+[
+  {
+    "pageContent": "<path>How to use Reddit API features, Import</path>\n## slug: /api\n# Reddit API\nInteracting with Reddit data is one of the funnest things you can do with devvit!\nThe Reddit Developer Platform implements `Devvit.Types.RedditAPI` for most of the features found in the [public Reddit API](https://www.reddit.com/dev/api). This document gives you an overview of how to use these components in your app.\n# How to use Reddit API features\nTo use any Reddit API features, you need to first import, then instantiate, and finally invoke them.\n## Import\nThe Reddit API is roughly organized around a set of objects with methods related to manipulating them. E.g. `Devvit.Types.RedditAPI.Flair` contains methods for dealing with flair while `Devvit.Types.RedditAPI.LinksAndComments` contains methods for working with posts (a.k.a Links or Articles) and comments.\nReddit API types can be found under `Devvit.Types.RedditAPI`. Many types will also take as input `<Type>Request` and return `<Type>Response` objects. You can import these from `@devvit/protos` which will help you find documentation on what arguments the method takes and what the return values look like.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "How to use Reddit API features",
+        "Import"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>How to use Reddit API features, Invoke</path>\nIn this example, we will use the \"Flair\" type to list the flair that my user has on a particular post.\n```typescript\nimport { Devvit } from '@devvit/public-api';\nimport { FlairListResponse } from '@devvit/protos';\n```\n## Instantiate\nOnce you have imported the right objects, you need to create an instance of your type which you can use to make function calls. In the example below, we can use the `flair` object to get and modify flair.\n```typescript\nconst flair = Devvit.use(Devvit.Types.RedditAPI.Flair);\n```\n## Invoke\nFor now, you will need to invoke your method within a ContextAction (i.e. in response to a user clicking on a Menu App item). To learn more about ContextActions, check out our [remind me turotial](remind_me_guide.md).\nThe code below will create Menu item available on posts and then use `Devvit.Types.RedditAPI.Flair.FlairList` to get a list of a user's flair on a particular post.\n```typescript\nimport { Context, Devvit, PostContextActionEvent } from '@devvit/public-api';\nimport { FlairListResponse, Metadata } from '@devvit/protos';\n\nconst flair = Devvit.use(Devvit.Types.RedditAPI.Flair);\n\nasync function getFlair(event: PostContextActionEvent, metadata?: Metadata) {\n  let success = true;\n  let response: FlairListResponse | string;\n\n  try {\n    // The following call makes a call to https://www.reddit.com/dev/api/#GET_api_flairlist\n    response = await flair.FlairList({\n      limit: 10,\n      subreddit: event.context.subreddit,\n    });\n  } catch (err: any) {\n    success = false;\n    response = `Error occurred: ${JSON.stringify(err)}`;\n  }\n\n  return {\n    success,\n    message: JSON.stringify(response),\n  };\n}\n\nDevvit.addAction({\n  name: 'Get flair',\n  description: 'Lists out the flair on this post.',\n  context: Context.POST,\n  handler: getFlair,\n});\n\nexport default Devvit;\n```",
+    "metadata": {
+      "type": [
+        "text",
+        "code",
+        "heading"
+      ],
+      "path": [
+        "How to use Reddit API features",
+        "Invoke"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>How to use Reddit API features, Authentication</path>\n## How to find documentation\nWe know the Reddit API is confusing and the documentation isn't great. We're working on building a much simpler, developer-friendly wrapper now, but until that arrives, we **strongly** recommend installing [VS Code](https://code.visualstudio.com/). This will provide auto-completion and tooltips which surface important information on vailable methods, argument types and examples.\nYou can also look for the corresponding methods on the [public Reddit API](https://www.reddit.com/dev/api) site. The methods used in the examples below point to the specific API endpoints used so you can see how the Types here relate to that documentation.\n## Authentication\n:::caution\nRight now, your app will run with the identity and permissions of the user who installed the app into a particular subreddit. If the installer has the permission to modify comments on many subreddits, then your app will have the ability to modify comments on all those subreddits. In the (near) future, this will change: apps will need to be granted permissions by moderators on all subreddits",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "How to use Reddit API features",
+        "Authentication"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Reddit API Types, Flair, API methods</path>\n:::\nThe Reddit API plugin requires an authentication token, but this is automagically generated for you by the Reddit Developer Platform! There's no need to worry about creating, retrieving or managing your auth tokens.\n# Reddit API Types\n## Flair\nFlair - [Public Reddit API Documentation](https://www.reddit.com/dev/api#section_flair)\n### Global type\n`Devvit.Types.RedditAPI.Flair`\n### API methods\n-   ClearFlairTemplates(ClearFlairTemplatesRequest) returns (Empty)\n-   DeleteFlair(DeleteFlairRequest) returns (Empty)\n-   DeleteFlairTemplate(DeleteFlairTemplateRequest) returns (Empty)\n-   Flair(FlairRequest) returns (Empty)\n-   FlairTemplateOrder(FlairTemplateOrderRequest) returns (Empty)\n-   FlairConfig(FlairConfigRequest) returns (Empty)\n-   FlairCsv(FlairCsvRequest) returns (FlairCsvResponse)\n-   FlairList(FlairListRequest) returns (FlairListResponse)\n-   FlairSelector(FlairSelectorRequest) returns (FlairSelectorResponse)\n-   FlairTemplate(FlairTemplateRequest) returns (FlairObject)\n-   LinkFlair(LinkFlairRequest) returns (FlairArray)\n-   SelectFlair(SelectFlairRequest) returns (Empty)\n-   SetFlairEnabled(SetFlairEnabledRequest) returns (Empty)\n-   UserFlair(google.protobuf.Empty) returns (FlairArray)\n**Example**",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Reddit API Types",
+        "Flair",
+        "API methods"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Reddit API Types, Flair, API methods</path>\n```typescript\n/**\n * Retrieve the flair for the author of a specific post\n * https://www.reddit.com/dev/api/#GET_api_flairlist\n */\nimport { Context, Devvit, PostContextActionEvent } from '@devvit/public-api';\nimport { FlairListResponse, Metadata } from '@devvit/protos';\n\nconst flair = Devvit.use(Devvit.Types.RedditAPI.Flair);\n\nasync function getFlair(event: PostContextActionEvent, metadata?: Metadata) {\n  let success = true;\n  let response: FlairListResponse | string;\n\n  try {\n    // The following call makes a call to https://www.reddit.com/dev/api/#GET_api_flairlist\n    response = await flair.FlairList({\n      limit: 10,\n      subreddit: event.context.subreddit,\n    });\n  } catch (err: any) {\n    success = false;\n    response = `Error occurred: ${JSON.stringify(err)}`;\n  }\n\n  return {\n    success,\n    message: JSON.stringify(response),\n  };\n}\n\nDevvit.addAction({\n  name: 'Get flair',\n  description: 'Lists out the flair on this post.',\n  context: Context.POST,\n  handler: getFlair,\n});\n\nexport default Devvit;\n```",
+    "metadata": {
+      "type": [
+        "code"
+      ],
+      "level": 3,
+      "path": [
+        "Reddit API Types",
+        "Flair",
+        "API methods"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Reddit API Types, Links & Comments, API methods</path>\n## Links & Comments\nLinks & Comments - [Public Reddit API Documentation](https://www.reddit.com/dev/api#section_links_and_comments)\n### Global type\n`Devvit.Types.RedditAPI.LinksAndComments`\n### API methods\n-   Comment(CommentRequest) returns (RedditObject)\n-   Del(BasicIdRequest) returns (Empty)\n-   EditUserText(CommentRequest) returns (RedditObject)\n-   EventPostTime(EventPostTimeRequest) returns (EventPostTimeResponse)\n-   FollowPost(FollowPostRequest) returns (Empty)\n-   Hide(BasicIdRequest) returns (Empty)\n-   Info(InfoRequest) returns (Listing)\n-   Lock(BasicIdRequest) returns (Empty)\n-   MarkNSFW(BasicIdRequest) returns (Empty)\n-   MoreChildren(MoreChildrenRequest) returns (MoreChildrenResponse)\n-   Report(ReportRequest) returns (BasicJsonObject)\n-   ReportAward(ReportAwardRequest) returns (Empty)\n-   Save(SaveRequest) returns (Empty)\n-   SavedCategories(google.protobuf.Empty) returns (SavedCategoriesResponse)\n-   SendReplies(SendRepliesRequest) returns (.Empty)\n-   SetContestMode(SetContestModeRequest) returns (BasicJsonObject)\n-   SetSubredditSticky(SetSubredditStickyRequest) returns (BasicJsonObject)\n-   SetSuggestedSort(SetSuggestedSortRequest) returns (BasicJsonObject)\n-   Spoiler(BasicIdRequest) returns (Empty)\n-   StoreVisits(StoreVisitsRequest) returns (Empty)\n-   Submit(SubmitRequest) returns (SubmitResponse)\n-   Unhide(BasicIdRequest) returns (Empty)\n-   Unlock(BasicIdRequest) returns (Empty)\n-   UnmarkNSFW(BasicIdRequest) returns (Empty)\n-   Unsave(BasicIdRequest) returns (Empty)\n-   Unspoiler(BasicIdRequest) returns (Empty)\n-   Vote(VoteRequest) returns (Empty)\n**Example**",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Reddit API Types",
+        "Links & Comments",
+        "API methods"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Reddit API Types, Links & Comments, API methods</path>\n```typescript\n/**\n * Retrieve more comments on a post with hidden comments\n * https://www.reddit.com/dev/api#GET_api_morechildren\n */\nimport { ContextActionsBuilder, Devvit } from '@devvit/public-api';\nimport { MoreChildrenResponse } from '@devvit/protos';\n\nconst lc = Devvit.use(Devvit.Types.RedditAPI.LinksAndComments);\n\nDevvit.ContextAction.onGetActions(async () => {\n  return new ContextActionsBuilder()\n    .action({\n      actionId: 'comment-getter',\n      name: 'Get more comments',\n      description: 'Gets more comments.',\n      post: true,\n    })\n    .build();\n});\n\nDevvit.ContextAction.onAction(async (action, metadata) => {\n  let success = true;\n  let response: MoreChildrenResponse | string;\n  try {\n    response = await lc.MoreChildren({ link_id: `t3_${action.post?.id}` }); // t3_ represents a post a.k.a. a \"link\"\n  } catch (err: any) {\n    response = `Error occurred: ${JSON.stringify(err)}`;\n    success = false;\n  }\n\n  return {\n    success,\n    message: JSON.stringify(response),\n  };\n});\n\nexport default Devvit;\n```",
+    "metadata": {
+      "type": [
+        "code"
+      ],
+      "level": 3,
+      "path": [
+        "Reddit API Types",
+        "Links & Comments",
+        "API methods"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Reddit API Types, Listings, API methods</path>\n## Listings\nListings - [Public Reddit API Documentation](https://www.reddit.com/dev/api#section_listings)\n### Global type\n`Devvit.Types.RedditAPI.Listings`\n### API methods\n-   Best(GetBestRequest) returns (Listing)\n-   ById(GetByIdRequest) returns (Listing)\n-   Comments(GetCommentsRequest) returns (Listing)\n-   CommentsArticle(GetCommentsArticleRequest) returns (ListingResponse)\n-   Duplicates(GetDuplicatesRequest) returns (ListingResponse)\n-   Hot(GetHotRequest) returns (Listing)\n-   New(GetNewRequest) returns (Listing)\n-   Random(GetRandomRequest) returns (ListingResponse)\n-   Rising(GetRisingRequest) returns (Listing)\n-   Sort(GetSortRequest) returns (Listing)\n**Example**\n```typescript\n/**\n * Gets the top 10 comments for this post sorted by \"Best.\"\n * https://www.reddit.com/dev/api#GET_best\n */\nimport { ContextActionsBuilder, Devvit } from '@devvit/public-api';\nimport { Listing } from '@devvit/protos';\n\nconst listings = Devvit.use(Devvit.Types.RedditAPI.Listings);\n\nDevvit.ContextAction.onGetActions(async () => {\n  return new ContextActionsBuilder()\n    .action({\n      actionId: 'best-comments',\n      name: 'Gets best comments',\n      description: 'Gets comments sorted by \"Best\".',\n      post: true,\n    })\n    .build();\n});\n\nDevvit.ContextAction.onAction(async (action, metadata) => {\n  let success = true;\n  let response: Listing | string;\n  try {\n    response = await listings.Best({ limit: 10 });\n  } catch (err: any) {\n    response = `Error occurred: ${JSON.stringify(err)}`;\n    success = false;\n  }\n\n  return {\n    success,\n    message: JSON.stringify(response),\n  };\n});\n\nexport default Devvit;\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Reddit API Types",
+        "Listings",
+        "API methods"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Reddit API Types, Moderation, API methods</path>\n## Moderation\nModeration - [Public Reddit API Documentation](https://www.reddit.com/dev/api#section_moderation)\n### Global type\n`Devvit.Types.RedditAPI.Moderation`\n### API methods\n-   AboutLog(AboutLogRequest) returns (AboutLogResponse)\n-   AboutLocation(AboutLocationRequest) returns (Listing)\n-   AboutReports(AboutLocationRequest) returns (Listing)\n-   AboutSpam(AboutLocationRequest) returns (Listing)\n-   AboutModqueue(AboutLocationRequest) returns (Listing)\n-   AboutUnmoderated(AboutLocationRequest) returns (Listing)\n-   AboutEdited(AboutLocationRequest) returns (Listing)\n-   AcceptModeratorInvite(AcceptModeratorInviteRequest) returns (BasicJsonObject)\n-   Approve(BasicModerationIdRequest) returns (Empty)\n-   Distinguish(DistinguishRequest) returns (JsonRedditObjects)\n-   IgnoreReports(BasicModerationIdRequest) returns (Empty)\n-   LeaveContributor(BasicModerationIdRequest) returns (Empty)\n-   LeaveModerator(BasicModerationIdRequest) returns (Empty)\n-   MuteMessageAuthor(BasicModerationIdRequest) returns (Empty)\n-   Remove(RemoveRequest) returns (Empty)\n-   ShowComment(BasicModerationIdRequest) returns (Empty)\n-   SnoozeReports(SnoozeReportsRequest) returns (Empty)\n-   UnignoreReports(BasicModerationIdRequest) returns (Empty)\n-   UnmuteMessageAuthor(BasicModerationIdRequest) returns (Empty)\n-   UnsnoozeReports(SnoozeReportsRequest) returns (Empty)\n-   UpdateCrowdControlLevel(UpdateCrowdControlLevelRequest) returns (Empty)\n-   Stylesheet(StylesheetRequest) returns (StringValue)\n**Example**",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Reddit API Types",
+        "Moderation",
+        "API methods"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Reddit API Types, Moderation, API methods</path>\n```typescript\n/**\n * Retrieves mod logs describing recent mod actions against type: spamlink\n * https://www.reddit.com/dev/api#GET_about_log\n */\nimport { Devvit, Context, SubredditContextActionEvent } from '@devvit/public-api';\nimport { Metadata } from '@devvit/protos';\n\nconst moderation = Devvit.use(Devvit.Types.RedditAPI.Moderation);\n\nasync function getModLogSpamLinks(event: SubredditContextActionEvent, metadata?: Metadata) {\n  if (!event.subreddit.url) {\n    return {\n      success: false,\n      message: 'Subreddit is missing url (in event.subreddit.url)',\n    };\n  }\n\n  let success = true;\n  let response = '';\n\n  try {\n    // Get the subreddit name from the url. event.subreddit.name is a thingId not a name\n    const subreddit = event.subreddit.url.split('/')[2];\n    const aboutLog = await moderation.AboutLog(\n      {\n        type: 'spamlink',\n        subreddit,\n      },\n      metadata\n    );\n\n    // The response is a list of mod actions. Let's make a brief summary of them to\n    // display in the context-menu's toast notification.\n    if (aboutLog.data) {\n      response = aboutLog.data.children\n        .map((action) => {\n          const { data } = action;\n          if (!data) {\n            return 'action is missing data';\n          }\n\n          const actionDescription = `Action: ${data.action} - Target Author: ${data.targetAuthor} - Target Title ${data.targetTitle} - Target Permalink ${data.targetPermalink} - Mod: ${data.mod} -  Details: ${data.details}`;\n\n          return actionDescription;\n        })\n        .join('\\n\\n');\n    } else {\n      response = 'No data in response';\n    }\n  } catch (err: any) {\n    response = `Error occurred: ${JSON.stringify(err)} err ${err}}`;\n    success = false;\n  }\n\n  return {\n    success: success,\n    message: JSON.stringify(response),\n  };\n}\n\nDevvit.addAction({\n  name: 'Get recent spam actions',\n  description: 'Queries the mod log for any actions classified as \"spamlink\".',\n  context: Context.SUBREDDIT,\n```",
+    "metadata": {
+      "type": [
+        "code"
+      ],
+      "level": 3,
+      "path": [
+        "Reddit API Types",
+        "Moderation",
+        "API methods"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Reddit API Types, Mod Note, API methods</path>\n```typescript\n  handler: getModLogSpamLinks,\n});\n\nexport default Devvit;\n```\n## Mod Note\nMod Note - [Public Reddit API Documentation](https://www.reddit.com/dev/api#section_modnote)\n### Global type\n`Devvit.Types.RedditAPI.ModNote`\n### API methods\n-   GetNotes(GetNotesRequest) returns (ModNotesResponse)\n-   DeleteNotes(DeleteNotesRequest) returns (DeleteNotesResponse)\n-   PostNotes(PostNotesRequest) returns (PostModNotesResponse)\n-   RecentNotes(RecentNotesRequest) returns (ModNotesResponse)\n**Example**\n```typescript\n/**\n * Get recent mod notes\n * Current subreddits are hardcoded (pics and aww), but could be set dynamically\n * https://www.reddit.com/dev/api#GET_api_mod_notes_recent\n */\nimport { ContextActionsBuilder, Devvit } from '@devvit/public-api';\nimport { ModNotesResponse } from '@devvit/protos';\n\nconst modnote = Devvit.use(Devvit.Types.RedditAPI.ModNote);\n\nDevvit.ContextAction.onGetActions(async () => {\n  return new ContextActionsBuilder()\n    .action({\n      actionId: '',\n      name: 'Get recent mod notes',\n      description: 'Get the most recent notes written by a moderator.',\n      subreddit: true,\n      moderator: true,\n    })\n    .build();\n});\n\nDevvit.ContextAction.onAction(async (action, metadata) => {\n  let success = true;\n  let response: ModNotesResponse | string;\n  try {\n    response = await modnote.RecentNotes({ subreddits: 'pics, aww' });\n  } catch (err: any) {\n    response = `Error occurred: ${JSON.stringify(err)}`;\n    success = false;\n  }\n\n  return {\n    success,\n    message: JSON.stringify(response),\n  };\n});\n\nexport default Devvit;\n```",
+    "metadata": {
+      "type": [
+        "code",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Reddit API Types",
+        "Mod Note",
+        "API methods"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Reddit API Types, New Modmail, API methods</path>\n## New Modmail\nNew Modmail - [Public Reddit API Documentation](https://www.reddit.com/dev/api#section_modmail)\n### Globaltype\n`Devvit.Types.RedditAPI.NewModmail`\n### API methods\n-   BulkReadConversations(BulkReadConversationsRequest) returns (BulkReadConversationsResponse)\n-   GetConversations(GetConversationsRequest) returns (GetConversationsResponse)\n-   CreateConversation(CreateConversationRequest) returns (CreateConversationResponse)\n-   GetConversation(GetConversationRequest) returns (GetConversationResponse)\n-   CreateConversationMessage(CreateConversationMessageRequest) returns (\n-   CreateConversationMessageResponse)\n-   ApproveConversation(BasicConversationRequest) returns (ApproveConversationResponse)\n-   ArchiveConversation(BasicConversationRequest) returns (ArchiveConversationResponse)\n-   DisapproveConversation(BasicConversationRequest) returns (ApproveConversationResponse)\n-   UnhighlightConversation(BasicConversationRequest) returns (HighlightConversationResponse)\n-   HighlightConversation(BasicConversationRequest) returns (HighlightConversationResponse)\n-   MuteConversation(MuteConversationRequest) returns (MuteConversationResponse)\n-   TempBan(TempBanRequest) returns (TempBanResponse)\n-   UnarchiveConversation(BasicConversationRequest) returns (ArchiveConversationResponse)\n-   Unban(BasicConversationRequest) returns (TempBanResponse)\n-   UnmuteConversation(BasicConversationRequest) returns (MuteConversationResponse)\n-   UserConversations(BasicConversationRequest) returns (ConversationUserData)\n-   Read(BasicConversationsRequest) returns (Empty)\n-   Subreddits(google.protobuf.Empty) returns (SubredditsResponse)\n-   Unread(BasicConversationsRequest) returns (Empty)\n-   UnreadCount(google.protobuf.Empty) returns (UnreadCountResponse)\n**Example**",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Reddit API Types",
+        "New Modmail",
+        "API methods"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Reddit API Types, New Modmail, API methods</path>\n```typescript\n/**\n * Get the 10 most recent mod mail messages in \"inbox\"\n * https://www.reddit.com/dev/api#GET_api_mod_conversations\n */\nimport { ContextActionsBuilder, Devvit } from '@devvit/public-api';\nimport { GetConversationResponse } from '@devvit/protos';\n\nconst newmodmail = Devvit.use(Devvit.Types.RedditAPI.NewModmail);\n\nDevvit.ContextAction.onGetActions(async () => {\n  return new ContextActionsBuilder()\n    .action({\n      actionId: '',\n      name: 'Get recent modmail',\n      description: 'Get the 10 most recent mod mail messages in \"inbox\".',\n      subreddit: true,\n      moderator: true,\n    })\n    .build();\n});\n\nDevvit.ContextAction.onAction(async (action, metadata) => {\n  let success = true;\n  let response: GetConversationResponse | string;\n  try {\n    response = await newmodmail.GetConversation({ limit: 10, state: 'inbox' });\n  } catch (err: any) {\n    response = `Error occurred: ${JSON.stringify(err)}`;\n    success = false;\n  }\n\n  return {\n    success,\n    message: JSON.stringify(response),\n  };\n});\n\nexport default Devvit;\n```",
+    "metadata": {
+      "type": [
+        "code"
+      ],
+      "level": 3,
+      "path": [
+        "Reddit API Types",
+        "New Modmail",
+        "API methods"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Reddit API Types, Subreddits</path>\n## Private Messages\nPrivate Messages - [Public Reddit API Documentation](https://www.reddit.com/dev/api#section_messages)\n### Global type\n`Devvit.Types.RedditAPI.PrivateMessages`\n### API methods\n-   Block(GenericPrivateMessagesRequest) returns (Empty)\n-   CollapseMessage(GenericPrivateMessagesRequest) returns (Empty)\n-   Compose(ComposeRequest) returns (Empty)\n-   DelMsg(GenericPrivateMessagesRequest) returns (Empty)\n-   MessageWhere(MessageWhereRequest) returns (Listing)\n-   ReadAllMessages(ReadAllMessagesRequest) returns (Empty)\n-   ReadMessage(GenericPrivateMessagesRequest) returns (Empty)\n-   UnblockSubreddit(GenericPrivateMessagesRequest) returns (Empty)\n-   UncollapseMessage(GenericPrivateMessagesRequest) returns (Empty)\n-   UnreadMessage(GenericPrivateMessagesRequest) returns (Empty)\n**Example** TBD\n## Subreddits\nSubreddits - [Public Reddit API Documentation](https://www.reddit.com/dev/api#section_subreddits)\n### Global type\n`Devvit.Types.RedditAPI.Subreddits`\n### API methods",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Reddit API Types",
+        "Subreddits"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Reddit API Types, Subreddits, API methods</path>\n-   AboutWhere(AboutWhereRequest) returns (Listing)\n-   DeleteSrBanner(BasicSubredditRequest) returns (BasicJsonObject)\n-   DeleteSrHeader(BasicSubredditRequest) returns (BasicJsonObject)\n-   DeleteSrIcon(BasicSubredditRequest) returns (BasicJsonObject)\n-   DeleteSrImg(DeleteSrImgRequest) returns (BasicJsonObject)\n-   SearchRedditNames(BasicSearchRequest) returns (SearchRedditNamesResponse)\n-   SearchSubreddits(BasicSearchRequest) returns (SearchSubredditsResponse)\n-   SiteAdmin(SiteAdminRequest) returns (BasicJsonObject)\n-   SubmitText(BasicSubredditRequest) returns (SubmitTextResponse)\n-   SubredditAutocomplete(SubredditAutocompleteRequest) returns (SubredditAutocompleteResponse)\n-   SubredditStylesheet(SubredditStylesheetRequest) returns (BasicJsonObject)\n-   Subscribe(SubscribeRequest) returns (Empty)\n-   UploadSrImg(UploadSrImgRequest) returns (UploadSrImgResponse)\n-   SubredditPostRequirements(BasicSubredditRequest) returns (SubredditPostRequirementsResponse)\n-   SubredditAbout(BasicSubredditRequest) returns (SubredditAboutResponse)\n-   SubredditAboutEdit(SubredditAboutEditRequest) returns (SubredditAboutEditResponse)\n-   SubredditAboutRules(BasicSubredditRequest) returns (SubredditAboutRulesResponse)\n-   SubredditAboutTraffic(BasicSubredditRequest) returns (SubredditAboutTrafficResponse)\n-   Sidebar(BasicSubredditRequest) returns (google.protobuf.StringValue)\n-   Sticky(StickyRequest) returns (StickyResponse)\n-   SubredditsMineWhere(BasicWhereRequest) returns (Listing)\n-   SubredditsSearch(SubredditsSearchRequest) returns (SubredditsSearchResponse)\n-   SubredditsWhere(BasicWhereRequest) returns (SubredditsSearchResponse)\n-   UsersSearch(UsersSearchRequest) returns (UserSearchResponse)\n-   UsersWhere(BasicWhereRequest) returns (SubredditsSearchResponse)\n**Example** TBD",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Reddit API Types",
+        "Subreddits",
+        "API methods"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Reddit API Types, Users, API methods</path>\n## Users\nUsers - [Public Reddit API Documentation](https://www.reddit.com/dev/api#section_users)\n### Global type\n`Devvit.Types.RedditAPI.Users`\n### API methods\n-   BlockUser(BlockUserRequest) returns (BlockUserResponse)\n-   Friend(FriendRequest) returns (BasicJsonObject)\n-   ReportUser(ReportUserRequest) returns (Empty)\n-   SetPermissions(SetPermissionsRequest) returns (BasicJsonObject)\n-   Unfriend(UnfriendRequest) returns (Empty)\n-   UserDataByAccountIds(UserDataByAccountIdsRequest) returns (UserDataByAccountIdsResponse)\n-   UsernameAvailable(UsernameAvailableRequest) returns (BoolValue)\n-   UnfriendUser(GenericUsersRequest) returns (Empty)\n-   GetFriendInformation(GenericUsersRequest) returns (GeneralFriendResponse)\n-   UpdateFriendRelationship(UpdateFriendRelationshipRequest) returns (GeneralFriendResponse)\n-   UserTrophies(GenericUsersRequest) returns (UserTrophiesResponse)\n-   UserAbout(UserAboutRequest) returns (UserAboutResponse)\n-   UserWhere(UserWhereRequest) returns (Listing)\n**Example** TBD",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Reddit API Types",
+        "Users",
+        "API methods"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Reddit API Types, Coming soon</path>\n## Coming soon\nThe Reddit API plugin is a work in progress, and the following categories will be implemented soon:\n-   Account\n-   Collections\n-   Emoji\n-   Reddit gold\n-   Live threads\n-   Multis\n-   Search\n-   Widgets\n-   Wiki\n(Except that we don’t plan to implement Captcha or Misc, ever.)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "level": 2,
+      "path": [
+        "Reddit API Types",
+        "Coming soon"
+      ]
+    }
+  }
+]

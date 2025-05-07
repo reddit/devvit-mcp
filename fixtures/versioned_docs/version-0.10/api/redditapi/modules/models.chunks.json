@@ -1,0 +1,415 @@
+[
+  {
+    "pageContent": "<path>Module: models, Table of contents</path>\n# Module: models\n## Table of contents\n### Enumerations\n-   [AboutLocations](../enums/models.AboutLocations.md)\n-   [FlairType](../enums/models.FlairType.md)\n-   [ModMailActionType](../enums/models.ModMailActionType.md)\n-   [ModMailConversationState](../enums/models.ModMailConversationState.md)\n-   [SocialLinkType](../enums/models.SocialLinkType.md)\n-   [WikiPagePermissionLevel](../enums/models.WikiPagePermissionLevel.md)\n### Classes\n-   [ButtonWidget](../classes/models.ButtonWidget.md)\n-   [CalendarWidget](../classes/models.CalendarWidget.md)\n-   [Comment](../classes/models.Comment.md)\n-   [CommunityListWidget](../classes/models.CommunityListWidget.md)\n-   [CustomWidget](../classes/models.CustomWidget.md)\n-   [Flair](../classes/models.Flair.md)\n-   [FlairTemplate](../classes/models.FlairTemplate.md)\n-   [ImageWidget](../classes/models.ImageWidget.md)\n-   [Listing](../classes/models.Listing.md)\n-   [ModMailService](../classes/models.ModMailService.md)\n-   [ModNote](../classes/models.ModNote.md)\n-   [Post](../classes/models.Post.md)\n-   [PostFlairWidget](../classes/models.PostFlairWidget.md)\n-   [PrivateMessage](../classes/models.PrivateMessage.md)\n-   [Subreddit](../classes/models.Subreddit.md)\n-   [SubredditRulesWidget](../classes/models.SubredditRulesWidget.md)\n-   [TextAreaWidget](../classes/models.TextAreaWidget.md)\n-   [User](../classes/models.User.md)\n-   [Widget](../classes/models.Widget.md)\n-   [WikiPage](../classes/models.WikiPage.md)\n-   [WikiPageRevision](../classes/models.WikiPageRevision.md)\n-   [WikiPageSettings](../classes/models.WikiPageSettings.md)\n### Interfaces\n-   [ModAction](../interfaces/models.ModAction.md)\n-   [PostNotesRequest](../interfaces/models.PostNotesRequest.md)\n### Type Aliases",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Module: models",
+        "Table of contents"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Table of contents, Type Aliases</path>\n-   [AboutSubredditTypes](models.md#aboutsubreddittypes)\n-   [AddRemovalNoteOptions](models.md#addremovalnoteoptions)\n-   [AddWidgetData](models.md#addwidgetdata)\n-   [AllowableFlairContent](models.md#allowableflaircontent)\n-   [BanUserOptions](models.md#banuseroptions)\n-   [BanWikiContributorOptions](models.md#banwikicontributoroptions)\n-   [CommentMediaTypes](models.md#commentmediatypes)\n-   [CommentSort](models.md#commentsort)\n-   [CommentSubmissionOptions](models.md#commentsubmissionoptions)\n-   [CommonSubmitPostOptions](models.md#commonsubmitpostoptions)\n-   [ConversationData](models.md#conversationdata)\n-   [ConversationResponse](models.md#conversationresponse)\n-   [ConversationStateFilter](models.md#conversationstatefilter)\n-   [ConversationUserData](models.md#conversationuserdata)\n-   [CreateCollectionInput](models.md#createcollectioninput)\n-   [CreateFlairTemplateOptions](models.md#createflairtemplateoptions)\n-   [CreateModNoteOptions](models.md#createmodnoteoptions)\n-   [CreateRelationshipOptions](models.md#createrelationshipoptions)\n-   [CreateWikiPageOptions](models.md#createwikipageoptions)\n-   [CrosspostOptions](models.md#crosspostoptions)\n-   [DeleteNotesOptions](models.md#deletenotesoptions)\n-   [EditCommentOptions](models.md#editcommentoptions)\n-   [EditFlairTemplateOptions](models.md#editflairtemplateoptions)\n-   [FlairBackgroundColor](models.md#flairbackgroundcolor)\n-   [FlairSettings](models.md#flairsettings)\n-   [FlairTextColor](models.md#flairtextcolor)\n-   [GetCommentsByUserOptions](models.md#getcommentsbyuseroptions)\n-   [GetCommentsOptions](models.md#getcommentsoptions)\n-   [GetConversationResponse](models.md#getconversationresponse)\n-   [GetConversationsRequest](models.md#getconversationsrequest)\n-   [GetConversationsResponse](models.md#getconversationsresponse)\n-   [GetHotPostsOptions](models.md#gethotpostsoptions)\n-   [GetModNotesOptions](models.md#getmodnotesoptions)\n-   [GetModerationLogOptions](models.md#getmoderationlogoptions)",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Module: models",
+        "Table of contents",
+        "Type Aliases"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Table of contents, Type Aliases</path>\n-   [GetPageRevisionsOptions](models.md#getpagerevisionsoptions)\n-   [GetPostsByUserOptions](models.md#getpostsbyuseroptions)\n-   [GetPostsOptions](models.md#getpostsoptions)\n-   [GetPostsOptionsWithTimeframe](models.md#getpostsoptionswithtimeframe)\n-   [GetPrivateMessagesOptions](models.md#getprivatemessagesoptions)\n-   [GetSortedPostsOptions](models.md#getsortedpostsoptions)\n-   [GetSubredditUsersByTypeOptions](models.md#getsubredditusersbytypeoptions)\n-   [GetUserFlairBySubredditOptions](models.md#getuserflairbysubredditoptions)\n-   [GetUserFlairBySubredditResponse](models.md#getuserflairbysubredditresponse)\n-   [GetUserFlairOptions](models.md#getuserflairoptions)\n-   [GetUserOverviewOptions](models.md#getuseroverviewoptions)\n-   [InternalSetPostFlairOptions](models.md#internalsetpostflairoptions)\n-   [LinkFlair](models.md#linkflair)\n-   [ListingFetchOptions](models.md#listingfetchoptions)\n-   [ListingFetchResponse](models.md#listingfetchresponse)\n-   [MessageData](models.md#messagedata)\n-   [ModActionData](models.md#modactiondata)\n-   [ModActionTarget](models.md#modactiontarget)\n-   [ModActionType](models.md#modactiontype)\n-   [ModLogOptions](models.md#modlogoptions)\n-   [ModNoteType](models.md#modnotetype)\n-   [ModeratorPermission](models.md#moderatorpermission)\n-   [MoreObject](models.md#moreobject)\n-   [OEmbed](models.md#oembed)\n-   [Participant](models.md#participant)\n-   [PostTextOptions](models.md#posttextoptions)\n-   [RedditVideo](models.md#redditvideo)\n-   [RelationshipType](models.md#relationshiptype)\n-   [RemovalReason](models.md#removalreason)\n-   [RemoveRelationshipOptions](models.md#removerelationshipoptions)\n-   [ReplyToCommentOptions](models.md#replytocommentoptions)\n-   [SecureMedia](models.md#securemedia)\n-   [SendPrivateMessageAsSubredditOptions](models.md#sendprivatemessageassubredditoptions)\n-   [SendPrivateMessageOptions](models.md#sendprivatemessageoptions)\n-   [SetFlairOptions](models.md#setflairoptions)",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Module: models",
+        "Table of contents",
+        "Type Aliases"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Table of contents, Functions</path>\n-   [SetPostFlairOptions](models.md#setpostflairoptions)\n-   [SetUserFlairOptions](models.md#setuserflairoptions)\n-   [SubmitCustomPostOptions](models.md#submitcustompostoptions)\n-   [SubmitLinkOptions](models.md#submitlinkoptions)\n-   [SubmitMediaOptions](models.md#submitmediaoptions)\n-   [SubmitPostOptions](models.md#submitpostoptions)\n-   [SubmitSelfPostOptions](models.md#submitselfpostoptions)\n-   [SubredditData](models.md#subredditdata)\n-   [SubredditSettings](models.md#subredditsettings)\n-   [SubredditType](models.md#subreddittype)\n-   [UnreadCountResponse](models.md#unreadcountresponse)\n-   [UpdatePageSettingsOptions](models.md#updatepagesettingsoptions)\n-   [UpdateWikiPageOptions](models.md#updatewikipageoptions)\n-   [UserFlair](models.md#userflair)\n-   [UserFlairPageOptions](models.md#userflairpageoptions)\n-   [UserNote](models.md#usernote)\n-   [UserNoteLabel](models.md#usernotelabel)\n-   [UserSocialLink](models.md#usersociallink)\n-   [WithUserData](models.md#withuserdata)\n### Functions\n-   [getModerationLog](models.md#getmoderationlog)",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Module: models",
+        "Table of contents",
+        "Functions"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases</path>\n## Type Aliases\n### AboutSubredditTypes\nƬ **AboutSubredditTypes**: `\"comment\"` | `\"post\"` | `\"all\"`\n### AddRemovalNoteOptions\nƬ **AddRemovalNoteOptions**: `Prettify`<`PostRemovalNoteRequest`\\>\n### AddWidgetData\nƬ **AddWidgetData**: `AddImageWidgetRequest` & { `type`: `\"image\"` } | `AddCalendarWidgetRequest` & { `type`: `\"calendar\"` } | `AddTextAreaWidgetRequest` & { `type`: `\"textarea\"` } | `AddButtonWidgetRequest` & { `type`: `\"button\"` } | `AddCommunityListWidgetRequest` & { `type`: `\"community-list\"` } | `AddPostFlairWidgetRequest` & { `type`: `\"post-flair\"` } | `AddCustomWidgetRequest` & { `type`: `\"custom\"` }\n### AllowableFlairContent\nƬ **AllowableFlairContent**: `\"all\"` | `\"emoji\"` | `\"text\"`\n### BackgroundImagePosition\nƬ **BackgroundImagePosition**: `\"cover\"` | `\"tiled\"` | `\"centered\"`\n### BannerHeight\nƬ **BannerHeight**: `\"small\"` | `\"medium\"` | `\"large\"`\n### BanUserOptions\nƬ **BanUserOptions**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| context? | string |\n| duration? | number |\n| message? | string |\n| note? | string |\n| reason? | string |\n| subredditName | string |\n| username | string |\n### BanWikiContributorOptions\nƬ **BanWikiContributorOptions**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| duration? | number |\n| note? | string |\n| reason? | string |\n| subredditName | string |\n| username | string |\n### CommentMediaTypes\nƬ **CommentMediaTypes**: `\"giphy\"` | `\"static\"` | `\"animated\"` | `\"expression\"`\n### CommentSort\nƬ **CommentSort**: `\"confidence\"` | `\"top\"` | `\"new\"` | `\"controversial\"` | `\"old\"` | `\"random\"` | `\"qa\"` | `\"live\"`\n### CommentSubmissionOptions\nƬ **CommentSubmissionOptions**: { `text`: `string` } | { `richtext`: `object` | `RichTextBuilder` }\n### CommonSubmitPostOptions\nƬ **CommonSubmitPostOptions**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| flairId? | string |\n| flairText? | string |\n| nsfw? | boolean |\n| sendreplies? | boolean |\n| spoiler? | boolean |\n| title | string |\n### CommunityNameFormat",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases, ConversationData, Type declaration</path>\nƬ **CommunityNameFormat**: `\"slashtag\"` | `\"pretty\"` | `\"hide\"`\n### ConversationData\nƬ **ConversationData**: `Object`\n#### Type declaration",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases",
+        "ConversationData",
+        "Type declaration"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases, ConversationData, Type declaration</path>\n| Name | Type | Description |\n|---|---|---|\n| authors | Participant[] | The authors of each message in the modmail conversation. |\n| conversationType? | string | A ConversationType specifies whether a conversation is with a subreddit itself, with another user, or with another subreddit entirely. - internal - This is a conversation with another user outside of the subreddit. The participant ID is that user's ID. - sr_user - This is a Mod Discussion, internal to the subreddit. There is no other participant. - sr_sr - This is a conversation is with another subreddit. The participant will have a subreddit ID. |\n| id? | string | Conversation ID |\n| isAuto? | boolean | Is the conversation automatically generated e.g. from automod, u/reddit |\n| isHighlighted? | boolean | Is the conversation highlighted |\n| isInternal? | boolean | Is the conversation internal (i.e. mod only) |\n| lastModUpdate? | string | The last datetime a mod from the owning subreddit made any interaction with the conversation. (Note that if this is a subreddit to subreddit conversation, the mods of the participant subreddit are irrelevant and do not affect this field.) |\n| lastUnread? | string | The datetime of the last unread message within this conversation for the current viewer. |\n| lastUpdated? | string | The datetime of the last time the conversation was update. |\n| lastUserUpdate? | string | The last datetime a user made any interaction with the conversation |\n| messages | { [id: string]: MessageData; } | Conversation messages Example ts const arrayOfMessages = Object.values(conversation.messages); const messageById = conversation.messages[messageId]; |\n| modActions | { [id: string]: ModActionData; } | Conversation mod actions Example ts const arrayOfModActions = Object.values(conversation.modActions); const modActionById = conversation.modActions[modActionId]; |\n| numMessages? | number | Number of messages (not actions) in the conversation |",
+    "metadata": {
+      "type": [
+        "table"
+      ],
+      "level": 4,
+      "path": [
+        "Module: models",
+        "Type Aliases",
+        "ConversationData",
+        "Type declaration"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases, ConversationUserData, Type declaration</path>\n| Name | Type | Description |\n|---|---|---|\n| participant? | Participant | Participant. Is absent for mod discussions |\n| state? | ModMailConversationState | State of the conversation |\n| subject? | string | Suject of the conversation |\n| subreddit? | { displayName?: string ; id?: string } | Subreddit owning the modmail conversation |\n| subreddit.displayName? | string | - |\n| subreddit.id? | string | - |\n### ConversationResponse\nƬ **ConversationResponse**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| conversation | ConversationData |\n### ConversationStateFilter\nƬ **ConversationStateFilter**: `\"all\"` | `\"new\"` | `\"inprogress\"` | `\"archived\"` | `\"appeals\"` | `\"join_requests\"` | `\"highlighted\"` | `\"mod\"` | `\"notifications\"` | `\"inbox\"` | `\"filtered\"` | `\"default\"`\nA Conversation State is a way in which conversations may be filtered within the UI.\nA conversation can be in more than one state. For example, a conversation may be both 'highlighted' and 'inprogress'.\n### ConversationUserData\nƬ **ConversationUserData**: `Object`\n#### Type declaration",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases",
+        "ConversationUserData",
+        "Type declaration"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases, CreateFlairTemplateOptions, Type declaration</path>\n| Name | Type | Description |\n|---|---|---|\n| approveStatus? | { isApproved?: boolean } | - |\n| approveStatus.isApproved? | boolean | - |\n| banStatus? | { endDate?: string ; isBanned?: boolean ; isPermanent?: boolean ; reason?: string } | - |\n| banStatus.endDate? | string | - |\n| banStatus.isBanned? | boolean | - |\n| banStatus.isPermanent? | boolean | - |\n| banStatus.reason? | string | - |\n| created? | string | When was created |\n| id? | string | User ID |\n| isShadowBanned? | boolean | - |\n| isSuspended? | boolean | - |\n| muteStatus? | { endDate?: string ; isMuted?: boolean ; muteCount?: number ; reason?: string } | - |\n| muteStatus.endDate? | string | - |\n| muteStatus.isMuted? | boolean | - |\n| muteStatus.muteCount? | number | - |\n| muteStatus.reason? | string | - |\n| name? | string | Username |\n| recentComments | { [id: string]: { comment?: string ; date?: string ; permalink?: string ; title?: string }; } | Recent comments |\n| recentConvos | { [id: string]: { date?: string ; id?: string ; permalink?: string ; subject?: string }; } | Recent conversations |\n| recentPosts | { [id: string]: { date?: string ; permalink?: string ; title?: string }; } | Recent posts |\n### CreateFlairTemplateOptions\nƬ **CreateFlairTemplateOptions**: `Object`\n#### Type declaration\n| Name | Type | Description |\n|---|---|---|\n| allowUserEdits? | boolean | Whether or not users are allowed to edit this flair template before using it. |\n| allowableContent? | AllowableFlairContent | The flair template's allowable content. Either 'all', 'emoji', or 'text'. |\n| backgroundColor? | string | The background color of the flair. Either 'transparent' or a hex color code. e.g. #FFC0CB |\n| maxEmojis? | number | - |\n| modOnly? | boolean | Whether or not this flair template is only available to moderators. |\n| subredditName | string | The name of the subreddit to create the flair template in. |\n| text | string | The text to display in the flair. |\n| textColor? | FlairTextColor | Either 'dark' or 'light'. |",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases",
+        "CreateFlairTemplateOptions",
+        "Type declaration"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases, GetCommentsByUserOptions, Type declaration</path>\n### CreateModNoteOptions\nƬ **CreateModNoteOptions**: `Prettify`<[`PostNotesRequest`](../interfaces/models.PostNotesRequest.md) & { `label?`: [`UserNoteLabel`](models.md#usernotelabel) ; `redditId?`: `T1ID` | `T3ID` }>\n### CreateRelationshipOptions\nƬ **CreateRelationshipOptions**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| banContext? | string |\n| banMessage? | string |\n| banReason? | string |\n| duration? | number |\n| note? | string |\n| permissions? | ModeratorPermission[] |\n| subredditName | string |\n| type | RelationshipType |\n| username | string |\n### CreateWikiPageOptions\nƬ **CreateWikiPageOptions**: `Object`\n#### Type declaration\n| Name | Type | Description |\n|---|---|---|\n| content | string | The content of the page. |\n| page | string | The name of the page to create. |\n| reason? | string | The reason for creating the page. |\n| subredditName | string | The name of the subreddit to create the page in. |\n### CrosspostOptions\nƬ **CrosspostOptions**: [`CommonSubmitPostOptions`](models.md#commonsubmitpostoptions) & { `postId`: `string` ; `subredditName`: `string` }\n### CustomizationFlag\nƬ **CustomizationFlag**: `\"default\"` | `\"custom\"`\n### DeleteNotesOptions\nƬ **DeleteNotesOptions**: `Prettify`<`DeleteNotesRequest`\\>\n### EditCommentOptions\nƬ **EditCommentOptions**: [`CommentSubmissionOptions`](models.md#commentsubmissionoptions)\n### EditFlairTemplateOptions\nƬ **EditFlairTemplateOptions**: [`CreateFlairTemplateOptions`](models.md#createflairtemplateoptions) & { `id`: `string` }\n### FlairBackgroundColor\nƬ **FlairBackgroundColor**: \\`#${string}\\` | `\"transparent\"`\n### FlairSettings\nƬ **FlairSettings**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| enabled | boolean |\n| usersCanAssign | boolean |\n| userFlairBackgroundColor? | string |\n| userFlairTextColor? | string |\n### FlairTextColor\nƬ **FlairTextColor**: `\"light\"` | `\"dark\"`\n### GetCommentsByUserOptions\nƬ **GetCommentsByUserOptions**: `Object`\n#### Type declaration",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases",
+        "GetCommentsByUserOptions",
+        "Type declaration"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases</path>\n| Name | Type |\n|---|---|\n| after? | string |\n| before? | string |\n| limit? | number |\n| pageSize? | number |\n| sort? | \"hot\" | \"new\" | \"top\" | \"controversial\" |\n| timeframe? | \"hour\" | \"day\" | \"week\" | \"month\" | \"year\" | \"all\" |\n| username | string |\n### GetCommentsOptions\nƬ **GetCommentsOptions**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| commentId? | string |\n| depth? | number |\n| limit? | number |\n| pageSize? | number |\n| postId | string |\n| sort? | CommentSort |\n### GetConversationResponse\nƬ **GetConversationResponse**: { `conversation?`: [`ConversationData`](models.md#conversationdata) ; `participantSubreddit?`: `ParticipantSubreddit` } & [`WithUserData`](models.md#withuserdata)\n### GetConversationsRequest\nƬ **GetConversationsRequest**: `Object`\n#### Type declaration\n| Name | Type | Description |\n|---|---|---|\n| after? | string | modmail conversation id |\n| limit? | number | an integer between 1 and 100 (default: 25) |\n| sort? | \"recent\" | \"mod\" | \"user\" | \"unread\" | Sort by: - recent - Order by whenever anyone last updated the conversation, mod or participant - mod - Order by the last time a mod updated the conversation - user - Order by the last time a participant user updated the conversation - unread - Order by the most recent unread message in the conversation for this mod |\n| state? | ConversationStateFilter | Filter by conversation state A conversation can be in more than one state. For example, a conversation may be both 'highlighted' and 'inprogress'. |\n| subreddits? | string[] | array of subreddit names |\n### GetConversationsResponse\nƬ **GetConversationsResponse**: `Object`\n#### Type declaration\n| Name | Type | Description |\n|---|---|---|\n| conversations | { [id: string]: ConversationData; } | Conversations key-value map |\n| viewerId? | string | - |\n### GetHotPostsOptions",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases, GetPageRevisionsOptions, Type declaration</path>\nƬ **GetHotPostsOptions**: [`GetPostsOptions`](models.md#getpostsoptions) & { `location?`: `\"GLOBAL\"` | `\"US\"` | `\"AR\"` | `\"AU\"` | `\"BG\"` | `\"CA\"` | `\"CL\"` | `\"CO\"` | `\"HR\"` | `\"CZ\"` | `\"FI\"` | `\"FR\"` | `\"DE\"` | `\"GR\"` | `\"HU\"` | `\"IS\"` | `\"IN\"` | `\"IE\"` | `\"IT\"` | `\"JP\"` | `\"MY\"` | `\"MX\"` | `\"NZ\"` | `\"PH\"` | `\"PL\"` | `\"PT\"` | `\"PR\"` | `\"RO\"` | `\"RS\"` | `\"SG\"` | `\"ES\"` | `\"SE\"` | `\"TW\"` | `\"TH\"` | `\"TR\"` | `\"GB\"` | `\"US_WA\"` | `\"US_DE\"` | `\"US_DC\"` | `\"US_WI\"` | `\"US_WV\"` | `\"US_HI\"` | `\"US_FL\"` | `\"US_WY\"` | `\"US_NH\"` | `\"US_NJ\"` | `\"US_NM\"` | `\"US_TX\"` | `\"US_LA\"` | `\"US_NC\"` | `\"US_ND\"` | `\"US_NE\"` | `\"US_TN\"` | `\"US_NY\"` | `\"US_PA\"` | `\"US_CA\"` | `\"US_NV\"` | `\"US_VA\"` | `\"US_CO\"` | `\"US_AK\"` | `\"US_AL\"` | `\"US_AR\"` | `\"US_VT\"` | `\"US_IL\"` | `\"US_GA\"` | `\"US_IN\"` | `\"US_IA\"` | `\"US_OK\"` | `\"US_AZ\"` | `\"US_ID\"` | `\"US_CT\"` | `\"US_ME\"` | `\"US_MD\"` | `\"US_MA\"` | `\"US_OH\"` | `\"US_UT\"` | `\"US_MO\"` | `\"US_MN\"` | `\"US_MI\"` | `\"US_RI\"` | `\"US_KS\"` | `\"US_MT\"` | `\"US_MS\"` | `\"US_SC\"` | `\"US_KY\"` | `\"US_OR\"` | `\"US_SD\"` }\n### GetModNotesOptions\nƬ **GetModNotesOptions**: `Prettify`<`Pick`<`GetNotesRequest`, `\"subreddit\"` | `\"user\"`\\> & { `filter?`: [`ModNoteType`](models.md#modnotetype) } & `Pick`<[`ListingFetchOptions`](models.md#listingfetchoptions), `\"limit\"` | `\"before\"`\\>>\n### GetModerationLogOptions\nƬ **GetModerationLogOptions**: [`ListingFetchOptions`](models.md#listingfetchoptions) & { `moderatorUsernames?`: `string`\\[\\] ; `subredditName`: `string` ; `type?`: [`ModActionType`](models.md#modactiontype) }\n### GetPageRevisionsOptions\nƬ **GetPageRevisionsOptions**: `Object`\n#### Type declaration\n| Name | Type | Description |\n|---|---|---|\n| after? | string | The ID of the revision to start at. |\n| limit? | number | The maximum number of revisions to get. |\n| page | string | The name of the page to get revisions for. |\n| pageSize? | number | The number of revisions to get per request. |\n| subredditName | string | The name of the subreddit the page is in. |",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases",
+        "GetPageRevisionsOptions",
+        "Type declaration"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases, GetUserFlairBySubredditResponse, Type declaration</path>\n### GetPostsByUserOptions\nƬ **GetPostsByUserOptions**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| after? | string |\n| before? | string |\n| limit? | number |\n| pageSize? | number |\n| sort? | \"hot\" | \"new\" | \"top\" | \"controversial\" |\n| timeframe? | \"hour\" | \"day\" | \"week\" | \"month\" | \"year\" | \"all\" |\n| username | string |\n### GetPostsOptions\nƬ **GetPostsOptions**: [`ListingFetchOptions`](models.md#listingfetchoptions) & { `subredditName?`: `string` }\n### GetPostsOptionsWithTimeframe\nƬ **GetPostsOptionsWithTimeframe**: [`GetPostsOptions`](models.md#getpostsoptions) & { `timeframe?`: `\"hour\"` | `\"day\"` | `\"week\"` | `\"month\"` | `\"year\"` | `\"all\"` }\n### GetPrivateMessagesOptions\nƬ **GetPrivateMessagesOptions**: `Prettify`<{ `type?`: `\"inbox\"` | `\"unread\"` | `\"sent\"` } & [`ListingFetchOptions`](models.md#listingfetchoptions)\\>\n### GetSortedPostsOptions\nƬ **GetSortedPostsOptions**: [`GetPostsOptionsWithTimeframe`](models.md#getpostsoptionswithtimeframe) & { `sort`: `\"top\"` | `\"controversial\"` }\n### GetSubredditUsersByTypeOptions\nƬ **GetSubredditUsersByTypeOptions**: [`ListingFetchOptions`](models.md#listingfetchoptions) & { `subredditName`: `string` ; `type`: `\"banned\"` | `\"muted\"` | `\"wikibanned\"` | `\"contributors\"` | `\"wikicontributors\"` | `\"moderators\"` ; `username?`: `string` }\n### GetUserFlairBySubredditOptions\nƬ **GetUserFlairBySubredditOptions**: [`UserFlairPageOptions`](models.md#userflairpageoptions) & { `name?`: `string` ; `subreddit`: `string` }\n### GetUserFlairBySubredditResponse\nƬ **GetUserFlairBySubredditResponse**: `Object`\n#### Type declaration",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases",
+        "GetUserFlairBySubredditResponse",
+        "Type declaration"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases</path>\n| Name | Type | Description |\n|---|---|---|\n| next? | string | The user id of the last user flair in this slice. Its presence indicates that there are more items that can be fetched. Pass this into the \"after\" parameter in the next call to get the next slice of data |\n| prev? | string | The user id of the first user flair in this slice. Its presence indicates that there are items before this item that can be fetched. Pass this into the \"before\" parameter in the next call to get the previous slice of data |\n| users | UserFlair[] | The list of user flair |\n### GetUserFlairOptions\nƬ **GetUserFlairOptions**: [`UserFlairPageOptions`](models.md#userflairpageoptions) & { `usernames?`: `string`\\[\\] }\n### GetUserOverviewOptions\nƬ **GetUserOverviewOptions**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| after? | string |\n| before? | string |\n| limit? | number |\n| pageSize? | number |\n| sort? | \"hot\" | \"new\" | \"top\" | \"controversial\" |\n| timeframe? | \"hour\" | \"day\" | \"week\" | \"month\" | \"year\" | \"all\" |\n| username | string |\n### ImagePosition\nƬ **ImagePosition**: `\"cover\"` | `\"tiled\"`\n### InternalSetPostFlairOptions\nƬ **InternalSetPostFlairOptions**: [`SetFlairOptions`](models.md#setflairoptions) & { `postId`: `T3ID` }\n### LinkFlair\nƬ **LinkFlair**: `Object`\n#### Type declaration\n| Name | Type | Description |\n|---|---|---|\n| backgroundColor? | string | Flair background color as a hex color string (# prefixed) Example ts \"#FF4500\" |\n| cssClass? | string | Custom CSS classes from the subreddit's stylesheet to apply to the flair if rendered as HTML |\n| richtext | { elementType?: string ; emojiRef?: string ; text?: string ; url?: string }[] | RichText object representation of the flair |\n| templateId? | string | Flair template ID to use when rendering this flair |\n| text? | string | Plain text representation of the flair |\n| textColor? | string | One of: \"light\", \"dark\" |\n| type? | string | One of: \"text\", \"richtext\" |\n### ListingFetchOptions",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases</path>\nƬ **ListingFetchOptions**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| after? | string |\n| before? | string |\n| limit? | number |\n| more? | MoreObject |\n| pageSize? | number |\n### ListingFetchResponse\nƬ **ListingFetchResponse**<`T`\\>: `Object`\n#### Type parameters\n| Name |\n|---|\n| T |\n#### Type declaration\n| Name | Type |\n|---|---|\n| after? | string |\n| before? | string |\n| children | T[] |\n| more? | MoreObject |\n### MenuPosition\nƬ **MenuPosition**: `\"default\"` | `\"overlay\"`\n### MessageData\nƬ **MessageData**: `Object`\n#### Type declaration\n| Name | Type | Description |\n|---|---|---|\n| author? | Participant | - |\n| body? | string | Message body |\n| bodyMarkdown? | string | - |\n| date? | string | When was created |\n| id? | string | Message ID |\n| isInternal? | boolean | - |\n| participatingAs? | string | - |\n### ModActionData\nƬ **ModActionData**: `Object`\n#### Type declaration\n| Name | Type | Description |\n|---|---|---|\n| actionType | ModMailActionType | Type of the action |\n| author? | { id?: number ; isAdmin?: boolean ; isDeleted?: boolean ; isHidden?: boolean ; isMod?: boolean ; name?: string } | Action author |\n| author.id? | number | User id |\n| author.isAdmin? | boolean | - |\n| author.isDeleted? | boolean | - |\n| author.isHidden? | boolean | - |\n| author.isMod? | boolean | - |\n| author.name? | string | User name |\n| date? | string | When the action happened |\n| id? | string | Action id |\n### ModActionTarget\nƬ **ModActionTarget**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| author? | string |\n| body? | string |\n| id | string |\n| permalink? | string |\n| title? | string |\n### ModActionType",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases</path>\nƬ **ModActionType**: `\"banuser\"` | `\"unbanuser\"` | `\"spamlink\"` | `\"removelink\"` | `\"approvelink\"` | `\"spamcomment\"` | `\"removecomment\"` | `\"approvecomment\"` | `\"addmoderator\"` | `\"showcomment\"` | `\"invitemoderator\"` | `\"uninvitemoderator\"` | `\"acceptmoderatorinvite\"` | `\"removemoderator\"` | `\"addcontributor\"` | `\"removecontributor\"` | `\"editsettings\"` | `\"editflair\"` | `\"distinguish\"` | `\"marknsfw\"` | `\"wikibanned\"` | `\"wikicontributor\"` | `\"wikiunbanned\"` | `\"wikipagelisted\"` | `\"removewikicontributor\"` | `\"wikirevise\"` | `\"wikipermlevel\"` | `\"ignorereports\"` | `\"unignorereports\"` | `\"setpermissions\"` | `\"setsuggestedsort\"` | `\"sticky\"` | `\"unsticky\"` | `\"setcontestmode\"` | `\"unsetcontestmode\"` | `\"lock\"` | `\"unlock\"` | `\"muteuser\"` | `\"unmuteuser\"` | `\"createrule\"` | `\"editrule\"` | `\"reorderrules\"` | `\"deleterule\"` | `\"spoiler\"` | `\"unspoiler\"` | `\"modmail_enrollment\"` | `\"community_styling\"` | `\"community_widgets\"` | `\"markoriginalcontent\"` | `\"collections\"` | `\"events\"` | `\"create_award\"` | `\"disable_award\"` | `\"delete_award\"` | `\"enable_award\"` | `\"mod_award_given\"` | `\"hidden_award\"` | `\"add_community_topics\"` | `\"remove_community_topics\"` | `\"create_scheduled_post\"` | `\"edit_scheduled_post\"` | `\"delete_scheduled_post\"` | `\"submit_scheduled_post\"` | `\"edit_post_requirements\"` | `\"invitesubscriber\"` | `\"submit_content_rating_survey\"` | `\"adjust_post_crowd_control_level\"` | `\"enable_post_crowd_control_filter\"` | `\"disable_post_crowd_control_filter\"` | `\"deleteoverriddenclassification\"` | `\"overrideclassification\"` | `\"reordermoderators\"` | `\"snoozereports\"` | `\"unsnoozereports\"` | `\"addnote\"` | `\"deletenote\"` | `\"addremovalreason\"` | `\"createremovalreason\"` | `\"updateremovalreason\"` | `\"deleteremovalreason\"` | `\"reorderremovalreason\"` | `\"dev_platform_app_changed\"` | `\"dev_platform_app_disabled\"` | `\"dev_platform_app_enabled\"` | `\"dev_platform_app_installed\"` | `\"dev_platform_app_uninstalled\"`\n### ModLogOptions",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases, OEmbed, Type declaration</path>\nƬ **ModLogOptions**<`T`\\>: `Omit`<`AboutSubredditHelperOptions`<`T`\\>, `\"location\"`\\>\n#### Type parameters\n| Name | Type |\n|---|---|\n| T | extends AboutSubredditTypes |\n### ModNoteType\nƬ **ModNoteType**: `\"NOTE\"` | `\"APPROVAL\"` | `\"REMOVAL\"` | `\"BAN\"` | `\"MUTE\"` | `\"INVITE\"` | `\"SPAM\"` | `\"CONTENT_CHANGE\"` | `\"MOD_ACTION\"` | `\"ALL\"`\n### ModeratorPermission\nƬ **ModeratorPermission**: `\"all\"` | `\"wiki\"` | `\"posts\"` | `\"access\"` | `\"mail\"` | `\"config\"` | `\"flair\"` | `\"chat_operator\"` | `\"chat_config\"`\n### MoreObject\nƬ **MoreObject**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| children | T1ID[] |\n| depth | number |\n| parentId | T1ID | T3ID |\n### OEmbed\nƬ **OEmbed**: `Object`\noEmbed is a format for allowing an embedded representation of a URL on third party sites. The simple API allows a website to display embedded content (such as photos or videos) when a user posts a link to that resource, without having to parse the resource directly. See: [https://oembed.com/](https://oembed.com/)\n#### Type declaration",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases",
+        "OEmbed",
+        "Type declaration"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases, RedditVideo, Type declaration</path>\n| Name | Type | Description |\n|---|---|---|\n| authorName? | string | The name of the author/owner of the resource. E.g. \"Reddit\" |\n| authorUrl? | string | A URL for the author/owner of the resource. E.g. \"https://www.youtube.com/@Reddit\" |\n| height? | number | The width in pixels required to display the HTML. |\n| html | string | The HTML required to embed a video player. The HTML should have no padding or margins. Consumers may wish to load the HTML in an off-domain iframe to avoid XSS vulnerabilities. |\n| providerName? | string | A URL for the author/owner of the resource. E.g. \"YouTube\" |\n| providerUrl? | string | The name of the resource provider. E.g \"https://www.youtube.com/\" |\n| thumbnailHeight? | number | The height of the optional thumbnail in pixels |\n| thumbnailUrl? | string | A URL to a thumbnail image representing the resource. |\n| thumbnailWidth? | number | The width of the optional thumbnail in pixels |\n| title? | string | A text title, describing the resource. |\n| type | string | The resource type. Valid values, along with value-specific parameters, are described below. E.g. \"video\" |\n| version | string | The oEmbed version number. This must be 1.0. |\n| width? | number | The height in pixels required to display the HTML. |\n### Participant\nƬ **Participant**: `Object`\nConversation participant\n#### Type declaration\n| Name | Type |\n|---|---|\n| id? | number |\n| isAdmin? | boolean |\n| isApproved? | boolean |\n| isDeleted? | boolean |\n| isHidden? | boolean |\n| isMod? | boolean |\n| isOp? | boolean |\n| isParticipant? | boolean |\n| name? | string |\n### PositionedImagePosition\nƬ **PositionedImagePosition**: `\"left\"` | `\"right\"` | `\"centered\"`\n### PostTextOptions\nƬ **PostTextOptions**: { `text`: `string` } | { `richtext`: `object` | `RichTextBuilder` }\n### RedditVideo\nƬ **RedditVideo**: `Object`\nContains the data for a video hosted on Reddit that is in a post\n#### Type declaration",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases",
+        "RedditVideo",
+        "Type declaration"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases, SecureMedia, Type declaration</path>\n| Name | Type | Description |\n|---|---|---|\n| bitrateKbps? | number | The bitrate of the video in kilobits per second. E.g. 450 |\n| dashUrl? | string | The URL to the DASH playlist file. E.g. \"https://v.redd.it/abc123/DASHPlaylist.mpd\" |\n| duration? | number | The duration of the video in seconds. E.g. 30 |\n| fallbackUrl? | string | The direct URL to the video. E.g. \"https://v.redd.it/abc123/DASH_1080.mp4?source=fallback\" |\n| height? | number | The height of the video in pixels. E.g. 1080 |\n| hlsUrl? | string | The URL to the HLS playlist file. E.g. \"https://v.redd.it/abc123/HLSPlaylist.m3u8\" |\n| isGif? | boolean | If true, the video is a GIF |\n| scrubberMediaUrl? | string | The URL to the scrubber media file. E.g. \"https://v.redd.it/abc123/DASH_96.mp4\" |\n| transcodingStatus? | string | The status of the transcoding process. E.g. \"completed\" |\n| width? | number | The width of the video in pixels. E.g. 1920 |\n### RelationshipType\nƬ **RelationshipType**: `\"moderator_invite\"` | `\"contributor\"` | `\"banned\"` | `\"muted\"` | `\"wikibanned\"` | `\"wikicontributor\"`\n### RemovalReason\nƬ **RemovalReason**: `Object`\nAn individual Removal Reason object.\n#### Type declaration\n| Name | Type | Description |\n|---|---|---|\n| id | string | The ID of the removal reason. |\n| message | string | The message associated with the removal reason. |\n| title | string | The title of the removal reason. |\n### RemoveRelationshipOptions\nƬ **RemoveRelationshipOptions**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| subredditName | string |\n| type | RelationshipType | \"moderator\" |\n| username | string |\n### ReplyToCommentOptions\nƬ **ReplyToCommentOptions**: [`CommentSubmissionOptions`](models.md#commentsubmissionoptions)\n### SecureMedia\nƬ **SecureMedia**: `Object`\n#### Type declaration\n| Name | Type | Description |\n|---|---|---|\n| oembed? | OEmbed | - |\n| redditVideo? | RedditVideo | - |\n| type? | string | The type of the OEmbed media, if present (e.g. \"youtube.com\") |",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases",
+        "SecureMedia",
+        "Type declaration"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases</path>\n### SendPrivateMessageAsSubredditOptions\nƬ **SendPrivateMessageAsSubredditOptions**: [`SendPrivateMessageOptions`](models.md#sendprivatemessageoptions) & { `fromSubredditName`: `string` }\n### SendPrivateMessageOptions\nƬ **SendPrivateMessageOptions**: `Object`\n#### Type declaration\n| Name | Type | Description |\n|---|---|---|\n| subject | string | The subject of the message. |\n| text | string | The body of the message in markdown text format. |\n| to | string | Recipient username (without the leading u/), or /r/name for that subreddit's moderators. |\n### SetFlairOptions\nƬ **SetFlairOptions**: `Object`\n#### Type declaration\n| Name | Type | Description |\n|---|---|---|\n| backgroundColor? | string | The flair background color. Either 'transparent' or a hex color code. e.g. #FFC0CB |\n| cssClass? | string | The flair CSS class |\n| flairTemplateId? | string | The flair template's ID |\n| subredditName | string | The name of the subreddit of the item to set the flair on |\n| text? | string | The flair text |\n| textColor? | FlairTextColor | The flair text color. Either 'dark' or 'light'. |\n### SetPostFlairOptions\nƬ **SetPostFlairOptions**: [`SetFlairOptions`](models.md#setflairoptions) & { `postId`: `string` }\n### SetUserFlairOptions\nƬ **SetUserFlairOptions**: [`SetFlairOptions`](models.md#setflairoptions) & { `username`: `string` }\n### SubmitCustomPostOptions\nƬ **SubmitCustomPostOptions**: [`CommonSubmitPostOptions`](models.md#commonsubmitpostoptions) & { `preview`: `JSX.Element` }\n### SubmitLinkOptions\nƬ **SubmitLinkOptions**: [`CommonSubmitPostOptions`](models.md#commonsubmitpostoptions) & { `resubmit?`: `boolean` ; `url`: `string` }\n### SubmitMediaOptions\nƬ **SubmitMediaOptions**: [`CommonSubmitPostOptions`](models.md#commonsubmitpostoptions) & { `kind`: `\"image\"` | `\"video\"` | `\"videogif\"` ; `videoPosterUrl`: `string` }\n### SubmitPostOptions",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases, SubredditSettings, Type declaration</path>\nƬ **SubmitPostOptions**: [`SubmitLinkOptions`](models.md#submitlinkoptions) | [`SubmitSelfPostOptions`](models.md#submitselfpostoptions) | [`SubmitCustomPostOptions`](models.md#submitcustompostoptions) | [`SubmitMediaOptions`](models.md#submitmediaoptions) & { `subredditName`: `string` }\n### SubmitSelfPostOptions\nƬ **SubmitSelfPostOptions**: [`PostTextOptions`](models.md#posttextoptions) & [`CommonSubmitPostOptions`](models.md#commonsubmitpostoptions)\n### SubredditData\nƬ **SubredditData**: `Object`\n#### Type declaration\n| Name | Type |\n|---|---|\n| communityIcon? | string |\n| displayName? | string |\n| icon? | string |\n| id? | string |\n| keyColor? | string |\n| lastUpdated? | string |\n| name? | string |\n| primaryColor? | string |\n| subscribers? | number |\n### SubredditSettings\nƬ **SubredditSettings**: `Object`\n#### Type declaration",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases",
+        "SubredditSettings",
+        "Type declaration"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases, SubredditSettings, Type declaration</path>\n| Name | Type | Description |\n|---|---|---|\n| acceptFollowers | boolean | Whether the subreddit accepts followers or not. |\n| allOriginalContent | boolean | Whether all content posted on the subreddit is original. |\n| allowChatPostCreation | boolean | Whether users are allowed to create chat posts on the subreddit. |\n| allowDiscovery | boolean | Whether the subreddit can be discovered through search. |\n| allowGalleries | boolean | Whether the subreddit allows galleries. |\n| allowImages | boolean | Whether the subreddit allows images. |\n| allowPolls | boolean | Whether the subreddit allows polls. |\n| allowPredictionContributors | boolean | Whether contributors are allowed to make predictions on the subreddit. |\n| allowPredictions | boolean | Whether predictions are allowed on the subreddit. |\n| allowPredictionsTournament | boolean | Whether prediction tournaments are allowed on the subreddit. |\n| allowTalks | boolean | Whether talks are allowed on the subreddit. |\n| allowVideoGifs | boolean | Whether video GIFs are allowed on the subreddit. |\n| allowVideos | boolean | Whether videos are allowed on the subreddit. |\n| allowedMediaInComments | CommentMediaTypes[] | List of allowed media types in the comments made in the subreddit. |\n| allowedPostType | \"any\" | \"link\" | \"self\" | The types of post allowed in this subreddit. Either \"any\", \"link\", or \"self\". |\n| bannerBackgroundColor? | string | a 6-digit rgb hex color of the banner e.g. #AABBCC, |\n| bannerBackgroundImage? | string | The background image of the banner. |\n| bannerImage? | string | The URL of the banner image. |\n| chatPostEnabled | boolean | Whether chat posts are enabled on the subreddit. |\n| collectionsEnabled | boolean | Whether collections are enabled on the subreddit. |\n| communityIcon? | string | The URL of the community icon. |\n| crosspostable | boolean | Whether crossposts can be made to this subreddit. |\n| emojisEnabled | boolean | Whether emojis are enabled on the subreddit. |",
+    "metadata": {
+      "type": [
+        "table"
+      ],
+      "level": 4,
+      "path": [
+        "Module: models",
+        "Type Aliases",
+        "SubredditSettings",
+        "Type declaration"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases, SubredditStyles, Type declaration</path>\n| Name | Type | Description |\n|---|---|---|\n| eventPostsEnabled | boolean | Whether event posts are enabled on the subreddit. |\n| headerTitle? | string | The header title. |\n| keyColor? | string | The 6-digit rgb hex color of the subreddit's key color, e.g. #AABBCC |\n| linkFlairEnabled | boolean | Whether link flairs are enabled on the subreddit. |\n| mobileBannerImage? | string | Banner image used on mobile apps. |\n| originalContentTagEnabled | boolean | Whether the Original Content tag is enabled. |\n| postFlairs | FlairSettings | The post flair settings for the subreddit. |\n| primaryColor? | string | The 6-digit rgb hex color of the subreddit's primary color, e.g. #AABBCC |\n| restrictCommenting | boolean | Whether commenting is restricted in the subreddit. |\n| restrictPosting | boolean | Whether posting is restricted in the subreddit. |\n| shouldArchivePosts | boolean | Whether posts in the subreddit should be automatically archived after 6 months. |\n| spoilersEnabled | boolean | Whether the Spoiler tag is enabled. |\n| url | string | HTTP URL to the subreddit |\n| userFlairs | FlairSettings | The user flair settings for the subreddit. |\n| wikiEnabled | boolean | Whether the wiki is enabled for the subreddit. |\n### SubredditStyles\nƬ **SubredditStyles**: `Object`\n#### Type declaration",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases",
+        "SubredditStyles",
+        "Type declaration"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases, UnreadCountResponse, Type declaration</path>\n| Name | Type |\n|---|---|\n| backgroundColor? | string |\n| backgroundImage? | string |\n| backgroundImagePosition? | BackgroundImagePosition |\n| bannerBackgroundColor? | string |\n| bannerBackgroundImage? | string |\n| bannerBackgroundImagePosition? | ImagePosition |\n| bannerCommunityName? | string |\n| bannerCommunityNameFormat? | CommunityNameFormat |\n| bannerHeight? | BannerHeight |\n| bannerOverlayColor? | string |\n| bannerPositionedImage? | string |\n| bannerPositionedImagePosition? | PositionedImagePosition |\n| bannerShowCommunityIcon? | Visibility |\n| highlightColor? | string |\n| icon? | string |\n| legacyBannerBackgroundImage? | string |\n| legacyPrimaryColor? | string |\n| menuBackgroundBlur? | number |\n| menuBackgroundColor? | string |\n| menuBackgroundImage? | string |\n| menuBackgroundOpacity? | number |\n| menuLinkColorActive? | string |\n| menuLinkColorHover? | string |\n| menuLinkColorInactive? | string |\n| menuPosition? | MenuPosition |\n| mobileBannerImage? | string |\n| mobileKeyColor? | string |\n| postBackgroundColor? | string |\n| postBackgroundImage? | string |\n| postBackgroundImagePosition? | ImagePosition |\n| postDownvoteCountColor? | string |\n| postDownvoteIconActive? | string |\n| postDownvoteIconInactive? | string |\n| postPlaceholderImage? | string |\n| postPlaceholderImagePosition? | ImagePosition |\n| postTitleColor? | string |\n| postUpvoteCountColor? | string |\n| postUpvoteIconActive? | string |\n| postUpvoteIconInactive? | string |\n| postVoteIcons? | CustomizationFlag |\n| primaryColor? | string |\n| secondaryBannerPositionedImage? | string |\n| sidebarWidgetBackgroundColor? | string |\n| sidebarWidgetHeaderColor? | string |\n| submenuBackgroundColor? | string |\n| submenuBackgroundStyle? | CustomizationFlag |\n### SubredditType\nƬ **SubredditType**: `\"public\"` | `\"private\"` | `\"restricted\"` | `\"employees_only\"` | `\"gold_restricted\"` | `\"archived\"`\n### UnreadCountResponse\nƬ **UnreadCountResponse**: `Object`\n#### Type declaration",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases",
+        "UnreadCountResponse",
+        "Type declaration"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Type Aliases, UserNote, Type declaration</path>\n| Name | Type |\n|---|---|\n| appeals? | number |\n| archived? | number |\n| filtered? | number |\n| highlighted? | number |\n| inprogress? | number |\n| joinRequests? | number |\n| mod? | number |\n| new? | number |\n| notifications? | number |\n### UpdatePageSettingsOptions\nƬ **UpdatePageSettingsOptions**: `Object`\n#### Type declaration\n| Name | Type | Description |\n|---|---|---|\n| listed | boolean | Whether the page should be listed in the wiki index. |\n| page | string | The name of the page to update settings for. |\n| permLevel | WikiPagePermissionLevel | The permission level for the page. |\n| subredditName | string | The name of the subreddit the page is in. |\n### UpdateWikiPageOptions\nƬ **UpdateWikiPageOptions**: `Object`\n#### Type declaration\n| Name | Type | Description |\n|---|---|---|\n| content | string | The new content of the page. |\n| page | string | The name of the page to update. |\n| reason? | string | The reason for updating the page. |\n| subredditName | string | The name of the subreddit the page is in. |\n### UserFlair\nƬ **UserFlair**: `Object`\n#### Type declaration\n| Name | Type | Description |\n|---|---|---|\n| flairCssClass? | string | The CSS class applied to this flair in the UI. |\n| flairText? | string | The text displayed in the UI for this flair. |\n| user? | string | The username of the user to which this flair is assigned. |\n### UserFlairPageOptions\nƬ **UserFlairPageOptions**: `Object`\n#### Type declaration\n| Name | Type | Description |\n|---|---|---|\n| after? | string | A user id optionally provided which will result in a slice of user flairs, starting after this user, to be returned. |\n| before? | string | A user id optionally provided which will result in a slice of user flairs, starting before this user, to be returned. |\n| limit? | number | A limit to the number of flairs that will be returned. Default: 25, Max: 1000 |\n### UserNote\nƬ **UserNote**: `Object`\n#### Type declaration",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Module: models",
+        "Type Aliases",
+        "UserNote",
+        "Type declaration"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Module: models, Functions, getVaultByUserId, Returns</path>\n| Name | Type |\n|---|---|\n| label? | UserNoteLabel |\n| note? | string |\n| redditId? | T1ID | T3ID | T5ID |\n### UserNoteLabel\nƬ **UserNoteLabel**: `\"BOT_BAN\"` | `\"PERMA_BAN\"` | `\"BAN\"` | `\"ABUSE_WARNING\"` | `\"SPAM_WARNING\"` | `\"SPAM_WATCH\"` | `\"SOLID_CONTRIBUTOR\"` | `\"HELPFUL_USER\"`\n### WithUserData\nƬ **WithUserData**: `Object`\n### Visibility\nƬ **Visibility**: `\"show\"` | `\"hide\"`\n#### Type declaration\n| Name | Type |\n|---|---|\n| user? | ConversationUserData |\n## Functions\n### getModerationLog\n▸ **getModerationLog**(`options`, `metadata`): [`Listing`](../classes/models.Listing.md)<[`ModAction`](../interfaces/models.ModAction.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetModerationLogOptions |\n| metadata | undefined | Metadata |\n#### Returns\n[`Listing`](../classes/models.Listing.md)<[`ModAction`](../interfaces/models.ModAction.md)\\>\n### getSubredditLeaderboard\n▸ **getSubredditLeaderboard**(`subredditId`, `metadata`): `Promise`<[`SubredditLeaderboard`](models.md#subredditleaderboard)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| subredditId | string |\n| metadata | undefined | Metadata |\n#### Returns\n`Promise`<[`SubredditLeaderboard`](models.md#subredditleaderboard)\\>\n### getVaultByAddress\n▸ **getVaultByAddress**(`address`, `metadata`): `Promise`<[`Vault`](models.md#vault)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| address | string |\n| metadata | undefined | Metadata |\n#### Returns\n`Promise`<[`Vault`](models.md#vault)\\>\n### getVaultByUserId\n▸ **getVaultByUserId**(`userId`, `metadata`): `Promise`<[`Vault`](models.md#vault)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| userId | `t2_${string}` |\n| metadata | undefined | Metadata |\n#### Returns\n`Promise`<[`Vault`](models.md#vault)\\>",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Module: models",
+        "Functions",
+        "getVaultByUserId",
+        "Returns"
+      ],
+      "level": 2
+    }
+  }
+]

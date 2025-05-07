@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Type Alias: CommentUpdate</path>\n[**@devvit/public-api v0.12.0-dev**](../README.md)\n# Type Alias: CommentUpdate\n**CommentUpdate** = `\"CommentUpdate\"`\nThe event name for when a comment is updated",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: CommentUpdate"
+      ],
+      "level": 0
+    }
+  }
+]

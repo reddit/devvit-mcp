@@ -1,0 +1,30 @@
+[
+  {
+    "pageContent": "<path>Authentication, Logging in</path>\n# Authentication\nTo publish, install, and manage applications, you must be logged in with a Reddit account. Once you log in, your access token is stored locally at `~/.devvit/token`. Whenever you interact with the CLI, the authentication token is loaded and used for interacting with Devvit’s backend. These tokens are automatically refreshed.\nOnce your app is published, when the app is invoked in the Reddit backend, an access token is automatically issued for the user and is used to interact with the Reddit public API.\n## Logging in\n-   Open up a terminal to log in via the CLI.\n    \n-   Type `devvit login` and press enter.\n    \n-   In the browser window, enter your username and password. If you have two-factor authentication (2FA) enabled, you’ll be prompted to enter your 2FA code. ![Reddit login dialogue](./assets/oauth-login.png)\n    \n-   Press the Allow button on the authorization screen. ![OAuth permissions](./assets/oauth-perms.png)\n    \n-   Once you see the success screen, you can close the browser. ![Succesful OAuth](./assets/oauth-success.png)\n    \n-   If the login was successful, you'll see `Logged in as <username>` in your terminal window.\n    \n-   To confirm your CLI is authenticated, run `devvit whoami` and confirm that your username is returned.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Authentication",
+        "Logging in"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Authentication, Logging out</path>\n## Logging out\nTo logout of your Devvit CLI, run `devvit logout`. This logs out your local system and revokes the issued access token.\nTo remove OAuth access to the devvit CLI entirely, go to your [app preferences](https://www.reddit.com/prefs/apps) and click **revoke access**. ![Revoke Oauth Permissions](./assets/oauth-revoke.png)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "level": 2,
+      "path": [
+        "Authentication",
+        "Logging out"
+      ]
+    }
+  }
+]

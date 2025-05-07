@@ -1,0 +1,35 @@
+[
+  {
+    "pageContent": "<path>Class: ButtonWidget, Constructors, constructor, Overrides</path>\n# Class: ButtonWidget\n[models](../modules/models.md).ButtonWidget\n## Hierarchy\n-   [`Widget`](models.Widget.md)\n    \n    ↳ **`ButtonWidget`**\n## Table of contents\n### Constructors\n-   [constructor](models.ButtonWidget.md#constructor)\n### Accessors\n-   [buttons](models.ButtonWidget.md#buttons)\n-   [description](models.ButtonWidget.md#description)\n-   [id](models.ButtonWidget.md#id)\n-   [name](models.ButtonWidget.md#name)\n-   [styles](models.ButtonWidget.md#styles)\n-   [subredditName](models.ButtonWidget.md#subredditname)\n### Methods\n-   [delete](models.ButtonWidget.md#delete)\n-   [toJSON](models.ButtonWidget.md#tojson)\n## Constructors\n### constructor\n• **new ButtonWidget**(`widgetData`, `subredditName`, `metadata`): [`ButtonWidget`](models.ButtonWidget.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| widgetData | GetWidgetsResponse_WidgetItem |\n| subredditName | string |\n| metadata | undefined | Metadata |\n#### Returns\n[`ButtonWidget`](models.ButtonWidget.md)\n#### Overrides\n[Widget](models.Widget.md).[constructor](models.Widget.md#constructor)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: ButtonWidget",
+        "Constructors",
+        "constructor",
+        "Overrides"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: ButtonWidget, Methods, toJSON, Overrides</path>\n## Accessors\n### buttons\n• `get` **buttons**(): `WidgetButton`\\[\\]\n#### Returns\n`WidgetButton`\\[\\]\n### description\n• `get` **description**(): `string`\n#### Returns\n`string`\n### id\n• `get` **id**(): `string`\n#### Returns\n`string`\n#### Inherited from\nWidget.id\n### name\n• `get` **name**(): `string`\n#### Returns\n`string`\n#### Inherited from\nWidget.name\n### styles\n• `get` **styles**(): `WidgetStyles`\n#### Returns\n`WidgetStyles`\n### subredditName\n• `get` **subredditName**(): `string`\n#### Returns\n`string`\n#### Inherited from\nWidget.subredditName\n## Methods\n### delete\n▸ **delete**(): `Promise`<`void`\\>\n#### Returns\n`Promise`<`void`\\>\n#### Inherited from\n[Widget](models.Widget.md).[delete](models.Widget.md#delete)\n### toJSON\n▸ **toJSON**(): `Pick`<[`Widget`](models.Widget.md), `\"name\"` | `\"subredditName\"` | `\"id\"`\\> & `Pick`<[`ButtonWidget`](models.ButtonWidget.md), `\"description\"` | `\"styles\"` | `\"buttons\"`\\>\n#### Returns\n`Pick`<[`Widget`](models.Widget.md), `\"name\"` | `\"subredditName\"` | `\"id\"`\\> & `Pick`<[`ButtonWidget`](models.ButtonWidget.md), `\"description\"` | `\"styles\"` | `\"buttons\"`\\>\n#### Overrides\n[Widget](models.Widget.md).[toJSON](models.Widget.md#tojson)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: ButtonWidget",
+        "Methods",
+        "toJSON",
+        "Overrides"
+      ],
+      "level": 2
+    }
+  }
+]

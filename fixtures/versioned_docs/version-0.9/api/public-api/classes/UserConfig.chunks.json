@@ -1,0 +1,19 @@
+[
+  {
+    "pageContent": "<path>Class: UserConfig, Methods, get, Returns</path>\n# Class: UserConfig\nHelper class to add and manage configuration to your actor. Saves and loads all values to a KVStore with JSON encoding.\n## Table of contents\n### Constructors\n-   [constructor](UserConfig.md#constructor)\n### Methods\n-   [builder](UserConfig.md#builder)\n-   [get](UserConfig.md#get)\n## Constructors\n### constructor\n• **new UserConfig**(`storage?`)\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| storage | KVStore | provide a custom KVStore or use the system default |\n## Methods\n### builder\n▸ **builder**(): [`ConfigFormBuilder`](ConfigFormBuilder.md)\n#### Returns\n[`ConfigFormBuilder`](ConfigFormBuilder.md)\n### get\n▸ **get**(`key`): `Promise`< `unknown`\\>\nRetrieve a value from user configuration\n#### Parameters\n| Name | Type |\n|---|---|\n| key | string |\n#### Returns\n`Promise`< `unknown`\\>",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: UserConfig",
+        "Methods",
+        "get",
+        "Returns"
+      ],
+      "level": 1
+    }
+  }
+]

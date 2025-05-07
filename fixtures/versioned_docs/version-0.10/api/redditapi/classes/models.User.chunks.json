@@ -1,0 +1,54 @@
+[
+  {
+    "pageContent": "<path>Class: User, Accessors, permalink</path>\n# Class: User\n[models](../modules/models.md).User\nA class representing a user.\n## Table of contents\n### Accessors\n-   [commentKarma](models.User.md#commentkarma)\n-   [createdAt](models.User.md#createdat)\n-   [id](models.User.md#id)\n-   [isAdmin](models.User.md#isadmin)\n-   [linkKarma](models.User.md#linkkarma)\n-   [modPermissions](models.User.md#modpermissions)\n-   [nsfw](models.User.md#nsfw)\n-   [permalink](models.User.md#permalink)\n-   [url](models.User.md#url)\n-   [username](models.User.md#username)\n### Methods\n-   [getComments](models.User.md#getcomments)\n-   [getModPermissionsForSubreddit](models.User.md#getmodpermissionsforsubreddit)\n-   [getPosts](models.User.md#getposts)\n-   [getSnoovatarUrl](models.User.md#getsnoovatarurl)\n-   [getUserFlairBySubreddit](models.User.md#getuserflairbysubreddit)\n-   [getSocialLinks](models.User.md#getsociallinks)\n-   [toJSON](models.User.md#tojson)\n## Accessors\n### commentKarma\n• `get` **commentKarma**(): `number`\nThe amount of comment karma the user has.\n#### Returns\n`number`\n### createdAt\n• `get` **createdAt**(): `Date`\nThe date the user was created.\n#### Returns\n`Date`\n### id\n• `get` **id**(): \\`t2\\_${string}\\`\nThe ID (starting with t2\\_) of the user to retrieve.\n#### Returns\n\\`t2\\_${string}\\`\n**`Example`**\n```ts\n't2_1w72';\n```\n### isAdmin\n• `get` **isAdmin**(): `boolean`\nWhether the user is admin.\n#### Returns\n`boolean`\n### linkKarma\n• `get` **linkKarma**(): `number`\nThe amount of link karma the user has.\n#### Returns\n`number`\n### modPermissions\n• `get` **modPermissions**(): `Map`<`string`, [`ModeratorPermission`](../modules/models.md#moderatorpermission)\\[\\]>\nThe permissions the user has on the subreddit.\n#### Returns\n`Map`<`string`, [`ModeratorPermission`](../modules/models.md#moderatorpermission)\\[\\]>\n### nsfw\n• `get` **nsfw**(): `boolean`\nWhether the user's profile is marked as NSFW (Not Safe For Work).\n#### Returns\n`boolean`\n### permalink\n• `get` **permalink**(): `string`",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Class: User",
+        "Accessors",
+        "permalink"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: User, Methods, getUserFlairBySubreddit, Parameters</path>\nReturns a permalink path relative to [https://www.reddit.com](https://www.reddit.com)\n#### Returns\n`string`\n### url\n• `get` **url**(): `string`\nReturns the HTTP URL for the user\n#### Returns\n`string`\n### username\n• `get` **username**(): `string`\nThe username of the user omitting the u/.\n#### Returns\n`string`\n**`Example`**\n```ts\n'spez';\n```\n## Methods\n### getComments\n▸ **getComments**(`options`): [`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\nGet the user's comments.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | Omit<GetCommentsByUserOptions, \"username\"> | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`Comment`](models.Comment.md)\\>\nA Listing of Comment objects.\n### getModPermissionsForSubreddit\n▸ **getModPermissionsForSubreddit**(`subredditName`): `Promise`<[`ModeratorPermission`](../modules/models.md#moderatorpermission)\\[\\]>\nGet the mod permissions the user has on the subreddit if they are a moderator.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| subredditName | string | name of the subreddit |\n#### Returns\n`Promise`<[`ModeratorPermission`](../modules/models.md#moderatorpermission)\\[\\]>\nthe moderator permissions the user has on the subreddit\n### getPosts\n▸ **getPosts**(`options`): [`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\nGet the user's posts.\n#### Parameters\n| Name | Type | Description |\n|---|---|---|\n| options | Omit<GetPostsByUserOptions, \"username\"> | Options for the request |\n#### Returns\n[`Listing`](models.Listing.md)<[`Post`](models.Post.md)\\>\nA Listing of Post objects.\n### getSnoovatarUrl\n▸ **getSnoovatarUrl**(): `Promise`<`undefined` | `string`\\>\n#### Returns\n`Promise`<`undefined` | `string`\\>\n### getUserFlairBySubreddit\n▸ **getUserFlairBySubreddit**(`subreddit`): `Promise`<`undefined` | [`UserFlair`](../modules/models.md#userflair)\\>\nRetrieve the user's flair for the subreddit.\n#### Parameters",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code",
+        "table"
+      ],
+      "path": [
+        "Class: User",
+        "Methods",
+        "getUserFlairBySubreddit",
+        "Parameters"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: User, Methods, toJSON, Returns</path>\n| Name | Type | Description |\n|---|---|---|\n| subreddit | string | The name of the subreddit associated with the user's flair. |\n#### Returns\n`Promise`<`undefined` | [`UserFlair`](../modules/models.md#userflair)\\>\n**`Example`**\n```ts\nconst username = 'badapple';\nconst subredditName = 'mysubreddit';\nconst user = await reddit.getUserByUsername(username);\nconst userFlair = await user.getUserFlairBySubreddit(subredditName);\n```\n### getSocialLinks\n▸ **getSocialLinks**(): `Promise`<[`UserSocialLink`](../modules/models.md#usersociallink)\\[\\]>\nGets social links of the user\n#### Returns\n`Promise`<[`UserSocialLink`](../modules/models.md#usersociallink)\\[\\]>\nA Promise that resolves an Array of UserSocialLink objects\n**`Example`**\n```ts\nconst socialLinks = await user.getSocialLinks();\n```\n### toJSON\n▸ **toJSON**(): `Pick`<[`User`](models.User.md), `\"username\"` | `\"id\"` | `\"nsfw\"` | `\"createdAt\"` | `\"linkKarma\"` | `\"commentKarma\"`\\> & { `modPermissionsBySubreddit`: `Record`<`string`, [`ModeratorPermission`](../modules/models.md#moderatorpermission)\\[\\]> }\n#### Returns\n`Pick`<[`User`](models.User.md), `\"username\"` | `\"id\"` | `\"nsfw\"` | `\"createdAt\"` | `\"linkKarma\"` | `\"commentKarma\"`\\> & { `modPermissionsBySubreddit`: `Record`<`string`, [`ModeratorPermission`](../modules/models.md#moderatorpermission)\\[\\]> }",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Class: User",
+        "Methods",
+        "toJSON",
+        "Returns"
+      ],
+      "level": 3
+    }
+  }
+]

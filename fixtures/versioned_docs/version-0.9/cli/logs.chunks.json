@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>devvit logs, devvit logs SUBREDDIT</path>\n# devvit logs\nStreams logs for an installation\n-   [`devvit logs SUBREDDIT`](#devvit-logs-appname-subreddit)\n## devvit logs SUBREDDIT\nStreams logs for an installation\n```\nUSAGE\n  $ devvit logs SUBREDDIT [APPNAME] [-d <value>] [-j] [-s <value>]\n\nARGUMENTS\n  APPNAME    app name\n  SUBREDDIT  subreddit name\n\nFLAGS\n  -d, --dateformat=<value>\n      [default: MMM d HH:mm:ss] Format for rendering dates. See https://date-fns.org/v2.29.3/docs/format for format\n      options\n\n  -j, --json\n      output JSON for each log line\n\n  -s, --since=<value>\n      [default: 0m] when to start the logs from. example \"15s\", \"2w1d\" \"30m\"\n      Supported format:\n      w: weeks\n      d: days\n      h: hours\n      m: minutes\n      s: seconds\n\nDESCRIPTION\n  Streams logs for an installation\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "devvit logs",
+        "devvit logs SUBREDDIT"
+      ],
+      "level": 1
+    }
+  }
+]

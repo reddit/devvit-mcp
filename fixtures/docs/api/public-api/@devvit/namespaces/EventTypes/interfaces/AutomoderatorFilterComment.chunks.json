@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: AutomoderatorFilterComment, Properties, subreddit?</path>\n[**@devvit/public-api v0.11.15-dev**](../../../../README.md)\n# Interface: AutomoderatorFilterComment\n## Properties\n### author\n**author**: `string`\n### comment?\n`optional` **comment**: `CommentV2`\n### reason\n**reason**: `string`\n### removedAt?\n`optional` **removedAt**: `Date`\n### subreddit?\n`optional` **subreddit**: `SubredditV2`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Interface: AutomoderatorFilterComment",
+        "Properties",
+        "subreddit?"
+      ],
+      "level": 0
+    }
+  }
+]

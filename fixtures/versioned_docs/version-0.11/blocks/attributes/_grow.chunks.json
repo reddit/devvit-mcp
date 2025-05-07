@@ -1,0 +1,12 @@
+[
+  {
+    "pageContent": "<path></path>\nA `boolean` that allows the block to expand to fill all available space along the axis of its parent container if set to true. Possible values:\n-   `true`\n-   `false`: The default if the attribute is not used.\nHas no effect inside a `<zstack>`.",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 0,
+      "path": []
+    }
+  }
+]

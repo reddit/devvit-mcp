@@ -1,0 +1,35 @@
+[
+  {
+    "pageContent": "<path>Class: CustomWidget, Constructors, constructor, Overrides</path>\n# Class: CustomWidget\n[models](../modules/models.md).CustomWidget\n## Hierarchy\n-   [`Widget`](models.Widget.md)\n    \n    ↳ **`CustomWidget`**\n## Table of contents\n### Constructors\n-   [constructor](models.CustomWidget.md#constructor)\n### Accessors\n-   [css](models.CustomWidget.md#css)\n-   [height](models.CustomWidget.md#height)\n-   [id](models.CustomWidget.md#id)\n-   [images](models.CustomWidget.md#images)\n-   [name](models.CustomWidget.md#name)\n-   [stylesheetUrl](models.CustomWidget.md#stylesheeturl)\n-   [subredditName](models.CustomWidget.md#subredditname)\n-   [text](models.CustomWidget.md#text)\n### Methods\n-   [delete](models.CustomWidget.md#delete)\n-   [toJSON](models.CustomWidget.md#tojson)\n## Constructors\n### constructor\n• **new CustomWidget**(`widgetData`, `subredditName`, `metadata`): [`CustomWidget`](models.CustomWidget.md)\n#### Parameters\n| Name | Type |\n|---|---|\n| widgetData | GetWidgetsResponse_WidgetItem |\n| subredditName | string |\n| metadata | undefined | Metadata |\n#### Returns\n[`CustomWidget`](models.CustomWidget.md)\n#### Overrides\n[Widget](models.Widget.md).[constructor](models.Widget.md#constructor)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "table"
+      ],
+      "path": [
+        "Class: CustomWidget",
+        "Constructors",
+        "constructor",
+        "Overrides"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: CustomWidget, Methods, toJSON, Overrides</path>\n## Accessors\n### css\n• `get` **css**(): `string`\n#### Returns\n`string`\n### height\n• `get` **height**(): `number`\n#### Returns\n`number`\n### id\n• `get` **id**(): `string`\n#### Returns\n`string`\n#### Inherited from\nWidget.id\n### images\n• `get` **images**(): `WidgetImage`\\[\\]\n#### Returns\n`WidgetImage`\\[\\]\n### name\n• `get` **name**(): `string`\n#### Returns\n`string`\n#### Inherited from\nWidget.name\n### stylesheetUrl\n• `get` **stylesheetUrl**(): `string`\n#### Returns\n`string`\n### subredditName\n• `get` **subredditName**(): `string`\n#### Returns\n`string`\n#### Inherited from\nWidget.subredditName\n### text\n• `get` **text**(): `string`\n#### Returns\n`string`\n## Methods\n### delete\n▸ **delete**(): `Promise`<`void`\\>\n#### Returns\n`Promise`<`void`\\>\n#### Inherited from\n[Widget](models.Widget.md).[delete](models.Widget.md#delete)\n### toJSON\n▸ **toJSON**(): `Pick`<[`Widget`](models.Widget.md), `\"name\"` | `\"subredditName\"` | `\"id\"`\\> & `Pick`<[`CustomWidget`](models.CustomWidget.md), `\"text\"` | `\"height\"` | `\"images\"` | `\"stylesheetUrl\"` | `\"css\"`\\>\n#### Returns\n`Pick`<[`Widget`](models.Widget.md), `\"name\"` | `\"subredditName\"` | `\"id\"`\\> & `Pick`<[`CustomWidget`](models.CustomWidget.md), `\"text\"` | `\"height\"` | `\"images\"` | `\"stylesheetUrl\"` | `\"css\"`\\>\n#### Overrides\n[Widget](models.Widget.md).[toJSON](models.Widget.md#tojson)",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: CustomWidget",
+        "Methods",
+        "toJSON",
+        "Overrides"
+      ],
+      "level": 2
+    }
+  }
+]

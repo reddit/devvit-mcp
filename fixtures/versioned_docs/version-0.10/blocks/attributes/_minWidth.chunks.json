@@ -1,0 +1,12 @@
+[
+  {
+    "pageContent": "<path></path>\nPrevents the used value of `width` from becoming smaller than the minimum width if set.",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 0,
+      "path": []
+    }
+  }
+]

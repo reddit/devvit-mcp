@@ -1,0 +1,93 @@
+[
+  {
+    "pageContent": "<path>Optimizing performance, Make the initial render faster</path>\n# Optimizing performance\nYou may want to optimize your app to make it run faster, use resources more efficiently, or just create a better user experience. Here are some ways to improve performance.\n## Make the initial render faster\nLook at the render function of this experience post.\n```tsx\nimport { Devvit, useState } from '@devvit/public-api';\n\nrender: (context) => {\n  const [postInfo] = useState(async () => {\n    return await getThreadInfo(context);\n  });\n\n  const [user] = useState(async () => {\n    return await getUser(context);\n  });\n\n  const [weather] = useState(async () => {\n    return await getTheWeather(context);\n  });\n\n  const [leaderboardStats] = useState(async () => {\n    return await getLeaderboard(context);\n  });\n\n  // the rest of the render function\n};\n```\nYou can see that the app fetches data about the post, the user, the weather, and the leaderboard stats. In Devvit, the first [render](rendering_apps.md) happens on the server side, and all four data requests need to be resolved before the app can be rendered for the user.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "Optimizing performance",
+        "Make the initial render faster"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Optimizing performance, Make the initial render faster</path>\nIf each request takes roughly 250 ms, then four requests will take around 1 second to resolve. But, If we make these requests in parallel, it’ll take 250 ms to resolve all four!\nTo achieve this, you can:\n-   use [`useAsync`](/docs/working_with_useasync.md) to make everything non-blocking\n-   use [Promise.all](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) inside of one `useState` to get all of the information as once\n:::note The difference between these two methods is that `useState` will block render until it is resolved whereas `useAsync` will allow the app to render immediately. By rendering the app immediately, you will need to add `loading` states while the requests resolve.\n`useAsync` is the best choice for performance as it allows you to render parts of your application while others may still be loading. :::\nHere’s how the optimized version looks for `useAsync`:\n```tsx\nimport { Devvit, useAsync } from '@devvit/public-api';\n\nconst { data: postInfo, loading: postInfoLoading } = useAsync(async () => {\n  return await getThreadInfo(context);\n});\n\nconst { data: user, loading: userLoading } = useAsync(async () => {\n  return await getUser(context);\n});\n\nconst { data: weather, loading: weatherLoading } = useAsync(async () => {\n  return await getTheWeather(context);\n});\n\nconst { data: leaderboardStats, loading: leaderboardStatsLoading } = useAsync(async () => {\n  return await getLeaderboard(context);\n});\n```",
+    "metadata": {
+      "type": [
+        "text",
+        "code"
+      ],
+      "level": 2,
+      "path": [
+        "Optimizing performance",
+        "Make the initial render faster"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Optimizing performance, Fetch data for multiple users</path>\nand for `useState`:\n```tsx\nimport { Devvit, useState } from '@devvit/public-api';\n\nrender: (context) => {\n  const [appState, setAppState] = useState(async () => {\n    const [postInfo, user, weather, leaderboardStats] = await Promise.all([\n      getThreadInfo(context),\n      getUser(context),\n      getTheWeather(context),\n      getLeaderboard(context),\n    ]);\n    return {\n      postInfo,\n      user,\n      weather,\n      leaderboardStats,\n    };\n  });\n\n  const { postInfo, user, weather, leaderboardStats } = appState;\n\n  // the rest of the render function\n};\n```\nYou can see the app gets the same variables from the state object, which means that you won’t need to change the way you access the data from the state in the rest of the app.\n:::note If you need to update one of the state props, instead of `setPostInfo(newPostInfo)` you’ll need to do `setAppState({...appState, postInfo: newPostInfo})`. :::\n## Fetch data for multiple users\nImagine your app needs to get data from an external resource, such as a weather API. The code would look like this:",
+    "metadata": {
+      "type": [
+        "text",
+        "code",
+        "heading"
+      ],
+      "path": [
+        "Optimizing performance",
+        "Fetch data for multiple users"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Optimizing performance, Fetch data for multiple users, Use cache helper</path>\n```tsx\nimport { Devvit, useState } from '@devvit/public-api';\n\nconst [externalData] = useState(async (async) => {\n  const response = await fetch('https://external.weather.com');\n\n  return await response.json();\n});\n```\n### Request overload\nThe [state](rendering_apps.md#state-variables) is initialized for each user that sees the app. This means that in a large subreddit, where thousands of users can see the post at the same time, your app would make thousands of requests to the external resource. This can put unnecessary pressure on the external resource or drain your request quota for the resource (if there is one). Some requests are just slow by their nature, so you might want to minimize the amount of duplicate requests to external resources.\nThis situation gets even worse if you request the data in an interval, like to get a game score or stock market information, because the load repeats on each interval tick.\n### Use cache helper\nTo address these issues, you can use the [cache helper](./capabilities/cache.md). This lets the app make one request for the data, saves the response and provides this response to all users requesting the same data.\nIn addition to the request you’d like to optimize, cache helper needs two parameters:\n-   `key` is a string that is used to distinguish between different cached responses. Instead of making a real request, the app gets the response from cache using the key you provide. Just make sure to use different keys for different data (like if you’re saving post-specific data, add the postId to the cache key like `post_data_${postId}`).\n-   `ttl` (time to live) is the number of milliseconds during which the cached response is expected to be relevant. Once it expires, the cached response will be voided and a real request is made to populate the cache again. You can treat it as a threshold, where `ttl` of 30000 would mean that a request is done no more than once per 30 seconds.",
+    "metadata": {
+      "type": [
+        "code",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Optimizing performance",
+        "Fetch data for multiple users",
+        "Use cache helper"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Optimizing performance, Update the client state without intervals, With realtime</path>\n:::note **Do not cache sensitive information**. Cache helper randomly selects one user to make the real request and saves the response to the cache for others to use. You should only use cache helper for non-personalized fetches, since the same response is available to all users. :::\n## Update the client state without intervals\nImagine you have a game with a leaderboard. When a user wins and their score is saved, the leaderboard needs to update immediately for all active sessions. One way to achieve this is to set an interval to fetch leaderboard stats as often as possible, but making a request in the interval would trigger the circuit breaker and affect the performance of the app. In addition, each time a user viewed the app, it would spam the leaderboard database in an attempt to get the latest data.\nTo achieve the best performance in this scenario, you can use [realtime](./capabilities/realtime.md) to send the leaderboard stats to all users directly.\n### Without realtime\nBefore using realtime, the leaderboard fetching code looked like this:\n```tsx\nconst getLeaderboard = async () =>\n  await context.redis.zRange('leaderboard', 0, 5, {\n    reverse: true,\n    by: 'rank',\n  });\n\nconst [leaderboard, setLeaderboard] = useState(async () => {\n  return await getLeaderboard();\n});\n\nconst leaderboardInterval = useInterval(async () => {\n  const newLeaderboard = await getLeaderboard();\n  setLeaderboard(newLeaderboard);\n}, 1000);\n```\nAnd code for setting the leaderboard looked like this:\n```tsx\nawait context.redis.zAdd('leaderboard', { member: `${username}:${datetime}`, score: gameScore });\n```\n### With realtime\nUsing realtime, you can fetch the leaderboard during the initial render and emit the new leaderboard state when the user completes the game.\nThis is the updated game completion code:",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Optimizing performance",
+        "Update the client state without intervals",
+        "With realtime"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Optimizing performance, Update the client state without intervals, With realtime</path>\n```tsx\nawait context.redis.zAdd('leaderboard', { member: `${username}:${datetime}`, score: gameScore }); // stays as is\nconst newLeaderboard = await getLeaderboard();\ncontext.realtime.send('leaderboard_updates', newLeaderboard);\n```\nNow replace the interval with the realtime subscription:\n```tsx\nconst [leaderboard, setLeaderboard] = useState(async () => {\n  return await getLeaderboard();\n}); // stays as is\n\nconst channel = useChannel({\n  name: 'leaderboard_updates',\n  onMessage: (newLeaderboard) => {\n    setLeaderboard(newLeaderboard);\n  },\n});\n```\nUsing realtime ensures that extra requests will not impact your app’s performance, and the app only emits the event when the data has changed.",
+    "metadata": {
+      "type": [
+        "code",
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Optimizing performance",
+        "Update the client state without intervals",
+        "With realtime"
+      ]
+    }
+  }
+]

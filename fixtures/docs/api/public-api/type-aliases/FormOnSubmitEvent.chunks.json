@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: FormOnSubmitEvent<T>, Properties, values</path>\n[**@devvit/public-api v0.11.15-dev**](../README.md)\n# Type Alias: FormOnSubmitEvent<T>\n**FormOnSubmitEvent**<`T`\\> = `object`\n## Type Parameters\n### T\n`T` _extends_ `Partial`<[`JSONObject`](JSONObject.md)\\>\n## Properties\n### values\n**values**: `T`\nThe form values that were submitted",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: FormOnSubmitEvent<T>",
+        "Properties",
+        "values"
+      ],
+      "level": 0
+    }
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "pageContent": "<path>How to migrate the KV store to Redis</path>\n# How to migrate the KV store to Redis\nMigrating your app to the Redis plugin is easy! If your app is already using the key value store plugin, use the following steps to migrate to the Redis plugin.\n-   From the terminal, navigate to the directory where you store your project.\n-   Open `main.ts` or `main.tsx` in your code editor.\n-   Add the Redis plugin\n```tsx\nDevvit.configure({\n  redis: true,\n});\n```\n-   In your app code, replace the following commands:\n-   Change `kvStore.put` to `redis.set`\n-   Change `kvStore.get` to `redis.get`\n-   Change `kvStore.delete` with `redis.del`\n-   `kvStore.list` can be replaced with redis hash or sorted set usage. Example migration patterns:\n-   Use `redis.hscan` if your app is retrieving key-value pairs based on a matched pattern. Alternate iteration methods like `redis.hgetall` and `redis.hkeys` might also fit your usecase. See the **Redis Hash Migration** for more details.\n-   If you're implementing a leaderboard by listing all the keys and sorting them in memory - use `redis.zadd` and `redis.zrange` to leverage the redis data-structure custom built for this usecase.\n-   If your app is periodically listing all the keys and deleting older keys based on a stored timestamp, use `redis.expire` to set a key expiration and simplify your code - no periodic listing is necessary.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "level": 1,
+      "path": [
+        "How to migrate the KV store to Redis"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Redis Hash Migration</path>\n-   Save your changes.\n-   Upload the new version of your app and update existing installations.\n# Redis Hash Migration\nA custom menu action to migrate all your KV store items to a Redis Hash\n```tsx\nimport { Devvit } from '@devvit/public-api';\n\nDevvit.configure({\n  redis: true,\n  kvStore: true,\n});\n\nDevvit.addMenuItem({\n  location: 'subreddit',\n  label: 'Migrate KV Store to Redis Hash',\n  onPress: async (_, { redis, ui, kvStore }) => {\n    const keys = await kvStore.list();\n    const hashKey = 'custom_hash_key'; // define your hash key here\n    keys.forEach(async (key) => {\n      const value = await kvStore.get(key);\n      if (value) {\n        console.log(`setting field: ${key} with value: ${value} in hash: ${hashKey}`);\n        await redis.hset(hashKey, { [key]: value as string });\n      }\n    });\n    // Verify the redis hash contents\n    const items = await redis.hgetall(hashKey);\n    if (items) {\n      for (const key in items) {\n        console.log(`redis hash contains field: ${key} and value: ${items[key]}`);\n      }\n    }\n    // Now you can start using hget/hset methods for reads and writes\n    // to the custom redis hash. And iterate with hscan, hgetall and hkeys.\n    ui.showToast(`Completed redis hash migration`);\n  },\n});\n\nexport default Devvit;\n```",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Redis Hash Migration"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Troubleshooting</path>\n# Troubleshooting\n-   When apps use `kvStore.list` - safe execution in a multi-tenant environment is not guaranteed - it causes CPU spikes and blocks other Redis commands from running at the same time. We recommend using Redis Hashes instead, each hash can store upto 4.2 billion key value pairs and a combination of `hscan`, `hgetall` and `hkeys` can be used for iteration. Please reach out to us in Discord - we can help adapt your existing data model to use Redis and improve performance and reliability of your app.\n-   `kvStore.put` encodes the values with `JSON.stringify` and `kvStore.get` does `JSON.parse` to obtain the original data. If you are seeing returned values from `redis.get` wrapped in additional quotes during migration - add a try/catch block with `JSON.parse` to resolve the issue.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "level": 1,
+      "path": [
+        "Troubleshooting"
+      ]
+    }
+  }
+]

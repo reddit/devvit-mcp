@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Type Alias: UserNoteLabel</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Type Alias: UserNoteLabel\n**UserNoteLabel** = `\"BOT_BAN\"` | `\"PERMA_BAN\"` | `\"BAN\"` | `\"ABUSE_WARNING\"` | `\"SPAM_WARNING\"` | `\"SPAM_WATCH\"` | `\"SOLID_CONTRIBUTOR\"` | `\"HELPFUL_USER\"`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: UserNoteLabel"
+      ],
+      "level": 0
+    }
+  }
+]

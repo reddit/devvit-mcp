@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: SetUserFlairOptions, Properties, username</path>\n# Interface: SetUserFlairOptions\n## Hierarchy\n-   [`SetFlairOptions`](SetFlairOptions.md)\n    \n    ↳ **`SetUserFlairOptions`**\n## Table of contents\n### Properties\n-   [backgroundColor](SetUserFlairOptions.md#backgroundcolor)\n-   [cssClass](SetUserFlairOptions.md#cssclass)\n-   [flairTemplateId](SetUserFlairOptions.md#flairtemplateid)\n-   [subredditName](SetUserFlairOptions.md#subredditname)\n-   [text](SetUserFlairOptions.md#text)\n-   [textColor](SetUserFlairOptions.md#textcolor)\n-   [username](SetUserFlairOptions.md#username)\n## Properties\n### backgroundColor\n• `Optional` **backgroundColor**: `string`\nThe flair background color. Either 'transparent' or a hex color code. e.g. #FFC0CB\n#### Inherited from\n[SetFlairOptions](SetFlairOptions.md).[backgroundColor](SetFlairOptions.md#backgroundcolor)\n### cssClass\n• `Optional` **cssClass**: `string`\nThe flair CSS class\n#### Inherited from\n[SetFlairOptions](SetFlairOptions.md).[cssClass](SetFlairOptions.md#cssclass)\n### flairTemplateId\n• `Optional` **flairTemplateId**: `string`\nThe flair template's ID\n#### Inherited from\n[SetFlairOptions](SetFlairOptions.md).[flairTemplateId](SetFlairOptions.md#flairtemplateid)\n### subredditName\n• **subredditName**: `string`\nThe name of the subreddit of the item to set the flair on\n#### Inherited from\n[SetFlairOptions](SetFlairOptions.md).[subredditName](SetFlairOptions.md#subredditname)\n### text\n• `Optional` **text**: `string`\nThe flair text\n#### Inherited from\n[SetFlairOptions](SetFlairOptions.md).[text](SetFlairOptions.md#text)\n### textColor\n• `Optional` **textColor**: [`FlairTextColor`](../README.md#flairtextcolor)\nThe flair text color. Either 'dark' or 'light'.\n#### Inherited from\n[SetFlairOptions](SetFlairOptions.md).[textColor](SetFlairOptions.md#textcolor)\n### username\n• **username**: `string`\nThe username of the user to set the flair on",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Interface: SetUserFlairOptions",
+        "Properties",
+        "username"
+      ],
+      "level": 1
+    }
+  }
+]

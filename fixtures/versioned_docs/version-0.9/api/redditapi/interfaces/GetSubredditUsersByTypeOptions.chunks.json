@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: GetSubredditUsersByTypeOptions, Properties, username</path>\n# Interface: GetSubredditUsersByTypeOptions\n## Hierarchy\n-   [`ListingFetchOptions`](ListingFetchOptions.md)\n    \n    ↳ **`GetSubredditUsersByTypeOptions`**\n## Table of contents\n### Properties\n-   [after](GetSubredditUsersByTypeOptions.md#after)\n-   [before](GetSubredditUsersByTypeOptions.md#before)\n-   [limit](GetSubredditUsersByTypeOptions.md#limit)\n-   [more](GetSubredditUsersByTypeOptions.md#more)\n-   [pageSize](GetSubredditUsersByTypeOptions.md#pagesize)\n-   [subredditName](GetSubredditUsersByTypeOptions.md#subredditname)\n-   [type](GetSubredditUsersByTypeOptions.md#type)\n-   [username](GetSubredditUsersByTypeOptions.md#username)\n## Properties\n### after\n• `Optional` **after**: `string`\n#### Inherited from\n[ListingFetchOptions](ListingFetchOptions.md).[after](ListingFetchOptions.md#after)\n### before\n• `Optional` **before**: `string`\n#### Inherited from\n[ListingFetchOptions](ListingFetchOptions.md).[before](ListingFetchOptions.md#before)\n### limit\n• `Optional` **limit**: `number`\n#### Inherited from\n[ListingFetchOptions](ListingFetchOptions.md).[limit](ListingFetchOptions.md#limit)\n### more\n• `Optional` **more**: [`MoreObject`](MoreObject.md)\n#### Inherited from\n[ListingFetchOptions](ListingFetchOptions.md).[more](ListingFetchOptions.md#more)\n### pageSize\n• `Optional` **pageSize**: `number`\n#### Inherited from\n[ListingFetchOptions](ListingFetchOptions.md).[pageSize](ListingFetchOptions.md#pagesize)\n### subredditName\n• **subredditName**: `string`\n### type\n• **type**: `\"banned\"` | `\"muted\"` | `\"wikibanned\"` | `\"contributors\"` | `\"wikicontributors\"` | `\"moderators\"`\n### username\n• `Optional` **username**: `string`",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Interface: GetSubredditUsersByTypeOptions",
+        "Properties",
+        "username"
+      ],
+      "level": 1
+    }
+  }
+]

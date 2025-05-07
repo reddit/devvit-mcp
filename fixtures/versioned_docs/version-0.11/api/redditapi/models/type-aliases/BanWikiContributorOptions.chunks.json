@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: BanWikiContributorOptions, Properties, username</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Type Alias: BanWikiContributorOptions\n**BanWikiContributorOptions** = `object`\n## Properties\n### duration?\n`optional` **duration**: `number`\n### note?\n`optional` **note**: `string`\n### reason?\n`optional` **reason**: `string`\n### subredditName\n**subredditName**: `string`\n### username\n**username**: `string`",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: BanWikiContributorOptions",
+        "Properties",
+        "username"
+      ],
+      "level": 0
+    }
+  }
+]

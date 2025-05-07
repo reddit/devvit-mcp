@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>devvit docs, devvit docs</path>\n# devvit docs\nOpen the Reddit Developer Platform documentation in your browser\n-   [`devvit docs`](#devvit-docs)\n## devvit docs\nOpen the Reddit Developer Platform documentation in your browser\n```\nUSAGE\n  $ devvit docs\n\nDESCRIPTION\n  Open the Reddit Developer Platform documentation in your browser\n```",
+    "metadata": {
+      "type": [
+        "heading",
+        "text",
+        "code"
+      ],
+      "path": [
+        "devvit docs",
+        "devvit docs"
+      ],
+      "level": 1
+    }
+  }
+]

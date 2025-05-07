@@ -1,0 +1,110 @@
+[
+  {
+    "pageContent": "<path>Class: Subreddit, Table of contents</path>\n# Class: Subreddit\nA class representing a subreddit.\n## Table of contents\n### Accessors\n-   [createdAt](Subreddit.md#createdat)\n-   [description](Subreddit.md#description)\n-   [id](Subreddit.md#id)\n-   [language](Subreddit.md#language)\n-   [name](Subreddit.md#name)\n-   [nsfw](Subreddit.md#nsfw)\n-   [numberOfActiveUsers](Subreddit.md#numberofactiveusers)\n-   [numberOfSubscribers](Subreddit.md#numberofsubscribers)\n-   [postFlairsEnabled](Subreddit.md#postflairsenabled)\n-   [settings](Subreddit.md#settings)\n-   [title](Subreddit.md#title)\n-   [type](Subreddit.md#type)\n-   [userFlairsEnabled](Subreddit.md#userflairsenabled)\n-   [usersCanAssignPostFlairs](Subreddit.md#userscanassignpostflairs)\n-   [usersCanAssignUserFlairs](Subreddit.md#userscanassignuserflairs)\n### Methods",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: Subreddit",
+        "Table of contents"
+      ],
+      "level": 1
+    }
+  },
+  {
+    "pageContent": "<path>Class: Subreddit, Table of contents, Methods</path>\n-   [addWikiContributor](Subreddit.md#addwikicontributor)\n-   [approveUser](Subreddit.md#approveuser)\n-   [banUser](Subreddit.md#banuser)\n-   [banWikiContributor](Subreddit.md#banwikicontributor)\n-   [createPostFlairTemplate](Subreddit.md#createpostflairtemplate)\n-   [createUserFlairTemplate](Subreddit.md#createuserflairtemplate)\n-   [getApprovedUsers](Subreddit.md#getapprovedusers)\n-   [getBannedUsers](Subreddit.md#getbannedusers)\n-   [getBannedWikiContributors](Subreddit.md#getbannedwikicontributors)\n-   [getControversialPosts](Subreddit.md#getcontroversialposts)\n-   [getModerationLog](Subreddit.md#getmoderationlog)\n-   [getModerators](Subreddit.md#getmoderators)\n-   [getMutedUsers](Subreddit.md#getmutedusers)\n-   [getPostFlairTemplates](Subreddit.md#getpostflairtemplates)\n-   [getTopPosts](Subreddit.md#gettopposts)\n-   [getUserFlairTemplates](Subreddit.md#getuserflairtemplates)\n-   [getWikiContributors](Subreddit.md#getwikicontributors)\n-   [inviteModerator](Subreddit.md#invitemoderator)\n-   [muteUser](Subreddit.md#muteuser)\n-   [removeModerator](Subreddit.md#removemoderator)\n-   [removeUser](Subreddit.md#removeuser)\n-   [removeWikiContributor](Subreddit.md#removewikicontributor)\n-   [revokeModeratorInvite](Subreddit.md#revokemoderatorinvite)\n-   [setModeratorPermissions](Subreddit.md#setmoderatorpermissions)\n-   [submitPost](Subreddit.md#submitpost)\n-   [toJSON](Subreddit.md#tojson)\n-   [unbanUser](Subreddit.md#unbanuser)\n-   [unbanWikiContributor](Subreddit.md#unbanwikicontributor)\n-   [unmuteUser](Subreddit.md#unmuteuser)\n-   [getById](Subreddit.md#getbyid)\n-   [getByName](Subreddit.md#getbyname)\n-   [getFromMetadata](Subreddit.md#getfrommetadata)",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 3,
+      "path": [
+        "Class: Subreddit",
+        "Table of contents",
+        "Methods"
+      ]
+    }
+  },
+  {
+    "pageContent": "<path>Class: Subreddit, Accessors</path>\n## Accessors\n### createdAt\n• `get` **createdAt**(): `Date`\nThe creation date of the subreddit.\n#### Returns\n`Date`\n### description\n• `get` **description**(): `undefined` | `string`\nThe description of the subreddit.\n#### Returns\n`undefined` | `string`\n### id\n• `get` **id**(): \\`t5\\_${string}\\`\nThe ID (starting with t5\\_) of the subreddit to retrieve. e.g. t5\\_2qjpg\n#### Returns\n\\`t5\\_${string}\\`\n### language\n• `get` **language**(): `string`\nThe language of the subreddit.\n#### Returns\n`string`\n### name\n• `get` **name**(): `string`\nThe name of a subreddit omitting the r/.\n#### Returns\n`string`\n### nsfw\n• `get` **nsfw**(): `boolean`\nWhether the subreddit is marked as NSFW (Not Safe For Work).\n#### Returns\n`boolean`\n### numberOfActiveUsers\n• `get` **numberOfActiveUsers**(): `number`\nThe number of active users of the subreddit.\n#### Returns\n`number`\n### numberOfSubscribers\n• `get` **numberOfSubscribers**(): `number`\nThe number of subscribers of the subreddit.\n#### Returns\n`number`\n### postFlairsEnabled\n• `get` **postFlairsEnabled**(): `boolean`\nWhether the post flairs are enabled for this subreddit.\n#### Returns\n`boolean`\n### settings\n• `get` **settings**(): [`SubredditSettings`](../interfaces/SubredditSettings.md)\nThe settings of the subreddit.\n#### Returns\n[`SubredditSettings`](../interfaces/SubredditSettings.md)\n### title\n• `get` **title**(): `undefined` | `string`\nThe title of the subreddit.\n#### Returns\n`undefined` | `string`\n### type\n• `get` **type**(): [`SubredditType`](../README.md#subreddittype)\nThe type of subreddit (public, private, etc.).\n#### Returns\n[`SubredditType`](../README.md#subreddittype)\n### userFlairsEnabled\n• `get` **userFlairsEnabled**(): `boolean`\nWhether the user flairs are enabled for this subreddit.\n#### Returns\n`boolean`\n### usersCanAssignPostFlairs\n• `get` **usersCanAssignPostFlairs**(): `boolean`\nWhether the user can assign post flairs. This is only true if the post flairs are enabled.\n#### Returns\n`boolean`\n### usersCanAssignUserFlairs",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: Subreddit",
+        "Accessors"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: Subreddit, Methods</path>\n• `get` **usersCanAssignUserFlairs**(): `boolean`\nWhether the user can assign user flairs. This is only true if the user flairs are enabled.\n#### Returns\n`boolean`\n## Methods\n### addWikiContributor\n▸ **addWikiContributor**(`username`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`< `void`\\>\n### approveUser\n▸ **approveUser**(`username`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`< `void`\\>\n### banUser\n▸ **banUser**(`options`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | Omit< BanUserOptions, \"subredditName\"> |\n#### Returns\n`Promise`< `void`\\>\n### banWikiContributor\n▸ **banWikiContributor**(`options`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | Omit< BanWikiContributorOptions, \"subredditName\"> |\n#### Returns\n`Promise`< `void`\\>\n### createPostFlairTemplate\n▸ **createPostFlairTemplate**(`options`): `Promise`< [`FlairTemplate`](FlairTemplate.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | Omit< CreateFlairTemplateOptions, \"subredditName\"> |\n#### Returns\n`Promise`< [`FlairTemplate`](FlairTemplate.md)\\>\n### createUserFlairTemplate\n▸ **createUserFlairTemplate**(`options`): `Promise`< [`FlairTemplate`](FlairTemplate.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | Omit< CreateFlairTemplateOptions, \"subredditName\"> |\n#### Returns\n`Promise`< [`FlairTemplate`](FlairTemplate.md)\\>\n### getApprovedUsers\n▸ **getApprovedUsers**(`options?`): [`Listing`](Listing.md)< [`User`](User.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetUsersOptions |\n#### Returns\n[`Listing`](Listing.md)< [`User`](User.md)\\>\n### getBannedUsers\n▸ **getBannedUsers**(`options?`): [`Listing`](Listing.md)< [`User`](User.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetUsersOptions |\n#### Returns\n[`Listing`](Listing.md)< [`User`](User.md)\\>\n### getBannedWikiContributors",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: Subreddit",
+        "Methods"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Class: Subreddit, Methods, getWikiContributors, Parameters</path>\n▸ **getBannedWikiContributors**(`options?`): [`Listing`](Listing.md)< [`User`](User.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetUsersOptions |\n#### Returns\n[`Listing`](Listing.md)< [`User`](User.md)\\>\n### getControversialPosts\n▸ **getControversialPosts**(`options?`): [`Listing`](Listing.md)< [`Post`](Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | Omit< GetPostsOptionsWithTimeframe, \"subredditName\"> |\n#### Returns\n[`Listing`](Listing.md)< [`Post`](Post.md)\\>\n### getModerationLog\n▸ **getModerationLog**(`options`): [`Listing`](Listing.md)< [`ModAction`](../interfaces/ModAction.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetModerationLogOptions |\n#### Returns\n[`Listing`](Listing.md)< [`ModAction`](../interfaces/ModAction.md)\\>\n### getModerators\n▸ **getModerators**(`options?`): [`Listing`](Listing.md)< [`User`](User.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetUsersOptions |\n#### Returns\n[`Listing`](Listing.md)< [`User`](User.md)\\>\n### getMutedUsers\n▸ **getMutedUsers**(`options?`): [`Listing`](Listing.md)< [`User`](User.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | GetUsersOptions |\n#### Returns\n[`Listing`](Listing.md)< [`User`](User.md)\\>\n### getPostFlairTemplates\n▸ **getPostFlairTemplates**(): `Promise`< [`FlairTemplate`](FlairTemplate.md)\\[\\]>\n#### Returns\n`Promise`< [`FlairTemplate`](FlairTemplate.md)\\[\\]>\n### getTopPosts\n▸ **getTopPosts**(`options?`): [`Listing`](Listing.md)< [`Post`](Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | Omit< GetPostsOptionsWithTimeframe, \"subredditName\"> |\n#### Returns\n[`Listing`](Listing.md)< [`Post`](Post.md)\\>\n### getUserFlairTemplates\n▸ **getUserFlairTemplates**(): `Promise`< [`FlairTemplate`](FlairTemplate.md)\\[\\]>\n#### Returns\n`Promise`< [`FlairTemplate`](FlairTemplate.md)\\[\\]>\n### getWikiContributors\n▸ **getWikiContributors**(`options?`): [`Listing`](Listing.md)< [`User`](User.md)\\>\n#### Parameters",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "table"
+      ],
+      "path": [
+        "Class: Subreddit",
+        "Methods",
+        "getWikiContributors",
+        "Parameters"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Subreddit, Methods, toJSON, Returns</path>\n| Name | Type |\n|---|---|\n| options | GetUsersOptions |\n#### Returns\n[`Listing`](Listing.md)< [`User`](User.md)\\>\n### inviteModerator\n▸ **inviteModerator**(`username`, `permissions?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n| permissions? | ModeratorPermission[] |\n#### Returns\n`Promise`< `void`\\>\n### muteUser\n▸ **muteUser**(`username`, `note?`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n| note? | string |\n#### Returns\n`Promise`< `void`\\>\n### removeModerator\n▸ **removeModerator**(`username`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`< `void`\\>\n### removeUser\n▸ **removeUser**(`username`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`< `void`\\>\n### removeWikiContributor\n▸ **removeWikiContributor**(`username`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`< `void`\\>\n### revokeModeratorInvite\n▸ **revokeModeratorInvite**(`username`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`< `void`\\>\n### setModeratorPermissions\n▸ **setModeratorPermissions**(`username`, `permissions`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n| permissions | ModeratorPermission[] |\n#### Returns\n`Promise`< `void`\\>\n### submitPost\n▸ **submitPost**(`options`, `metadata?`): `Promise`< [`Post`](Post.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| options | SubmitLinkOptions | SubmitSelfPostOptions |\n| metadata? | Metadata |\n#### Returns\n`Promise`< [`Post`](Post.md)\\>\n### toJSON\n▸ **toJSON**(): `Object`\n#### Returns\n`Object`",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: Subreddit",
+        "Methods",
+        "toJSON",
+        "Returns"
+      ],
+      "level": 3
+    }
+  },
+  {
+    "pageContent": "<path>Class: Subreddit, Methods, getFromMetadata, Returns</path>\n| Name | Type |\n|---|---|\n| createdAt | Date |\n| description | undefined | string |\n| id | `t5_${string}` |\n| language | string |\n| name | string |\n| nsfw | boolean |\n| numberOfActiveUsers | number |\n| numberOfSubscribers | number |\n| settings | SubredditSettings |\n| title | undefined | string |\n| type | SubredditType |\n### unbanUser\n▸ **unbanUser**(`username`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`< `void`\\>\n### unbanWikiContributor\n▸ **unbanWikiContributor**(`username`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`< `void`\\>\n### unmuteUser\n▸ **unmuteUser**(`username`): `Promise`< `void`\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| username | string |\n#### Returns\n`Promise`< `void`\\>\n### getById\n▸ `Static` **getById**(`id`, `metadata?`): `Promise`< [`Subreddit`](Subreddit.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| id | `t5_${string}` |\n| metadata? | Metadata |\n#### Returns\n`Promise`< [`Subreddit`](Subreddit.md)\\>\n### getByName\n▸ `Static` **getByName**(`subredditName`, `metadata?`): `Promise`< [`Subreddit`](Subreddit.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| subredditName | string |\n| metadata? | Metadata |\n#### Returns\n`Promise`< [`Subreddit`](Subreddit.md)\\>\n### getFromMetadata\n▸ `Static` **getFromMetadata**(`metadata?`): `Promise`< [`Subreddit`](Subreddit.md)\\>\n#### Parameters\n| Name | Type |\n|---|---|\n| metadata? | Metadata |\n#### Returns\n`Promise`< [`Subreddit`](Subreddit.md)\\>",
+    "metadata": {
+      "type": [
+        "table",
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Class: Subreddit",
+        "Methods",
+        "getFromMetadata",
+        "Returns"
+      ],
+      "level": 3
+    }
+  }
+]

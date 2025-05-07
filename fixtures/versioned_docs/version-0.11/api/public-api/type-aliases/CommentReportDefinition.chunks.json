@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Type Alias: CommentReportDefinition, Properties, onEvent</path>\n[**@devvit/public-api v0.11.14-dev**](../README.md)\n# Type Alias: CommentReportDefinition\n**CommentReportDefinition** = `object`\n## Properties\n### event\n**event**: [`CommentReport`](CommentReport.md)\n### onEvent\n**onEvent**: [`TriggerOnEventHandler`](TriggerOnEventHandler.md)<[`CommentReport`](../@devvit/namespaces/EventTypes/interfaces/CommentReport.md)\\>",
+    "metadata": {
+      "type": [
+        "text",
+        "heading"
+      ],
+      "path": [
+        "Type Alias: CommentReportDefinition",
+        "Properties",
+        "onEvent"
+      ],
+      "level": 0
+    }
+  }
+]

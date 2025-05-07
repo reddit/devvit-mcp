@@ -1,0 +1,15 @@
+[
+  {
+    "pageContent": "<path>Update your subreddit app version</path>\n## Update your subreddit app version\nCurrently, apps on a subreddit need to be manually updated when a new version is published.\n-   Go to your \"app details\" page in developers.reddit.com and locate the subreddit you want to update.\n-   If a new version of the app is available, an \"Upgrade\" button will be visible. Click this to update your app.",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "level": 2,
+      "path": [
+        "Update your subreddit app version"
+      ]
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "pageContent": "<path>Interface: ModActionTarget, Properties, title</path>\n# Interface: ModActionTarget\n## Table of contents\n### Properties\n-   [author](ModActionTarget.md#author)\n-   [body](ModActionTarget.md#body)\n-   [id](ModActionTarget.md#id)\n-   [permalink](ModActionTarget.md#permalink)\n-   [title](ModActionTarget.md#title)\n## Properties\n### author\n• `Optional` **author**: `string`\n### body\n• `Optional` **body**: `string`\n### id\n• **id**: `string`\n### permalink\n• `Optional` **permalink**: `string`\n### title\n• `Optional` **title**: `string`",
+    "metadata": {
+      "type": [
+        "heading",
+        "text"
+      ],
+      "path": [
+        "Interface: ModActionTarget",
+        "Properties",
+        "title"
+      ],
+      "level": 1
+    }
+  }
+]

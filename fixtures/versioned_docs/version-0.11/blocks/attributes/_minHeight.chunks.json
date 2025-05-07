@@ -1,0 +1,12 @@
+[
+  {
+    "pageContent": "<path></path>\nPrevents the used value of `height` from becoming smaller than the minimum height if set.",
+    "metadata": {
+      "type": [
+        "text"
+      ],
+      "level": 0,
+      "path": []
+    }
+  }
+]
