@@ -6,9 +6,11 @@ import { helloWorldTool } from './tools/hello-world';
 import z from 'zod';
 import { logger } from './utils/logger';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
+import { Context } from './utils/context';
+import { searchTool } from './tools/search';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const tools: Tool<any>[] = [helloWorldTool];
+const tools: Tool<any>[] = [helloWorldTool, searchTool];
 
 export const createServer = (): Server => {
   const server = new Server(
@@ -21,6 +23,7 @@ export const createServer = (): Server => {
       },
     }
   );
+  const context = new Context();
 
   server.setRequestHandler(ListToolsRequestSchema, async () => {
     return {
@@ -41,7 +44,7 @@ export const createServer = (): Server => {
     }
 
     try {
-      const result = await tool.handler({ params: request.params.arguments });
+      const result = await tool.handler({ params: request.params.arguments, context });
       return result;
     } catch (error) {
       return {
@@ -54,6 +57,7 @@ export const createServer = (): Server => {
   // We wrap these to allow logging to work without needing to send MCP style
   // logging messages everywhere in the code
   const oldConnect = server.connect.bind(server);
+  const oldClose = server.close.bind(server);
 
   server.connect = async (transport: StdioServerTransport) => {
     await oldConnect(transport);
@@ -89,6 +93,13 @@ export const createServer = (): Server => {
         },
       },
     ]);
+
+    await context.initialize();
+  };
+
+  server.close = async () => {
+    await oldClose();
+    await context.shutdown();
   };
 
   return server;

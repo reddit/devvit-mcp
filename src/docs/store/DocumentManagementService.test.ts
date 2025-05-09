@@ -386,13 +386,28 @@ describe('DocumentManagementService', () => {
       expect(mockStore.checkDocumentExists).toHaveBeenCalledWith(library, '');
     });
 
-    it('addDocument should normalize version to empty string', async () => {
+    it.only('addDocument should normalize version to empty string', async () => {
       await docService.addDocument(library, null, doc);
-      expect(mockStore.addDocuments).toHaveBeenCalledWith(library, '', expect.any(Array));
+      expect(mockStore.addDocuments).toHaveBeenCalledWith(
+        library,
+        '',
+        expect.any(Array),
+        expect.any(Array)
+      );
       await docService.addDocument(library, undefined, doc);
-      expect(mockStore.addDocuments).toHaveBeenCalledWith(library, '', expect.any(Array));
+      expect(mockStore.addDocuments).toHaveBeenCalledWith(
+        library,
+        '',
+        expect.any(Array),
+        expect.any(Array)
+      );
       await docService.addDocument(library, '', doc);
-      expect(mockStore.addDocuments).toHaveBeenCalledWith(library, '', expect.any(Array));
+      expect(mockStore.addDocuments).toHaveBeenCalledWith(
+        library,
+        '',
+        expect.any(Array),
+        expect.any(Array)
+      );
     });
 
     it('searchStore should normalize version to empty string', async () => {

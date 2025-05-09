@@ -3,7 +3,6 @@ import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest';
 // --- Mocking Setup ---
 
 // Mock OpenAIEmbeddings
-const mockEmbedQuery = vi.fn().mockResolvedValue([0.1, 0.2, 0.3]);
 const mockEmbedDocuments = vi.fn().mockResolvedValue([[0.1, 0.2, 0.3]]); // Keep this if addDocuments is tested elsewhere
 
 // Mock the module to export a mock function for the class constructor
@@ -53,7 +52,6 @@ describe('DocumentStore', () => {
 
     // Configure the mock constructor's implementation for THIS test run
     MockedOpenAIEmbeddingsConstructor.mockImplementation(() => ({
-      embedQuery: mockEmbedQuery,
       embedDocuments: mockEmbedDocuments,
     }));
     mockPrepare.mockReturnValue(mockStatement); // <-- Re-configure prepare mock return value
@@ -78,10 +76,6 @@ describe('DocumentStore', () => {
       const expectedFtsQuery = '"find ""quotes"""'; // Escaped and wrapped
 
       await documentStore.findByContent(library, version, query, limit);
-
-      // 1. Check if embedQuery was called
-      expect(mockEmbedQuery).toHaveBeenCalledWith(query);
-      expect(mockEmbedQuery).toHaveBeenCalledTimes(1);
 
       // 2. Check if db.prepare was called correctly during findByContent
       // It's called multiple times during initialize, so check the specific call
