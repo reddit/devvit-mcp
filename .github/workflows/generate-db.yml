@@ -1,0 +1,42 @@
+name: Generate Devvit Fixtures and DB
+
+on:
+  schedule:
+    - cron: '0 21 * * *'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Full history is required to be able to push a commit back.
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          # Use the version declared in .nvmrc if present; otherwise default to 20.x
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate chunks
+        run: npm run scripts:generate-chunks
+
+      - name: Generate SQLite DB
+        run: npm run scripts:generate-sqlite-db
+
+      # Commit the updated DB (and only that file) back to the repository.
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: update devvit-docs.db and fixtures'
+          file_pattern: |
+            db/devvit-docs.db
+            fixtures/**
