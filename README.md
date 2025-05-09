@@ -33,6 +33,22 @@ npm install
 npm run dev
 ```
 
+If you want to test your MCP server inside of other projects. Pass in the entire path to your node runtime and the location of `/dist/index.js` on your machine.
+
+- Node path: `which node`
+- Dist: `pwd` from the root of your `devvit-mcp` + `/dist/index.js`
+
+```ts
+{
+  "mcpServers": {
+    "devvit-mcp": {
+      "command": "/Users/marcus.wood/.nvm/versions/node/v22.13.0/bin/node",
+      "args": ["/Users/marcus.wood/open-source/devvit-mcp/dist/index.js"]
+    }
+  }
+}
+```
+
 ## MCP Gotchas
 
 - Never put a `console.log` in the hot path of your app if you're trying to debug. You'll see weird error messages like `Unexpected token 'a', " at Anthrop"... is not valid JSON`.
