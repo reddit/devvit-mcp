@@ -1,6 +1,7 @@
 import { TextContent } from '@modelcontextprotocol/sdk/types.js';
 import { ImageContent } from '@modelcontextprotocol/sdk/types.js';
 import z from 'zod';
+import { Context } from '../utils/context';
 
 export type ToolResult = {
   content: (ImageContent | TextContent)[];
@@ -11,7 +12,7 @@ export type Tool<T extends z.ZodObject = z.ZodObject> = {
   name: string;
   description: string;
   inputSchema: T;
-  handler: (args: { params: z.infer<T> }) => Promise<ToolResult>;
+  handler: (args: { params: z.infer<T>; context: Context }) => Promise<ToolResult>;
 };
 
 // Needed for automatic type inference
@@ -19,5 +20,5 @@ export const createTool = <T extends z.ZodObject>(args: {
   name: string;
   description: string;
   inputSchema: T;
-  handler: (args: { params: z.infer<T> }) => Promise<ToolResult>;
+  handler: (args: { params: z.infer<T>; context: Context }) => Promise<ToolResult>;
 }): Tool<T> => args;

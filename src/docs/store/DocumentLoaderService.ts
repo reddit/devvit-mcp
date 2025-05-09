@@ -76,7 +76,7 @@ export class DocumentLoaderService {
               version: version,
             });
           } else {
-            console.warn(`Warning: No embeddings file found for ${fullPath}`);
+            logger.warn(`Warning: No embeddings file found for ${fullPath}`);
           }
         }
       }
