@@ -9,7 +9,12 @@ export const helloWorldTool = createTool({
   }),
   handler: async ({ params }) => {
     return {
-      content: [{ type: 'text', text: `Hello, ${params.name}!` }],
+      content: [
+        {
+          type: 'text',
+          text: `Hello, ${params.name}!`,
+        },
+      ],
     };
   },
 });
