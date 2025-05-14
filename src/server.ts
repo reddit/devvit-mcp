@@ -2,7 +2,6 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import packageJSON from '../package.json' assert { type: 'json' };
 import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
 import { Tool } from './tools/types';
-import { helloWorldTool } from './tools/hello-world';
 import z from 'zod';
 import { logger } from './utils/logger';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
@@ -11,7 +10,7 @@ import { searchTool } from './tools/search';
 import { logsTool } from './tools/logs';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const tools: Tool<any>[] = [helloWorldTool, searchTool, logsTool];
+const tools: Tool<any>[] = [searchTool, logsTool];
 
 export const createServer = (): Server => {
   const server = new Server(
