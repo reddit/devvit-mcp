@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import semver from 'semver';
+import { resolveRepoRoot } from './resolveRepoRoot';
 
 // Packages whose versions should be examined to determine the effective Devvit SDK version
 const DEVVIT_DEP_PACKAGES = [
@@ -19,12 +20,7 @@ const DEVVIT_DEP_PACKAGES = [
  * version is found, `null` is returned.
  */
 export async function resolveDevvitVersion(): Promise<string | null> {
-  const startDir =
-    // If the user provides this, use it
-    process.env.DEVVIT_WORKSPACE_ROOT ??
-    // I have no idea if I need to split on the comma but given the name, I think so?
-    // https://www.reddit.com/r/cursor/comments/1k796n6/cursor_mcp_working_directory/
-    process.env.WORKSPACE_FOLDER_PATHS?.split(',')[0];
+  const startDir = resolveRepoRoot();
 
   if (!startDir) {
     return null;

@@ -8,9 +8,10 @@ import { logger } from './utils/logger';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { Context } from './utils/context';
 import { searchTool } from './tools/search';
+import { logsTool } from './tools/logs';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const tools: Tool<any>[] = [helloWorldTool, searchTool];
+const tools: Tool<any>[] = [helloWorldTool, searchTool, logsTool];
 
 export const createServer = (): Server => {
   const server = new Server(
