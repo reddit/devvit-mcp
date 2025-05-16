@@ -4,7 +4,7 @@
   "description": "MCP for Devvit things",
   "license": "BSD-3-Clause",
   "author": "Marcus Wood",
-  "bugs": "https://github.com/modelcontextprotocol/servers/issues",
+  "bugs": "https://github.com/reddit/devvit-mcp/issues",
   "type": "module",
   "bin": {
     "devvit-mcp": "dist/index.js"
