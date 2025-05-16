@@ -386,7 +386,7 @@ describe('DocumentManagementService', () => {
       expect(mockStore.checkDocumentExists).toHaveBeenCalledWith(library, '');
     });
 
-    it.only('addDocument should normalize version to empty string', async () => {
+    it('addDocument should normalize version to empty string', async () => {
       await docService.addDocument(library, null, doc);
       expect(mockStore.addDocuments).toHaveBeenCalledWith(
         library,
