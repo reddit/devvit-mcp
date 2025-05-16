@@ -19,6 +19,22 @@ Add the following to your `mcp.json` for the editor or LLM of choice.
 }
 ```
 
+## Opting Out Of Telemetry
+
+```json
+{
+  "mcpServers": {
+    "devvit-mcp": {
+      "command": "npx",
+      "args": ["-y", "@devvit/mcp"],
+      "env": {
+        "DEVVIT_DISABLE_METRICS": "true"
+      }
+    }
+  }
+}
+```
+
 ## Developing on the MCP Server
 
 ```sh
