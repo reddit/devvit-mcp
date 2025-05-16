@@ -3,6 +3,7 @@ import { version } from '../../package.json';
 import path from 'path';
 import fs from 'fs/promises';
 import crypto from 'crypto';
+import { logger } from './logger';
 
 export async function isFile(path: string): Promise<boolean> {
   try {
@@ -63,7 +64,7 @@ function getHeaders(): Headers {
   headers.set(...HEADER_DEVVIT_MCP());
 
   if (process.env.DEVVIT_CANARY) {
-    console.warn(`Warning: setting devvit-canary to "${process.env.DEVVIT_CANARY}"`);
+    logger.warn(`Warning: setting devvit-canary to "${process.env.DEVVIT_CANARY}"`);
     headers.set(...HEADER_DEVVIT_CANARY(process.env.DEVVIT_CANARY));
   }
 
@@ -126,7 +127,8 @@ export const sendEvent = async (
 ) => {
   const shouldTrack = force || (await isMetricsEnabled());
   if (!shouldTrack) {
-    console.log('Telemetry is disabled');
+    // TODO: Remove after testing
+    logger.info('Telemetry is disabled');
     return;
   }
 
@@ -153,15 +155,14 @@ export const sendEvent = async (
   }
 
   try {
-    const response = await fetch(`${DEVVIT_PORTAL_API}/events/devvit.dev_portal.Events/SendEvent`, {
+    await fetch(`${DEVVIT_PORTAL_API}/events/devvit.dev_portal.Events/SendEvent`, {
       method: 'POST',
       headers,
       body: JSON.stringify(eventWithSession),
     });
-
-    console.log(await response.json());
   } catch (error) {
     // We don't care if it fails!
-    console.error(error);
+    // TODO: Remove after we test
+    logger.error(error);
   }
 };
