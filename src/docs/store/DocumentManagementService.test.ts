@@ -100,7 +100,8 @@ describe('DocumentManagementService', () => {
         version,
         expect.arrayContaining([
           expect.objectContaining({ pageContent: validDocument.pageContent }),
-        ])
+        ]),
+        expect.any(Array)
       );
       expect(results).toEqual(['Mocked search result']); // Expect mocked result
     });
@@ -132,7 +133,8 @@ describe('DocumentManagementService', () => {
               path: expect.arrayContaining(['Chapter 1', 'Section 1.1']),
             }),
           }),
-        ])
+        ]),
+        expect.any(Array)
       );
 
       // Verify search results preserve metadata
