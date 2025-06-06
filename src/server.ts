@@ -1,5 +1,5 @@
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
-import packageJSON from '../package.json' assert { type: 'json' };
+import packageJSON from '../package.json' with { type: 'json' };
 import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
 import { Tool } from './tools/types';
 import z from 'zod';

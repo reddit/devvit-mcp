@@ -1,3 +1,4 @@
+/** Lifted from: https://github.snooguts.net/reddit/reddit-devplatform-monorepo/tree/main/packages/cli/src */
 import os from 'os';
 import { version } from '../../package.json';
 import path from 'path';
@@ -110,9 +111,14 @@ async function getToken(): Promise<string | undefined> {
   const tokenFilename = getTokenFilename();
   const isTokenFileCreated = await isFile(tokenFilename);
 
-  if (isTokenFileCreated!) return;
+  if (!isTokenFileCreated) return;
 
-  return await fs.readFile(tokenFilename, 'utf-8');
+  try {
+    const contents = await fs.readFile(tokenFilename, 'utf-8');
+    return JSON.parse(contents).token;
+  } catch (error) {
+    return undefined;
+  }
 }
 
 export const sendEvent = async (
@@ -126,11 +132,7 @@ export const sendEvent = async (
   force: boolean = false
 ) => {
   const shouldTrack = force || (await isMetricsEnabled());
-  if (!shouldTrack) {
-    // TODO: Remove after testing
-    logger.info('Telemetry is disabled');
-    return;
-  }
+  if (!shouldTrack) return;
 
   const sessionId = await getTelemetrySessionId();
   const eventWithSession = {
@@ -162,7 +164,5 @@ export const sendEvent = async (
     });
   } catch (error) {
     // We don't care if it fails!
-    // TODO: Remove after we test
-    logger.error(error);
   }
 };
