@@ -46,9 +46,6 @@ jobs:
             db/devvit-docs.db
             fixtures/**
         env:
-          GIT_AUTHOR_NAME: devvit-bot
-          GIT_AUTHOR_EMAIL: devvit-bot@reddit.com
-          GIT_COMMITTER_NAME: devvit-bot
-          GIT_COMMITTER_EMAIL: devvit-bot@reddit.com
-          # Use your PAT instead of GITHUB_TOKEN
+          # Use a personal access token (PAT) with admin role to override the branch protections to push the
+          # changes back to the repository.
           GITHUB_TOKEN: ${{ secrets.BOT_PAT }}
