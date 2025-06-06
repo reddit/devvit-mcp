@@ -6,7 +6,7 @@ import fs from 'fs/promises';
 import crypto from 'crypto';
 import { logger } from './logger';
 
-export async function isFile(path: string): Promise<boolean> {
+async function isFile(path: string): Promise<boolean> {
   try {
     const stat = await fs.stat(path);
     return stat.isFile();
@@ -16,15 +16,15 @@ export async function isFile(path: string): Promise<boolean> {
 }
 
 /** @type {boolean} See envvar.md. */
-export const MY_PORTAL_ENABLED = !!process.env.MY_PORTAL && process.env.MY_PORTAL !== '0';
+const MY_PORTAL_ENABLED = !!process.env.MY_PORTAL && process.env.MY_PORTAL !== '0';
 
-export const STAGE_USER_NAME =
+const STAGE_USER_NAME =
   // Not every username is `first-last`, if `MY_PORTAL` looks like a username use that directly
   MY_PORTAL_ENABLED && process.env.MY_PORTAL?.includes('-')
     ? process.env.MY_PORTAL.toLowerCase()
     : os.userInfo().username.replace(/\./g, '-');
 
-export const DEVVIT_PORTAL_URL = (() => {
+const DEVVIT_PORTAL_URL = (() => {
   if (MY_PORTAL_ENABLED) {
     return `https://reddit-service-devvit-dev-portal.${STAGE_USER_NAME}.snoo.dev` as const;
   }
@@ -32,18 +32,18 @@ export const DEVVIT_PORTAL_URL = (() => {
   return 'https://developers.reddit.com' as const;
 })();
 
-export const DEVVIT_PORTAL_API = `${DEVVIT_PORTAL_URL}/api` as const;
+const DEVVIT_PORTAL_API = `${DEVVIT_PORTAL_URL}/api` as const;
 
-export type HeaderTuple = readonly [key: string, val: string];
+type HeaderTuple = readonly [key: string, val: string];
 
-export const HEADER_USER_AGENT = (): HeaderTuple => [
+const HEADER_USER_AGENT = (): HeaderTuple => [
   'user-agent',
   `Devvit/MCP/${version} Node/${process.version.replace(/^v/, '')}`,
 ];
 
-export const HEADER_DEVVIT_MCP = (): HeaderTuple => ['x-devvit-mcp', 'true'];
+const HEADER_DEVVIT_MCP = (): HeaderTuple => ['x-devvit-mcp', 'true'];
 
-export const HEADER_DEVVIT_CANARY = (val: string): HeaderTuple => {
+const HEADER_DEVVIT_CANARY = (val: string): HeaderTuple => {
   return ['devvit-canary', val];
 };
 
@@ -55,7 +55,7 @@ const DEVVIT_DIR_NAME = `${process.env.DEVVIT_DIR_NAME || '.devvit'}${DIR_SUFFIX
 /**
  * @type {string} Absolute filename of the Devvit CLI configuration directory.
  */
-export const DOT_DEVVIT_DIR_FILENAME = process.env.DEVVIT_ROOT_DIR
+const DOT_DEVVIT_DIR_FILENAME = process.env.DEVVIT_ROOT_DIR
   ? path.join(process.env.DEVVIT_ROOT_DIR, DEVVIT_DIR_NAME)
   : path.join(os.homedir(), DEVVIT_DIR_NAME);
 
@@ -72,19 +72,19 @@ function getHeaders(): Headers {
   return headers;
 }
 
-export function getTelemetrySessionIdFilename(): string {
+function getTelemetrySessionIdFilename(): string {
   return path.join(DOT_DEVVIT_DIR_FILENAME, 'session-id');
 }
 
-export function getTokenFilename(): string {
+function getTokenFilename(): string {
   return path.join(DOT_DEVVIT_DIR_FILENAME, 'token');
 }
 
-export function getMetricsOptOutFile(): string {
+function getMetricsOptOutFile(): string {
   return path.join(DOT_DEVVIT_DIR_FILENAME, 'opt-out-metrics');
 }
 
-export async function isMetricsEnabled(): Promise<boolean> {
+async function isMetricsEnabled(): Promise<boolean> {
   if (process.env.DEVVIT_DISABLE_METRICS) {
     return false;
   }
@@ -93,7 +93,7 @@ export async function isMetricsEnabled(): Promise<boolean> {
   return !(await isFile(optOutFile));
 }
 
-export async function getTelemetrySessionId(): Promise<string> {
+async function getTelemetrySessionId(): Promise<string> {
   const sessionIdFilename = getTelemetrySessionIdFilename();
   const isSessionIdFileCreated = await isFile(sessionIdFilename);
 
