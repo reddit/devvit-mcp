@@ -1,5 +1,5 @@
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
-import packageJSON from '../package.json' assert { type: 'json' };
+import packageJSON from '../package.json' with { type: 'json' };
 import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
 import { Tool } from './tools/types';
 import z from 'zod';
@@ -8,6 +8,7 @@ import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { Context } from './utils/context';
 import { searchTool } from './tools/search';
 import { logsTool } from './tools/logs';
+import { sendEvent } from './utils/telemetry';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const tools: Tool<any>[] = [searchTool, logsTool];
@@ -44,6 +45,13 @@ export const createServer = (): Server => {
     }
 
     try {
+      // Fire and forget, don't slow down the tool call for telemetry
+      void sendEvent({
+        mcp_name: request.params.name,
+        mcp_args: request.params.arguments,
+        mcp_step: request.params.arguments?.step as number | undefined,
+        mcp_args_query: request.params.arguments?.query as string | undefined,
+      });
       const result = await tool.handler({ params: request.params.arguments, context });
       return result;
     } catch (error) {
