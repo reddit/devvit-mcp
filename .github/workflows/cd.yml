@@ -35,7 +35,6 @@ jobs:
         run: npm run test
 
       - name: Publish package to npm
-        if: ${{ vars.ENVIRONMENT == 'prod' }}
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
