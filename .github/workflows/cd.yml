@@ -22,7 +22,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install deps
-        run: npm install
+        run: npm ci
 
       - name: Build
         run: npm run build
