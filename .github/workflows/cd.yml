@@ -30,6 +30,9 @@ jobs:
       - name: Run checks (linting, type-checking, formatting)
         run: npm run check
 
+      - name: Ensure repo is clean after checks
+        run: git diff --exit-code
+
       - name: Run tests
         run: npm run test
 
