@@ -21,7 +21,7 @@
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src",
     "prepare": "npm run check && npm run type-check && npm run build",
-    "prettier": "prettier-package-json --write ./package.json &&prettier --write .",
+    "prettier": "prettier-package-json --write ./package.json && prettier --write .",
     "scripts:generate-chunks": "NODE_NO_WARNINGS=1 tsx ./src/scripts/generateChunks.ts",
     "scripts:generate-sqlite-db": "NODE_NO_WARNINGS=1 tsx ./src/scripts/generateSqliteDb.ts",
     "test": "vitest",
@@ -43,6 +43,9 @@
     "unified": "11.0.5",
     "zod": "^4.0.0-beta.20250505T195954"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.43.0"
+  },
   "devDependencies": {
     "@eslint/js": "9.23.0",
     "@types/better-sqlite3": "^7.6.13",
@@ -63,8 +66,5 @@
     "typescript": "5.8.2",
     "typescript-eslint": "8.29.0",
     "vitest": "3.0.8"
-  },
-  "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.43.0"
   }
 }
