@@ -37,17 +37,22 @@ jobs:
       - name: Generate SQLite DB
         run: npm run scripts:generate-sqlite-db
 
-      # Commit the updated DB (and only that file) back to the repository.
-      - name: Commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Create PR
+        id: cpr
+        uses: peter-evans/create-pull-request@v6
         with:
-          commit_message: 'chore: update devvit-docs.db and fixtures'
-          file_pattern: |
+          token: ${{ secrets.BOT_PAT }}
+          commit-message: 'chore: update devvit-docs.db and fixtures'
+          title: 'chore: update devvit-docs.db and fixtures'
+          body: 'This PR was created automatically.'
+          branch: auto/update-docs
+          add-paths: |
             db/devvit-docs.db
             fixtures/**
-          commit_user_name: Spencer Koch
-          commit_user_email: sp3nx0r@gmail.com
+
+      - name: Enable auto-merge
+        if: steps.cpr.outputs.pull-request-url != ''
         env:
-          # Use a personal access token (PAT) with admin role to override the branch protections to push the
-          # changes back to the repository.
-          GITHUB_TOKEN: ${{ secrets.BOT_PAT }}
+          GH_TOKEN: ${{ secrets.BOT_PAT }}
+        run: |
+          gh pr merge --auto --squash "${{ steps.cpr.outputs.pull-request-url }}"
