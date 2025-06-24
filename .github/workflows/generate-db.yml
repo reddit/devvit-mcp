@@ -45,6 +45,8 @@ jobs:
           file_pattern: |
             db/devvit-docs.db
             fixtures/**
+          commit_user_name: Spencer Koch
+          commit_user_email: sp3nx0r@gmail.com
         env:
           # Use a personal access token (PAT) with admin role to override the branch protections to push the
           # changes back to the repository.
