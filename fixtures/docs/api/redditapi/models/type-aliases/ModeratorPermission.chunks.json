@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: ModeratorPermission</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Type Alias: ModeratorPermission\n**ModeratorPermission** = `\"all\"` | `\"wiki\"` | `\"posts\"` | `\"access\"` | `\"mail\"` | `\"config\"` | `\"flair\"` | `\"chat_operator\"` | `\"chat_config\"` | `\"channels\"` | `\"community_chat\"`",
+    "pageContent": "<path>Type Alias: ModeratorPermission</path>\n[**@devvit/public-api v0.11.19-dev**](../../README.md)\n# Type Alias: ModeratorPermission\n**ModeratorPermission** = `\"all\"` | `\"wiki\"` | `\"posts\"` | `\"access\"` | `\"mail\"` | `\"config\"` | `\"flair\"` | `\"chat_operator\"` | `\"chat_config\"` | `\"channels\"` | `\"community_chat\"`",
     "metadata": {
       "type": [
         "text",

@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: SetPostFlairOptions, Type declaration, postId</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Type Alias: SetPostFlairOptions\n**SetPostFlairOptions** = [`SetFlairOptions`](SetFlairOptions.md) & `object`\n## Type declaration\n### postId\n**postId**: `string`\nThe ID of the post to set the flair on",
+    "pageContent": "<path>Type Alias: SetPostFlairOptions, Type declaration, postId</path>\n[**@devvit/public-api v0.11.18-dev**](../../README.md)\n# Type Alias: SetPostFlairOptions\n**SetPostFlairOptions** = [`SetFlairOptions`](SetFlairOptions.md) & `object`\n## Type declaration\n### postId\n**postId**: `string`\nThe ID of the post to set the flair on",
     "metadata": {
       "type": [
         "text",

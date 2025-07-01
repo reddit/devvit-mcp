@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: MuteUserOptions, Properties, username</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Type Alias: MuteUserOptions\n**MuteUserOptions** = `object`\n## Properties\n### note?\n`optional` **note**: `string`\nA mod note on why the user was muted. (optional)\n### subredditName\n**subredditName**: `string`\nThe name of the subreddit to mute the user in\n### username\n**username**: `string`\nThe name of the user to mute",
+    "pageContent": "<path>Type Alias: MuteUserOptions, Properties, username</path>\n[**@devvit/public-api v0.11.19-dev**](../../README.md)\n# Type Alias: MuteUserOptions\n**MuteUserOptions** = `object`\n## Properties\n### note?\n`optional` **note**: `string`\nA mod note on why the user was muted. (optional)\n### subredditName\n**subredditName**: `string`\nThe name of the subreddit to mute the user in\n### username\n**username**: `string`\nThe name of the user to mute",
     "metadata": {
       "type": [
         "text",

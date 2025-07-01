@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: BooleanField</path>\n[**@devvit/public-api v0.11.15-dev**](../README.md)\n# Type Alias: BooleanField\n**BooleanField** = `Prettify`<`Omit`<[`BaseField`](BaseField.md)<`boolean`\\>, `\"required\"`\\> & `FieldConfig_Boolean` & `object`\\>\nA boolean field displayed as a toggle",
+    "pageContent": "<path>Type Alias: BooleanField</path>\n[**@devvit/public-api v0.11.19-dev**](../README.md)\n# Type Alias: BooleanField\n**BooleanField** = `Prettify`<`Omit`<[`BaseField`](BaseField.md)<`boolean`\\>, `\"required\"`\\> & `FieldConfig_Boolean` & `object`\\>\nA boolean field displayed as a toggle",
     "metadata": {
       "type": [
         "text",

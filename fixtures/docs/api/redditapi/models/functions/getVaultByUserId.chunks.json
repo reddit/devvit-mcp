@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Function: getVaultByUserId(), Returns</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Function: getVaultByUserId()\n**getVaultByUserId**(`userId`, `metadata`): `Promise`<[`Vault`](../type-aliases/Vault.md)\\>\n## Parameters\n### userId\n`` `t2_${string}` ``\n### metadata\n`undefined` | `Metadata`\n## Returns\n`Promise`<[`Vault`](../type-aliases/Vault.md)\\>",
+    "pageContent": "<path>Function: getVaultByUserId(), Returns</path>\n[**@devvit/public-api v0.11.19-dev**](../../README.md)\n# Function: getVaultByUserId()\n**getVaultByUserId**(`userId`, `metadata`): `Promise`<[`Vault`](../type-aliases/Vault.md)\\>\n## Parameters\n### userId\n`` `t2_${string}` ``\n### metadata\n`undefined` | `Metadata`\n## Returns\n`Promise`<[`Vault`](../type-aliases/Vault.md)\\>",
     "metadata": {
       "type": [
         "text",

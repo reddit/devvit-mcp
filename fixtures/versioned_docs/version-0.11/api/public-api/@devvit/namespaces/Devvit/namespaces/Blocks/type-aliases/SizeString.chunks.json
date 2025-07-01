@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: SizeString</path>\n[**@devvit/public-api v0.11.14-dev**](../../../../../../README.md)\n# Type Alias: SizeString\n**SizeString** = [`SizePixels`](SizePixels.md) | [`SizePercent`](SizePercent.md) | `number`",
+    "pageContent": "<path>Type Alias: SizeString</path>\n[**@devvit/public-api v0.11.18-dev**](../../../../../../README.md)\n# Type Alias: SizeString\n**SizeString** = [`SizePixels`](SizePixels.md) | [`SizePercent`](SizePercent.md) | `number`",
     "metadata": {
       "type": [
         "text",

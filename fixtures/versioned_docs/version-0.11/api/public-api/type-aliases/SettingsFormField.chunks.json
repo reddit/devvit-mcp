@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: SettingsFormField</path>\n[**@devvit/public-api v0.11.14-dev**](../README.md)\n# Type Alias: SettingsFormField\n**SettingsFormField** = [`ValidatedStringField`](ValidatedStringField.md) | [`ValidatedParagraphField`](ValidatedParagraphField.md) | [`ValidatedNumberField`](ValidatedNumberField.md) | [`ValidatedBooleanField`](ValidatedBooleanField.md) | [`ValidatedSelectField`](ValidatedSelectField.md) | [`SettingsFormFieldGroup`](SettingsFormFieldGroup.md)",
+    "pageContent": "<path>Type Alias: SettingsFormField</path>\n[**@devvit/public-api v0.11.18-dev**](../README.md)\n# Type Alias: SettingsFormField\n**SettingsFormField** = [`ValidatedStringField`](ValidatedStringField.md) | [`ValidatedParagraphField`](ValidatedParagraphField.md) | [`ValidatedNumberField`](ValidatedNumberField.md) | [`ValidatedBooleanField`](ValidatedBooleanField.md) | [`ValidatedSelectField`](ValidatedSelectField.md) | [`SettingsFormFieldGroup`](SettingsFormFieldGroup.md)",
     "metadata": {
       "type": [
         "text",

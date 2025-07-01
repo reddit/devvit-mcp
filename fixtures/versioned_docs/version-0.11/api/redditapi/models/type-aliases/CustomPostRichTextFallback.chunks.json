@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: CustomPostRichTextFallback</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Type Alias: CustomPostRichTextFallback\n**CustomPostRichTextFallback** = `RichTextBuilder` | `string`",
+    "pageContent": "<path>Type Alias: CustomPostRichTextFallback</path>\n[**@devvit/public-api v0.11.18-dev**](../../README.md)\n# Type Alias: CustomPostRichTextFallback\n**CustomPostRichTextFallback** = `RichTextBuilder` | `string`",
     "metadata": {
       "type": [
         "text",

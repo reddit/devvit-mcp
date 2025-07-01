@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Function: getVaultByAddress(), Returns</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Function: getVaultByAddress()\n**getVaultByAddress**(`address`, `metadata`): `Promise`<[`Vault`](../type-aliases/Vault.md)\\>\n## Parameters\n### address\n`string`\n### metadata\n`undefined` | `Metadata`\n## Returns\n`Promise`<[`Vault`](../type-aliases/Vault.md)\\>",
+    "pageContent": "<path>Function: getVaultByAddress(), Returns</path>\n[**@devvit/public-api v0.11.18-dev**](../../README.md)\n# Function: getVaultByAddress()\n**getVaultByAddress**(`address`, `metadata`): `Promise`<[`Vault`](../type-aliases/Vault.md)\\>\n## Parameters\n### address\n`string`\n### metadata\n`undefined` | `Metadata`\n## Returns\n`Promise`<[`Vault`](../type-aliases/Vault.md)\\>",
     "metadata": {
       "type": [
         "text",

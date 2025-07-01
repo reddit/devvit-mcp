@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Interface: SubredditSubscribe, Properties, subscriber?</path>\n[**@devvit/public-api v0.11.14-dev**](../../../../README.md)\n# Interface: SubredditSubscribe\n## Properties\n### subreddit?\n`optional` **subreddit**: `SubredditV2`\n### subscriber?\n`optional` **subscriber**: `UserV2`",
+    "pageContent": "<path>Interface: SubredditSubscribe, Properties, subscriber?</path>\n[**@devvit/public-api v0.11.18-dev**](../../../../README.md)\n# Interface: SubredditSubscribe\n## Properties\n### subreddit?\n`optional` **subreddit**: `SubredditV2`\n### subscriber?\n`optional` **subscriber**: `UserV2`",
     "metadata": {
       "type": [
         "text",

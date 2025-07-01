@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>HTTP fetch, Example</path>\n# HTTP fetch\nMake requests to allow-listed external domains.\nYour Devvit app can make network requests to access allow-listed external domains using HTTP Fetch. This enables your app to leverage webhooks, personal servers, and other third-party integrations asynchronously across the network.\n## Devvit configure\n```ts\nimport { Devvit } from '@devvit/public-api';\n\nDevvit.configure({\n  http: true,\n  // other capabilities\n});\n```\n## Limitations\n-   Access is only allowed to https URIs.\n-   Supported HTTP methods: `GET`, `POST`, `PUT`, `DELETE`, `OPTIONS` and `PATCH`.\n-   HTTP timeout limit is 30 seconds.\nTo request a domain to the allow-list, [please contact us via r/devvit modmail](https://www.reddit.com/message/compose/?to=r%2Fdevvit) or fill out [this form](https://forms.gle/Pn8Eq3RoPcmH1ZJJ7).\n## Example\n```ts\nimport { Devvit } from '@devvit/public-api';\n\nDevvit.configure({ http: true });\n\nDevvit.addMenuItem({\n  location: 'comment',\n  label: 'Sample HTTP request',\n  onPress: async (_, context) => {\n    console.log(`Comment ID:  ${context.commentId}`);\n    const response = await fetch('https://example.com', {\n      method: 'post',\n      headers: {\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({ content: context.commentId }),\n    });\n    context.ui.showToast(\n      `Invoked HTTP request on comment: ${context.commentId}. Completed with status: ${response.status}`\n    );\n  },\n});\n\nexport default Devvit;\n```",
+    "pageContent": "<path>Overview, Requesting a domain to be allow-listed</path>\n# Overview\nMake requests to allow-listed external domains.\nYour Devvit app can make network requests to access allow-listed external domains using HTTP Fetch. This enables your app to leverage webhooks, personal servers, and other third-party integrations asynchronously across the network.\n## Devvit configure\n```ts\nimport { Devvit } from '@devvit/public-api';\n\nDevvit.configure({\n  http: true,\n  // other capabilities\n});\n```\n## Requesting a domain to be allow-listed\nApps may request a domain to be added to the allow-list by specifying `domains` in the `http` configuration. This configuration is optional, and apps can still configure `http: true` as before.\n```ts\nimport { Devvit } from '@devvit/public-api';\n\nDevvit.configure({\n  http: {\n    domains: ['my-site.com', 'another-domain.net'],\n  },\n});\n```\nRequested domains will be submitted for review when you playtest or upload your app. Admins may approve or deny domain requests.\nDomain entries must be exact hostnames only, such as nytimes.com or wikipedia.org. These fetch requests are not allowed:",
     "metadata": {
       "type": [
         "heading",
@@ -8,14 +8,29 @@
         "code"
       ],
       "path": [
-        "HTTP fetch",
-        "Example"
+        "Overview",
+        "Requesting a domain to be allow-listed"
       ],
       "level": 1
     }
   },
   {
-    "pageContent": "<path>HTTP fetch, Troubleshooting, Terms and Conditions</path>\n## Troubleshooting\nIf you see the following error, it means HTTP Fetch requests are hitting the internal timeout limits. To resolve this:\n-   Use a queue or kick off an async request in your back end. You can use [Scheduler](/docs/capabilities/scheduler.md) to monitor the result.\n-   Optimize the overall HTTP request latency if you have a self-hosted server.\n```ts\nHTTP request to domain: <domain> timed out with error: context deadline exceeded.\n```\n### Terms and Conditions\nAny app that uses `fetch` must upload Terms and Conditions and a Privacy Policy. Links to each of these documents must be saved in the app details form.\n![App configuration form](../assets/capabilities/http-fetch/http-fetch-legal-links.png)",
+    "pageContent": "<path>Overview, Example</path>\n-   No using \\* example.com when you need api.example.com\n-   No wildcards: \\*.example.com\n-   No protocols: [https://api.example.com](https://api.example.com)\n-   No paths: api.example.com/webhooks\nDomains that are approved for your app will be displayed in the Developer Settings section for your app at [https://developers.reddit.com/apps/{your-app-slug}/developer-settings](https://developers.reddit.com/apps/%7Byour-app-slug%7D/developer-settings). These domains are allow-listed for **your app only** and not globally.\nApps must request each individual domain that it intends to fetch, even if the domain is already globally allowed. See the [global fetch allowlist](./http-fetch-allowlist.md) to view the list of globally allowed domains.\n## Limitations\n-   Access is only allowed to https URIs.\n-   Supported HTTP methods: `GET`, `POST`, `PUT`, `DELETE`, `OPTIONS` and `PATCH`.\n-   HTTP timeout limit is 30 seconds.\n## Example\n```ts\nimport { Devvit } from '@devvit/public-api';\n\nDevvit.configure({ http: true });\n\nDevvit.addMenuItem({\n  location: 'comment',\n  label: 'Sample HTTP request',\n  onPress: async (_, context) => {\n    console.log(`Comment ID:  ${context.commentId}`);\n    const response = await fetch('https://example.com', {\n      method: 'post',\n      headers: {\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({ content: context.commentId }),\n    });\n    context.ui.showToast(\n      `Invoked HTTP request on comment: ${context.commentId}. Completed with status: ${response.status}`\n    );\n  },\n});\n\nexport default Devvit;\n```",
+    "metadata": {
+      "type": [
+        "text",
+        "heading",
+        "code"
+      ],
+      "path": [
+        "Overview",
+        "Example"
+      ],
+      "level": 2
+    }
+  },
+  {
+    "pageContent": "<path>Overview, Troubleshooting, Terms and Conditions</path>\n## Troubleshooting\nIf you see the following error, it means HTTP Fetch requests are hitting the internal timeout limits. To resolve this:\n-   Use a queue or kick off an async request in your back end. You can use [Scheduler](/docs/capabilities/scheduler.md) to monitor the result.\n-   Optimize the overall HTTP request latency if you have a self-hosted server.\n```ts\nHTTP request to domain: <domain> timed out with error: context deadline exceeded.\n```\n### Terms and Conditions\nAny app that uses `fetch` must upload Terms and Conditions and a Privacy Policy. Links to each of these documents must be saved in the app details form.\n![App configuration form](../assets/capabilities/http-fetch/http-fetch-legal-links.png)",
     "metadata": {
       "type": [
         "heading",
@@ -23,7 +38,7 @@
         "code"
       ],
       "path": [
-        "HTTP fetch",
+        "Overview",
         "Troubleshooting",
         "Terms and Conditions"
       ],

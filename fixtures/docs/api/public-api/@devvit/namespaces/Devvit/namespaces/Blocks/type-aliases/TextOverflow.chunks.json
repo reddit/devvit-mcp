@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: TextOverflow</path>\n[**@devvit/public-api v0.11.15-dev**](../../../../../../README.md)\n# Type Alias: TextOverflow\n**TextOverflow** = `\"clip\"` | `\"ellipsis\"`",
+    "pageContent": "<path>Type Alias: TextOverflow</path>\n[**@devvit/public-api v0.11.19-dev**](../../../../../../README.md)\n# Type Alias: TextOverflow\n**TextOverflow** = `\"clip\"` | `\"ellipsis\"`",
     "metadata": {
       "type": [
         "text",

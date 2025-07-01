@@ -1,4 +1,4 @@
-[**@devvit/public-api v0.11.14-dev**](../README.md)
+[**@devvit/public-api v0.11.18-dev**](../README.md)
 
 ---
 
@@ -12,7 +12,7 @@
 
 ### http?
 
-> `optional` **http**: [`PluginSettings`](PluginSettings.md) \| `boolean`
+> `optional` **http**: [`PluginSettings`](PluginSettings.md) \| `boolean` \| \{ `domains`: `string`[]; \}
 
 Allows your app to use the HTTP/Fetch API
 

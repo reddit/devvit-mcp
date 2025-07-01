@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: ConversationStateFilter</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Type Alias: ConversationStateFilter\n**ConversationStateFilter** = `\"all\"` | `\"new\"` | `\"inprogress\"` | `\"archived\"` | `\"appeals\"` | `\"join_requests\"` | `\"highlighted\"` | `\"mod\"` | `\"notifications\"` | `\"inbox\"` | `\"filtered\"` | `\"default\"`\nA Conversation State is a way in which conversations may be filtered within the UI.\nA conversation can be in more than one state. For example, a conversation may be both 'highlighted' and 'inprogress'.",
+    "pageContent": "<path>Type Alias: ConversationStateFilter</path>\n[**@devvit/public-api v0.11.19-dev**](../../README.md)\n# Type Alias: ConversationStateFilter\n**ConversationStateFilter** = `\"all\"` | `\"new\"` | `\"inprogress\"` | `\"archived\"` | `\"appeals\"` | `\"join_requests\"` | `\"highlighted\"` | `\"mod\"` | `\"notifications\"` | `\"inbox\"` | `\"filtered\"` | `\"default\"`\nA Conversation State is a way in which conversations may be filtered within the UI.\nA conversation can be in more than one state. For example, a conversation may be both 'highlighted' and 'inprogress'.",
     "metadata": {
       "type": [
         "text",

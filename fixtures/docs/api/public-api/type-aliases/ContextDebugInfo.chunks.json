@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: ContextDebugInfo, Type declaration, metadata</path>\n[**@devvit/public-api v0.11.15-dev**](../README.md)\n# Type Alias: ContextDebugInfo\n**ContextDebugInfo** = `object` & `{ [key in AppDebug]?: string }`\n## Type declaration\n### effects?\n`optional` **effects**: `EffectEmitter`\n### metadata\n**metadata**: `Metadata`",
+    "pageContent": "<path>Type Alias: ContextDebugInfo, Type declaration, metadata</path>\n[**@devvit/public-api v0.11.19-dev**](../README.md)\n# Type Alias: ContextDebugInfo\n**ContextDebugInfo** = `object` & `{ [key in AppDebug]?: string }`\n## Type declaration\n### effects?\n`optional` **effects**: `EffectEmitter`\n### metadata\n**metadata**: `Metadata`",
     "metadata": {
       "type": [
         "text",

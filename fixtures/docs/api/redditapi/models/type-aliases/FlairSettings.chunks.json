@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: FlairSettings, Properties, usersCanAssign</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Type Alias: FlairSettings\n**FlairSettings** = `object`\n## Properties\n### enabled\n**enabled**: `boolean`\n### userFlairBackgroundColor?\n`optional` **userFlairBackgroundColor**: `string`\n### userFlairTextColor?\n`optional` **userFlairTextColor**: `string`\n### usersCanAssign\n**usersCanAssign**: `boolean`",
+    "pageContent": "<path>Type Alias: FlairSettings, Properties, usersCanAssign</path>\n[**@devvit/public-api v0.11.19-dev**](../../README.md)\n# Type Alias: FlairSettings\n**FlairSettings** = `object`\n## Properties\n### enabled\n**enabled**: `boolean`\n### userFlairBackgroundColor?\n`optional` **userFlairBackgroundColor**: `string`\n### userFlairTextColor?\n`optional` **userFlairTextColor**: `string`\n### usersCanAssign\n**usersCanAssign**: `boolean`",
     "metadata": {
       "type": [
         "text",

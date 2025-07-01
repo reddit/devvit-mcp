@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: CommentCreateDefinition, Properties, onEvent</path>\n[**@devvit/public-api v0.11.14-dev**](../README.md)\n# Type Alias: CommentCreateDefinition\n**CommentCreateDefinition** = `object`\n## Properties\n### event\n**event**: [`CommentCreate`](CommentCreate.md)\n### onEvent\n**onEvent**: [`TriggerOnEventHandler`](TriggerOnEventHandler.md)<[`CommentCreate`](../@devvit/namespaces/EventTypes/interfaces/CommentCreate.md)\\>",
+    "pageContent": "<path>Type Alias: CommentCreateDefinition, Properties, onEvent</path>\n[**@devvit/public-api v0.11.18-dev**](../README.md)\n# Type Alias: CommentCreateDefinition\n**CommentCreateDefinition** = `object`\n## Properties\n### event\n**event**: [`CommentCreate`](CommentCreate.md)\n### onEvent\n**onEvent**: [`TriggerOnEventHandler`](TriggerOnEventHandler.md)<[`CommentCreate`](../@devvit/namespaces/EventTypes/interfaces/CommentCreate.md)\\>",
     "metadata": {
       "type": [
         "text",

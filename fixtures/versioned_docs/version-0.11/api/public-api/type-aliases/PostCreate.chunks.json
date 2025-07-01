@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: PostCreate</path>\n[**@devvit/public-api v0.11.14-dev**](../README.md)\n# Type Alias: PostCreate\n**PostCreate** = `\"PostCreate\"`\nThe event name for when a post is created, after safety delay",
+    "pageContent": "<path>Type Alias: PostCreate</path>\n[**@devvit/public-api v0.11.18-dev**](../README.md)\n# Type Alias: PostCreate\n**PostCreate** = `\"PostCreate\"`\nThe event name for when a post is created, after safety delay",
     "metadata": {
       "type": [
         "text",

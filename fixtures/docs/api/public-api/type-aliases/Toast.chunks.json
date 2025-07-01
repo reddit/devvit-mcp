@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: Toast, Properties, text</path>\n[**@devvit/public-api v0.11.15-dev**](../README.md)\n# Type Alias: Toast\n**Toast** = `object`\n## Properties\n### appearance?\n`optional` **appearance**: `\"neutral\"` | `\"success\"`\nThe appearance of the toast\n### text\n**text**: `string`\nThe message shown within the toast",
+    "pageContent": "<path>Type Alias: Toast, Properties, text</path>\n[**@devvit/public-api v0.11.19-dev**](../README.md)\n# Type Alias: Toast\n**Toast** = `object`\n## Properties\n### appearance?\n`optional` **appearance**: `\"neutral\"` | `\"success\"`\nThe appearance of the toast\n### text\n**text**: `string`\nThe message shown within the toast",
     "metadata": {
       "type": [
         "text",

@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: OnAutomoderatorFilterCommentDefinition, Properties, onEvent</path>\n[**@devvit/public-api v0.11.14-dev**](../README.md)\n# Type Alias: OnAutomoderatorFilterCommentDefinition\n**OnAutomoderatorFilterCommentDefinition** = `object`\n## Properties\n### event\n**event**: [`AutomoderatorFilterComment`](AutomoderatorFilterComment.md)\n### onEvent\n**onEvent**: [`TriggerOnEventHandler`](TriggerOnEventHandler.md)<[`AutomoderatorFilterComment`](../@devvit/namespaces/EventTypes/interfaces/AutomoderatorFilterComment.md)\\>",
+    "pageContent": "<path>Type Alias: OnAutomoderatorFilterCommentDefinition, Properties, onEvent</path>\n[**@devvit/public-api v0.11.18-dev**](../README.md)\n# Type Alias: OnAutomoderatorFilterCommentDefinition\n**OnAutomoderatorFilterCommentDefinition** = `object`\n## Properties\n### event\n**event**: [`AutomoderatorFilterComment`](AutomoderatorFilterComment.md)\n### onEvent\n**onEvent**: [`TriggerOnEventHandler`](TriggerOnEventHandler.md)<[`AutomoderatorFilterComment`](../@devvit/namespaces/EventTypes/interfaces/AutomoderatorFilterComment.md)\\>",
     "metadata": {
       "type": [
         "text",

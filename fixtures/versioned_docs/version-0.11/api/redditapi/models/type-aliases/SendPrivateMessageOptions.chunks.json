@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: SendPrivateMessageOptions, Properties, to</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Type Alias: SendPrivateMessageOptions\n**SendPrivateMessageOptions** = `object`\n## Properties\n### subject\n**subject**: `string`\nThe subject of the message.\n### text\n**text**: `string`\nThe body of the message in markdown text format.\n### to\n**to**: `string`\nRecipient username (without the leading u/), or /r/name for that subreddit's moderators.",
+    "pageContent": "<path>Type Alias: SendPrivateMessageOptions, Properties, to</path>\n[**@devvit/public-api v0.11.18-dev**](../../README.md)\n# Type Alias: SendPrivateMessageOptions\n**SendPrivateMessageOptions** = `object`\n## Properties\n### subject\n**subject**: `string`\nThe subject of the message.\n### text\n**text**: `string`\nThe body of the message in markdown text format.\n### to\n**to**: `string`\nRecipient username (without the leading u/), or /r/name for that subreddit's moderators.",
     "metadata": {
       "type": [
         "text",

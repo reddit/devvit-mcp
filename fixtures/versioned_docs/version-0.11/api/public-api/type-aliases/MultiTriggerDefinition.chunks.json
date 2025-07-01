@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: MultiTriggerDefinition<Event>, Properties, onEvent</path>\n[**@devvit/public-api v0.11.14-dev**](../README.md)\n# Type Alias: MultiTriggerDefinition<Event>\n**MultiTriggerDefinition**<`Event`\\> = `object`\n## Type Parameters\n### Event\n`Event` _extends_ [`TriggerEvent`](TriggerEvent.md)\n## Properties\n### events\n**events**: readonly `Event`\\[\\]\n### onEvent\n**onEvent**: [`TriggerOnEventHandler`](TriggerOnEventHandler.md)<[`TriggerEventType`](TriggerEventType.md)\\[`Event`\\]>",
+    "pageContent": "<path>Type Alias: MultiTriggerDefinition<Event>, Properties, onEvent</path>\n[**@devvit/public-api v0.11.18-dev**](../README.md)\n# Type Alias: MultiTriggerDefinition<Event>\n**MultiTriggerDefinition**<`Event`\\> = `object`\n## Type Parameters\n### Event\n`Event` _extends_ [`TriggerEvent`](TriggerEvent.md)\n## Properties\n### events\n**events**: readonly `Event`\\[\\]\n### onEvent\n**onEvent**: [`TriggerOnEventHandler`](TriggerOnEventHandler.md)<[`TriggerEventType`](TriggerEventType.md)\\[`Event`\\]>",
     "metadata": {
       "type": [
         "text",

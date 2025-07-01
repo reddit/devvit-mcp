@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: FlairBackgroundColor</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Type Alias: FlairBackgroundColor\n**FlairBackgroundColor** = `` `#${string}` `` | `\"transparent\"`",
+    "pageContent": "<path>Type Alias: FlairBackgroundColor</path>\n[**@devvit/public-api v0.11.19-dev**](../../README.md)\n# Type Alias: FlairBackgroundColor\n**FlairBackgroundColor** = `` `#${string}` `` | `\"transparent\"`",
     "metadata": {
       "type": [
         "text",

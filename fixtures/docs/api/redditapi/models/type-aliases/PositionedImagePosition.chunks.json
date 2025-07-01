@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: PositionedImagePosition</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Type Alias: PositionedImagePosition\n**PositionedImagePosition** = `\"left\"` | `\"right\"` | `\"centered\"`",
+    "pageContent": "<path>Type Alias: PositionedImagePosition</path>\n[**@devvit/public-api v0.11.19-dev**](../../README.md)\n# Type Alias: PositionedImagePosition\n**PositionedImagePosition** = `\"left\"` | `\"right\"` | `\"centered\"`",
     "metadata": {
       "type": [
         "text",

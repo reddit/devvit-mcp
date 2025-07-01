@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Class: SubredditWikiSettings, Properties, wikiEditMode?</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Class: SubredditWikiSettings\n## Constructors\n### new SubredditWikiSettings()\n**new SubredditWikiSettings**(): `SubredditWikiSettings`\n#### Returns\n`SubredditWikiSettings`\n## Properties\n### wikiEditMode?\n`optional` **wikiEditMode**: [`WikiEditMode`](../type-aliases/WikiEditMode.md)",
+    "pageContent": "<path>Class: SubredditWikiSettings, Properties, wikiEditMode?</path>\n[**@devvit/public-api v0.11.18-dev**](../../README.md)\n# Class: SubredditWikiSettings\n## Constructors\n### new SubredditWikiSettings()\n**new SubredditWikiSettings**(): `SubredditWikiSettings`\n#### Returns\n`SubredditWikiSettings`\n## Properties\n### wikiEditMode?\n`optional` **wikiEditMode**: [`WikiEditMode`](../type-aliases/WikiEditMode.md)",
     "metadata": {
       "type": [
         "text",

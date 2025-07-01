@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Function: getModerationLog(), Returns</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Function: getModerationLog()\n**getModerationLog**(`options`, `metadata`): [`Listing`](../classes/Listing.md)<[`ModAction`](../interfaces/ModAction.md)\\>\n## Parameters\n### options\n[`GetModerationLogOptions`](../type-aliases/GetModerationLogOptions.md)\n### metadata\n`undefined` | `Metadata`\n## Returns\n[`Listing`](../classes/Listing.md)<[`ModAction`](../interfaces/ModAction.md)\\>",
+    "pageContent": "<path>Function: getModerationLog(), Returns</path>\n[**@devvit/public-api v0.11.18-dev**](../../README.md)\n# Function: getModerationLog()\n**getModerationLog**(`options`, `metadata`): [`Listing`](../classes/Listing.md)<[`ModAction`](../interfaces/ModAction.md)\\>\n## Parameters\n### options\n[`GetModerationLogOptions`](../type-aliases/GetModerationLogOptions.md)\n### metadata\n`undefined` | `Metadata`\n## Returns\n[`Listing`](../classes/Listing.md)<[`ModAction`](../interfaces/ModAction.md)\\>",
     "metadata": {
       "type": [
         "text",

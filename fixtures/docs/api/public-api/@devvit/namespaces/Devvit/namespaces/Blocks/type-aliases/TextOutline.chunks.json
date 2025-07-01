@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: TextOutline</path>\n[**@devvit/public-api v0.11.15-dev**](../../../../../../README.md)\n# Type Alias: TextOutline\n**TextOutline** = [`Thickness`](Thickness.md)\nthin = 1px; thick = 2px;",
+    "pageContent": "<path>Type Alias: TextOutline</path>\n[**@devvit/public-api v0.11.19-dev**](../../../../../../README.md)\n# Type Alias: TextOutline\n**TextOutline** = [`Thickness`](Thickness.md)\nthin = 1px; thick = 2px;",
     "metadata": {
       "type": [
         "text",

@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: ModActionTarget, Properties, title?</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Type Alias: ModActionTarget\n**ModActionTarget** = `object`\n## Properties\n### author?\n`optional` **author**: `string`\n### body?\n`optional` **body**: `string`\n### id\n**id**: `string`\n### permalink?\n`optional` **permalink**: `string`\n### title?\n`optional` **title**: `string`",
+    "pageContent": "<path>Type Alias: ModActionTarget, Properties, title?</path>\n[**@devvit/public-api v0.11.19-dev**](../../README.md)\n# Type Alias: ModActionTarget\n**ModActionTarget** = `object`\n## Properties\n### author?\n`optional` **author**: `string`\n### body?\n`optional` **body**: `string`\n### id\n**id**: `string`\n### permalink?\n`optional` **permalink**: `string`\n### title?\n`optional` **title**: `string`",
     "metadata": {
       "type": [
         "text",

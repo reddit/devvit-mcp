@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: ContainerPadding</path>\n[**@devvit/public-api v0.11.14-dev**](../../../../../../README.md)\n# Type Alias: ContainerPadding\n**ContainerPadding** = `\"none\"` | `\"xsmall\"` | `\"small\"` | `\"medium\"` | `\"large\"`\nxsmall = 4px; small = 8px; medium = 16px; large = 32px;",
+    "pageContent": "<path>Type Alias: ContainerPadding</path>\n[**@devvit/public-api v0.11.18-dev**](../../../../../../README.md)\n# Type Alias: ContainerPadding\n**ContainerPadding** = `\"none\"` | `\"xsmall\"` | `\"small\"` | `\"medium\"` | `\"large\"`\nxsmall = 4px; small = 8px; medium = 16px; large = 32px;",
     "metadata": {
       "type": [
         "text",

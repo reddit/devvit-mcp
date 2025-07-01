@@ -4,6 +4,96 @@ While we're always shipping fixes and improvements, our team bundles new feature
 
 Before upgrading `@devvit/public-api` in your project, always update the CLI first by running `npm install -g devvit`.
 
+## Devvit 0.11.18: Playtest subreddits and CLI improvements
+
+**Release Date: Jul 1, 2025**
+
+We made app development even smoother with auto-generated [playtest subreddits](./playtest.md). When you run `devvit upload` for the first time, u/devvit-dev-bot automatically creates a playtest subreddit for your app that:
+
+- Is private by default
+- Makes you a moderator automatically
+- Has your app pre-installed and ready to test
+- Allows admins to join
+
+Just run `devvit playtest` to use the auto-generated subreddit.
+
+You can also still use your own subreddits for playtesting (with fewer than 200 subscribers) by specifying the subreddit in the CLI or adding a default subreddit in your app. Learn more about playtesting [here](./playtest.md#playtest-on-an-alternate-subreddit).
+
+**CLI improvements**
+
+Here’s what’s new:
+
+- A [`devvit view`](./devvit_cli.md#devvit-view) command that lets you see the latest version of your app (since it’s not updated in devvit.yaml anymore).
+- CLI updates are now less disruptive and don’t require a forced update for non-breaking changes. (Note that this update does require a forced update to take effect.)
+
+Use `npm install -g devvit@latest` to update your CLI .
+
+:::note
+If you’re using Devvit Web (Experimental) templates or Bolt, you should only update Devvit CLI locally by running `npm i devvit@latest`.
+:::
+
+**And a shout-out**
+
+Special thanks to u/antboiy for updating `Comment.ApprovedAt` in our typedoc. We love community contributions!
+
+## Devvit 0.11.17: Easier fetch domain requests
+
+**Release Date: June 16, 2025**
+
+We’ve simplified how to request new domains for HTTP fetch (no more forms!). Now you can just add domains in your app’s configuration, and when you playtest or upload the app, the domain is automatically submitted for approval.
+
+```tsx
+import { Devvit } from '@devvit/public-api';
+
+Devvit.configure({
+  http: {
+    domains: ['my-site.com', 'another-domain.net'],
+  },
+});
+```
+
+:::note
+Domains on the [global allow list](./capabilities/http-fetch-allowlist.md) don’t need approval—they just work.
+:::
+
+There’s also a new section in your app’s Developer Settings (https://developers.reddit.com/apps/[app-slug]/developer-setings) tab that lets you check the status of a domain.
+
+![domain exceptions](./assets/domain_exceptions.png)
+
+To use this feature, you’ll need to be on the latest version of the public api. You can do this by running: `npm i @devvit/public-api` in your app.
+
+Learn more about [HTTP fetch](./capabilities/http-fetch.md) and the[allow-listed domains](./capabilities/http-fetch-allowlist.md) in our docs.
+
+## Devvit 0.11.16: CLI improvements and updated guidelines
+
+**Release Date: May 27, 2025**
+
+Release 0.11.16 has several CLI improvements. We’ve also updated our guidelines to clarify the app review process and use of LLMs, among other things. Check out [Devvit Rules](./devvit_rules) to see what’s new!
+
+**CLI updates**
+
+- **Removed versions from devvit.yaml**. Now you’ll see less of this annoying error: _your local version number doesn't match the server, do you want to continue anyway?_. Versions are handled on our server, and existing versions in devvit.yaml will not update or have any effect on uploads.
+
+- **Require the latest CLI version to playtest**. You need to be on the latest version of the CLI in order to playtest your app properly. The latest CLI is now required to `devvit playtest` (just like it is for `devvit upload`). Things to note:
+
+  - Updating your CLI does not require you to update your app code / devvit SDK (i.e. you do NOT have to run devvit update app to playtest).
+
+  - You can update your CLI by doing `npm install -g devvit@latest`
+
+- **Ensure @devvit/payments and @devvit/public-api have the same version**. Unexpected behavior resulted from mismatched payments and public api versions. Going forward, if you’re using payments the versions need to be the same.
+
+- **Small security fix** - Thanks to a [community report](https://github.com/reddit/devvit/pull/180), we implemented a small CLI security fix.
+
+**Other updates**
+
+There’s a small change to mount() for webviews where you cannot mount() if a webview is already mounted. Doing so will now show a warning log for the developer.
+
+## Devvit 0.11.15: Typescript update
+
+**Release Date: May 7, 2025**
+
+This little release updates typescript to 5.8.3 and fixes an internal issue that caused problems uploading webview assets.
+
 ## Devvit 0.11.14: App versions panel, gallery image support, and some smaller fixes
 
 **Release Date: May 6, 2025**

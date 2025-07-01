@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: ModMailDefinition, Properties, onEvent</path>\n[**@devvit/public-api v0.11.15-dev**](../README.md)\n# Type Alias: ModMailDefinition\n**ModMailDefinition** = `object`\n## Properties\n### event\n**event**: [`ModMailTrigger`](ModMailTrigger.md)\n### onEvent\n**onEvent**: [`TriggerOnEventHandler`](TriggerOnEventHandler.md)<`protos.ModMail`\\>",
+    "pageContent": "<path>Type Alias: ModMailDefinition, Properties, onEvent</path>\n[**@devvit/public-api v0.11.19-dev**](../README.md)\n# Type Alias: ModMailDefinition\n**ModMailDefinition** = `object`\n## Properties\n### event\n**event**: [`ModMailTrigger`](ModMailTrigger.md)\n### onEvent\n**onEvent**: [`TriggerOnEventHandler`](TriggerOnEventHandler.md)<`protos.ModMail`\\>",
     "metadata": {
       "type": [
         "text",

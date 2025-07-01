@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: ScheduledJobEvent<T>, Properties, name</path>\n[**@devvit/public-api v0.11.15-dev**](../README.md)\n# Type Alias: ScheduledJobEvent<T>\n**ScheduledJobEvent**<`T`\\> = `object`\n## Type Parameters\n### T\n`T` _extends_ [`JSONObject`](JSONObject.md) | `undefined`\n## Properties\n### data\n**data**: `T`\nAdditional data passed in by the scheduler client\n### name\n**name**: `string`\nThe name of the scheduled job",
+    "pageContent": "<path>Type Alias: ScheduledJobEvent<T>, Properties, name</path>\n[**@devvit/public-api v0.11.19-dev**](../README.md)\n# Type Alias: ScheduledJobEvent<T>\n**ScheduledJobEvent**<`T`\\> = `object`\n## Type Parameters\n### T\n`T` _extends_ [`JSONObject`](JSONObject.md) | `undefined`\n## Properties\n### data\n**data**: `T`\nAdditional data passed in by the scheduler client\n### name\n**name**: `string`\nThe name of the scheduled job",
     "metadata": {
       "type": [
         "text",

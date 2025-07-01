@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Class: AuthorFlairSettings, Properties, isSelfAssignabled?</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Class: AuthorFlairSettings\n## Constructors\n### new AuthorFlairSettings()\n**new AuthorFlairSettings**(): `AuthorFlairSettings`\n#### Returns\n`AuthorFlairSettings`\n## Properties\n### isEnabled?\n`optional` **isEnabled**: `boolean`\n### isSelfAssignabled?\n`optional` **isSelfAssignabled**: `boolean`",
+    "pageContent": "<path>Class: AuthorFlairSettings, Properties, isSelfAssignabled?</path>\n[**@devvit/public-api v0.11.19-dev**](../../README.md)\n# Class: AuthorFlairSettings\n## Constructors\n### new AuthorFlairSettings()\n**new AuthorFlairSettings**(): `AuthorFlairSettings`\n#### Returns\n`AuthorFlairSettings`\n## Properties\n### isEnabled?\n`optional` **isEnabled**: `boolean`\n### isSelfAssignabled?\n`optional` **isSelfAssignabled**: `boolean`",
     "metadata": {
       "type": [
         "text",

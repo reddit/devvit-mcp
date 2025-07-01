@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: UseWebViewOnMessage()<From, To>, Returns</path>\n[**@devvit/public-api v0.11.15-dev**](../README.md)\n# Type Alias: UseWebViewOnMessage()<From, To>\n**UseWebViewOnMessage**<`From`, `To`\\> = (`message`, `hook`) => `void` | `Promise`<`void`\\>\n## Type Parameters\n### From\n`From` _extends_ [`JSONValue`](JSONValue.md) = [`JSONValue`](JSONValue.md)\nMessage from web view to Devvit Blocks app.\n### To\n`To` _extends_ [`JSONValue`](JSONValue.md) = [`JSONValue`](JSONValue.md)\nMessage from Devvit Blocks app to web view.\n## Parameters\n### message\n`From`\n### hook\n[`UseWebViewResult`](UseWebViewResult.md)<`To`\\>\n## Returns\n`void` | `Promise`<`void`\\>",
+    "pageContent": "<path>Type Alias: UseWebViewOnMessage()<From, To>, Returns</path>\n[**@devvit/public-api v0.11.19-dev**](../README.md)\n# Type Alias: UseWebViewOnMessage()<From, To>\n**UseWebViewOnMessage**<`From`, `To`\\> = (`message`, `hook`) => `void` | `Promise`<`void`\\>\n## Type Parameters\n### From\n`From` _extends_ [`JSONValue`](JSONValue.md) = [`JSONValue`](JSONValue.md)\nMessage from web view to Devvit Blocks app.\n### To\n`To` _extends_ [`JSONValue`](JSONValue.md) = [`JSONValue`](JSONValue.md)\nMessage from Devvit Blocks app to web view.\n## Parameters\n### message\n`From`\n### hook\n[`UseWebViewResult`](UseWebViewResult.md)<`To`\\>\n## Returns\n`void` | `Promise`<`void`\\>",
     "metadata": {
       "type": [
         "text",

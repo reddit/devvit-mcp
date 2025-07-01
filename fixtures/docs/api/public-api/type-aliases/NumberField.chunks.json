@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: NumberField</path>\n[**@devvit/public-api v0.11.15-dev**](../README.md)\n# Type Alias: NumberField\n**NumberField** = `Prettify`<[`BaseField`](BaseField.md)<`number`\\> & `Omit`<`FieldConfig_Number`, `\"min\"` | `\"max\"` | `\"step\"`\\> & `object`\\>\nA number field",
+    "pageContent": "<path>Type Alias: NumberField</path>\n[**@devvit/public-api v0.11.19-dev**](../README.md)\n# Type Alias: NumberField\n**NumberField** = `Prettify`<[`BaseField`](BaseField.md)<`number`\\> & `Omit`<`FieldConfig_Number`, `\"min\"` | `\"max\"` | `\"step\"`\\> & `object`\\>\nA number field",
     "metadata": {
       "type": [
         "text",

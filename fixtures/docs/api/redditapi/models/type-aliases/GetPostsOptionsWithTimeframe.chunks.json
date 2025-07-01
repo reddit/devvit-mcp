@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: GetPostsOptionsWithTimeframe, Type declaration, timeframe?</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Type Alias: GetPostsOptionsWithTimeframe\n**GetPostsOptionsWithTimeframe** = [`GetPostsOptions`](GetPostsOptions.md) & `object`\n## Type declaration\n### timeframe?\n`optional` **timeframe**: `\"hour\"` | `\"day\"` | `\"week\"` | `\"month\"` | `\"year\"` | `\"all\"`",
+    "pageContent": "<path>Type Alias: GetPostsOptionsWithTimeframe, Type declaration, timeframe?</path>\n[**@devvit/public-api v0.11.19-dev**](../../README.md)\n# Type Alias: GetPostsOptionsWithTimeframe\n**GetPostsOptionsWithTimeframe** = [`GetPostsOptions`](GetPostsOptions.md) & `object`\n## Type declaration\n### timeframe?\n`optional` **timeframe**: `\"hour\"` | `\"day\"` | `\"week\"` | `\"month\"` | `\"year\"` | `\"all\"`",
     "metadata": {
       "type": [
         "text",

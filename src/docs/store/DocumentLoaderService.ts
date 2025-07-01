@@ -14,9 +14,11 @@ const fixturesDir = join(__dirname, '../../../', 'fixtures');
 
 export class DocumentLoaderService {
   private readonly store: DocumentStore;
+  private readonly fixturesPath: string;
 
-  constructor(store: DocumentStore) {
+  constructor(store: DocumentStore, fixturesPath: string) {
     this.store = store;
+    this.fixturesPath = fixturesPath;
   }
 
   private async readJsonFile<T>(path: string): Promise<T> {
@@ -51,8 +53,8 @@ export class DocumentLoaderService {
           const embeddingsFile = join(currentDir, `${baseName}.chunks.embeddings.json`);
 
           if (await this.fileExists(embeddingsFile)) {
-            const relativePath = fullPath.startsWith(fixturesDir + '/')
-              ? fullPath.substring(fixturesDir.length + 1)
+            const relativePath = fullPath.startsWith(this.fixturesPath + '/')
+              ? fullPath.substring(this.fixturesPath.length + 1)
               : fullPath;
 
             let version = '';
@@ -90,9 +92,9 @@ export class DocumentLoaderService {
     const library = 'devvit';
 
     logger.info(`Loading fixture documents for library: ${library}`);
-    logger.info(`Fixtures directory: ${fixturesDir}`);
+    logger.info(`Fixtures directory: ${this.fixturesPath}`);
 
-    const filePairs = await this.findChunkFiles(fixturesDir);
+    const filePairs = await this.findChunkFiles(this.fixturesPath);
 
     logger.info(`Found ${filePairs.length} file pairs to load`);
 
@@ -107,8 +109,8 @@ export class DocumentLoaderService {
         );
       }
 
-      const relativeChunksPath = chunksPath.startsWith(fixturesDir + '/')
-        ? chunksPath.substring(fixturesDir.length + 1)
+      const relativeChunksPath = chunksPath.startsWith(this.fixturesPath + '/')
+        ? chunksPath.substring(this.fixturesPath.length + 1)
         : chunksPath;
       const slug = relativeChunksPath.replace(/\.chunks\.json$/, '');
 

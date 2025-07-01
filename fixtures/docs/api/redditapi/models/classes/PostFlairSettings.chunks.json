@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Class: PostFlairSettings, Properties, isSelfAssignabled?</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Class: PostFlairSettings\n## Constructors\n### new PostFlairSettings()\n**new PostFlairSettings**(): `PostFlairSettings`\n#### Returns\n`PostFlairSettings`\n## Properties\n### isEnabled?\n`optional` **isEnabled**: `boolean`\n### isSelfAssignabled?\n`optional` **isSelfAssignabled**: `boolean`",
+    "pageContent": "<path>Class: PostFlairSettings, Properties, isSelfAssignabled?</path>\n[**@devvit/public-api v0.11.19-dev**](../../README.md)\n# Class: PostFlairSettings\n## Constructors\n### new PostFlairSettings()\n**new PostFlairSettings**(): `PostFlairSettings`\n#### Returns\n`PostFlairSettings`\n## Properties\n### isEnabled?\n`optional` **isEnabled**: `boolean`\n### isSelfAssignabled?\n`optional` **isSelfAssignabled**: `boolean`",
     "metadata": {
       "type": [
         "text",

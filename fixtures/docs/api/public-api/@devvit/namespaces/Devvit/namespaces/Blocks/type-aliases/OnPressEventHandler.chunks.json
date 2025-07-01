@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: OnPressEventHandler(), Returns</path>\n[**@devvit/public-api v0.11.15-dev**](../../../../../../README.md)\n# Type Alias: OnPressEventHandler()\n**OnPressEventHandler** = (`data`) => `void` | `Promise`<`void`\\>\n## Parameters\n### data\n[`JSONObject`](../../../../../../type-aliases/JSONObject.md)\n## Returns\n`void` | `Promise`<`void`\\>",
+    "pageContent": "<path>Type Alias: OnPressEventHandler(), Returns</path>\n[**@devvit/public-api v0.11.19-dev**](../../../../../../README.md)\n# Type Alias: OnPressEventHandler()\n**OnPressEventHandler** = (`data`) => `void` | `Promise`<`void`\\>\n## Parameters\n### data\n[`JSONObject`](../../../../../../type-aliases/JSONObject.md)\n## Returns\n`void` | `Promise`<`void`\\>",
     "metadata": {
       "type": [
         "text",

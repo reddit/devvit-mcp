@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Function: getSubredditInfoByName(), Returns</path>\n[**@devvit/public-api v0.11.15-dev**](../../README.md)\n# Function: getSubredditInfoByName()\n**getSubredditInfoByName**(`subredditName`, `metadata`): `Promise`<[`SubredditInfo`](../type-aliases/SubredditInfo.md)\\>\nGets a [SubredditInfo](../type-aliases/SubredditInfo.md) object by name\n## Parameters\n### subredditName\n`string`\n### metadata\nOptional RPC metadata passed with every request.\n`undefined` | `Metadata`\n## Returns\n`Promise`<[`SubredditInfo`](../type-aliases/SubredditInfo.md)\\>\nA Promise that resolves a SubredditInfo object.",
+    "pageContent": "<path>Function: getSubredditInfoByName(), Returns</path>\n[**@devvit/public-api v0.11.19-dev**](../../README.md)\n# Function: getSubredditInfoByName()\n**getSubredditInfoByName**(`subredditName`, `metadata`): `Promise`<[`SubredditInfo`](../type-aliases/SubredditInfo.md)\\>\nGets a [SubredditInfo](../type-aliases/SubredditInfo.md) object by name\n## Parameters\n### subredditName\n`string`\n### metadata\nOptional RPC metadata passed with every request.\n`undefined` | `Metadata`\n## Returns\n`Promise`<[`SubredditInfo`](../type-aliases/SubredditInfo.md)\\>\nA Promise that resolves a SubredditInfo object.",
     "metadata": {
       "type": [
         "text",

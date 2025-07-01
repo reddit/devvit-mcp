@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Interface: CommentUpdate, Properties, subreddit?</path>\n[**@devvit/public-api v0.11.15-dev**](../../../../README.md)\n# Interface: CommentUpdate\n## Properties\n### author?\n`optional` **author**: `UserV2`\n### comment?\n`optional` **comment**: `CommentV2`\n### post?\n`optional` **post**: `PostV2`\n### previousBody\n**previousBody**: `string`\n### subreddit?\n`optional` **subreddit**: `SubredditV2`",
+    "pageContent": "<path>Interface: CommentUpdate, Properties, subreddit?</path>\n[**@devvit/public-api v0.11.19-dev**](../../../../README.md)\n# Interface: CommentUpdate\n## Properties\n### author?\n`optional` **author**: `UserV2`\n### comment?\n`optional` **comment**: `CommentV2`\n### post?\n`optional` **post**: `PostV2`\n### previousBody\n**previousBody**: `string`\n### subreddit?\n`optional` **subreddit**: `SubredditV2`",
     "metadata": {
       "type": [
         "text",

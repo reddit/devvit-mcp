@@ -7,6 +7,7 @@ import { promisify } from 'util';
 import { exec } from 'child_process';
 import { minimatch } from 'minimatch';
 import PQueue from 'p-queue';
+import archiver from 'archiver';
 import { GreedySplitter } from '../docs/splitter/GreedySplitter';
 import { SemanticMarkdownSplitter } from '../docs/splitter/SemanticMarkdownSplitter';
 import { logger } from '../utils/logger';
@@ -20,7 +21,7 @@ const execPromise = promisify(exec);
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDir = path.dirname(currentFilePath);
 const PROJECT_ROOT = path.resolve(currentDir, '..', '..');
-const FIXTURES_DIR = path.join(PROJECT_ROOT, 'fixtures');
+const FIXTURES_DIR = path.join(PROJECT_ROOT, 'dist/fixtures');
 
 const queue = new PQueue({
   concurrency: 10,
@@ -97,7 +98,11 @@ async function cloneRepo(repoUrl: string, branch: string): Promise<string> {
   } catch (error) {
     logger.error('Error cloning repository:', error);
     // Clean up temp directory on failure
-    await fs.rm(tempDir, { recursive: true, force: true });
+    try {
+      await fs.rm(tempDir, { recursive: true, force: true });
+    } catch (cleanupError) {
+      logger.warn('Error cleaning up temp directory:', cleanupError);
+    }
     throw error;
   }
 }
@@ -284,6 +289,8 @@ async function processDirectory(
 async function clearFixturesDirectory(): Promise<void> {
   try {
     await fs.rm(FIXTURES_DIR, { recursive: true, force: true });
+    await fs.rm(path.join(PROJECT_ROOT, 'fixtures.tar.gz'), { force: true });
+    await fs.rm(path.join(PROJECT_ROOT, 'fixtures.zip'), { force: true });
     logger.info('Cleared existing fixtures directory');
   } catch (error) {
     // Ignore errors if directory doesn't exist
@@ -323,6 +330,9 @@ async function main(): Promise<void> {
     // Wait for all queued tasks to complete
     await queue.onIdle();
 
+    // Create a tar.gz archive of the fixtures directory
+    await createTarGzArchive(FIXTURES_DIR, path.join(PROJECT_ROOT, 'fixtures.tar.gz'));
+
     logger.info('Processing completed successfully.');
   } catch (error) {
     logger.error('Error:', error);
@@ -343,3 +353,33 @@ main().catch((error) => {
   logger.error('Unhandled error:', error);
   process.exit(1);
 });
+
+/**
+ * Create a tar.gz archive of the fixtures directory using Node.js native methods
+ * @param sourceDir - The directory to archive
+ * @param outputPath - The output path for the archive
+ */
+async function createTarGzArchive(sourceDir: string, outputPath: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const output = fsSync.createWriteStream(outputPath);
+    const archive = archiver('tar', {
+      gzip: true,
+      gzipOptions: {
+        level: 9, // Maximum compression
+      },
+    });
+
+    output.on('close', () => {
+      logger.info(`Tar.gz archive created: ${outputPath} (${archive.pointer()} bytes)`);
+      resolve();
+    });
+
+    archive.on('error', (err: Error) => {
+      reject(err);
+    });
+
+    archive.pipe(output);
+    archive.directory(sourceDir, false);
+    archive.finalize();
+  });
+}

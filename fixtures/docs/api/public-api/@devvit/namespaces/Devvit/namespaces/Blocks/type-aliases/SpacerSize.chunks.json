@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Type Alias: SpacerSize</path>\n[**@devvit/public-api v0.11.15-dev**](../../../../../../README.md)\n# Type Alias: SpacerSize\n**SpacerSize** = `\"xsmall\"` | `\"small\"` | `\"medium\"` | `\"large\"`\nxsmall = 4px; small = 8px; medium = 16px; large = 32px;",
+    "pageContent": "<path>Type Alias: SpacerSize</path>\n[**@devvit/public-api v0.11.19-dev**](../../../../../../README.md)\n# Type Alias: SpacerSize\n**SpacerSize** = `\"xsmall\"` | `\"small\"` | `\"medium\"` | `\"large\"`\nxsmall = 4px; small = 8px; medium = 16px; large = 32px;",
     "metadata": {
       "type": [
         "text",

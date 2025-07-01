@@ -1,6 +1,6 @@
 [
   {
-    "pageContent": "<path>Class: SubredditDescription, Properties, markdown?</path>\n[**@devvit/public-api v0.11.14-dev**](../../README.md)\n# Class: SubredditDescription\n## Constructors\n### new SubredditDescription()\n**new SubredditDescription**(): `SubredditDescription`\n#### Returns\n`SubredditDescription`\n## Properties\n### markdown?\n`optional` **markdown**: `string`",
+    "pageContent": "<path>Class: SubredditDescription, Properties, markdown?</path>\n[**@devvit/public-api v0.11.18-dev**](../../README.md)\n# Class: SubredditDescription\n## Constructors\n### new SubredditDescription()\n**new SubredditDescription**(): `SubredditDescription`\n#### Returns\n`SubredditDescription`\n## Properties\n### markdown?\n`optional` **markdown**: `string`",
     "metadata": {
       "type": [
         "text",
