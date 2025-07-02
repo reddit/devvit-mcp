@@ -5,12 +5,15 @@ This directory contains scripts for generating and managing Devvit documentation
 ## Scripts Overview
 
 ### `generateChunks.ts`
+
 Generates chunks and embeddings from the Devvit documentation repository.
 
 ### `generateSqliteDb.ts`
+
 Creates a SQLite database from the generated chunks and embeddings.
 
 ### `hashAndCompare.ts` (NEW)
+
 Calculates content hashes and compares with the latest release to determine if a new release is needed.
 
 ## Content Hash Comparison
@@ -58,4 +61,4 @@ The GitHub workflow (`.github/workflows/generate-db.yml`) has been updated to:
 3. Only create tags and releases when content has actually changed
 4. Use GitHub's built-in SHA256 hashing for release assets
 
-This prevents unnecessary releases when the documentation content hasn't changed, saving storage and bandwidth. 
+This prevents unnecessary releases when the documentation content hasn't changed, saving storage and bandwidth.

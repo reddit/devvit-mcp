@@ -1,4 +1,4 @@
-name: "Generate Devvit Fixtures and DB"
+name: 'Generate Devvit Fixtures and DB'
 
 on:
   schedule:
@@ -34,7 +34,7 @@ jobs:
 
       - name: Generate chunks
         run: npm run scripts:generate-chunks
-      
+
       - name: Generate SQLite DB
         run: npm run scripts:generate-sqlite-db
 
@@ -77,7 +77,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: artifacts-${{ steps.date.outputs.date }}
-          name: "Embeddings Release: artifacts-${{ steps.date.outputs.date }}"
+          name: 'Embeddings Release: artifacts-${{ steps.date.outputs.date }}'
           body: 'Regenerated embeddings for artifacts-${{ steps.date.outputs.date }}'
           draft: false
           prerelease: false

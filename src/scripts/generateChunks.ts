@@ -296,7 +296,6 @@ async function clearFixturesDirectory(): Promise<void> {
   }
 }
 
-
 /**
  * Create a tar.gz archive of the fixtures directory using Node.js native methods
  * @param sourceDir - The directory to archive

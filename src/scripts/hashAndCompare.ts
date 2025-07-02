@@ -60,8 +60,8 @@ async function getLatestRelease(): Promise<GitHubRelease | null> {
       headers: {
         'Authorization': `token ${token}`,
         'Accept': 'application/vnd.github.v3+json',
-        'User-Agent': 'devvit-mcp-release-checker'
-      }
+        'User-Agent': 'devvit-mcp-release-checker',
+      },
     });
 
     if (!response.ok) {
@@ -92,8 +92,8 @@ async function getLatestReleaseContentHash(): Promise<ContentHashInfo | null> {
     }
 
     // Find the fixtures.tar.gz and devvit-docs.db assets
-    const fixturesAsset = latestRelease.assets.find(asset => asset.name === 'fixtures.tar.gz');
-    const dbAsset = latestRelease.assets.find(asset => asset.name === 'devvit-docs.db');
+    const fixturesAsset = latestRelease.assets.find((asset) => asset.name === 'fixtures.tar.gz');
+    const dbAsset = latestRelease.assets.find((asset) => asset.name === 'devvit-docs.db');
 
     if (!fixturesAsset || !dbAsset) {
       logger.warn('Required assets not found in latest release');
@@ -103,7 +103,7 @@ async function getLatestReleaseContentHash(): Promise<ContentHashInfo | null> {
     // Grab hashes and remove the "sha256:" prefix
     const fixturesHash = fixturesAsset.digest.replace('sha256:', '');
     const dbHash = dbAsset.digest.replace('sha256:', '');
-    
+
     return {
       fixturesHash,
       dbHash,
@@ -121,7 +121,7 @@ async function calculateGeneratedContentHash(): Promise<ContentHashInfo> {
   try {
     const fixturesPath = path.join(PROJECT_ROOT, 'fixtures.tar.gz');
     const dbPath = path.join(PROJECT_ROOT, 'db', 'devvit-docs.db');
-    
+
     // Check if files exist
     if (!fsSync.existsSync(fixturesPath)) {
       throw new Error('Fixtures archive does not exist');
@@ -129,10 +129,10 @@ async function calculateGeneratedContentHash(): Promise<ContentHashInfo> {
     if (!fsSync.existsSync(dbPath)) {
       throw new Error('SQLite database does not exist');
     }
-    
+
     const fixturesHash = await calculateFileHash(fixturesPath);
     const dbHash = await calculateFileHash(dbPath);
-    
+
     return {
       fixturesHash,
       dbHash,
@@ -150,15 +150,15 @@ async function main(): Promise<void> {
   try {
     // Calculate hash of generated artifacts
     const generatedHashInfo = await calculateGeneratedContentHash();
-    
+
     // Get the latest release content hash
     const latestHashInfo = await getLatestReleaseContentHash();
-    
+
     if (latestHashInfo === null) {
       logger.info('No previous release found. Proceeding with new release.');
       process.exit(0); // Continue with release
     }
-    
+
     if (
       generatedHashInfo.fixturesHash === latestHashInfo.fixturesHash &&
       generatedHashInfo.dbHash === latestHashInfo.dbHash
@@ -183,7 +183,9 @@ async function main(): Promise<void> {
       if (changedFiles.length > 0) {
         logger.info(`Changed file(s) detected: ${changedFiles.join(', ')}`);
       } else {
-        logger.info('Unable to determine which file changed (hash mismatch but file hashes match).');
+        logger.info(
+          'Unable to determine which file changed (hash mismatch but file hashes match).'
+        );
       }
 
       process.exit(0); // Continue with release
@@ -195,4 +197,4 @@ async function main(): Promise<void> {
 }
 
 // Run the script
-void main(); 
+void main();
