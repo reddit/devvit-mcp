@@ -1,16 +1,11 @@
 import { DocumentStore } from './DocumentStore';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+import { join } from 'path';
 import { readFile, readdir } from 'fs/promises';
 import { access } from 'fs/promises';
 import type { Document } from '@langchain/core/documents';
 import { logger } from '../../utils/logger';
 
 type EmbeddingData = number[][];
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const fixturesDir = join(__dirname, '../../../', 'fixtures');
 
 export class DocumentLoaderService {
   private readonly store: DocumentStore;
@@ -95,7 +90,6 @@ export class DocumentLoaderService {
     logger.info(`Fixtures directory: ${this.fixturesPath}`);
 
     const filePairs = await this.findChunkFiles(this.fixturesPath);
-
     logger.info(`Found ${filePairs.length} file pairs to load`);
 
     for (const { chunks: chunksPath, embeddings: embeddingsPath, version } of filePairs) {
