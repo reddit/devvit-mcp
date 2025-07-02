@@ -11,4 +11,5 @@ venv
 dist
 .store
 fixtures/
-devvit-docs.db
+fixtures.tar.gz
+db/devvit-docs.db

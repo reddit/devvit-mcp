@@ -7,7 +7,7 @@ import { promisify } from 'util';
 import { exec } from 'child_process';
 import { minimatch } from 'minimatch';
 import PQueue from 'p-queue';
-import archiver from 'archiver';
+import * as tar from 'tar';
 import { GreedySplitter } from '../docs/splitter/GreedySplitter';
 import { SemanticMarkdownSplitter } from '../docs/splitter/SemanticMarkdownSplitter';
 import { logger } from '../utils/logger';
@@ -296,6 +296,44 @@ async function clearFixturesDirectory(): Promise<void> {
   }
 }
 
+
+/**
+ * Create a tar.gz archive of the fixtures directory using Node.js native methods
+ * @param sourceDir - The directory to archive
+ * @param outputPath - The output path for the archive
+ */
+async function createTarGzArchive(sourceDir: string, outputPath: string): Promise<void> {
+  try {
+    await tar.create(
+      {
+        // Add additional flags to make the archive portable and idempotent
+        portable: true,
+        noPax: true,
+        noMtime: true,
+        gzip: true,
+        file: outputPath,
+        cwd: path.dirname(sourceDir),
+      },
+      [path.basename(sourceDir)]
+    );
+    logger.verbose(`Created tar.gz archive: ${outputPath}`);
+  } catch (error) {
+    logger.error('Error creating tar.gz archive:', error);
+    throw error;
+  }
+}
+
+// Run the script
+void main()
+  .then(() => {
+    logger.info('Script completed successfully.');
+    process.exit(0);
+  })
+  .catch((error) => {
+    logger.error('Unhandled error in main execution:', error);
+    process.exit(1);
+  });
+
 /**
  * Main function to orchestrate the process
  */
@@ -346,38 +384,3 @@ async function main(): Promise<void> {
     }
   }
 }
-
-/**
- * Create a tar.gz archive of the fixtures directory using Node.js native methods
- * @param sourceDir - The directory to archive
- * @param outputPath - The output path for the archive
- */
-async function createTarGzArchive(sourceDir: string, outputPath: string): Promise<void> {
-  try {
-    const output = fsSync.createWriteStream(outputPath);
-    const archive = archiver('tar', {
-      gzip: true,
-      gzipOptions: {
-        level: 9, // Maximum compression
-      },
-    });
-
-    archive.pipe(output);
-    archive.directory(sourceDir, false);
-    await archive.finalize();
-  } catch (error) {
-    logger.error('Error creating tar.gz archive:', error);
-    throw error;
-  }
-}
-
-// Run the script
-void main()
-  .then(() => {
-    logger.info('Script completed successfully.');
-    process.exit(0);
-  })
-  .catch((error) => {
-    logger.error('Unhandled error in main execution:', error);
-    process.exit(1);
-  });

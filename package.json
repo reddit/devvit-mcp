@@ -25,6 +25,7 @@
     "prettier": "prettier-package-json --write ./package.json && prettier --write .",
     "scripts:generate-chunks": "NODE_NO_WARNINGS=1 tsx ./src/scripts/generateChunks.ts",
     "scripts:generate-sqlite-db": "NODE_NO_WARNINGS=1 tsx ./src/scripts/generateSqliteDb.ts",
+    "scripts:hash-and-compare": "NODE_NO_WARNINGS=1 tsx ./src/scripts/hashAndCompare.ts",
     "test": "vitest",
     "type-check": "tsc --noEmit"
   },
