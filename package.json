@@ -16,6 +16,7 @@
     "build": "node esbuild.js && shx chmod +x dist/*.js",
     "build:watch": "node esbuild.js --watch",
     "check": "npm run lint && npm run type-check && npm run prettier",
+    "clean": "rm -rf ./dist ./fixtures ./db ./fixtures.tar.gz",
     "dev": "concurrently -p \"[{name}]\" -n \"ESBUILD,INSPECTOR\" -c \"blue,green\" \"npm run build:watch\" \"npm run dev:inspector\"",
     "dev:inspector": "npx @modelcontextprotocol/inspector node ./dist/index.js",
     "lint": "eslint ./src",
@@ -40,6 +41,7 @@
     "remark-gfm": "4.0.1",
     "remark-html": "16.0.1",
     "sqlite-vec": "0.1.7-alpha.2",
+    "tar": "^7.4.3",
     "turndown": "7.2.0",
     "unified": "11.0.5",
     "zod": "^4.0.0-beta.20250505T195954"

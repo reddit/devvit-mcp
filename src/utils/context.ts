@@ -1,10 +1,9 @@
 import { promises as fs } from 'fs';
-import * as fsSync from 'fs';
 import path from 'path';
 import os from 'os';
-import archiver from 'archiver';
 import { DocumentManagementService } from '../docs/store/DocumentManagementService';
 import { logger } from './logger';
+import { extract } from 'tar';
 
 interface GitHubRelease {
   tag_name: string;
@@ -65,11 +64,9 @@ export class Context {
 
     try {
       // Find the fixtures archive in the release assets
-      const fixturesAsset = release.assets.find((asset) => 
-        asset.name === 'fixtures.tar.gz'
-      );
+      const fixturesAsset = release.assets.find((asset) => asset.name === 'fixtures.tar.gz');
       if (!fixturesAsset) {
-        throw new Error(`Fixtures archive not found in release ${release.tag_name}`)
+        throw new Error(`Fixtures archive not found in release ${release.tag_name}`);
       }
 
       // Download the fixtures archive
@@ -81,14 +78,16 @@ export class Context {
       const archiveBuffer = await response.arrayBuffer();
       const archivePath = path.join(tempDir, fixturesAsset.name);
       await fs.writeFile(archivePath, new Uint8Array(archiveBuffer));
-      
+
       // Extract the archive
       await this._extractTarGz(archivePath, tempFixturesPath);
 
       // Clean up the downloaded archive
       await fs.unlink(archivePath);
-      
-      logger.log(`Fixtures downloaded and extracted from release ${release.tag_name} to: ${tempFixturesPath}`);
+
+      logger.log(
+        `Fixtures downloaded and extracted from release ${release.tag_name} to: ${tempFixturesPath}`
+      );
       return tempFixturesPath;
     } catch (error) {
       logger.error('Error downloading or extracting fixtures:', error);
@@ -97,30 +96,20 @@ export class Context {
   }
 
   private async _extractTarGz(archivePath: string, extractPath: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      const input = fsSync.createReadStream(archivePath);
-      const extract = archiver.create('tar', { gzip: true });
-      
-      extract.on('error', (err: Error) => {
-        reject(new Error(`Archive extraction failed: ${err.message}`));
-      });
-      
-      extract.on('end', () => {
-        logger.verbose(`Successfully extracted archive to: ${extractPath}`);
-        resolve();
-      });
-      
+    try {
       // Create the extraction directory if it doesn't exist
-      fs.mkdir(extractPath, { recursive: true })
-        .then(() => {
-          extract.directory(extractPath, false);
-          input.pipe(extract);
-        })
-        .catch((err) => {
-          reject(new Error(`Failed to create extraction directory: ${err.message}`));
-        });
-    });
+      await fs.mkdir(extractPath, { recursive: true });
+      await extract({
+        file: archivePath,
+        cwd: extractPath,
+      });
+      logger.log(`Successfully extracted archive to: ${extractPath}`);
+    } catch (error) {
+      logger.error('Error extracting tar.gz:', error);
+      throw error;
+    }
   }
+
 
   async initialize() {
     this._latestRelease = await this._getLatestRelease();
