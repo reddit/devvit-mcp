@@ -106,6 +106,8 @@ export const createServer = (): Server => {
   };
 
   server.close = async () => {
+    // Clear the MCP logger reporter to prevent "Not connected" errors during shutdown
+    logger.setReporters([]);
     await oldClose();
     await context.shutdown();
   };
