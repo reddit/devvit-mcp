@@ -42,7 +42,7 @@ describe('DocumentManagementService', () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
-    docService = new DocumentManagementService('db/devvit-docs.db');
+    docService = new DocumentManagementService('db/devvit-docs.db', 'fixtures');
   });
 
   afterEach(async () => {

@@ -10,3 +10,6 @@ venv
 .env
 dist
 .store
+fixtures/
+fixtures.tar.gz
+db/devvit-docs.db
