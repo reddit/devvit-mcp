@@ -110,7 +110,6 @@ export class Context {
     }
   }
 
-
   async initialize() {
     this._latestRelease = await this._getLatestRelease();
     this._dbPath = await this._downloadAndCacheDb(this._latestRelease);

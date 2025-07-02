@@ -62,7 +62,7 @@ jobs:
         with:
           tag_name: ${{ steps.date.outputs.date }}
           name: Release ${{ steps.date.outputs.date }}
-          body: "Automated release for ${{ steps.date.outputs.date }}"
+          body: 'Automated release for ${{ steps.date.outputs.date }}'
           draft: false
           prerelease: false
           files: |
