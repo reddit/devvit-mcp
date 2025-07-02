@@ -41,6 +41,8 @@ jobs:
       - name: Hash content and compare to latest release
         id: hash_and_compare
         continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run scripts:hash-and-compare
 
       - name: Check if new release is needed
