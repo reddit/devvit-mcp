@@ -20,7 +20,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          # Full history is required to be able to push a commit back.
           fetch-depth: 0
 
       - name: Setup Node
@@ -48,8 +47,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git tag ${{ steps.date.outputs.date }}
-          git push origin ${{ steps.date.outputs.date }}
+          # Check if the tag already exists remotely or locally
+          if git rev-parse "refs/tags/${{ steps.date.outputs.date }}" >/dev/null 2>&1 || \
+             git ls-remote --tags origin | grep -q "refs/tags/${{ steps.date.outputs.date }}$"; then
+            echo "Tag ${{ steps.date.outputs.date }} already exists. Skipping tag creation."
+          else
+            git tag ${{ steps.date.outputs.date }}
+            git push origin ${{ steps.date.outputs.date }}
+          fi
 
       - name: Create GitHub Release
         id: create_release
