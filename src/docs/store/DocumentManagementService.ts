@@ -28,10 +28,10 @@ export class DocumentManagementService {
     return (version ?? '').toLowerCase();
   }
 
-  constructor(dbPath: string) {
+  constructor(dbPath: string, fixturesPath: string) {
     this.store = new DocumentStore(dbPath);
     this.documentRetriever = new DocumentRetrieverService(this.store);
-    this.documentLoader = new DocumentLoaderService(this.store);
+    this.documentLoader = new DocumentLoaderService(this.store, fixturesPath);
     const minChunkSize = 500;
     const maxChunkSize = 1500;
     const semanticSplitter = new SemanticMarkdownSplitter(maxChunkSize);

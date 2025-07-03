@@ -2,6 +2,12 @@ import { DocumentManagementService } from '../docs/store/DocumentManagementServi
 import * as path from 'path';
 import * as fs from 'fs';
 import { logger } from '../utils/logger';
+import { fileURLToPath } from 'url';
+
+const currentFilePath = fileURLToPath(import.meta.url);
+const currentDir = path.dirname(currentFilePath);
+const PROJECT_ROOT = path.resolve(currentDir, '..', '..');
+export const FIXTURES_DIR = path.join(PROJECT_ROOT, 'fixtures');
 
 async function main(): Promise<void> {
   const outputDir = path.join(process.cwd(), 'db');
@@ -27,7 +33,7 @@ async function main(): Promise<void> {
   }
 
   logger.info(`Creating new SQLite DB at: ${dbPath}`);
-  const docManager = new DocumentManagementService(dbPath);
+  const docManager = new DocumentManagementService(dbPath, FIXTURES_DIR);
 
   try {
     logger.info('Initializing database schema...');
