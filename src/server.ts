@@ -68,7 +68,13 @@ export const createServer = (): Server => {
   const oldClose = server.close.bind(server);
 
   server.connect = async (transport: StdioServerTransport) => {
+    // Initialize the documentation context *before* establishing the server connection.
+    // This guarantees that tools depending on the docs service are ready as soon as
+    // the server starts accepting requests.
+    await context.initialize();
+
     await oldConnect(transport);
+
     /**
      * Custom reporter to pipe logs through MCP so we can see
      * them in the inspector and in the console for apps
@@ -101,8 +107,6 @@ export const createServer = (): Server => {
         },
       },
     ]);
-
-    await context.initialize();
   };
 
   server.close = async () => {
