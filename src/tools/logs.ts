@@ -12,29 +12,17 @@ This is a convenience wrapper around the \`devvit logs\` CLI command. Supply a s
 
 Examples:
   { subreddit: "mySubreddit" }
-  { subreddit: "r/myTestSubreddit", app: "my-app", json: true, since: "15m" }`,
+  { subreddit: "r/myTestSubreddit", app: "my-app", since: "15m" }`,
   inputSchema: z.object({
     subreddit: z.string().describe('Provide the subreddit name. The "r/" prefix is optional'),
+    since: z.string().describe('Start time for logs (e.g. "15s", "2w1d", "30m").'),
     app: z.string().optional().describe('Provide the app name'),
-    config: z.string().optional().describe('Path to devvit config file (default: devvit.yaml)'),
-    connect: z.boolean().optional().default(false).describe('Connect to local runtime'),
-    dateformat: z
-      .string()
-      .optional()
-      .describe(
-        'Format for rendering dates (default: "MMM d HH:mm:ss"). See https://date-fns.org/docs/format for formatting options.'
-      ),
-    json: z.boolean().optional().default(false).describe('Output JSON for each log line'),
-    since: z
-      .string()
-      .optional()
-      .describe('Start time for logs (e.g. "15s", "2w1d", "30m"). Defaults to 0m (now)'),
-    verbose: z.boolean().optional().default(true).describe('Enable verbose output'),
+    config: z.string().optional().describe('Path to devvit config file (default: devvit.json)'),
   }),
   handler: async ({ params }) => {
-    const { subreddit, app, config, connect, dateformat, json: jsonFlag, since, verbose } = params;
+    const { subreddit, app, config, since } = params;
 
-    const args: string[] = ['logs', subreddit];
+    const args: string[] = ['devvit', 'logs', subreddit];
     const repoRoot = resolveRepoRoot();
 
     if (!repoRoot && !params.app) {
@@ -53,16 +41,12 @@ Examples:
 
     // Flags ---------------------------------------------------------------
     if (config) args.push('--config', config);
-    if (connect) args.push('--connect');
-    if (dateformat) args.push('--dateformat', dateformat);
-    if (jsonFlag) args.push('--json');
-    if (since) args.push('--since', since);
-    if (verbose) args.push('--verbose');
+    args.push('--since', since);
 
     logger.info(`🚀 Executing: devvit ${args.join(' ')}`);
 
     return await new Promise((resolve) => {
-      const child = spawn('devvit', args, {
+      const child = spawn('npx', args, {
         stdio: ['ignore', 'pipe', 'pipe'],
         env: process.env,
         cwd: repoRoot,
@@ -96,10 +80,12 @@ Examples:
         });
       });
 
-      const KILL_TIMEOUT_MS = 2_000; // Prevent indefinite hanging by killing process after 10s
+      const KILL_TIMEOUT_MS = 4_000; // Prevent indefinite hanging by killing process after 4s
 
       const timeout = setTimeout(() => {
-        logger.info(`⌛ Reached timeout (${KILL_TIMEOUT_MS}ms) – terminating devvit logs process…`);
+        logger.error(
+          `⌛ Reached timeout (${KILL_TIMEOUT_MS}ms) – terminating devvit logs process…`
+        );
         child.kill('SIGINT');
       }, KILL_TIMEOUT_MS);
 
