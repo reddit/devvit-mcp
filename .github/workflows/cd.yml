@@ -50,8 +50,8 @@ jobs:
       - name: Get latest version from git tags
         id: get_version
         run: |
-          # Get the latest version tag, default to 0.0.0 if none exists
-          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+          # Get the latest semantic version tag, default to 0.0.0 if none exists
+          LATEST_TAG=$(git tag --list "v*" --sort=-version:refname | head -n1 || echo "v0.0.0")
           # Remove 'v' prefix and increment patch version
           VERSION=${LATEST_TAG#v}
           IFS='.' read -r major minor patch <<< "$VERSION"
