@@ -82,6 +82,10 @@ Error: Server does not support logging (required for notifications/message)
 
 You need to add the capability to your `new MCPServer`. [Use this permalink](https://github.com/modelcontextprotocol/typescript-sdk/blob/1909bbcc671b00431579ea15c7713082406b1005/src/server/index.ts#L146) to know what key you should add.
 
+## Versioning
+
+This package uses automated versioning managed by CI/CD. The version in `package.json` is a placeholder and will be automatically updated during the release process. Check git tags for the actual released versions.
+
 ## Credits
 
 Huge thanks to Arabold for open sourcing [docs-mcp-server](https://github.com/arabold/docs-mcp-server). Portions of this code is heavily inspired by this library. Please use it if you need other docs servers!

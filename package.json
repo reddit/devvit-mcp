@@ -1,6 +1,6 @@
 {
   "name": "@devvit/mcp",
-  "version": "0.0.14",
+  "version": "0.0.0",
   "description": "MCP for Devvit things",
   "license": "BSD-3-Clause",
   "author": "Marcus Wood",
@@ -71,5 +71,7 @@
     "typescript": "5.8.2",
     "typescript-eslint": "8.29.0",
     "vitest": "3.0.8"
-  }
+  },
+  "_ci_version_source": "git-tags",
+  "_comment": "This is a placeholder version that is updated by the CD pipeline"
 }
