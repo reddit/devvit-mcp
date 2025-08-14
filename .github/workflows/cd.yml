@@ -56,9 +56,7 @@ jobs:
           env | grep -E "(NPM|NODE)" || echo "No NPM/NODE env vars found"
 
       - name: Publish to npm
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
 
       - name: Push commit and tag (only if publish succeeded)
         if: success()
