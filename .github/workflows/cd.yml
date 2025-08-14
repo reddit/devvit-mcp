@@ -47,7 +47,10 @@ jobs:
         run: npm version patch -m "chore(release)"
 
       - name: Publish to npm
-        run: npm publish --access public
+        run: |
+          npm whoami
+          npm access ls-collaborators @devvit/mcp
+          npm publish --access public
 
       - name: Push commit and tag (only if publish succeeded)
         if: success()
