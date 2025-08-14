@@ -18,7 +18,7 @@
     "check": "npm run lint && npm run type-check && npm run prettier",
     "clean": "rm -rf ./dist ./fixtures ./db ./fixtures.tar.gz",
     "dev": "concurrently -p \"[{name}]\" -n \"ESBUILD,INSPECTOR\" -c \"blue,green\" \"npm run build:watch\" \"npm run dev:inspector\"",
-    "dev:inspector": "DANGEROUSLY_OMIT_AUTH=true npx --yes @modelcontextprotocol/inspector@0.14.3 node ./dist/index.js",
+    "dev:inspector": "npx --yes @modelcontextprotocol/inspector@0.14.3 node ./dist/index.js",
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src",
     "prepare": "npm run check && npm run type-check && npm run build",
