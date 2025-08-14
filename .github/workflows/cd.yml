@@ -22,6 +22,8 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           scope: '@devvit'
           always-auth: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install deps
         run: npm ci
@@ -46,11 +48,17 @@ jobs:
       - name: Bump version locally
         run: npm version patch -m "chore(release)"
 
-      - name: Publish to npm
+      - name: Debug npm config
         run: |
-          npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          echo "=== .npmrc contents ==="
+          cat ~/.npmrc || echo "No .npmrc found"
+          echo "=== npm config list ==="
+          npm config list
+          echo "=== Environment variables ==="
+          env | grep -E "(NPM|NODE)" || echo "No NPM/NODE env vars found"
+
+      - name: Publish to npm
+        run: npm publish --access public
 
       - name: Push commit and tag (only if publish succeeded)
         if: success()
