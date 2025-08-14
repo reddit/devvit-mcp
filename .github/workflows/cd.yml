@@ -22,8 +22,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           scope: '@devvit'
           always-auth: true
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install deps
         run: npm ci
@@ -50,8 +48,6 @@ jobs:
 
       - name: Publish to npm
         run: |
-          npm whoami
-          npm access ls-collaborators @devvit/mcp
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
