@@ -53,6 +53,8 @@ jobs:
           npm whoami
           npm access ls-collaborators @devvit/mcp
           npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Push commit and tag (only if publish succeeded)
         if: success()
