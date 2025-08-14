@@ -39,30 +39,29 @@ jobs:
       - name: Run tests
         run: npm run test
 
-      - name: Configure git user
-        run: |
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          git config --global user.name "${{ github.actor }}"
-
-      - name: Bump version locally
+      - name: Bump version locally (not committed)
         run: npm version patch -m "chore(release)"
 
-      - name: Debug npm config
-        run: |
-          echo "=== .npmrc contents ==="
-          cat /home/runner/work/_temp/.npmrc || echo "No .npmrc found"
-          echo "=== npm config list ==="
-          npm config list
-          echo "=== Environment variables ==="
-          env | grep -E "(NPM|NODE)" || echo "No NPM/NODE env vars found"
-
       - name: Publish to npm
+        id: npm_publish
         run: |
-          npm whoami
           npm publish --access public
 
-      - name: Push commit and tag (only if publish succeeded)
-        if: success()
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: git push origin HEAD:main --follow-tags
+      - name: Get package version
+        id: package_version
+        run: echo "version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+
+      - name: Create release tag
+        id: create_tag
+        if: steps.npm_publish.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Check if the tag already exists remotely or locally
+          if git rev-parse "refs/tags/v${{ steps.package_version.outputs.version }}" >/dev/null 2>&1 || \
+             git ls-remote --tags origin | grep -q "refs/tags/v${{ steps.package_version.outputs.version }}$"; then
+            echo "Tag v${{ steps.package_version.outputs.version }} already exists. Skipping tag creation."
+          else
+            git tag v${{ steps.package_version.outputs.version }}
+            git push origin v${{ steps.package_version.outputs.version }}
+          fi
