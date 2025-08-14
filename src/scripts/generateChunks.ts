@@ -71,6 +71,12 @@ const config: Config = {
   excludePatterns: [
     '**/node_modules/**',
     '**/.git/**',
+    '**/docs/blocks/**',
+    '**/docs/capabilities/blocks/**',
+    '**/docs/api/**',
+    '**/versioned_docs/version-0.12/blocks/**',
+    '**/versioned_docs/version-0.12/capabilities/blocks/**',
+    '**/versioned_docs/version-0.12/api/**',
     // I've found that these muddy up the search results
     '**/README.md',
     // May contain out of date information
