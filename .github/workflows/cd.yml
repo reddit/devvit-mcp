@@ -80,5 +80,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           VERSION=${{ steps.package_version.outputs.version }}
-          git tag v${VERSION}
+          git tag v${VERSION} || echo "Tag v${VERSION} already exists"
           git push origin v${VERSION}
