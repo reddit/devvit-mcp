@@ -45,6 +45,8 @@ export const createServer = (): Server => {
     }
 
     try {
+      // Ensure context is initialized before handling tools to avoid undefined services
+      await context.initialize();
       // Fire and forget, don't slow down the tool call for telemetry
       void sendEvent({
         mcp_name: request.params.name,

@@ -18,6 +18,8 @@ export class Context {
   private _dbPath!: string;
   private _fixturesPath!: string;
   _docsService!: DocumentManagementService;
+  private _initPromise: Promise<void> | null = null;
+  private _initialized = false;
 
   constructor() {}
 
@@ -111,15 +113,28 @@ export class Context {
   }
 
   async initialize() {
-    this._latestRelease = await this._getLatestRelease();
-    this._dbPath = await this._downloadAndCacheDb(this._latestRelease);
-    this._fixturesPath = await this._downloadFixtures(this._latestRelease);
-    this._docsService = new DocumentManagementService(this._dbPath, this._fixturesPath);
-    await this._docsService.initialize();
+    if (this._initialized) return;
+    if (this._initPromise) return this._initPromise;
+
+    this._initPromise = (async () => {
+      this._latestRelease = await this._getLatestRelease();
+      this._dbPath = await this._downloadAndCacheDb(this._latestRelease);
+      this._fixturesPath = await this._downloadFixtures(this._latestRelease);
+      this._docsService = new DocumentManagementService(this._dbPath, this._fixturesPath);
+      await this._docsService.initialize();
+      this._initialized = true;
+    })().catch((error) => {
+      this._initPromise = null;
+      throw error;
+    });
+
+    return this._initPromise;
   }
 
   async shutdown() {
-    await this._docsService.shutdown();
+    if (this._docsService) {
+      await this._docsService.shutdown();
+    }
     if (this._dbPath) {
       try {
         await fs.unlink(this._dbPath);
@@ -136,5 +151,7 @@ export class Context {
         logger.error(`Error deleting temporary fixtures ${this._fixturesPath}:`, error);
       }
     }
+    this._initialized = false;
+    this._initPromise = null;
   }
 }

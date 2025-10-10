@@ -18,7 +18,7 @@ Examples:
 - {query: "scheduler"}`,
   inputSchema: z.object({
     query: z.string().describe('Search query'),
-    limit: z.number().optional().default(5).describe('Maximum number of results'),
+    limit: z.number().optional().default(2).describe('Maximum number of results'),
     exactMatch: z.boolean().optional().default(false).describe('Only use exact version match'),
   }),
   handler: async ({ params, context }) => {
