@@ -1,6 +1,10 @@
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import packageJSON from '../package.json' with { type: 'json' };
-import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
+import {
+  CallToolRequestSchema,
+  ListToolsRequestSchema,
+  SetLevelRequestSchema,
+} from '@modelcontextprotocol/sdk/types.js';
 import { Tool } from './tools/types';
 import z from 'zod';
 import { logger } from './utils/logger';
@@ -25,6 +29,13 @@ export const createServer = (): Server => {
     }
   );
   const context = new Context();
+
+  // Breaking change in the protocol:
+  // https://github.com/modelcontextprotocol/inspector/issues/610
+  server.setRequestHandler(SetLevelRequestSchema, (request) => {
+    logger.log(`--- Logging level: ${request.params.level}`);
+    return {};
+  });
 
   server.setRequestHandler(ListToolsRequestSchema, async () => {
     return {
