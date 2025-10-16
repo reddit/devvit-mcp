@@ -13,9 +13,8 @@ For redis docs, use redis.{my_command}
 Examples:
 - {query: "how do hooks work"}
 - {query: "redis.bitfield"}
-- {query: "useState"}
-- {query: "working with useState", limit: 10}
-- {query: "scheduler"}`,
+- {query: "navigate to external urls"}
+- {query: "how does devvit.json work"}`,
   inputSchema: z.object({
     query: z.string().describe('Search query'),
     limit: z.number().optional().default(2).describe('Maximum number of results'),

@@ -6,13 +6,13 @@ import {
   SetLevelRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
 import { Tool } from './tools/types';
-import z from 'zod';
 import { logger } from './utils/logger';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { Context } from './utils/context';
 import { searchTool } from './tools/search';
 import { logsTool } from './tools/logs';
 import { sendEvent } from './utils/telemetry';
+import { zodToJsonSchema } from 'zod-to-json-schema';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const tools: Tool<any>[] = [searchTool, logsTool];
@@ -41,7 +41,7 @@ export const createServer = (): Server => {
     return {
       tools: tools.map(({ handler: _handler, inputSchema, ...rest }) => ({
         ...rest,
-        inputSchema: z.toJSONSchema(inputSchema),
+        inputSchema: zodToJsonSchema(inputSchema),
       })),
     };
   });

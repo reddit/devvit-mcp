@@ -8,7 +8,7 @@ export type ToolResult = {
   isError?: boolean;
 };
 
-export type Tool<T extends z.ZodObject = z.ZodObject> = {
+export type Tool<T extends z.AnyZodObject = z.AnyZodObject> = {
   name: string;
   description: string;
   inputSchema: T;
@@ -16,7 +16,7 @@ export type Tool<T extends z.ZodObject = z.ZodObject> = {
 };
 
 // Needed for automatic type inference
-export const createTool = <T extends z.ZodObject>(args: {
+export const createTool = <T extends z.AnyZodObject>(args: {
   name: string;
   description: string;
   inputSchema: T;
