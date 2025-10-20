@@ -1,5 +1,5 @@
 import { JSDOM } from 'jsdom';
-import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter';
+import { RecursiveCharacterTextSplitter } from '@langchain/textsplitters';
 import remarkGfm from 'remark-gfm';
 import remarkHtml from 'remark-html';
 import remarkParse from 'remark-parse';

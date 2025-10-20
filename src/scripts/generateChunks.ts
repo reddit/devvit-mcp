@@ -12,7 +12,7 @@ import { GreedySplitter } from '../docs/splitter/GreedySplitter';
 import { SemanticMarkdownSplitter } from '../docs/splitter/SemanticMarkdownSplitter';
 import { logger } from '../utils/logger';
 import type { ContentChunk } from '../docs/splitter/types';
-import { Document } from 'langchain/document';
+import { Document } from '@langchain/core/documents';
 import { embedDocuments } from '../utils/embeddings';
 
 const execPromise = promisify(exec);
