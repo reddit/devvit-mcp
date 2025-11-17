@@ -6,6 +6,13 @@ import { StoreError } from './errors';
 
 vi.mock('../utils/logger');
 
+vi.mock('../../utils/embeddings', () => ({
+  embedDocuments: vi.fn().mockImplementation((texts: string[]) =>
+    Promise.resolve(texts.map(() => [0.1, 0.2, 0.3]))
+  ),
+  embedDocument: vi.fn().mockResolvedValue([0.1, 0.2, 0.3]),
+}));
+
 // Mock document store and retriever
 const mockStore = {
   initialize: vi.fn(),
