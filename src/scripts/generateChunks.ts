@@ -59,9 +59,10 @@ interface Config {
 
 /** Configuration object for easy editing */
 const config: Config = {
-  repoUrl: 'reddit/devvit',
+  repoUrl: 'reddit/devvit-docs',
   branch: 'main',
-  pathInRepo: 'devvit-docs',
+  // The Devvit docs are now hosted in their own repo (not under the devvit monorepo).
+  pathInRepo: '.',
   includePatterns: [
     '**/docs/**/*.md',
     '**/docs/**/*.mdx',
