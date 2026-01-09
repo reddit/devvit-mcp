@@ -1,3 +1,4 @@
+/** Lifted from: https://github.snooguts.net/reddit/reddit-devplatform-monorepo/tree/main/packages/cli/src */
 import crypto from 'crypto';
 import fs from 'fs/promises';
 import os from 'os';
