@@ -1,19 +1,21 @@
 /** Lifted from: https://github.snooguts.net/reddit/reddit-devplatform-monorepo/tree/main/packages/cli/src */
-import os from 'os';
-import { version } from '../../package.json';
-import path from 'path';
-import fs from 'fs/promises';
 import crypto from 'crypto';
+import fs from 'fs/promises';
+import os from 'os';
+import path from 'path';
+import { version } from '../../package.json';
 import { logger } from './logger';
 
-async function isFile(path: string): Promise<boolean> {
+async function isFile(filename: string): Promise<boolean> {
   try {
-    const stat = await fs.stat(path);
+    const stat = await fs.stat(filename);
     return stat.isFile();
   } catch {
     return false;
   }
 }
+
+const DEVVIT_AUTH_TOKEN = 'DEVVIT_AUTH_TOKEN';
 
 /** @type {boolean} See envvar.md. */
 const MY_PORTAL_ENABLED = !!process.env.MY_PORTAL && process.env.MY_PORTAL !== '0';
@@ -68,7 +70,6 @@ function getHeaders(): Headers {
     logger.warn(`Warning: setting devvit-canary to "${process.env.DEVVIT_CANARY}"`);
     headers.set(...HEADER_DEVVIT_CANARY(process.env.DEVVIT_CANARY));
   }
-
   return headers;
 }
 
@@ -107,17 +108,74 @@ async function getTelemetrySessionId(): Promise<string> {
   return sessionId;
 }
 
-async function getToken(): Promise<string | undefined> {
-  const tokenFilename = getTokenFilename();
-  const isTokenFileCreated = await isFile(tokenFilename);
+type StoredTokenJSON = {
+  readonly refreshToken: string;
+  readonly accessToken: string;
+  readonly expiresAt: number;
+  readonly scope: string;
+  readonly tokenType: string;
+};
 
-  if (!isTokenFileCreated) return;
+/**
+ * Copied from CLI: packages/cli/src/lib/auth/StoredToken.ts
+ *
+ * We only need the access token for telemetry.
+ */
+function storedTokenFromBase64(base64: string): StoredTokenJSON | undefined {
+  let token: unknown;
+  try {
+    token = JSON.parse(Buffer.from(base64, 'base64').toString('utf8'));
+  } catch {
+    return undefined;
+  }
+
+  if (!token || typeof token !== 'object') {
+    return undefined;
+  }
+
+  const candidate = token as Partial<StoredTokenJSON>;
+  if (
+    typeof candidate.accessToken !== 'string' ||
+    typeof candidate.expiresAt !== 'number' ||
+    typeof candidate.refreshToken !== 'string' ||
+    typeof candidate.scope !== 'string' ||
+    candidate.tokenType !== 'bearer'
+  ) {
+    return undefined;
+  }
+
+  return candidate as StoredTokenJSON;
+}
+
+async function getAccessToken(): Promise<string | undefined> {
+  let rawToken: string;
+
+  if (process.env[DEVVIT_AUTH_TOKEN]) {
+    rawToken = process.env[DEVVIT_AUTH_TOKEN];
+  } else {
+    const tokenFilename = getTokenFilename();
+    if (!(await isFile(tokenFilename))) {
+      return undefined;
+    }
+
+    rawToken = await fs.readFile(tokenFilename, { encoding: 'utf8' });
+    if (rawToken == null || rawToken.length === 0) {
+      return undefined;
+    }
+  }
 
   try {
-    const contents = await fs.readFile(tokenFilename, 'utf-8');
-    return JSON.parse(contents).token;
-  } catch (error) {
-    return undefined;
+    const jsonParse = JSON.parse(rawToken) as { token?: unknown };
+    if (typeof jsonParse.token !== 'string') {
+      return undefined;
+    }
+
+    const token = storedTokenFromBase64(jsonParse.token);
+    return token?.accessToken;
+  } catch {
+    // Old format: file contents are base64(JSON(StoredToken))
+    const token = storedTokenFromBase64(rawToken);
+    return token?.accessToken;
   }
 }
 
@@ -148,10 +206,9 @@ export const sendEvent = async (
   };
 
   const headers = getHeaders();
-
   headers.set('content-type', 'application/json');
 
-  const token = await getToken();
+  const token = await getAccessToken();
   if (token) {
     headers.set('authorization', `bearer ${token}`);
   }
