@@ -30,7 +30,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@langchain/core": "1.0.1",
+    "@langchain/core": "1.1.19",
     "@langchain/openai": "1.0.0",
     "@langchain/textsplitters": "1.0.0",
     "@modelcontextprotocol/sdk": "1.20.0",
