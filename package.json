@@ -39,7 +39,7 @@
     "better-sqlite3": "11.9.1",
     "consola": "3.4.2",
     "jsdom": "26.0.0",
-    "minimatch": "10.0.1",
+    "minimatch": "10.2.1",
     "remark": "15.0.1",
     "remark-gfm": "4.0.1",
     "remark-html": "16.0.1",
