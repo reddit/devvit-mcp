@@ -29,6 +29,8 @@ jobs:
 
       - name: Install deps
         run: npm ci
+        env:
+          NPM_CONFIG_REGISTRY: https://registry.npmjs.org/
 
       - name: Build
         run: npm run build
