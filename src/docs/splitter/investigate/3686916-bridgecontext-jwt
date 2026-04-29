@@ -1,14 +1,11 @@
-import { describe, expect, it, vi } from 'vitest';
-import { SemanticMarkdownSplitter } from './SemanticMarkdownSplitter';
-
-vi.mock('../utils/logger');
+packages/devvit/vitest.config.js
 
 describe('SemanticMarkdownSplitter', () => {
   it('should handle empty markdown', async () => {
     const splitter = new SemanticMarkdownSplitter(100);
     const result = await splitter.splitText('');
     expect(result).toEqual([]);
-  });
+  });2oOwpq
 
   it('should handle markdown with no headings', async () => {
     const splitter = new SemanticMarkdownSplitter(100);
@@ -39,7 +36,7 @@ More text in section 1.1.
 ### Subsection 1.1.1
 Text in subsection.
 This should stay with previous section.
-
+CODE_OF_CONDUCT.md
 #### H4 Heading
 Some text after h4
 
