@@ -2,12 +2,10 @@ import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest';
 
 // --- Mocking Setup ---
 
-// Mock OpenAIEmbeddings
-const mockEmbedDocuments = vi.fn().mockResolvedValue([[0.1, 0.2, 0.3]]); // Keep this if addDocuments is tested elsewhere
-
-// Mock the module to export a mock function for the class constructor
-vi.mock('@langchain/openai', () => ({
-  OpenAIEmbeddings: vi.fn(), // Mock the class export as a vi.fn()
+// Mock the embeddings utility
+vi.mock('../../utils/embeddings', () => ({
+  embedDocument: vi.fn().mockResolvedValue([0.1, 0.2, 0.3]),
+  embedDocuments: vi.fn().mockResolvedValue([[0.1, 0.2, 0.3]]),
 }));
 
 // Mock better-sqlite3
@@ -36,13 +34,8 @@ vi.mock('sqlite-vec', () => ({
 
 // --- Test Suite ---
 
-// Import the mocked constructor function
-import { OpenAIEmbeddings } from '@langchain/openai';
 // Import DocumentStore AFTER mocks are defined
 import { DocumentStore } from './DocumentStore';
-
-// Cast OpenAIEmbeddings to the correct Vitest mock type for configuration
-const MockedOpenAIEmbeddingsConstructor = OpenAIEmbeddings as ReturnType<typeof vi.fn>;
 
 describe('DocumentStore', () => {
   let documentStore: DocumentStore;
@@ -50,14 +43,9 @@ describe('DocumentStore', () => {
   beforeEach(async () => {
     vi.clearAllMocks(); // Clear call history etc.
 
-    // Configure the mock constructor's implementation for THIS test run
-    MockedOpenAIEmbeddingsConstructor.mockImplementation(() => ({
-      embedDocuments: mockEmbedDocuments,
-    }));
     mockPrepare.mockReturnValue(mockStatement); // <-- Re-configure prepare mock return value
 
     // Now create the store and initialize.
-    // initialize() will call 'new OpenAIEmbeddings()', which uses our fresh mock implementation.
     documentStore = new DocumentStore(':memory:');
     await documentStore.initialize();
   });

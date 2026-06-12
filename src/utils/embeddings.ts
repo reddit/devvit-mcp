@@ -10,6 +10,9 @@ export async function embedDocument(q: string): Promise<number[]> {
 }
 
 export async function embedDocuments(q: string[]): Promise<number[][]> {
+  if (q.length === 0) {
+    return [];
+  }
   const out = await extractor(q, { pooling: 'mean', normalize: true });
   return out.tolist();
 }
