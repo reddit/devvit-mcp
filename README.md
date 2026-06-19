@@ -88,4 +88,4 @@ This package uses automated versioning managed by CI/CD. The version in `package
 
 ## Credits
 
-Huge thanks to Arabold for open sourcing [docs-mcp-server](https://github.com/arabold/docs-mcp-server). Portions of this code is heavily inspired by this library. Please use it if you need other docs servers!
+Huge thanks to Arabold for open sourcing [docs-mcp-server](https://github.com/arabold/docs-mcp-server). Portions of this code are heavily inspired by this library. Please use it if you need other docs servers!
