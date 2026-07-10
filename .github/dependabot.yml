@@ -1,32 +1,32 @@
 version: 2
 
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "11:00"
-      timezone: "America/Los_Angeles"
+      interval: 'weekly'
+      day: 'monday'
+      time: '11:00'
+      timezone: 'America/Los_Angeles'
     cooldown:
       default-days: 7
     groups:
       security-vulnerabilities-npm:
-        applies-to: "security-updates"
+        applies-to: 'security-updates'
         patterns:
-          - "*"
+          - '*'
 
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "11:00"
-      timezone: "America/Los_Angeles"
+      interval: 'weekly'
+      day: 'monday'
+      time: '11:00'
+      timezone: 'America/Los_Angeles'
     cooldown:
       default-days: 7
     groups:
       security-vulnerabilities-github-actions:
-        applies-to: "security-updates"
+        applies-to: 'security-updates'
         patterns:
-          - "*"
+          - '*'
