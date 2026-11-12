@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "description": "MCP for Devvit things",
   "bugs": "https://github.com/reddit/devvit-mcp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reddit/devvit-mcp.git"
+  },
   "license": "BSD-3-Clause",
   "author": "Marcus Wood",
   "type": "module",
