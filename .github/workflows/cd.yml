@@ -24,8 +24,6 @@ jobs:
           cache: 'npm'
           registry-url: 'https://registry.npmjs.org'
           scope: '@devvit'
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install deps
         run: npm ci
@@ -65,11 +63,16 @@ jobs:
       - name: Update package.json version
         run: npm version ${{ steps.get_version.outputs.new_version }} --no-git-tag-commit
 
+      # npm trusted publishing (OIDC) needs npm >= 11.5.1; Node 22 bundles npm 10.
+      - name: Update npm for trusted publishing
+        run: npm install -g npm@11.21.1
+
+      # Authenticates with GitHub OIDC (permissions: id-token: write) via the
+      # trusted publisher configured for this workflow on npmjs.com.
+      # No long-lived NPM_TOKEN is used.
       - name: Publish to npm
         id: npm_publish
-        run: |
-          npm whoami
-          npm publish --access public
+        run: npm publish --access public
 
       - name: Get package version
         id: package_version
